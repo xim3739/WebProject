@@ -4,11 +4,14 @@
 <head>
   <meta charset="utf-8">
   <title></title>
-  <link rel="stylesheet" type="text/css" href="/WebProject/css/board/board.css">
+  <link rel="stylesheet" type="text/css" href="../../css/board/board.css">
 </head>
 
 <body>
-  <!-- header -->
+  <header>
+    <?php include "../../lib/common_page/header.php" ?>
+  </header>
+
   <div class="board_header">
     <div id="board_header_div">
       <p><a href="board_form.html"  >BOARD</a></p>
@@ -52,6 +55,11 @@
       <input id="wirte_upload" type="button" value="UpLoad">
     </div>
   </div>
+
+  <footer>
+    <?php "../../lib/common_page/footer.php" ?>
+  </footer>
+  
 </body>
 
 </html>
