@@ -26,28 +26,5 @@
 
   </div>
   <!-- /.container -->
-  <div id="pop_up">
-    <div id="pop_box" onmouseleave="pop_down()">
-      <ul>
-        <li><a href="">찾아요</a></li>
-        <li><a href="">데리고있어요</a></li>
-        <li><a href="">임시보호</a></li>
 
-      </ul>
-      <ul>
-        <li><a href="">자유게시판</a></li>
-        <li><a href="">후후후</a></li>
-      </ul>
-
-    </div>
-</div>
-<div id="pop_log" onmouseleave="pop_down()">
-<div id="pop_login"></div>
-  <ul>
-    <li><a href="">로그인</a></li>
-    <li><a href="">회원가입</a></li>
-  </ul>
-</div>
-
-  </div>
   </section>
