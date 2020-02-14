@@ -55,7 +55,7 @@
       #btn_search{
         height: 45px;
     width: 45px;
-    background-image: url("./img/search1.png");
+    background-image: url("../../img/main/search1.png");
     border: none;
     background-color: none;
     outline: none;
@@ -70,13 +70,13 @@
       vertical-align: middle;
     }
     #btn_home{
-      background-image: url("./img/home1.png");
+      background-image: url("../../img/main/home1.png");
     }
     #btn_info{
-      background-image: url("./img/info1.png");
+      background-image: url("../../img/main/info1.png");
     }
     #btn_login{
-      background-image: url("./img/info1.png");
+      background-image: url("../../img/main/info1.png");
     }
     .no-flex{
       flex: none;
@@ -111,7 +111,7 @@
     </div>
   </nav> -->
 
-  <?php include "header.php"; ?>
+  <?php include "../../lib/common_page/header.php"; ?>
   <!-- Page Content -->
   <div class="container">
 
@@ -141,7 +141,7 @@
   <!-- /.container -->
 
   <!-- Footer -->
-  <?php include "footer.php"; ?>
+  <?php include "../../lib/common_page/footer.php"; ?>
 
   <!-- Bootstrap core JavaScript -->
   <!-- <script src="vendor/jquery/jquery.min.js"></script>
