@@ -162,8 +162,8 @@
   }
 </style>
 <script src="../../js/main/pop_up_menu.js"></script>
-  
-  
+
+
 </head>
 
 <body>
@@ -172,7 +172,7 @@
   <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">Start Bootstrap</a>
-     
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -192,8 +192,8 @@
   <?php include "../../lib/common_page/header.php"; ?>
 
   <!-- Page Content -->
+  <?php include "../aside_right/aside_right.php"; ?>
   <?php include "../../lib/common_page/content.php"; ?>
-
   <!-- Footer -->
   <?php include "../../lib/common_page/footer.php"; ?>
 
