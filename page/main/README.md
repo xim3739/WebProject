@@ -1,28 +1,28 @@
-# [Start Bootstrap - Blog Home](https://startbootstrap.com/template-overviews/blog-home/)
+# [Start Bootstrap - Small Business](https://startbootstrap.com/template-overviews/small-business/)
 
-[Blog Home](http://startbootstrap.com/template-overviews/blog-home/) is a basic blog homepage HTML starter template for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
+[Small Business](http://startbootstrap.com/template-overviews/small-business/) is a responsive marketing landing page template for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
 
 ## Preview
 
-[![Blog Home Preview](https://startbootstrap.com/assets/img/templates/blog-home.jpg)](https://blackrockdigital.github.io/startbootstrap-blog-home/)
+[![Small Business Preview](https://startbootstrap.com/assets/img/templates/small-business.jpg)](https://blackrockdigital.github.io/startbootstrap-small-business/)
 
-**[View Live Preview](https://blackrockdigital.github.io/startbootstrap-blog-home/)**
+**[View Live Preview](https://blackrockdigital.github.io/startbootstrap-small-business/)**
 
 ## Status
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-blog-home/master/LICENSE)
-[![npm version](https://img.shields.io/npm/v/startbootstrap-blog-home.svg)](https://www.npmjs.com/package/startbootstrap-blog-home)
-[![Build Status](https://travis-ci.org/BlackrockDigital/startbootstrap-blog-home.svg?branch=master)](https://travis-ci.org/BlackrockDigital/startbootstrap-blog-home)
-[![dependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-blog-home/status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-blog-home)
-[![devDependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-blog-home/dev-status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-blog-home?type=dev)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-small-business/master/LICENSE)
+[![npm version](https://img.shields.io/npm/v/startbootstrap-small-business.svg)](https://www.npmjs.com/package/startbootstrap-small-business)
+[![Build Status](https://travis-ci.org/BlackrockDigital/startbootstrap-small-business.svg?branch=master)](https://travis-ci.org/BlackrockDigital/startbootstrap-small-business)
+[![dependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-small-business/status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-small-business)
+[![devDependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-small-business/dev-status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-small-business?type=dev)
 
 ## Download and Installation
 
 To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](https://startbootstrap.com/template-overviews/blog-home/)
-* Install via npm: `npm i startbootstrap-blog-home`
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-blog-home.git`
-* [Fork, Clone, or Download on GitHub](https://github.com/BlackrockDigital/startbootstrap-blog-home)
+* [Download the latest release on Start Bootstrap](https://startbootstrap.com/template-overviews/small-business/)
+* Install via npm: `npm i startbootstrap-small-business`
+* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-small-business.git`
+* [Fork, Clone, or Download on GitHub](https://github.com/BlackrockDigital/startbootstrap-small-business)
 
 ## Usage
 
@@ -38,7 +38,7 @@ You must have npm and Gulp installed globally on your machine in order to use th
 
 ## Bugs and Issues
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-blog-home/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/blog-home/).
+Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-small-business/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/small-business/).
 
 ## About
 
@@ -57,4 +57,4 @@ Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework 
 
 ## Copyright and License
 
-Copyright 2013-2019 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-blog-home/blob/gh-pages/LICENSE) license.
+Copyright 2013-2019 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-small-business/blob/gh-pages/LICENSE) license.

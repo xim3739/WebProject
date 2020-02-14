@@ -8,35 +8,98 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Blog Home - Start Bootstrap Template</title>
+  <title>Small Business - Start Bootstrap Template</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="../../css/main/blog-home.css" rel="stylesheet">
+  <link href="css/small-business.css" rel="stylesheet">
+  <style>
+    form{
+      display: inline-block;
+    }
+    #header_box{
+      width: 1100px;
+      margin: 0 auto;
+    }
+    #header_box div{
+      display: inline-block;
+    }
+    header{
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: antiquewhite;
 
+    }
+    #icon_box{
+      margin-left: 190px;
+    }
+    #search{
+      width: 700px;
+      height: 50px;
+      font-size: 20px;
+      }
+      header span{
+        display: inline-block;
+        width: 45px;
+        height: 45px;
+      }
+      #login_icon{
+        background-image: url("");
+      }
+      #info_icon{
+        background-image: url("");
+      }
+      #btn_search{
+        height: 45px;
+    width: 45px;
+    background-image: url("./img/search1.png");
+    border: none;
+    background-color: none;
+    outline: none;
+      }
+    
+    header a{
+      width: 45px;
+      height: 52px;
+      padding: 0;
+      margin: 0;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    #btn_home{
+      background-image: url("./img/home1.png");
+    }
+    #btn_info{
+      background-image: url("./img/info1.png");
+    }
+    #btn_login{
+      background-image: url("./img/info1.png");
+    }
+    .no-flex{
+      flex: none;
+    }
+    .col-lg-7{
+      width: 450px;
+    }
+    
+  </style>
 </head>
 
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">Start Bootstrap</a>
+     
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
+        <ul class="navbar-nav ml-auto no-margin">
           <li class="nav-item">
             <a class="nav-link" href="#">Services</a>
           </li>
@@ -46,94 +109,43 @@
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> -->
 
+  <?php include "header.php"; ?>
   <!-- Page Content -->
   <div class="container">
 
-    <div class="row">
-
-      <!-- Blog Entries Column -->
-      <div class="col-md-8" style="left:200px">
-
-        <h1 class="my-4">Page Heading
-          <small>Secondary Text</small>
-        </h1>
-
-        <!-- Blog Post -->
-        <div class="card mb-4">
-          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
-          <div class="card-body">
-            <h2 class="card-title">Post Title</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-            <a href="#" class="btn btn-primary">Read More &rarr;</a>
-          </div>
-          <div class="card-footer text-muted">
-            Posted on January 1, 2017 by
-            <a href="#">Start Bootstrap</a>
-          </div>
-        </div>
-
-        <!-- Blog Post -->
-        <div class="card mb-4">
-          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
-          <div class="card-body">
-            <h2 class="card-title">Post Title</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-            <a href="#" class="btn btn-primary">Read More &rarr;</a>
-          </div>
-          <div class="card-footer text-muted">
-            Posted on January 1, 2017 by
-            <a href="#">Start Bootstrap</a>
-          </div>
-        </div>
-
-        <!-- Blog Post -->
-        <div class="card mb-4">
-          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
-          <div class="card-body">
-            <h2 class="card-title">Post Title</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-            <a href="#" class="btn btn-primary">Read More &rarr;</a>
-          </div>
-          <div class="card-footer text-muted">
-            Posted on January 1, 2017 by
-            <a href="#">Start Bootstrap</a>
-          </div>
-        </div>
-
-        <!-- Pagination -->
-        <ul class="pagination justify-content-center mb-4">
-          <!-- <li class="page-item">
-            <a class="page-link" href="#">&larr; Older</a>
-          </li> -->
-          <li class="page-item disabled">
-            <a class="page-link" href="#">더 보기</a>
-          </li>
-        </ul>
-
+    <!-- Heading Row -->
+    <div class="row align-items-center my-5">
+      <div class="col-lg-7 no-flex">
+        <img class="img-fluid rounded mb-4 mb-lg-0" src="http://placehold.it/900x400" alt="">
       </div>
-
-      <!-- Sidebar Widgets Column col-md-4-->
-      
-
+      <!-- /.col-lg-8 -->
+      <div class="col-lg-5 no-flex">
+        <h1 class="font-weight-light">Business Name or Tagline</h1>
+        <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
+        <a class="btn btn-primary" href="#">Call to Action!</a>
+      </div>
+      <!-- /.col-md-4 -->
     </div>
     <!-- /.row -->
+
+  
+    </div>
+    <!-- /.row -->
+    
+
+
 
   </div>
   <!-- /.container -->
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
-    </div>
-    <!-- /.container -->
-  </footer>
+  <?php include "footer.php"; ?>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="../../js/main/jquery/jquery.min.js"></script>
-  <script src="../../js/main/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
 
 </body>
 
