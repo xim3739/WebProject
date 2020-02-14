@@ -1,8 +1,8 @@
-<header>
+<header style="z-index: 1">
     <div id="header_box">
     <div id="header_center">
       <div>
-        <a href="" id="btn_home"></a>
+        <a href="../../page/index/index.php" id="btn_home"></a>
         <form action="">
           <input type="text" name="" id="search">
           <input type="submit" value="  " id="btn_search">
