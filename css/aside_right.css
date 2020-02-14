@@ -1,0 +1,10 @@
+*{margin: 0; padding: 0;}
+#aside_rightside{width: 21%;margin-right: 20px; margin-top: 20px; float: right; border: 3px solid #443e58;}
+#aside_rightside ul{margin: 5px; padding: 5px; list-style: none;}
+#member_list{border-bottom: 1px solid lightgray;}
+#profile_link{text-decoration: none;}
+#profile_link:visited{color: black;}
+#message_view{height: 100px; overflow: auto; }
+.time{font-size: 10px;}
+.my_text{text-align: right; position: relative; left: 20%; }
+.exit{width: 12px; height: 12px; font-size: 8px; float: right; margin-right: 5px; margin-top: 5px;}
