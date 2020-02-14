@@ -26,7 +26,6 @@
 </head>
 
 <body>
-
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">s

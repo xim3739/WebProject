@@ -1,11 +1,11 @@
 {
-    "title": "Blog Home",
-    "name": "startbootstrap-blog-home",
+    "title": "Small Business",
+    "name": "startbootstrap-small-business",
     "version": "4.2.1",
     "scripts": {
         "start": "node_modules/.bin/gulp watch"
     },
-    "description": "A basic blog homepage HTML template built with Bootstrap",
+    "description": "A small business HTML template built with Bootstrap",
     "keywords": [
         "css",
         "sass",
@@ -14,9 +14,9 @@
         "theme",
         "template"
     ],
-    "homepage": "https://startbootstrap.com/template-overviews/blog-home",
+    "homepage": "https://startbootstrap.com/template-overviews/small-business",
     "bugs": {
-        "url": "https://github.com/BlackrockDigital/startbootstrap-blog-home/issues",
+        "url": "https://github.com/BlackrockDigital/startbootstrap-small-business/issues",
         "email": "feedback@startbootstrap.com"
     },
     "license": "MIT",
@@ -26,7 +26,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/BlackrockDigital/startbootstrap-blog-home.git"
+        "url": "https://github.com/BlackrockDigital/startbootstrap-small-business.git"
     },
     "dependencies": {
         "bootstrap": "4.3.1",
