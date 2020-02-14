@@ -10,6 +10,8 @@
 
   <title>Landing Page - Start Bootstrap Theme</title>
 
+
+
   <!-- Bootstrap core CSS -->
   <link href="../../css/index/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -27,9 +29,9 @@
 
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
-    <div class="container">
+    <div class="container">s
       <a class="navbar-brand" href="#">어도러블</a>
-      <a class="btn btn-primary" href="#">Sign In</a>
+      <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/login.php','','width=500,height=700,left=300')">
     </div>
   </nav>
 
@@ -65,12 +67,12 @@ c.parentNode.insertBefore(cp, c); })(); </script>
         </div>
   <!-- Icons Grid -->
   <!-- Image Showcases -->
-  
+
   <!-- Testimonials -->
- 
+
 
   <!-- Call to Action -->
-  
+
 
   <!-- Footer -->
   <footer class="footer bg-light">
