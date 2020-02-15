@@ -190,9 +190,9 @@
   </nav> -->
 
   <?php include "../../lib/common_page/header.php"; ?>
-
+  <!-- Aside_right Message-->
+  
   <!-- Page Content -->
-  <?php include "../aside_right/aside_right.php"; ?>
   <?php include "../../lib/common_page/content.php"; ?>
   <!-- Footer -->
   <?php include "../../lib/common_page/footer.php"; ?>

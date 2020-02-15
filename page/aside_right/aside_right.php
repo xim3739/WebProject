@@ -15,14 +15,18 @@
         }
         document.message_form.submit();
       }
-      function hide_message() {
-        $("#aside_rightside").css('display','none');
+      // function hide_message() {
+      //   $("#aside_rightside").hide();
+      // }
+      function show_message() {
+        $("#aside_rightside").toggle();
       }
     </script>
   </head>
   <body>
+    <button type="button" id="message_show" onclick="show_message()">쪽지함 보이기/숨기기</button>
     <aside id="aside_rightside">
-      <button type="button" name="button" class="exit" onclick="hide_message()">X</button>
+      <!-- <button type="button" name="button" id="message_exit" onclick="hide_message()">X</button> -->
         <div id="member_list">
           <ul >
             <?php
