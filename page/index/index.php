@@ -8,10 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Landing Page - Start Bootstrap Theme</title>
-
-
-
+  <title>test</title>
   <!-- Bootstrap core CSS -->
   <link href="../../css/index/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -28,8 +25,9 @@
 <body>
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">어도러블</a>
+    <div class="container">s
+      <a class="navbar-brand" href="">test</a>
+
       <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/login.php','','width=500,height=700,left=300')">
     </div>
   </nav>
@@ -40,14 +38,14 @@
     <div class="container">
       <div id="slide_div" class="row">
       <div id="cp_widget_cc364539-773c-4be5-955e-b1aa94fd7ea5">...</div>
-      <script type="text/javascript">
-        var cpo = []; cpo["_object"] ="cp_widget_cc364539-773c-4be5-955e-b1aa94fd7ea5"; cpo["_fid"] = "AsPAfqeZUIfu";
-        var _cpmp = _cpmp || []; _cpmp.push(cpo);
-        (function() { var cp = document.createElement("script"); cp.type = "text/javascript";
-        cp.async = true; cp.src = "//www.cincopa.com/media-platform/runtime/libasync.js";
-        var c = document.getElementsByTagName("script")[0];
-        c.parentNode.insertBefore(cp, c); })(); 
-      </script>
+        <script type="text/javascript">
+          var cpo = []; cpo["_object"] ="cp_widget_cc364539-773c-4be5-955e-b1aa94fd7ea5"; cpo["_fid"] = "AsPAfqeZUIfu";
+          var _cpmp = _cpmp || []; _cpmp.push(cpo);
+          (function() { var cp = document.createElement("script"); cp.type = "text/javascript";
+          cp.async = true; cp.src = "//www.cincopa.com/media-platform/runtime/libasync.js";
+          var c = document.getElementsByTagName("script")[0];
+          c.parentNode.insertBefore(cp, c); })();
+        </script>
       </div>
     </div>
   </header>
