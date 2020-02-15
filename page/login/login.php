@@ -15,7 +15,7 @@
 
 		 <div id="naverIdLogin"></div>
      <a id="kakao-login-btn"></a>
-          <a href="http://developers.kakao.com/logout"></a>
+<input type="button" onclick="ktout()" value="카톡 로그아웃">
           <script type='text/javascript'>
             //<![CDATA[
               // 사용할 앱의 JavaScript 키를 설정해 주세요.
@@ -23,24 +23,30 @@
               // 카카오 로그인 버튼을 생성합니다.
               Kakao.Auth.createLoginButton({
                 container: '#kakao-login-btn',
-                // 담겨져 나오는 카카오톡 정보값 확인s
+                // 담겨져 나오는 카카오톡 정보값 확인
                 success: function(authObj) {
                   Kakao.API.request({
                     url:'/v2/user/me',
                     success: function(res){
-                      alert(JSON.stringify(res));
-                      alert(JSON.stringify(authObj));
-                      console.log(res.id);
-                      console.log(res.kaccount_email);
+                      // alert(JSON.stringify(res));
+                      // alert(JSON.stringify(authObj)); //res에 담겨있는 json값을 모두 확인가능
+                      alert(res.properties.nickname+'님 환영합니다.');
+
                     }
 
-                  })
+                  });
                 },
                 fail: function(err) {
                    alert(JSON.stringify(err));
                 }
               });
-
+function ktout(){
+  Kakao.Auth.logout(function(){
+    setTimeout(function(){
+      location.href="http://localhost/team_project/page/index/index.php"
+    },1000);
+  });
+}
           </script>
     	</form>
 
