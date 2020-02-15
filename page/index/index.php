@@ -28,7 +28,7 @@
 <body>
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
-    <div class="container">s
+    <div class="container">
       <a class="navbar-brand" href="#">어도러블</a>
       <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/login.php','','width=500,height=700,left=300')">
     </div>
