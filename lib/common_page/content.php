@@ -14,7 +14,6 @@
     </div>
   </div>
   <!-- /.container -->
-<<<<<<< HEAD
   <div id="pop_up">
     <div id="pop_box" onmouseleave="pop_down()">
       <ul>
@@ -22,12 +21,10 @@
         <li><a href="">데리고있어요</a></li>
         <li><a href="">임시보호</a></li>
       </ul>
-
       <ul>
         <li><a href="">자유게시판</a></li>
         <li><a href="">후후후</a></li>
       </ul>
-
     </div>
   </div>
 <!-- popup -->
@@ -40,7 +37,4 @@
       </ul>
   </div>
 </section>
-=======
 
-  </section>
->>>>>>> 2cca66a1eb37a6b9a4531493bfb36d5093d06d4d
