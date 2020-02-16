@@ -42,9 +42,9 @@
             }// end of switch
 
             if(mysqli_query($connect, $sql)) {
-                echo "<script>alert('$table_name 테이블이 생성되었습니다.');</script>";
+                echo "<script>alert('$tableName 테이블이 생성되었습니다.');</script>";
             } else {
-                echo "ERROR : ".mysqli_error($conn);
+                echo "ERROR : ".mysqli_error($connect);
             }//end of if query
         }//end of if flag
     }//end of function
