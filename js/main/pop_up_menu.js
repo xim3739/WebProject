@@ -1,5 +1,5 @@
 var flag = false;
-
+var flag1=false;
 function pop_up(id) {
   if(id===document.getElementById("btn_login")){
     if (flag === false) {
@@ -12,12 +12,12 @@ function pop_up(id) {
       flag = true;
     }
   }else if(id===document.getElementById("btn_pop_write")){
-    if(flag===false){
+    if(flag1===false){
       document.getElementById("pop_write").style.display="block";
-      flag = true;
+      flag1 = true;
     }else{
       document.getElementById("pop_write").style.display="none";
-      flag = false;
+      flag1 = false;
     }
   }
 }     
