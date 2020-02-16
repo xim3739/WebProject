@@ -1,7 +1,7 @@
-<header style="z-index: 1">
+<header class="z_index1">
     <div id="header_box">
     <div id="header_center">
-      <div id="header_content" style="margin-bottom: 10px;">
+      <div id="header_content" style="margin-bottom: 10px;margin-top: 10px;">
         <a href="../../page/index/index.php" id="btn_home"></a>
         <form action="">
           <input type="text" name="" id="search">
@@ -26,8 +26,8 @@
       <li class="t_co15"><a href="">흐흐흐</a></li>
     </ul>
   </div>
-  <div id="pop_up">
-    <div id="pop_box" onmouseleave="pop_down()">
+  <div id="pop_up" >
+    <div id="pop_box" class="z_index1" onmouseleave="pop_down()">
       <ul>
         <li><a href="">찾아요</a></li>
         <li><a href="">데리고있어요</a></li>
@@ -39,12 +39,13 @@
       </ul>
     </div>
 </div>
-<div id="pop_log" onmouseleave="pop_down()">
-<div id="pop_login"></div>
-  <ul>
-    <li><a href="">로그인</a></li>
-    <li><a href="">회원가입</a></li>
-  </ul>
+<div id="pop_log" class="z_index1" onmouseleave="pop_down()">
+  <div id="pop_login">
+    <ul>
+      <li><a href="">로그인</a></li>
+      <li><a href="">회원가입</a></li>
+    </ul>
+  </div>
 </div>
 
   </div>
