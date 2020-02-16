@@ -47,4 +47,7 @@
     #pop_login{ width: 150px; }
     .reply { margin-left: 213px; }
     body{ padding-top: 67px; }
+    #buttons_box{position: fixed;right: 30px;top: 50%;}
+    #buttons_box ul{list-style: none;padding: 0;}
+    #pop_write{display: none;}
   </style>
