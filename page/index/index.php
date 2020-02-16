@@ -1,3 +1,6 @@
+<?php
+  include $_SERVER['DOCUMENT_ROOT']."/db/db_connector_main.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
