@@ -7,6 +7,7 @@
 #profile_link{text-decoration: none;}
 #profile_link:visited{color: black;}
 #message_form h5{width: 100%;}
-#message_view{height: 100px; overflow: auto; }
+#message_div{width: 295px; overflow: hidden;}
+#message_view{width: 315px; height: 100px; overflow: auto; }
 .time{font-size: 10px;}
 .my_text{text-align: right; position: relative; left: 20%; }

@@ -30,7 +30,7 @@
 
     header span { display: inline-block; width: 45px; height: 45px; }
 
-    #login_icon { background-image: url(""); } 
+    #login_icon { background-image: url(""); }
 
     #info_icon { background-image: url(""); }
 
@@ -96,12 +96,9 @@
 
   <?php include "../../lib/common_page/header.php"; ?>
   <!-- Aside_right Message-->
-  
+  <?php include "../aside_right/aside_right.php"; ?>
   <!-- Page Content -->
-<<<<<<< HEAD
-=======
-  
->>>>>>> b6f7975c9a6eba4f9af44ddc58440575c102e06c
+
   <?php include "../../lib/common_page/content.php"; ?>
   <!-- Footer -->
   <?php include "../../lib/common_page/footer.php"; ?>
