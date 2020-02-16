@@ -1,5 +1,5 @@
 <?php
-  include $_SERVER['DOCUMENT_ROOT']."/db/db_connector_main.php";
+  include $_SERVER['DOCUMENT_ROOT']."/WebProject/db/db_connector_main.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
