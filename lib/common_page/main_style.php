@@ -37,8 +37,8 @@
 
     #menu_bar li { display: inline; margin-left: 10.5%; color: white; }
 
-    #pop_up { display: none; position: absolute; top: 54px; right: 128px; background-color: antiquewhite; }
-    #pop_log { display: none; position: absolute; top: 54px; right: 128px; background-color: antiquewhite; }
+    #pop_up { display: none; position: fixed; top: 54px; right: 128px; background-color: antiquewhite; }
+    #pop_log { display: none; position: fixed; top: 54px; right: 128px; background-color: antiquewhite; }
     #pop_box { width: 350px; height: 250px; }
 
     #pop_box ul { width: 50%; float: left; list-style: none; padding-left: 5px; }

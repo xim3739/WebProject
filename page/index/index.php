@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
+  include $_SERVER['DOCUMENT_ROOT']."/WebProject/db/db_connector_main.php";
+=======
   include "../../db/db_connector_main.php";
+>>>>>>> 9a4b4df954de0bf17b6bd1bdfbba72984fbf0004
 ?>
 <!DOCTYPE html>
 <html lang="en">
