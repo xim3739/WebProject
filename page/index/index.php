@@ -30,7 +30,7 @@
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="#">어도러블</a>
-      <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/login.php','','width=500,height=700,left=300')">
+      <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/login_and_signup.php','','width=500,height=700,left=300')">
     </div>
   </nav>
 
@@ -46,7 +46,7 @@
         (function() { var cp = document.createElement("script"); cp.type = "text/javascript";
         cp.async = true; cp.src = "//www.cincopa.com/media-platform/runtime/libasync.js";
         var c = document.getElementsByTagName("script")[0];
-        c.parentNode.insertBefore(cp, c); })(); 
+        c.parentNode.insertBefore(cp, c); })();
       </script>
       </div>
     </div>

@@ -21,7 +21,7 @@
 	<script>
 		var naverLogin = new naver.LoginWithNaverId(
 			{
-				clientId: "{YOUR_CLIENT_ID}",
+				clientId: "txJsAHBUQ68ptqMzm_5I",
 				callbackUrl: "{YOUR_REDIRECT_URL}",
 				isPopup: false,
 				callbackHandle: true
