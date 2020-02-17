@@ -1,0 +1,16 @@
+*{margin: 0; padding: 0;}
+button{font-size: 11px;}
+#message_show{position: fixed; right: 200px; top: 120px; font-size: 10px;}
+#aside_rightside{width: 19%; position: fixed; right: 80px; top: 150px; border: 3px solid #443e58;}
+#aside_rightside ul{margin: 5px; padding: 5px; list-style: none;}
+#message_exit{display: inline-block; width: 12px; height: 12px; font-size: 8px; float: right; margin-right: 5px; margin-top: 5px;}
+#member_message{width: 283px; height: 100px; overflow: hidden; border-bottom: 1px solid lightgray; }
+#member_list{height: 100px; width: 330px; overflow: auto;}
+#profile_link{text-decoration: none;}
+#profile_link:visited{color: black;}
+#message_form h5{width: 283px; text-align: center; }
+#message_div{width: 295px; overflow: hidden;}
+#message_view{width: 315px; height: 150px; overflow: auto; }
+.time{font-size: 10px;}
+.my_text{text-align: right; position: relative; left: 20%; }
+#message_content{font-size: 12px;}

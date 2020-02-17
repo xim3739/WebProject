@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="../../css/aside_right.css">
+    <link rel="stylesheet" href="../../css/message/message.css">
     <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script type="text/javascript">
       function check_input() {
@@ -16,53 +16,62 @@
         document.message_form.submit();
       }
       function hide_message() {
-        $("#aside_rightside").css('display','none');
+        $("#message_form").toggle();
+      }
+      function show_message() {
+        $("#aside_rightside").toggle();
       }
     </script>
   </head>
   <body>
+    <button type="button" id="message_show" onclick="show_message()">쪽지함 보이기/숨기기</button>
     <aside id="aside_rightside">
-      <button type="button" name="button" class="exit" onclick="hide_message()">X</button>
+      <button type="button" name="button" id="message_exit" onclick="hide_message()">X</button>
+      <div id="member_message">
         <div id="member_list">
           <ul >
             <?php
             // session_start();
             $check_id=(isset($_GET["check_id"]))?$_GET["check_id"]:"";
-            $now_id="";
+            $names=(isset($_GET["names"]))?$_GET["names"]:"";
             $i=0;
+            // $now_id = "man1";
             $now_id = "cwpark2190";
-
+            include "../../db/db_connector_main.php";
             // $id=(isset($_SESSION["id"]))?$_SESSION["id"]:"";
             // $profile=(isset($_SESSION["profile"]))?$_SESSION["profile"]:"";
             // $intro=(isset($_SESSION["intr"]))?$_SESSION["intro"]:"";
-            $con = mysqli_connect("localhost","root","123456","test");
+            // $connect = mysqli_connect("localhost","root","123456","test");
             $sql = "select * from member";
-            $result = mysqli_query($con,$sql);
+            $result = mysqli_query($connect,$sql);
             $total_record = mysqli_num_rows($result);
             for ($i=0; $i <$total_record ; $i++) {
               $row = mysqli_fetch_array($result);
               $member_id[]= $row["id"];
-              $name = $row["name"];
+              $name[] = $row["name"];
              ?>
             <li>
-              <span ><a href="test.php?check_id=<?=$member_id[$i]?>" id="profile_link"><?=$member_id[$i]?> <?=$name?></a></span>
+              <span ><a href="main.php?check_id=<?=$member_id[$i]?>&names=<?=$name[$i]?>" id="profile_link"><?=$name["$i"]?></a></span>
             </li>
             <?php
               }//end of for
              ?>
           </ul>
         </div>
-        <form name="message_form" id="message_form"action="message_insert.php?send_id=<?=$now_id?>&rv_id=<?=$check_id?>" method="post">
-          <h5 style="background-color : lightblue;">&nbsp; <?=$name?></h5>
+      </div>
+      <form name="message_form" id="message_form" action="../aside_right/message_board.php?mode=insert&send_id=<?=$now_id?>&rv_id=<?=$check_id?>" method="post">
+        <h5 style="background-color : lightblue;">&nbsp; <?=$names?></h5>
+        <div id="message_div">
           <div id="message_view">
             <ul>
               <?php
                 $sql = "select * from message where send_id in ('$check_id','$now_id') and rv_id in ('$now_id','$check_id') order by num asc ";
-                $result = mysqli_query($con,$sql) or die("error".mysqli_error($con));
+                $result = mysqli_query($connect,$sql);
 
                 $total_record = mysqli_num_rows($result);
                 for ($i=0; $i <$total_record ; $i++) {
                   $row = mysqli_fetch_array($result);
+                  $num = $row["num"];
                   $send_id = $row["send_id"];
                   $rv_id = $row["rv_id"];
                   $name = $row["name"];
@@ -86,7 +95,7 @@
                       <span class="contents" ><?=$content?></span>
                     </li>
                     <style media="screen">
-                      .contents{background-color: lightgray;}
+                      .contents{background-color: lightgray; border-radius: 0px 40px 40px 40px;}
                       .names{display: inline;}
                     </style>
                     <?php
@@ -96,20 +105,21 @@
                     <li class="<?=$i?>" style="width: 200px; text-align: right; position: relative; left: 20%;">
                       <span class="time"><?=$set_time?></span><br>
                       <span class="names" style="display: none;"><?=$name?></span>
-                      <span class="contents" style="background-color: lightblue;"><?=$content?></span>
+                      <span class="contents" style="background-color: lightblue; border-radius: 40px 0px 40px 40px;"><?=$content?></span>
                     </li>
                     <?php
                   }
                 }//end of for
-                mysqli_close($con);
+                mysqli_close($connect);
                  ?>
             </ul>
           </div>
-          <input type="text" name="content" placeholder="메세지를 입력하세요.">
-          <button type="button" id="message_send" onclick="check_input()">보내기</button>
-          <button type="button" id="message_refresh" onclick="location.href = 'test.php?check_id=<?=$check_id?>'">새로고침</button>
-        </form>
-        </aside>
-
+        </div>
+        <input type="text" id="message_content" name="content" placeholder="메세지를 입력하세요.">
+        <button type="button" id="message_send" onclick="check_input()">보내기</button>
+        <button type="button" id="message_delete" onclick="location.href = '../aside_right/message_board.php?send_id=<?=$now_id?>&rv_id=<?=$check_id?>&num=<?=$num?>&mode=delete'">삭제</button>
+        <button type="button" id="message_refresh" onclick="location.href = 'main.php?check_id=<?=$check_id?>'">새로고침</button>
+      </form>
+    </aside>
   </body>
 </html>
