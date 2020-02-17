@@ -15,7 +15,7 @@
 
   <!-- Custom styles for this template -->
   <link href="../../css/main/small-business.css" rel="stylesheet">
-<<<<<<< HEAD
+
   <style>
     form { display: inline-block; }
 
@@ -69,11 +69,11 @@
   </style>
 
 <script src="../../js/main/pop_up_menu.js"></script>
-=======
+
   <!-- internal style -->
-  <?php include "../../lib/common_page/main_style.php";?> 
+  <?php include "../../lib/common_page/main_style.php";?>
   <script src="../../js/main/pop_up_menu.js"></script>
->>>>>>> 843b3632db95f2ad1315bda4dc5dc5c17ecdf146
+
 
 </head>
 
@@ -102,7 +102,7 @@
 
   <?php include "../../lib/common_page/header.php"; ?>
   <!-- Aside_right Message-->
-  <?php include "../aside_right/aside_right.php"; ?>
+  <?php include "../aside_right/message.php"; ?>
   <!-- Page Content -->
 
   <?php include "../../lib/common_page/content.php"; ?>

@@ -1,11 +1,11 @@
-<?php 
+<?php
     date_default_timezone_set("Asia/seoul");
 
     define("SERVER_NAME", "127.0.0.1");
     define("USER_NAME", "root");
     define("PASSWORD", "123456");
     define("DB_NAME", "joo_db");
-    
+
     $dbFlag = "NO";
 
     $connect = mysqli_connect(SERVER_NAME, USER_NAME, PASSWORD);
