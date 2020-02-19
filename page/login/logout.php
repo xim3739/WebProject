@@ -16,33 +16,19 @@ header('Access-Control-Allow-Origin: *');
   // unset($_SESSION["username"]);
   session_destroy();
 
-  // echo("
-  //          <script>
-  //            window.alert('로그아웃 되었습니다')
-  //       history.go(-1);
-  //          </script>
-  //       ");
+  echo("
+           <script>
+             window.alert('로그아웃 되었습니다')
+        history.go(-1);
+           </script>
+        ");
         ?>
 <!-- ===================================카카오 로그아웃========================================= -->
-        <!-- <script src='https://developers.kakao.com/sdk/js/kakao.min.js'></script>
-        <script>
-        let date = new Date();
-        date.setHours(date.getHours()-1);
-        document.cookie = "kakao_login=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/localhost;";
-        Kakao.init('d4c9f81c1dd87d7457ae9ba104e93a3d');//카카오에서 제공 myceo.co.kr 수정
-        Kakao.Auth.logout(
-        function(obj) {
-        if(obj==true){}else{}
-         // location.href='../index/index.php';
-         }
-        );
-        </script> -->
-
 
 
 
 <!-- ========================================네이버 로그아웃================================= -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 $(document).ready(function () {
 
   $.ajax({
@@ -60,6 +46,7 @@ $(document).ready(function () {
       });
 
 });
-</script>
+</script> -->
+
       </body>
     </html>
