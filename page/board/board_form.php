@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -5,62 +6,68 @@
   <meta charset="utf-8">
   <title></title>
   <link rel="stylesheet" type="text/css" href="../../css/board/board.css">
-   <!-- Bootstrap core CSS -->
-   <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="../../css/main/small-business.css" rel="stylesheet">
-  <style>
-    form { display: inline-block; }
+    <!-- Bootstrap core CSS -->
+    <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    #header_box { width: 1100px; margin: 0 auto; }
+<!-- Custom styles for this template -->
+<link href="../../css/main/small-business.css" rel="stylesheet">
+<style>
+  form { display: inline-block; }
 
-    #header_box div { display: inline-block; }
+  #header_box { width: 1100px; margin: 0 auto; }
 
-    header { position: fixed; top: 0; width: 100%; background-color: antiquewhite; }
+  #header_box div { display: inline-block; }
 
-    #icon_box { margin-left: 190px; }
+  header { position: fixed; top: 0; width: 100%; background-color: antiquewhite; }
 
-    #search { width: 700px; height: 50px; font-size: 20px; }
+  #icon_box { margin-left: 190px; }
 
-    header span { display: inline-block; width: 45px; height: 45px; }
+  #search { width: 700px; height: 50px; font-size: 20px; }
 
-    #login_icon { background-image: url(""); } 
+  header span { display: inline-block; width: 45px; height: 45px; }
 
-    #info_icon { background-image: url(""); }
+  #login_icon { background-image: url(""); }
 
-    #btn_search { height: 45px; width: 45px; background-image: url("../../img/main/search1.png"); border: none; background-color: none; outline: none; }
+  #info_icon { background-image: url(""); }
 
-    header a { width: 45px; height: 52px; padding: 0; margin: 0; display: inline-block; vertical-align: middle; }
+  #btn_search { height: 45px; width: 45px; background-image: url("../../img/main/search1.png"); border: none; background-color: none; outline: none; }
 
-    #btn_home { background-image: url("../../img/main/home1.png"); }
+  header a { width: 45px; height: 52px; padding: 0; margin: 0; display: inline-block; vertical-align: middle; }
 
-    #btn_info { background-image: url("../../img/main/info1.png"); }
+  img{vertical-align:unset;}
 
-    #btn_login { background-image: url("../../img/main/key1.jpg"); }
+  #btn_home { background-image: url("../../img/main/home1.png"); }
 
-    .no-flex { flex: none; }
+  #btn_info { background-image: url("../../img/main/info1.png"); }
 
-    .col-lg-7 { width: 450px; }
+  #btn_login { background-image: url("../../img/main/key1.jpg"); }
 
-    #menu_bar { height: 48px; background-color: #443e58; font-size: 16px; }
+  .no-flex { flex: none; }
 
-    #menu_bar ul { width: 1200px; margin: 0 auto; padding: 14px 0 0 40px; }
+  .col-lg-7 { width: 450px; }
 
-    #menu_bar li { display: inline; margin-left: 10.5%; color: white; }
+  #menu_bar { height: 48px; background-color: #443e58; font-size: 16px; }
 
-    #pop_up { display: none; position: absolute; top: 54px; right: 128px; background-color: antiquewhite; }
-    #pop_log { display: none; position: absolute; top: 54px; right: 128px; background-color: antiquewhite; }
-    #pop_box { width: 350px; height: 250px; }
+  #menu_bar ul { width: 1200px; margin: 0 auto; padding: 14px 0 0 40px; }
 
-    #pop_box ul { width: 50%; float: left; list-style: none; padding-left: 5px; }
+  #menu_bar li { display: inline; margin-left: 10.5%; color: white; }
 
-    #pop_box li { text-align: center; }
-    #pop_login ul { width: 100%; list-style: none; padding-left: 5px; }
-    #pop_login{ width: 150px; }
-    .reply { margin-left: 213px; }
-    body{ padding-top: 67px; }
-  </style>
+  #pop_up { display: none; position: absolute; top: 54px; right: 128px; background-color: antiquewhite; }
+  #pop_log { display: none; position: absolute; top: 54px; right: 128px; background-color: antiquewhite; }
+  #pop_box { width: 350px; height: 250px; }
+
+  #pop_box ul { width: 50%; float: left; list-style: none; padding-left: 5px; }
+
+  #pop_box li { text-align: center; }
+  #pop_login ul{ width: 100%; list-style: none; padding-left: 5px; }
+  #pop_login{ width: 150px; }
+  .reply { margin-left: 213px; }
+  body{ padding-top: 67px; }
+
+
+
+</style>
 
   <script src="../../js/main/pop_up_menu.js"></script>
 </head>
@@ -69,10 +76,10 @@
   <header>
     <?php include "../../lib/common_page/header.php" ?>
   </header>
-  
+
   <div class="board_header">
     <div id="board_header_div">
-      <p><a href="./board_form.html"></a>BOARD</p>
+      <p><a href="./board_form.php">BOARD</a></p>
     </div>
   </div>
   <!-- nav -->
@@ -83,29 +90,29 @@
       </div>
 
       <div id="board_box_writing">
-        <p><a href="./board_writing.html" style="color : black;">+ 글쓰기</a></p>
+        <p><a href="./board_writing.php" style="color : black;">+ 글쓰기</a></p>
       </div>
 
       <div id="board_box_mypost">
-        <p><a href="./board_form.html" style="color : black;">내 게시글 보기</a></p>
+        <p><a href="./board_myboard_form.php" style="color : black;">내 게시글 보기</a></p>
       </div>
 
       <div id="board_box_viewall">
-        <p><a href="./board_form.html" style="color : black;">전체보기</a></p>
+        <p><a href="./board_form.php" style="color : black;">전체보기</a></p>
       </div>
     </div>
   </div>
   <!-- center -->
   <div class="board_center">
     <div id="board_center_box">
-      <a href="./board_widen.html">아직 게시물이 없습니다!</a>
+      <a href="./board_widen.php">아직 게시물이 없습니다!</a>
     </div>
   </div>
 
   <footer>
     <?php include "../../lib/common_page/footer.php" ?>
   </footer>
-  
+
 </body>
 
 </html>

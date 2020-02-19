@@ -35,7 +35,7 @@
         <li><a href="">임시보호</a></li>
       </ul>
       <ul>
-        <li><a href="">자유게시판</a></li>
+        <li><a href="../../page/board/board_form.php">자유게시판</a></li>
         <li><a href="">후후후</a></li>
       </ul>
     </div>
@@ -61,4 +61,3 @@
     <button id="btn_pop_write" onclick="pop_up(this)">+</button>
   </div>
 </section>
-
