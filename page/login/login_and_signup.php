@@ -120,16 +120,19 @@
                      								success: function(res){
                      									// alert(JSON.stringify(res));
                      									// alert(JSON.stringify(authObj)); //res에 담겨있는 json값을 모두 확인가능
-
+                                      console.log(res.kakao_account.email);
+                                      var allData = {"name": res.properties.nickname, "email": res.kakao_account.email};
                                          $.ajax({
                                            type: "POST",
                                            url: "http://localhost/team_project/page/login/create_session.php",
-                                           data: "name="+res.properties.nickname,
+                                           data: allData,
                                            success:function(data) {
-                                             if(data === "name_error") {
+
+                                             if(data === "error") {
                                                alert('NAME_ERROR');
                                              } else {
                                                alert(data+' 님 환영합니다.');
+                                               console.log(data);
                                                opener.parent.location.reload();
                                                window.close();
                                              }

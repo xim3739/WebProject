@@ -15,11 +15,13 @@
   function naverSignInCallback() {
     alert(naver_id_login.getProfileData('email'));
 		alert(naver_id_login.getProfileData('name'));
+    
+    var allData = {"name": naver_id_login.getProfileData('name'), "email": naver_id_login.getProfileData('email')};
 
 		$.ajax({
 			type: "POST",
 			url: "http://localhost/team_project/page/login/create_session.php",
-			data: "name="+naver_id_login.getProfileData('name'),
+			data: allData,
 			success:function(data) {
 				if(data === "name_error") {
 					alert('NAME_ERROR');

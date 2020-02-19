@@ -55,13 +55,13 @@ if (!$username) {
     <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/login_and_signup.php','','width=500,height=700,left=300')">
     <?php
 } else {
-        $logged = $username."님"; ?>
+        $logged = $username."(".$userid.")님"; ?>
           <li><?=$logged?> </li>
 
 
 
             <li><a href="../login/logout.php" onclick=kout()>로그아웃</a></li>
-            
+
 
           <?php
     }
