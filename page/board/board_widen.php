@@ -67,31 +67,11 @@
     body{ padding-top: 67px; }
 
   </style>
-
+  <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4ef132eaf679a177a01f1b53b69f7119"></script>
   <script src="../../js/main/pop_up_menu.js"></script>
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <!-- 댓글 commet창에서 글자를 치면 자동 줄바꿈 자바스크립트 -->
-  <script>
-    function resize(obj) {
-      obj.style.height = "1px";
-      obj.style.height = (1 + obj.scrollHeight) + "px";
-    }
-  </script>
 
-  <script>
-  var flag=true;
-    function hide(){
-      if(flag===false){
-        document.getElementById("board_widen_comment_input_retext_box").style.display="none";
-        flag=true;
-      }else{
-        document.getElementById("board_widen_comment_input_retext_box").style.display="inline-block";
-        flag=false;
-      }
-
-    }
-  </script>
 </head>
 
 <body>
@@ -133,9 +113,7 @@
         <div id="board_widen_center">
           <p><span id="widen_content_span">내용이 옵니다</span></p>
         </div>
-        <div id="board_location_box">
-            <p>지도를 보여주는 div입니다</p>
-        </div>
+        <div id="board_location_box"></div>
       </div>
       <div id="board_widen_comment_box">
         <div id="board_widen_comment_input_box">
@@ -157,7 +135,7 @@
           </div>
         </div>
 
-
+<!-- 대댓글 -->
         <div id="board_widen_comment_input_retext_box">
           <div id="board_widen_comment_input_retext">
             <img id="board_widen_comment_input_retext_image" src="../../img/board/default_proflie.png">
@@ -181,6 +159,7 @@
     <footer>
       <?php include "../../lib/common_page/footer.php" ?>
     </footer>
+    <script src="../../js/board/board.js"></script>
 
 </body>
 

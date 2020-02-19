@@ -10,9 +10,9 @@
     <!-- Bootstrap core CSS -->
     <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Custom styles for this template -->
-<link href="../../css/main/small-business.css" rel="stylesheet">
-<style>
+    <!-- Custom styles for this template -->
+    <link href="../../css/main/small-business.css" rel="stylesheet">
+    <style>
   form { display: inline-block; }
 
   #header_box { width: 1100px; margin: 0 auto; }
@@ -68,28 +68,10 @@
 
 
 </style>
+  <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4ef132eaf679a177a01f1b53b69f7119"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script src="../../js/main/pop_up_menu.js"></script>
 
-<script src="../../js/main/pop_up_menu.js"></script>
-
-  <script>
-    function resize(obj) {
-      obj.style.height = "1px";
-      obj.style.height = (1 + obj.scrollHeight) + "px";
-    }
-  </script>
-  <script>
-  var flag=true;
-    function hide(){
-      if(flag===false){
-        document.getElementById("board_widen_comment_input_retext_box").style.display="none";
-        flag=true;
-      }else{
-        document.getElementById("board_widen_comment_input_retext_box").style.display="inline-block";
-        flag=false;
-      }
-
-    }
-  </script>
 </head>
 
 <body>
@@ -121,7 +103,7 @@
   <div class="board_myboard_widen">
     <div id="board_myboard_widen_box">
       <div id="board_myboard_widen_photo">
-        <img src="../../img/board/default.jpg">
+        <img id="Preview_img" src="../../img/board/default.jpg">
       </div>
       <div id="board_myboard_widen_top">
         <span id="board_myboard_widen_top_p_span">TITLE :</span> <span id="myboard_widen_title_span">제목이 옵니다</span><br>
@@ -131,12 +113,10 @@
       <div id="board_myboard_widen_center">
         <p><span id="myboard_widen_content_span">내용이 옵니다</span></p>
       </div>
-      <div id="board_location_box_edit">
-            <p>지도를 보여주는 div입니다</p>
-      </div>
+      <div id="board_location_box"></div>
     </div>
     <div id="board_myboard_widen_button_box">
-      <button type="button"><a href="board_myboard_rewrite.php">Edit</a></button>
+      <button type="button">Edit</button>
     </div>
     <div id="board_widen_comment_box">
       <div id="board_widen_comment_input_box">
@@ -180,6 +160,8 @@
   <footer>
     <?php include "../../lib/common_page/footer.php" ?>
   </footer>
+
+  <script src="../../js/board/board.js"></script>
 
 </body>
 

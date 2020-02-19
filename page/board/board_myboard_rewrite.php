@@ -62,25 +62,11 @@
     .reply { margin-left: 213px; }
     body{ padding-top: 67px; }
   </style>
-
+  <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4ef132eaf679a177a01f1b53b69f7119"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
   <script src="../../js/main/pop_up_menu.js"></script>
-  <script>
-    function check_input() {
-        if (!document.board_write.subject.value)
-        {
-            alert("제목을 입력하세요!");
-            document.board_write.subject.focus();
-            return;
-        }
-        if (!document.board_write.content.value)
-        {
-            alert("내용을 입력하세요!");
-            document.board_write.content.focus();
-            return;
-        }
-        document.board_write.submit();
-     }
-  </script>
+
+
 </head>
 
   <body>
@@ -117,7 +103,8 @@
       <form name="board_write" action="board_myboard_form.php" method="post">
         <div id="board_myboard_rewrite_box">
           <div id="board_myboard_rewrite_photo">
-            <input type="button" value="Attach a file">
+            <input type='file' id="Preview_img" />
+            <img src="../../img/board/default.jpg" id="blah"/>
           </div>
           <div id="board_myboard_rewrite_top">
             <input id="myboard_rewrite_title" name="subject" type="text" placeholder="Title">
@@ -126,9 +113,7 @@
           <div id="board_myboard_rewrite_center">
             <textarea id="board_myboard_rewrite_content" name="content"  placeholder="Content"></textarea>
           </div>
-          <div id="board_location_box_rewrite">
-              <input type="button"  value="location">
-          </div>
+          <div id="board_location_box"></div>
         </div>
         <div id="board_myboard_rewrite_bottom">
           <button id="board_myboard_rewrite_upload" type="button"  onclick="check_input()">UpLoad</button>
@@ -140,6 +125,6 @@
     <footer>
       <?php include "../../lib/common_page/footer.php" ?>
     </footer>
-
+  <script src="../../js/board/board.js"></script>
   </body>
 </html>

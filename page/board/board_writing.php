@@ -10,84 +10,68 @@
     <!-- Bootstrap core CSS -->
     <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Custom styles for this template -->
-<link href="../../css/main/small-business.css" rel="stylesheet">
-<style>
-  form { display: inline-block; }
+  <!-- Custom styles for this template -->
+  <link href="../../css/main/small-business.css" rel="stylesheet">
+  <style>
+    form { display: inline-block; }
 
-  #header_box { width: 1100px; margin: 0 auto; }
+    #header_box { width: 1100px; margin: 0 auto; }
 
-  #header_box div { display: inline-block; }
+    #header_box div { display: inline-block; }
 
-  header { position: fixed; top: 0; width: 100%; background-color: antiquewhite; }
+    header { position: fixed; top: 0; width: 100%; background-color: antiquewhite; }
 
-  #icon_box { margin-left: 190px; }
+    #icon_box { margin-left: 190px; }
 
-  #search { width: 700px; height: 50px; font-size: 20px; }
+    #search { width: 700px; height: 50px; font-size: 20px; }
 
-  header span { display: inline-block; width: 45px; height: 45px; }
+    header span { display: inline-block; width: 45px; height: 45px; }
 
-  #login_icon { background-image: url(""); }
+    #login_icon { background-image: url(""); }
 
-  #info_icon { background-image: url(""); }
+    #info_icon { background-image: url(""); }
 
-  #btn_search { height: 45px; width: 45px; background-image: url("../../img/main/search1.png"); border: none; background-color: none; outline: none; }
+    #btn_search { height: 45px; width: 45px; background-image: url("../../img/main/search1.png"); border: none; background-color: none; outline: none; }
 
-  header a { width: 45px; height: 52px; padding: 0; margin: 0; display: inline-block; vertical-align: middle; }
+    header a { width: 45px; height: 52px; padding: 0; margin: 0; display: inline-block; vertical-align: middle; }
 
-  img{vertical-align:unset;}
+    img{vertical-align:unset;}
 
-  #btn_home { background-image: url("../../img/main/home1.png"); }
+    #btn_home { background-image: url("../../img/main/home1.png"); }
 
-  #btn_info { background-image: url("../../img/main/info1.png"); }
+    #btn_info { background-image: url("../../img/main/info1.png"); }
 
-  #btn_login { background-image: url("../../img/main/key1.jpg"); }
+    #btn_login { background-image: url("../../img/main/key1.jpg"); }
 
-  .no-flex { flex: none; }
+    .no-flex { flex: none; }
 
-  .col-lg-7 { width: 450px; }
+    .col-lg-7 { width: 450px; }
 
-  #menu_bar { height: 48px; background-color: #443e58; font-size: 16px; }
+    #menu_bar { height: 48px; background-color: #443e58; font-size: 16px; }
 
-  #menu_bar ul { width: 1200px; margin: 0 auto; padding: 14px 0 0 40px; }
+    #menu_bar ul { width: 1200px; margin: 0 auto; padding: 14px 0 0 40px; }
 
-  #menu_bar li { display: inline; margin-left: 10.5%; color: white; }
+    #menu_bar li { display: inline; margin-left: 10.5%; color: white; }
 
-  #pop_up { display: none; position: absolute; top: 54px; right: 128px; background-color: antiquewhite; }
-  #pop_log { display: none; position: absolute; top: 54px; right: 128px; background-color: antiquewhite; }
-  #pop_box { width: 350px; height: 250px; }
+    #pop_up { display: none; position: absolute; top: 54px; right: 128px; background-color: antiquewhite; }
+    #pop_log { display: none; position: absolute; top: 54px; right: 128px; background-color: antiquewhite; }
+    #pop_box { width: 350px; height: 250px; }
 
-  #pop_box ul { width: 50%; float: left; list-style: none; padding-left: 5px; }
+    #pop_box ul { width: 50%; float: left; list-style: none; padding-left: 5px; }
 
-  #pop_box li { text-align: center; }
-  #pop_login ul{ width: 100%; list-style: none; padding-left: 5px; }
-  #pop_login{ width: 150px; }
-  .reply { margin-left: 213px; }
-  body{ padding-top: 67px; }
+    #pop_box li { text-align: center; }
+    #pop_login ul{ width: 100%; list-style: none; padding-left: 5px; }
+    #pop_login{ width: 150px; }
+    .reply { margin-left: 213px; }
+    body{ padding-top: 67px; }
 
 
 
-</style>
+  </style>
+  <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4ef132eaf679a177a01f1b53b69f7119"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+     <script src="../../js/main/pop_up_menu.js"></script>
 
-  <script src="../../js/main/pop_up_menu.js"></script>
-  <!-- board에서 입력하지 않은 칸이 있는지 확인 -->
-  <script>
-    function check_input() {
-        if (!document.board_write.subject.value)
-        {
-            alert("제목을 입력하세요!");
-            document.board_write.subject.focus();
-            return;
-        }
-        if (!document.board_write.content.value)
-        {
-            alert("내용을 입력하세요!");
-            document.board_write.content.focus();
-            return;
-        }
-        document.board_write.submit();
-     }
-  </script>
 </head>
 
   <body>
@@ -123,7 +107,8 @@
           <form name="board_write" action="board_form.php" method="post" style="display:inline-block;">
         <div id="board_wirte_box">
           <div id="board_wirte_photo">
-            <input type="file" name="upfile" value="Attach a file">
+            <input type='file' id="Preview_img" />
+            <img src="../../img/board/default.jpg" id="blah"/>
           </div>
           <div id="board_wirte_top">
             <input id="wirte_title" name="subject" type="text" placeholder="Title">
@@ -132,9 +117,7 @@
           <div id="board_wirte_center">
             <textarea id="wirte_content"  name="content"  placeholder="Content"></textarea>
           </div>
-          <div id="board_location_box">
-              <input type="button"  value="location">
-          </div>
+          <div id="board_location_box"></div>
         </div>
         <div id="board_wirte_bottom">
           <button id="wirte_upload" type="button" onclick="check_input();">UpLoad</button>
@@ -147,6 +130,6 @@
     <footer>
       <?php include "../../lib/common_page/footer.php" ?>
     </footer>
-
+  <script src="../../js/board/board.js"></script>
   </body>
 </html>
