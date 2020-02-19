@@ -141,7 +141,7 @@
         <li><a href="">회원가입</a></li>
       </ul>
   </div>
-  <div id="buttons_box" onmouseleave="pop_down()">
+  <div id="buttons_box">
     <div id="pop_write">
       <ul>
         <li><a href="">글쓰기</a></li>
