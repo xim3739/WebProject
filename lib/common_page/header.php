@@ -22,7 +22,7 @@
       <li class="t_co11"><a href="">찾아요</a></li>
       <li class="t_co12"><a href="">데리고있어요</a></li>
       <li class="t_co13"><a href="">임시보호</a></li>
-      <li class="t_co14"><a href="">자유게시판</a></li>
+      <li class="t_co14"><a href="../../page/board/board_form.php">자유게시판</a></li>
       <li class="t_co15"><a href="">흐흐흐</a></li>
     </ul>
   </div>
@@ -34,7 +34,7 @@
         <li><a href="">임시보호</a></li>
       </ul>
       <ul>
-        <li><a href="">자유게시판</a></li>
+        <li><a href="../../page/board/board_form.php">자유게시판</a></li>
         <li><a href="">후후후</a></li>
       </ul>
     </div>
