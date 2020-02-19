@@ -22,8 +22,8 @@
         ");
         exit;
     }*/
-$userid='kim';
-$username='kim';
+    $userid='kim';
+    $username='kim';
 
 // $_GET["id"];
     $subject = $_POST["subject"];

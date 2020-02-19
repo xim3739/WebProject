@@ -104,7 +104,6 @@ body {
   width: 276.475px;
   height: 320px;
   margin: 20px 20px;
-  border: 1px solid gray;
   display: inline-block;
   position: relative;
   margin-left: 35px;
@@ -112,13 +111,17 @@ body {
 
 #board_wirte_photo input {
   position: absolute;
-  width: 134.238px;
+  width: 380px;
   height: 50px;
-  font-size: 5px;
-  margin: 55% 50%;
-  transform: translate(-50%, -50%);
+  font-size: 12px;
+  transform: translateY(305px);
 }
 
+#board_wirte_photo img {
+  width: 276.475px;
+  height: 300px;
+  transform: translateY(-2px);
+}
 #board_wirte_top {
   width: 552.950px;
   height: 55px;
@@ -170,15 +173,6 @@ body {
   margin: 0px auto;
   width: 850px;
   height: 200px;
-}
-
-#board_location_box input {
-  position: absolute;
-  width: 180px;
-  height: 50px;
-  font-size: 16px;
-  margin: 10% 50%;
-  transform: translate(-50%, -50%);
 }
 
 #board_wirte_bottom {
@@ -302,7 +296,6 @@ body {
   border: 1px solid gray;
 }
 
-/* ------------------------------------------ */
 #board_widen_comment_input_retext_box {
   width: 870px;
   height: 50px;
@@ -340,7 +333,6 @@ body {
   border: 1px solid gray;
 }
 
-/* ------------------------------------------ */
 #board_widen_comment_show_text {
   width: 921.600px;
   margin-top: 20px;
@@ -419,7 +411,6 @@ body {
   width: 270px;
   height: 320px;
   margin: 20px 20px;
-  border: 1px solid gray;
   display: inline-block;
   position: relative;
   margin-left: 33px;
@@ -427,13 +418,17 @@ body {
 
 #board_myboard_rewrite_photo input {
   position: absolute;
-  width: 134.238px;
+  width: 380px;
   height: 50px;
-  font-size: 16px;
-  margin: 55% 50%;
-  transform: translate(-50%, -50%);
+  font-size: 12px;
+  transform: translateY(305px);
 }
 
+#board_myboard_rewrite_photo img {
+  width: 270px;
+  height: 300px;
+  transform: translateY(-2px);
+}
 #board_myboard_rewrite_top {
   width: 552px;
   height: 55px;
@@ -589,6 +584,7 @@ body {
   border: 1px solid gray;
   transform: translateX(390px);
 }
+
 /* ------------------------------------------ */
 #board_widen_comment_input_retext_box {
   display: none;
