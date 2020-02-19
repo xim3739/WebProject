@@ -26,11 +26,45 @@
 </head>
 
 <body>
+
+  <?php
+@session_start();
+if (isset($_SESSION["userid"])) {
+    $userid = $_SESSION["userid"];
+} else {
+    $userid = "";
+}
+if (isset($_SESSION["username"])) {
+    $username = $_SESSION["username"];
+} else {
+    $username = "";
+}
+  echo ("<script>console.log(document.cookie)</script>;");
+?>
+
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="#">어도러블</a>
-      <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/login_and_signup.php','','width=500,height=700,left=300')">
+      <ul>
+        <?php
+if (!$username) {
+    ?>
+    <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/login_and_signup.php','','width=500,height=700,left=300')">
+    <?php
+} else {
+        $logged = $username."님"; ?>
+          <li><?=$logged?> </li>
+
+
+
+            <li><a href="../login/logout.php" >로그아웃</a></li>
+
+
+          <?php
+    }
+?>
+      </ul>
     </div>
   </nav>
 
@@ -116,6 +150,8 @@
       </div>
     </div>
   </footer>
+
+
 
   <!-- Bootstrap core JavaScript -->
   <script src="../../js/index/vendor/jquery/jquery.min.js"></script>

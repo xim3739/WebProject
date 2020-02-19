@@ -3,122 +3,64 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="../../css/message/message.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript">
-      function check_input() {
-        if (!document.message_form.content.value)
-        {
-            alert("내용을 입력하세요!");
-            document.message_form.content.focus();
-            return;
-        }
-        document.message_form.submit();
-      }
-      function hide_message() {
-        $("#message_form").toggle();
-      }
-      function show_message() {
-        $("#aside_rightside").toggle();
-      }
-    </script>
+    <link rel="stylesheet" href="../../css/message/message.css">
+    <script src="../../js/message/message.js" charset="utf-8"></script>
   </head>
   <body>
-    <button type="button" id="message_show" onclick="show_message()">쪽지함 보이기/숨기기</button>
+    <button type="button" id="message_show" onclick="show_message()">쪽지함</button>
     <aside id="aside_rightside">
-      <button type="button" name="button" id="message_exit" onclick="hide_message()">X</button>
-      <div id="member_message">
-        <div id="member_list">
-          <ul >
-            <?php
-            // session_start();
-            $check_id=(isset($_GET["check_id"]))?$_GET["check_id"]:"";
-            $names=(isset($_GET["names"]))?$_GET["names"]:"";
-            $i=0;
-            // $now_id = "man1";
-            $now_id = "cwpark2190";
-            include "../../db/db_connector_main.php";
-            // $id=(isset($_SESSION["id"]))?$_SESSION["id"]:"";
-            // $profile=(isset($_SESSION["profile"]))?$_SESSION["profile"]:"";
-            // $intro=(isset($_SESSION["intr"]))?$_SESSION["intro"]:"";
-            // $connect = mysqli_connect("localhost","root","123456","test");
-            $sql = "select * from member";
-            $result = mysqli_query($connect,$sql);
-            $total_record = mysqli_num_rows($result);
-            for ($i=0; $i <$total_record ; $i++) {
-              $row = mysqli_fetch_array($result);
-              $member_id[]= $row["id"];
-              $name[] = $row["name"];
-             ?>
-            <li>
-              <span ><a href="main.php?check_id=<?=$member_id[$i]?>&names=<?=$name[$i]?>" id="profile_link"><?=$name["$i"]?></a></span>
-            </li>
-            <?php
-              }//end of for
-             ?>
+      <button type="button" name="button" id="message_exit" onclick="hide_message()"><img id="exit_img" src="../../img/message/hide.png" alt="X"> </button>
+      <div id="member_list">
+        <ul >
+          <?php
+          // session_start();
+          $check_id=(isset($_GET["check_id"]))?$_GET["check_id"]:"";
+          $names=(isset($_GET["names"]))?$_GET["names"]:"";
+          $i=0;
+          // $now_id = "man1";
+          $now_id = "cwpark2190";
+          if (!$now_id) {
+            echo "<script type='text/javascript'>
+            $('#aside_rightside').hide();
+            $('#message_show').hide();
+            </script>";
+          }
+          // include "../../db/db_connector_main.php";
+          // $id=(isset($_SESSION["id"]))?$_SESSION["id"]:"";
+          // $profile=(isset($_SESSION["profile"]))?$_SESSION["profile"]:"";
+          // $intro=(isset($_SESSION["intr"]))?$_SESSION["intro"]:"";
+          $connect = mysqli_connect("localhost","root","123456","test");
+          $sql = "select * from member";
+          $result = mysqli_query($connect,$sql);
+          $total_record = mysqli_num_rows($result);
+          for ($i=0; $i <$total_record ; $i++) {
+            $row = mysqli_fetch_array($result);
+            $member_id= $row["id"];
+            $name = $row["name"];
+           ?>
+          <li>
+            <span><button type="button" class="profile_link" onclick="connect_memeber('<?=$member_id?>','<?=$now_id?>');"><?=$name?></button> </span>
+          </li>
+          <?php
+            }//end of for
+           ?>
+        </ul>
+      </div>
+      <form name="message_form" id="message_form" action="#" method="post">
+        <h6 id="name_head">&nbsp;</h6>
+        <input id="hidden_send_id"hidden></input>
+        <input id="hidden_rv_id"hidden></input>
+        <div id="message_view">
+          <ul id="message_ul">
           </ul>
         </div>
-      </div>
-      <form name="message_form" id="message_form" action="../aside_right/message_board.php?mode=insert&send_id=<?=$now_id?>&rv_id=<?=$check_id?>" method="post">
-        <h5 style="background-color : lightblue;">&nbsp; <?=$names?></h5>
-        <div id="message_div">
-          <div id="message_view">
-            <ul>
-              <?php
-                $sql = "select * from message where send_id in ('$check_id','$now_id') and rv_id in ('$now_id','$check_id') order by num asc ";
-                $result = mysqli_query($connect,$sql);
-
-                $total_record = mysqli_num_rows($result);
-                for ($i=0; $i <$total_record ; $i++) {
-                  $row = mysqli_fetch_array($result);
-                  $num = $row["num"];
-                  $send_id = $row["send_id"];
-                  $rv_id = $row["rv_id"];
-                  $name = $row["name"];
-                  $content = $row["content"];
-                  $regist_day = $row["regist_day"];
-                  $time = substr($regist_day,12,5);
-                  $time_hour = substr($time,0,2);
-                  $time_minute = substr($time,2,3);
-                  if ((int)$time_hour<12&&(int)$time_hour>0) {
-                    $time=$time_hour.$time_minute;
-                    $set_time="오전 ".$time;
-                  }else {
-                    $time=(string)((int)$time_hour-12).$time_minute;
-                    $set_time="오후 ".$time;
-                  }
-                  if ($send_id !== $now_id) {
-                    ?>
-                    <li style="width: 200px;" class="<?=$i?>">
-                      <span class="time"><?=$set_time?></span><br>
-                      <span class="names"><?=$name?></span>
-                      <span class="contents" ><?=$content?></span>
-                    </li>
-                    <style media="screen">
-                      .contents{background-color: lightgray; border-radius: 0px 40px 40px 40px;}
-                      .names{display: inline;}
-                    </style>
-                    <?php
-                  }
-                  else {
-                    ?>
-                    <li class="<?=$i?>" style="width: 200px; text-align: right; position: relative; left: 20%;">
-                      <span class="time"><?=$set_time?></span><br>
-                      <span class="names" style="display: none;"><?=$name?></span>
-                      <span class="contents" style="background-color: lightblue; border-radius: 40px 0px 40px 40px;"><?=$content?></span>
-                    </li>
-                    <?php
-                  }
-                }//end of for
-                mysqli_close($connect);
-                 ?>
-            </ul>
-          </div>
-        </div>
         <input type="text" id="message_content" name="content" placeholder="메세지를 입력하세요.">
-        <button type="button" id="message_send" onclick="check_input()">보내기</button>
-        <button type="button" id="message_delete" onclick="location.href = '../aside_right/message_board.php?send_id=<?=$now_id?>&rv_id=<?=$check_id?>&num=<?=$num?>&mode=delete'">삭제</button>
-        <button type="button" id="message_refresh" onclick="location.href = 'main.php?check_id=<?=$check_id?>'">새로고침</button>
+        <button type="button" class="button_icon" id="message_send" onclick="check_input();"><img src="../../img/message/send.png" alt="보내기.png"></button>
+        <button type="button" class="button_icon" id="message_delete" onclick="delete_message();"><img src="../../img/message/delete.png" alt="삭제.png"></button>
+        <button type="button" class="button_icon" id="message_refresh" onclick="recall_message();">
+          <img src="../../img/message/refresh.png" alt="새로고침.png"></button>
       </form>
     </aside>
   </body>
