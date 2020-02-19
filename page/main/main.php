@@ -68,12 +68,10 @@
     body{ padding-top: 67px; }
   </style>
 
-<script src="../../js/main/pop_up_menu.js"></script>
+  <script src="../../js/main/pop_up_menu.js"></script>
 
   <!-- internal style -->
   <?php include "../../lib/common_page/main_style.php";?>
-  <script src="../../js/main/pop_up_menu.js"></script>
-
 
 </head>
 
