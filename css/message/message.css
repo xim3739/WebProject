@@ -1,16 +1,24 @@
 *{margin: 0; padding: 0;}
-button{font-size: 11px;}
-#message_show{position: fixed; right: 200px; top: 120px; font-size: 10px;}
-#aside_rightside{width: 19%; position: fixed; right: 80px; top: 150px; border: 3px solid #443e58;}
-#aside_rightside ul{margin: 5px; padding: 5px; list-style: none;}
-#message_exit{display: inline-block; width: 12px; height: 12px; font-size: 8px; float: right; margin-right: 5px; margin-top: 5px;}
-#member_message{width: 283px; height: 100px; overflow: hidden; border-bottom: 1px solid lightgray; }
-#member_list{height: 100px; width: 330px; overflow: auto;}
-#profile_link{text-decoration: none;}
-#profile_link:visited{color: black;}
-#message_form h5{width: 283px; text-align: center; }
-#message_div{width: 295px; overflow: hidden;}
-#message_view{width: 315px; height: 150px; overflow: auto; }
+.message_button{font-size: 11px; border: none;}
+#message_show{position: absolute; top: 653px; right: 90px; font-size: 10px; }
+#aside_rightside{width: 260px; position: absolute; top: 392px; right: 3px; background-color: #69E5FF; display: none;}
+#hidden_id{margin: 0;}
+#aside_rightside ul{list-style: none;}
+#message_exit{position: absolute; top: 5px; right: 5px; background-color: transparent; border: none; z-index: 2;}
+#message_exit img{width: 20px; height: 20px;}
+#member_list{border: 3px solid #03D5FF ; height: 60px; width: 263px; overflow: auto;}
+#member_list::-webkit-scrollbar{display:none;}
+#member_list ul{margin: 0; padding: 0; font-size: 12px;}
+.profile_link{width: 230px; background-color: transparent; text-align: left;text-decoration: none; border: none;}
+.profile_link:hover{background-color: #3BDEFF;}
+.profile_link:focus{outline: none;}
+.profile_link:active{outline: 5px auto -webkit-focus-ring-color;}
+#message_form{border: 3px solid #03D5FF ; width: 263px; border-top: none;}
+#message_form h6{width: 257px;}
+#message_view{width: 260px; height: 165px; overflow: auto; }
+#message_view::-webkit-scrollbar{display:none;}
+#message_ul{margin: 0; margin-left: 5px; padding: 0; height: 165px; font-size: 12px;}
 .time{font-size: 10px;}
-.my_text{text-align: right; position: relative; left: 20%; }
-#message_content{font-size: 12px;}
+#message_content{width: 180px; height: 20px; font-size: 13px;}
+.button_icon{border: none; background-color: transparent;}
+.button_icon img{width: 20px; height: 20px;}
