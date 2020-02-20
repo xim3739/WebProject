@@ -1,8 +1,10 @@
-<!-- board테이블에 저장함 -->
+<!-- //board테이블에 저장
+<!-- //board테이블에 저장
+//파일 복사 날짜 파일명 복사 -->
 <meta charset="utf-8">
 <?php
-    /*session_start();
-    if (isset($_SESSION["userid"])) {
+    session_start();
+/*    if (isset($_SESSION["userid"])) {
         $userid = $_SESSION["userid"];
     } else {
         $userid = "";
@@ -15,23 +17,24 @@
 
     if (!$userid) {
         echo("
-                <script>
-                alert('게시판 글쓰기는 로그인 후 이용해 주세요!');
-                history.go(-1)
-                </script>
+                    <script>
+                    alert('게시판 글쓰기는 로그인 후 이용해 주세요!');
+                    history.go(-1)
+                    </script>
         ");
         exit;
-    }*/
-    $userid='kim';
-    $username='kim';
+    }
+*/
 
-// $_GET["id"];
+    $userid = "kim";
+    $username ="test";
     $subject = $_POST["subject"];
     $content = $_POST["content"];
+
     $subject = htmlspecialchars($subject, ENT_QUOTES);
     $content = htmlspecialchars($content, ENT_QUOTES);
     $regist_day = date("Y-m-d (H:i)");
-    $upload_dir = './data/';
+    $upload_dir = '../../data/';
 
     $upfile_name	 = $_FILES["upfile"]["name"];
     $upfile_tmp_name = $_FILES["upfile"]["tmp_name"];
@@ -43,6 +46,7 @@
         $file = explode(".", $upfile_name);
         $file_name = $file[0];
         $file_ext  = $file[1];
+
         $new_file_name = date("Y_m_d_H_i_s");
         $copied_file_name = $new_file_name.".".$file_ext;
         $uploaded_file = $upload_dir.$copied_file_name;
@@ -56,6 +60,7 @@
 				");
             exit;
         }
+
         if (!move_uploaded_file($upfile_tmp_name, $uploaded_file)) {
             echo("
 					<script>
@@ -71,19 +76,17 @@
         $copied_file_name = "";
     }
 
-    $con = mysqli_connect("localhost", "root", "123456", "webproject");
-    $sql = "insert into board (id, name, subject, content, regist_day, hit,  file_name, file_type, file_copied, location) ";
-    $sql .= "values('$userid', '$username', '$subject', '$content', '$regist_day', 0, ";
-    $sql .= "'$upfile_name', '$upfile_type', '$copied_file_name','서울시')";
-    mysqli_query($con, $sql);
+    $con = mysqli_connect("localhost", "root", "123456", "joo_db");           
 
+    $sql = "insert into board values ";
+    $sql .= "(null, 'kim', 'test', '찾아요' ,'$subject', '$content', '$regist_day', 0, ";
+    $sql .= "'$upfile_name', '$upfile_type', '$copied_file_name','123456','789123')";
 
     mysqli_query($con, $sql);
     mysqli_close($con);
-
     echo "
 	   <script>
-	    location.href = 'board_list.php';
+	   // location.href = '../main/main.php';
 	   </script>
 	";
 ?>

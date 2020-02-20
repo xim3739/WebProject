@@ -12,7 +12,7 @@
 
     <!-- Custom styles for this template -->
     <link href="../../css/main/small-business.css" rel="stylesheet">
-    <style>
+  <style>
   form { display: inline-block; }
 
   #header_box { width: 1100px; margin: 0 auto; }
@@ -64,12 +64,10 @@
   #pop_login{ width: 150px; }
   .reply { margin-left: 213px; }
   body{ padding-top: 67px; }
-
-
-
 </style>
+
   <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4ef132eaf679a177a01f1b53b69f7119"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
   <script src="../../js/main/pop_up_menu.js"></script>
 
 </head>
@@ -100,18 +98,53 @@
     </div>
   </div>
   <!-- center -->
+  <?php
+    $num  = $_GET["num"];
+    $page  = $_GET["page"];
+
+    $con = mysqli_connect("localhost", "root", "123456", "joo_db");
+    $sql = "select * from board where num=1";
+    $result = mysqli_query($con, $sql);
+
+    $row = mysqli_fetch_array($result);
+    $id      = $row["id"];
+    $name      = $row["name"];
+    $regist_day = $row["regist_day"];
+    $subject    = $row["subject"];
+    $content    = $row["content"];
+    $file_name    = $row["file_name"];
+    $file_type    = $row["file_type"];
+    $file_copied  = $row["file_copied"];
+    $locationX = $row["locationX"];
+    $locationY = $row["locationY"];
+    $hit = $row["hit"];
+
+    $content = str_replace(" ", "&nbsp;", $content);
+    $content = str_replace("\n", "<br>", $content);
+
+    $new_hit = $hit + 1;
+    $sql = "update board set hit=$new_hit where num=$num";
+    mysqli_query($con, $sql);
+  ?>
   <div class="board_myboard_widen">
     <div id="board_myboard_widen_box">
       <div id="board_myboard_widen_photo">
-        <img id="Preview_img" src="../../img/board/default.jpg">
+        <?php
+              if ($file_name) {
+                  $real_name = $file_copied;
+                  $file_path = "../../data/".$real_name.".png";
+                  $file_size = filesize($file_path);
+                  }
+          ?>
+        <img id="Preview_img" src=<?=$file_path?>>
       </div>
       <div id="board_myboard_widen_top">
-        <span id="board_myboard_widen_top_p_span">TITLE :</span> <span id="myboard_widen_title_span">제목이 옵니다</span><br>
-         <span id="board_myboard_widen_top_p_span">MEMBER_ID :</span> <span id="myboard_widen_memberId_span">작성자 명이 옵니다</span><br>
-         <span id="board_myboard_widen_top_p_span">DATE :</span> <span id="myboard_widen_date_span">날짜가 옵니다</span><br>
+        <span id="board_myboard_widen_top_p_span">TITLE :</span> <span id="myboard_widen_title_span"><?=$subject?></span><br>
+         <span id="board_myboard_widen_top_p_span">MEMBER_ID :</span> <span id="myboard_widen_memberId_span"><?=$name?></span><br>
+         <span id="board_myboard_widen_top_p_span">DATE :</span> <span id="myboard_widen_date_span"><?=$regist_day?></span><br>
       </div>
       <div id="board_myboard_widen_center">
-        <p><span id="myboard_widen_content_span">내용이 옵니다</span></p>
+        <p><span id="myboard_widen_content_span"><?=$content?></span></p>
       </div>
       <div id="board_location_box"></div>
     </div>

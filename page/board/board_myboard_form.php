@@ -62,7 +62,7 @@
     body{ padding-top: 67px; }
   </style>
   <script src="../../js/main/pop_up_menu.js"></script>
-  
+
 </head>
 
 <body>
@@ -98,7 +98,7 @@
   <!-- center -->
   <div class="board_center">
     <div id="board_center_box">
-      <a href="./board_myboard_widen.php">아직 나의 게시물이 없습니다!</a>
+      <a href="./board_myboard_widen.php?num=''&page=''">아직 나의 게시물이 없습니다!</a>
     </div>
   </div>
 

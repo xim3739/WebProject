@@ -68,9 +68,9 @@
 
   </style>
   <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4ef132eaf679a177a01f1b53b69f7119"></script>
-  <script src="../../js/main/pop_up_menu.js"></script>
+  <!-- <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../../js/main/pop_up_menu.js"></script>
 
 </head>
 
@@ -100,21 +100,58 @@
       </div>
     </div>
     <!-- center -->
+    <?php
+    $num  = $_GET["num"];
+    $page  = $_GET["page"];
+
+    $con = mysqli_connect("localhost", "root", "123456", "joo_db");
+    $sql = "select * from board where num=1";
+    $result = mysqli_query($con, $sql);
+
+    $row = mysqli_fetch_array($result);
+    $id      = $row["id"];
+    $name      = $row["name"];
+    $regist_day = $row["regist_day"];
+    $subject    = $row["subject"];
+    $content    = $row["content"];
+    $file_name    = $row["file_name"];
+    $file_type    = $row["file_type"];
+    $file_copied  = $row["file_copied"];
+    $locationX = $row["locationX"];
+    $locationY = $row["locationY"];
+    $hit = $row["hit"];
+
+    $content = str_replace(" ", "&nbsp;", $content);
+    $content = str_replace("\n", "<br>", $content);
+
+    $new_hit = $hit + 1;
+    $sql = "update board set hit=$new_hit where num=$num";
+    mysqli_query($con, $sql);
+?>
     <div class="board_widen">
       <div id="board_widen_box">
         <div id="board_widen_photo">
-          <img id="default_proflie" src="../../img/board/default.jpg">
+          <?php
+                if ($file_name) {
+                    $real_name = $file_copied;
+                    $file_path = "../../data/".$real_name.".png";
+                    $file_size = filesize($file_path);
+                    }
+            ?>
+          <img id="default_proflie" src=<?=$file_path?>>
         </div>
         <div id="board_widen_top">
-          <span id="board_widen_top_p_span">TITLE :</span> <span id="widen_title_span">제목이 옵니다</span><br>
-           <span id="board_widen_top_p_span">MEMBER_ID :</span> <span id="widen_memberId_span">작성자 명이 옵니다</span><br>
-           <span id="board_widen_top_p_span">DATE :</span> <span id="widen_date_span">날짜가 옵니다</span><br>
+          <span id="board_widen_top_p_span">TITLE :</span> <span id="widen_title_span"><?=$subject?></span><br>
+           <span id="board_widen_top_p_span">MEMBER_ID :</span> <span id="widen_memberId_span"><?=$name?></span><br>
+           <span id="board_widen_top_p_span">DATE :</span> <span id="widen_date_span"><?=$regist_day?></span><br>
         </div>
         <div id="board_widen_center">
-          <p><span id="widen_content_span">내용이 옵니다</span></p>
+          <p><span id="widen_content_span"><?=$content?></span></p>
         </div>
         <div id="board_location_box"></div>
       </div>
+
+<!-- 댓글 -->
       <div id="board_widen_comment_box">
         <div id="board_widen_comment_input_box">
           <div id="board_widen_comment_input_span">
