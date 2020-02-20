@@ -101,10 +101,7 @@
   </nav> -->
 
   <?php include "../../lib/common_page/header.php"; ?>
-  <!-- Aside_right Message-->
-  <?php include "../aside_right/message.php"; ?>
   <!-- Page Content -->
-
   <?php include "../../lib/common_page/content.php"; ?>
   <!-- Footer -->
   <?php include "../../lib/common_page/footer.php"; ?>
