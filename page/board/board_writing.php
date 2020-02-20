@@ -112,7 +112,13 @@
           </div>
           <div id="board_wirte_top">
             <input id="wirte_title" name="subject" type="text" placeholder="Title">
-            <span id="div_write_spandiv">MemberId :<span id="memberid"></span> </span>
+          <!--  <span id="div_write_spandiv">MemberId :<span id="memberid"></span> </span>-->
+          <select id="category_write" name="category">
+            <option value="찾아요">찾아요</option>
+            <option value="데리고있어요">데리고 있어요</option>
+            <option value="자유게시판">자유게시판</option>
+            <option value="흐흐흐">흐흐흐</option>
+          </select>
           </div>
           <div id="board_wirte_center">
             <textarea id="wirte_content"  name="content"  placeholder="Content"></textarea>
