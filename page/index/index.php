@@ -3,10 +3,15 @@
 
 <head>
 
+  <?php
+    include "../../db/db_connector_main.php";
+  ?>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
   <title>Landing Page - Start Bootstrap Theme</title>
 
@@ -22,6 +27,7 @@
 
   <!-- Custom styles for this template -->
   <link href="../../css/index/landing-page.min.css" rel="stylesheet">
+  <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 </head>
 
@@ -53,12 +59,12 @@ if (!$username) {
     <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/login_and_signup.php','','width=500,height=700,left=300')">
     <?php
 } else {
-        $logged = $username."님"; ?>
+        $logged = $username."(".$userid.")님"; ?>
           <li><?=$logged?> </li>
 
 
 
-            <li><a href="../login/logout.php" >로그아웃</a></li>
+            <li><a href="../login/logout.php" onclick=kout()>로그아웃</a></li>
 
 
           <?php

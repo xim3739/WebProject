@@ -11,7 +11,7 @@
     <script type="text/javascript">
 
       $(document).ready(function(){
-        
+
         $('ul.tabs li').click(function(){
           var tab_id = $(this).attr('data-tab');
 
@@ -25,16 +25,7 @@
         function done(){
           document.login_form.submit();
         }
-        function newLogin(){
-               Kakao.Auth.loginForm({
-                 success: function(authObj) {
-                   alert(JSON.stringify(authObj));
-                 },
-                 fail: function(err) {
-                   alert(JSON.stringify(err));
-                 }
-              })
-             }
+
     });
     </script>
     <link rel="stylesheet" href="../../css/login/login.css">
@@ -109,50 +100,54 @@
          <input type="password" name="password" class="signUpInput" placeholder="Choose a password" required>
          <input type="button" value="로그인" class="signUpButton" onclick="done()">
          <div id="naver_id_login"></div>
-         <!-- <input type="button" id="kakao-login-btn" onclick="newLogin()"> -->
-         <a id="kakao-login-btn" onclick="newLogin()"></a>
+         <a href="#" onclick="kout()"><img src="../../img/login/kakao_account_login_btn_medium_narrow.png"</a>
+
       </form>
 
+
     <!-- ===================================카카오 로그인========================================= -->
-          <script type='text/javascript'>
-				//<![CDATA[
-					// 사용할 앱의 JavaScript 키를 설정해 주세요.
-					Kakao.init('d4c9f81c1dd87d7457ae9ba104e93a3d');
-					// 카카오 로그인 버튼을 생성합니다.
-					Kakao.Auth.createLoginButton({
-						container: '#kakao-login-btn',
-						// 담겨져 나오는 카카오톡 정보값 확인
-						success: function(authObj) {
-							Kakao.API.request({
-								url:'/v2/user/me',
-								success: function(res){
-									// alert(JSON.stringify(res));
-									// alert(JSON.stringify(authObj)); //res에 담겨있는 json값을 모두 확인가능
 
-									alert(res.properties.nickname+'님 환영합니다.');
-                  $.ajax({
-                    type: "POST",
-                    url: "http://localhost/team_project/page/login/create_session.php",
-                    data: "name="+res.properties.nickname,
-                    success:function(data) {
-                      if(data === "name_error") {
-                        alert('NAME_ERROR');
-                      } else {
-                        alert(data+' 님 환영합니다.');
-                        opener.parent.location.reload();
-                        window.close();
-                      }
-                    }
+    <script type="text/javascript">
+    Kakao.init('d4c9f81c1dd87d7457ae9ba104e93a3d');
+
+    function kout(){
+      Kakao.Auth.logout();
+                 Kakao.Auth.loginForm({
+                   success: function(authObj) {
+
+                     							Kakao.API.request({
+                                   	url:'/v2/user/me',
+                     								success: function(res){
+                     									// alert(JSON.stringify(res));
+                     									// alert(JSON.stringify(authObj)); //res에 담겨있는 json값을 모두 확인가능
+                                      console.log(res.kakao_account.email);
+                                      var allData = {"name": res.properties.nickname, "email": res.kakao_account.email};
+                                         $.ajax({
+                                           type: "POST",
+                                           url: "http://localhost/team_project/page/login/create_session.php",
+                                           data: allData,
+                                           success:function(data) {
+
+                                             if(data === "error") {
+                                               alert('NAME_ERROR');
+                                             } else {
+                                               alert(data+' 님 환영합니다.');
+                                               console.log(data);
+                                               opener.parent.location.reload();
+                                               window.close();
+                                             }
+                                           }
+                                         });
+                       								}
+                       							});
+                                  },
+                     fail: function(err) {
+                       alert(JSON.stringify(err));
+                     }
+
                   });
-								}
-							});
-						},
-						fail: function(err) {
-							 alert(JSON.stringify(err));
-						}
-					});
-			</script>
-
+    }
+    </script>
 
 <!-- ========================================네이버 로그인========================================== -->
 <script type="text/javascript">
