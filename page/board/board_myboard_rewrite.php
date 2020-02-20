@@ -130,6 +130,31 @@
     </div>
     <!-- center -->
     <!-- action="board_myboard_form.php?id=yy&pw=ii" -->
+<<<<<<< HEAD
+    <?php
+    $num  = $_GET["num"];
+    $page = $_GET["page"];
+
+    $con = mysqli_connect("localhost", "root", "123456", "joo_db");
+    $sql = "select * from board where num=$num";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_array($result);
+
+    $id      = $row["id"];
+    $name      = $row["name"];
+    $regist_day = $row["regist_day"];
+    $category = $row["category"];
+    $subject    = $row["subject"];
+    $content    = $row["content"];
+    $file_name    = $row["file_name"];
+    $file_type    = $row["file_type"];
+    $file_copied  = $row["file_copied"];
+    $locationX = $row["locationX"];
+    $locationY = $row["locationY"];
+    $hit = $row["hit"];
+
+    var_dump($file_name);
+=======
     <?php
     $num  = $_GET["num"];
     $page = $_GET["page"];
@@ -150,22 +175,63 @@
     $locationX = $row["locationX"];
     $locationY = $row["locationY"];
     $hit = $row["hit"];
+>>>>>>> 87d0581d0e20af93c07a815879de01e6b7dd238a
 ?>
     <div class="board_myboard_rewrite">
-      <form  name="board_form" method="post" action="board_modify.php?num=''&page=''" enctype="multipart/form-data">
+      <form  name="board_myboard_rewrite" method="post" action="board_modify.php" enctype="multipart/form-data">
         <div id="board_myboard_rewrite_box">
           <div id="board_myboard_rewrite_photo">
-            <input type='file' id="Preview_img"  value="<?=$file_name?>"/>
-            <img src="../../img/board/default.jpg" id="blah"/>
+            <?php
+                  if ($file_name) {
+                      $real_name = $file_copied;
+                      $file_path = "../../data/".$real_name;
+                      $file_size = filesize($file_path);
+                      }
+              ?>
+            <input type='file' id="Preview_img" name="upfile" value='<?=$file_name?>'/>
+            <img id="blah" src=<?=$file_path?>>
           </div>
           <div id="board_myboard_rewrite_top">
             <input id="myboard_rewrite_title" name="subject" type="text" placeholder="Title" value="<?=$subject?>">
           <!--  <span id="div_myboard_rewrite_spandiv">MemberId :<span id="memberid"><?=$id?></span> </span>-->
           <select id="category_write" name="category">
-            <option value="찾아요">찾아요</option>
-            <option value="데리고있어요">데리고 있어요</option>
-            <option value="자유게시판">자유게시판</option>
-            <option value="흐흐흐">흐흐흐</option>
+              <?php
+                switch ($category) {
+                case '찾아요':
+                  ?>
+                  <option value="찾아요" selected="selected" >찾아요</option>
+                  <option value="데리고 있어요">데리고 있어요</option>
+                  <option value="자유게시판">자유게시판</option>
+                  <option value="흐흐흐">흐흐흐</option>
+                  <?php
+                  break;
+                  case '데리고있어요' :
+                  ?>
+                  <option value="찾아요" >찾아요</option>
+                  <option value="데리고 있어요"selected="selected">데리고 있어요</option>
+                  <option value="자유게시판">자유게시판</option>
+                  <option value="흐흐흐">흐흐흐</option>
+                  <?php
+                  break;
+                  case '자유게시판' :
+                  ?>
+                  <option value="찾아요" >찾아요</option>
+                  <option value="데리고 있어요">데리고 있어요</option>
+                  <option value="자유게시판"selected="selected">자유게시판</option>
+                  <option value="흐흐흐">흐흐흐</option>
+                  <?php
+                  break;
+                  case '흐흐흐' :
+                   ?>
+                   <option value="찾아요" >찾아요</option>
+                   <option value="데리고 있어요">데리고 있어요</option>
+                   <option value="자유게시판">자유게시판</option>
+                   <option value="흐흐흐"selected="selected">흐흐흐</option>
+                   <?php
+                   default:
+                   break;
+                 }
+                  ?>
           </select>
           </div>
           <div id="board_myboard_rewrite_center">

@@ -103,7 +103,7 @@
     $num  = $_GET["num"];
     $page  = $_GET["page"];
 
-    $con = mysqli_connect("localhost", "root", "123456", "phpprograming");
+    $con = mysqli_connect("localhost", "root", "123456", "joo_db");
     $sql = "select * from board where num=$num";
     $result = mysqli_query($con, $sql);
 
