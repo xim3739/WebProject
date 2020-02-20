@@ -24,7 +24,8 @@
   <link href="../../css/index/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="../../css/index/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script src="../../js/index/hospital_list.js"></script>
   <!-- Custom styles for this template -->
   <link href="../../css/index/landing-page.min.css" rel="stylesheet">
   <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
