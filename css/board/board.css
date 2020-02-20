@@ -548,13 +548,12 @@ body {
   display: inline-block;
   position: absolute;
   transform: translateY(75px);
-  border: 1px solid gray;
   resize: none;
   margin-top: 30px;
 }
 
 #board_myboard_widen_center p {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 #board_location_box_edit {
