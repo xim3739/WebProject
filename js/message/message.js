@@ -1,9 +1,13 @@
 function hide_message() {
-  $("#aside_rightside").hide();
+  $("#aside_rightside").css("-webkit-animation","slide-down 1s ease-in");
+  $("#aside_rightside").addClass("off");
+  $("#aside_rightside").removeClass("on");
   $("#message_show").show();
 }
 function show_message() {
-  $("#aside_rightside").show();
+  $("#aside_rightside").addClass("on");
+  $("#aside_rightside").removeClass("off");
+  $("#aside_rightside").css("-webkit-animation","slide-up 1s ease-out");
   $("#message_show").hide();
 }
 function check_input() {
@@ -35,20 +39,16 @@ function connect_memeber(check_id,now_id) {
         send_ids = data[i].send_id;
         now_ids = data[i].now_id;
         if (send_ids!==now_ids) {
-          html_one += "<li style='width: 200px;' class='"+i+"'>";
+          html_one += "<li style='width: 180px;' class='"+i+"'>";
           html_one += "<span class='time'>"+data[i].regist_day+"</span><br>";
           html_one += "<span class='names'>"+data[i].name+"&nbsp;</span>";
           html_one += "<span class='contents'>"+data[i].content+"</span>";
           html_one += "</li>";
-          html_one += "<style media='screen'>";
-          html_one += ".contents{background-color: #91DCEB; border-radius: 0px 40px 40px 40px;}";
-          html_one += ".names{display: inline;}";
-          html_one += "</style>";
         }else{
-          html_one += "<li class='<?=$i?>' style='width: 200px; text-align: right; position: relative; left: 45px;'>";
+          html_one += "<li class='<?=$i?>' style='width: 180px; text-align: right; '>";
           html_one += "<span class='time' style='font-size: 10px;'>"+data[i].regist_day+"</span><br>";
           html_one += "<span class='names' style='display: none;'>"+data[i].name+"&nbsp;</span>";
-          html_one += "<span class='contents' style='background-color: lightblue; border-radius: 40px 0px 40px 40px;'>"+data[i].content+"</span>";
+          html_one += "<span class='contents' style='display: inline-block; max-width : 80px; background-color: lightblue; border-radius: 40px 0px 40px 40px;'>"+data[i].content+"</span>";
           html_one += "<input name='hidden_num' value='"+data[i].num+"' hidden></input>";
           html_one += "</li>";
         }
@@ -132,20 +132,16 @@ function recall_message(){
         send_ids = data[i].send_id;
         now_ids = data[i].now_id;
         if (send_ids!==now_ids) {
-          html_one += "<li style='width: 200px;' class='"+i+"'>";
+          html_one += "<li style='width: 180px;' class='"+i+"'>";
           html_one += "<span class='time'>"+data[i].regist_day+"</span><br>";
-          html_one += "<span class='names'>"+data[i].name+"&nbsp;</span>";
-          html_one += "<span class='contents'>"+data[i].content+"</span>";
+          html_one += "<span class='names' >"+data[i].name+"&nbsp;</span>";
+          html_one += "<span class='contents' >"+data[i].content+"</span>";
           html_one += "</li>";
-          html_one += "<style media='screen'>";
-          html_one += ".contents{background-color: #91DCEB; border-radius: 0px 40px 40px 40px;}";
-          html_one += ".names{display: inline;}";
-          html_one += "</style>";
         }else{
-          html_one += "<li class='<?=$i?>' style='width: 200px; text-align: right; position: relative; left: 45px;'>";
-          html_one += "<span class='time' style='font-size: 10px;'>"+data[i].regist_day+"</span><br>";
+          html_one += "<li class='<?=$i?>' style='width: 180px; text-align: right; '>";
+          html_one += "<span class='time'>"+data[i].regist_day+"</span><br>";
           html_one += "<span class='names' style='display: none;'>"+data[i].name+"&nbsp;</span>";
-          html_one += "<span class='contents' style='background-color: lightblue; border-radius: 40px 0px 40px 40px;'>"+data[i].content+"</span>";
+          html_one += "<span class='contents' style='display: inline-block; max-width : 80px; background-color: lightblue; border-radius: 40px 0px 40px 40px;'>"+data[i].content+"</span>";
           html_one += "<input name='hidden_num' value='"+data[i].num+"' hidden></input>";
           html_one += "</li>";
         }

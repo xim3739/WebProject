@@ -1,4 +1,6 @@
 <section>
+  <?php include "../aside_right/message.php"; ?>
+  <!-- Aside_right Message-->
   <div class="container">
     <!-- Heading Row -->
     <div class="row align-items-center my-5">
@@ -148,7 +150,6 @@
         <li><a href="">시쓰기</a></li>
         <li><a href="">뭐쓰기</a></li>
       </ul>
-
     </div>
     <button id="btn_pop_write" onclick="pop_up(this)">+</button>
   </div>
