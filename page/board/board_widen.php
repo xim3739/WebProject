@@ -79,7 +79,7 @@
     <!-- header -->
     <div class="board_header">
       <div id="board_header_div">
-        <p><a href="board_form.php">BOARD</a></p>
+        <p><a href="board_form.php?num=''&page=''">BOARD</a></p>
       </div>
     </div>
     <!-- nav -->
@@ -129,6 +129,7 @@
     mysqli_query($con, $sql);
 ?>
     <div class="board_widen">
+     <form name="board_write" action="board_modify.php" method="post" enctype="multipart/form-data" style="display:inline-block;">
       <div id="board_widen_box">
         <div id="board_widen_photo">
           <?php
@@ -150,6 +151,7 @@
         </div>
         <div id="board_location_box"></div>
       </div>
+    </form>
 
 <!-- 댓글 -->
       <div id="board_widen_comment_box">

@@ -77,7 +77,7 @@
   <!-- header -->
   <div class="board_header">
     <div id="board_header_div">
-      <p><a href="board_form.php">BOARD</a></p>
+      <p><a href="board_form.php?num=''&page=''">BOARD</a></p>
     </div>
   </div>
   <!-- nav -->
@@ -127,30 +127,33 @@
     mysqli_query($con, $sql);
   ?>
   <div class="board_myboard_widen">
-    <div id="board_myboard_widen_box">
-      <div id="board_myboard_widen_photo">
-        <?php
-              if ($file_name) {
-                  $real_name = $file_copied;
-                  $file_path = "../../data/".$real_name.".png";
-                  $file_size = filesize($file_path);
-                  }
-          ?>
-        <img id="Preview_img" src=<?=$file_path?>>
+    <form name="board_write" action="board_modify.php" method="post" enctype="multipart/form-data" style="display:inline-block;">
+      <div id="board_myboard_widen_box">
+        <div id="board_myboard_widen_photo">
+          <?php
+                if ($file_name) {
+                    $real_name = $file_copied;
+                    $file_path = "../../data/".$real_name.".png";
+                    $file_size = filesize($file_path);
+                    }
+            ?>
+          <img id="Preview_img" src=<?=$file_path?>>
+        </div>
+        <div id="board_myboard_widen_top">
+          <span id="board_myboard_widen_top_p_span">TITLE :</span> <span id="myboard_widen_title_span"><?=$subject?></span><br>
+           <span id="board_myboard_widen_top_p_span">MEMBER_ID :</span> <span id="myboard_widen_memberId_span"><?=$name?></span><br>
+           <span id="board_myboard_widen_top_p_span">DATE :</span> <span id="myboard_widen_date_span"><?=$regist_day?></span><br>
+        </div>
+        <div id="board_myboard_widen_center">
+          <p><span id="myboard_widen_content_span"><?=$content?></span></p>
+        </div>
+        <div id="board_location_box"></div>
       </div>
-      <div id="board_myboard_widen_top">
-        <span id="board_myboard_widen_top_p_span">TITLE :</span> <span id="myboard_widen_title_span"><?=$subject?></span><br>
-         <span id="board_myboard_widen_top_p_span">MEMBER_ID :</span> <span id="myboard_widen_memberId_span"><?=$name?></span><br>
-         <span id="board_myboard_widen_top_p_span">DATE :</span> <span id="myboard_widen_date_span"><?=$regist_day?></span><br>
+      <div id="board_myboard_widen_button_box">
+        <button type="button"><a href="board_myboard_rewrite.php?num=''&page=''">Edit</a></button>
       </div>
-      <div id="board_myboard_widen_center">
-        <p><span id="myboard_widen_content_span"><?=$content?></span></p>
-      </div>
-      <div id="board_location_box"></div>
-    </div>
-    <div id="board_myboard_widen_button_box">
-      <button type="button">Edit</button>
-    </div>
+    </form>
+<!-- 댓글 -->
     <div id="board_widen_comment_box">
       <div id="board_widen_comment_input_box">
         <div id="board_widen_comment_input_span">
@@ -170,7 +173,7 @@
           <span>날짜</span>&nbsp;&nbsp;<span style="cursor:pointer"  onclick="hide();">▼ 답글</span>
         </div>
       </div>
-
+<!--대댓글-->
       <div id="board_widen_comment_input_retext_box">
         <div id="board_widen_comment_input_retext">
           <img id="board_widen_comment_input_retext_image" src="../../img/board/default_proflie.png">

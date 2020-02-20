@@ -74,7 +74,7 @@
 
   <div class="board_header">
     <div id="board_header_div">
-      <p><a href="./board_form.php">BOARD</a></p>
+      <p><a href="./board_form.php?num=''&page=''">BOARD</a></p>
     </div>
   </div>
   <!-- nav -->
@@ -99,9 +99,35 @@
     </div>
   </div>
   <!-- center -->
+  <?php
+    $num  = $_GET["num"];
+    $page  = $_GET["page"];
+
+    $con = mysqli_connect("localhost", "root", "123456", "phpprograming");
+    $sql = "select * from board where num=$num";
+    $result = mysqli_query($con, $sql);
+
+    $row = mysqli_fetch_array($result);
+    $id      = $row["id"];
+    $name      = $row["name"];
+    $regist_day = $row["regist_day"];
+    $subject    = $row["subject"];
+    $content    = $row["content"];
+    $file_name    = $row["file_name"];
+    $file_type    = $row["file_type"];
+    $file_copied  = $row["file_copied"];
+    $hit          = $row["hit"];
+
+    $content = str_replace(" ", "&nbsp;", $content);
+    $content = str_replace("\n", "<br>", $content);
+
+    $new_hit = $hit + 1;
+    $sql = "update board set hit=$new_hit where num=$num";
+    mysqli_query($con, $sql);
+?>
   <div class="board_center">
     <div id="board_center_box">
-      <a href="../main/main.php">아직 게시물이 없습니다!</a>
+      <a href="./board_widen.php?num=''&page=''">아직 게시물이 없습니다!</a>
     </div>
   </div>
 
