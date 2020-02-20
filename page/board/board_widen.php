@@ -135,7 +135,7 @@
           <?php
                 if ($file_name) {
                     $real_name = $file_copied;
-                    $file_path = "../../data/".$real_name.".png";
+                    $file_path = "../../data/".$real_name;
                     $file_size = filesize($file_path);
                     }
             ?>

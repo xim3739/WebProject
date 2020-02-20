@@ -146,7 +146,7 @@
           <?php
                 if ($file_name) {
                     $real_name = $file_copied;
-                    $file_path = "../../data/".$real_name.".png";
+                    $file_path = "../../data/".$real_name;
                     $file_size = filesize($file_path);
                     }
             ?>
@@ -166,21 +166,21 @@
         <div class="map_wrap">
     <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
     <ul id="category">
-        
-        <li id="PM9" data-order="2"> 
+
+        <li id="PM9" data-order="2">
             <span class="category_bg pharmacy"></span>
             동물병원
-        </li>  
-     
+        </li>
+
     </ul>
 </div>
         </div>
       </div>
       <div id="board_myboard_widen_button_box">
-        <button type="button"><a href="board_myboard_rewrite.php?num=''&page=''">Edit</a></button>
+        <button type="button"><a href="board_myboard_rewrite.php?num=1&page=1">Edit</a></button>
       </div>
     </form>
-    
+
 <!-- 댓글 -->
     <div id="board_widen_comment_box">
       <div id="board_widen_comment_input_box">
