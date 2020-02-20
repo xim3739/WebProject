@@ -66,7 +66,15 @@
                         `regist_day` char(20),
                         PRIMARY KEY(`num`)
                     )";
-                
+                    break;
+                case 'hospital_list' :
+                    $sql = "CREATE TABLE `hospital_list`(
+                        `num` int NOT NULL AUTO_INCREMENT,
+                        `name` char(30) NOT NULL,
+                        `address` char(60) NOT NULL,
+                        PRIMARY KEY(`num`)
+                    )";
+                    break;
                 default:
                     echo "<script>alert('해당 테이블이름이 없습니다. ');</script>";
                     break;
