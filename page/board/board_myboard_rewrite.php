@@ -60,8 +60,44 @@
     #pop_login{ width: 150px; }
     .reply { margin-left: 213px; }
     body{ padding-top: 67px; }
+    .map_wrap {
+            position: relative;
+            width: 100%;
+            height: 200px;
+        }
+
+        .title {
+            font-weight: bold;
+            display: block;
+        }
+
+        .hAddr {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            border-radius: 2px;
+            background: #fff;
+            background: rgba(255, 255, 255, 0.8);
+            z-index: 1;
+            padding: 5px;
+        }
+
+        #centerAddr {
+            display: block;
+            margin-top: 2px;
+            font-weight: normal;
+        }
+
+        .bAddr {
+            padding: 5px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+
   </style>
-  <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=4ef132eaf679a177a01f1b53b69f7119"></script>
+  <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2bc44b6ace455f7c953f89057af1aeae&libraries=services"></script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
   <script src="../../js/main/pop_up_menu.js"></script>
 </head>
@@ -94,6 +130,7 @@
     </div>
     <!-- center -->
     <!-- action="board_myboard_form.php?id=yy&pw=ii" -->
+<<<<<<< HEAD
     <?php
     $num  = $_GET["num"];
     $page = $_GET["page"];
@@ -117,6 +154,28 @@
     $hit = $row["hit"];
 
     var_dump($file_name);
+=======
+    <?php
+    $num  = $_GET["num"];
+    $page = $_GET["page"];
+
+    $con = mysqli_connect("localhost", "root", "123456", "joo_db");
+    $sql = "select * from board where num=$num";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_array($result);
+
+    $id      = $row["id"];
+    $name      = $row["name"];
+    $regist_day = $row["regist_day"];
+    $subject    = $row["subject"];
+    $content    = $row["content"];
+    $file_name    = $row["file_name"];
+    $file_type    = $row["file_type"];
+    $file_copied  = $row["file_copied"];
+    $locationX = $row["locationX"];
+    $locationY = $row["locationY"];
+    $hit = $row["hit"];
+>>>>>>> 87d0581d0e20af93c07a815879de01e6b7dd238a
 ?>
     <div class="board_myboard_rewrite">
       <form  name="board_myboard_rewrite" method="post" action="board_modify.php" enctype="multipart/form-data">
@@ -178,7 +237,16 @@
           <div id="board_myboard_rewrite_center">
             <textarea id="board_myboard_rewrite_content" name="content"  placeholder="Content"><?=$content?></textarea>
           </div>
-          <div id="board_location_box"></div>
+          <div id="board_location_box">
+          <div class="map_wrap">
+        <div id="map_write" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+        <div class="hAddr" style="position: absolute;left: 10px;top: 10px;border-radius: 2px;background: #fff;
+            background: rgba(255, 255, 255, 0.8);z-index: 1;padding: 5px;">
+            <span class="title">지도중심기준 행정동 주소정보</span>
+            <span id="centerAddr"></span>
+        </div>
+    </div>
+          </div>
         </div>
         <div id="board_myboard_rewrite_bottom">
           <button id="board_myboard_rewrite_upload" type="button"  onclick="check_input()">UpLoad</button>
@@ -191,5 +259,6 @@
       <?php include "../../lib/common_page/footer.php" ?>
     </footer>
   <script src="../../js/board/board.js"></script>
+  <script src="../../js/board/board_map_write.js"></script>
   </body>
 </html>
