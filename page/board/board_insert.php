@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <?php
     session_start();
-/*    if (isset($_SESSION["userid"])) {
+    if (isset($_SESSION["userid"])) {
         $userid = $_SESSION["userid"];
     } else {
         $userid = "";
@@ -24,14 +24,11 @@
         ");
         exit;
     }
-*/
 
-    $userid = "kim";
-    $username ="test";
     $subject = $_POST["subject"];
     $content = $_POST["content"];
     $category = $_POST["category"];
-
+    
     $subject = htmlspecialchars($subject, ENT_QUOTES);
     $content = htmlspecialchars($content, ENT_QUOTES);
     $regist_day = date("Y-m-d (H:i)");
@@ -85,7 +82,7 @@
 
     $con = mysqli_connect("localhost", "root", "123456", "joo_db");
     $sql = "insert into board values ";
-    $sql .= "(null, 'kim', 'test', '$category' ,'$subject', '$content', '$regist_day', 0, ";
+    $sql .= "(null, '$userid', '$username', '$category' ,'$subject', '$content', '$regist_day', 0, ";
     $sql .= "'$upfile_name', '$upfile_type', '$copied_file_name','123456','789123')";
 
     mysqli_query($con, $sql);
