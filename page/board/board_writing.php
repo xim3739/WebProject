@@ -104,15 +104,15 @@
     </div>
     <!-- center -->
       <div class="board_wirte">
-          <form name="board_write" action="board_form.php" method="post" style="display:inline-block;">
+          <form name="board_write" action="board_insert.php" method="post" enctype="multipart/form-data" style="display:inline-block;">
         <div id="board_wirte_box">
           <div id="board_wirte_photo">
-            <input type='file' id="Preview_img" />
+            <input type='file' id="Preview_img" name="upfile"/>
             <img src="../../img/board/default.jpg" id="blah"/>
           </div>
           <div id="board_wirte_top">
             <input id="wirte_title" name="subject" type="text" placeholder="Title">
-            <span id="div_write_spandiv">MemberId :<span id="memberid">사용자 아이디가 옴</span> </span>
+            <span id="div_write_spandiv">MemberId :<span id="memberid"></span> </span>
           </div>
           <div id="board_wirte_center">
             <textarea id="wirte_content"  name="content"  placeholder="Content"></textarea>
@@ -124,9 +124,6 @@
         </div>
         </form>
       </div>
-
-
-
     <footer>
       <?php include "../../lib/common_page/footer.php" ?>
     </footer>
