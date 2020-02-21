@@ -90,7 +90,7 @@
   <!-- header -->
   <div class="board_header">
     <div id="board_header_div">
-      <p><a href="board_form.php?num=''&page=''">BOARD</a></p>
+      <p><a href="board_form.php">BOARD</a></p>
     </div>
   </div>
   <!-- nav -->
@@ -150,6 +150,7 @@
                     $file_size = filesize($file_path);
                     }
             ?>
+
           <img id="Preview_img" src=<?=$file_path?>>
         </div>
         <div id="board_myboard_widen_top">
@@ -177,7 +178,8 @@
         </div>
       </div>
       <div id="board_myboard_widen_button_box">
-        <button type="button"><a href="board_myboard_rewrite.php?num=1&page=1">Edit</a></button>
+        <button id ="widen_edit" type="button"><a href="board_myboard_rewrite.php">Edit</a></button>
+        <button id ="widen_delete" type="button"><a href="#">Delete</a></button>
       </div>
     </form>
 

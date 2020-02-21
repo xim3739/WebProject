@@ -64,7 +64,7 @@
     #pop_login{ width: 150px; }
     .reply { margin-left: 213px; }
     body{ padding-top: 67px; }
-    
+
     .map_wrap {
             position: relative;
             width: 100%;
@@ -165,9 +165,7 @@
             <span class="title">지도중심기준 행정동 주소정보</span>
             <span id="centerAddr"></span>
         </div>
-    </div>
-
-
+        </div>
           </div>
         </div>
         <div id="board_wirte_bottom">

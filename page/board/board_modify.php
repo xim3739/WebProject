@@ -50,12 +50,11 @@
     $sql = "update board set category='$category', subject='$subject', content='$content', file_name='$upfile_name', file_type='$upfile_type', file_copied='$copied_file_name' ";
     $sql .= " where num=$num";
     mysqli_query($con, $sql);
-
     mysqli_close($con);
 
     echo "
 	      <script>
-	         //location.href = 'board_list.php?page=$page';
+	         location.href = 'board_myboard_form.php?page=$page';
 	      </script>
 	  ";
 ?>

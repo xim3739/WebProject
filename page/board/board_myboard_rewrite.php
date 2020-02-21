@@ -100,6 +100,22 @@
   <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2bc44b6ace455f7c953f89057af1aeae&libraries=services"></script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
   <script src="../../js/main/pop_up_menu.js"></script>
+  <script type="text/javascript">
+
+  function valid_check_input() {
+    if (!document.board_myboard_rewrite.subject.value) {
+      alert("제목을 입력하세요!");
+      document.board_myboard_rewrite.subject.focus();
+      return;
+    }
+    if (!document.board_myboard_rewrite.content.value) {
+      alert("내용을 입력하세요!");
+      document.board_myboard_rewrite.content.focus();
+      return;
+    }
+    document.board_myboard_rewrite.submit();
+  }
+  </script>
 </head>
   <body>
     <header>
@@ -108,7 +124,7 @@
 
     <div class="board_header">
       <div id="board_header_div">
-        <p><a href="board_form.php?num=''&page=''">BOARD</a></p>
+        <p><a href="board_form.php">BOARD</a></p>
       </div>
     </div>
     <!-- nav -->
@@ -131,6 +147,31 @@
     <!-- center -->
     <!-- action="board_myboard_form.php?id=yy&pw=ii" -->
 
+<<<<<<< HEAD
+    <?php
+    $num  = $_GET["num"];
+    $page = $_GET["page"];
+
+    $con = mysqli_connect("localhost", "root", "123456", "joo_db");
+    $sql = "select * from board where num=$num";
+    $result = mysqli_query($con, $sql);
+    $row = mysqli_fetch_array($result);
+
+    $id      = $row["id"];
+    $name      = $row["name"];
+    $regist_day = $row["regist_day"];
+    $category = $row["category"];
+    $subject    = $row["subject"];
+    $content    = $row["content"];
+    $file_name    = $row["file_name"];
+    $file_type    = $row["file_type"];
+    $file_copied  = $row["file_copied"];
+    $locationX = $row["locationX"];
+    $locationY = $row["locationY"];
+    $hit = $row["hit"];
+
+  ?>
+=======
     <?php
     $num  = $_GET["num"];
     $page = $_GET["page"];
@@ -152,8 +193,9 @@
     $locationY = $row["locationY"];
     $hit = $row["hit"];
 ?>
+>>>>>>> 485af9dd3f7e91b6582671e3a94e36c95756282b
     <div class="board_myboard_rewrite">
-      <form  name="board_myboard_rewrite" method="post" action="board_modify.php" enctype="multipart/form-data">
+      <form  name="board_myboard_rewrite" method="post" action="board_modify.php.php" enctype="multipart/form-data">
         <div id="board_myboard_rewrite_box">
           <div id="board_myboard_rewrite_photo">
             <?php
@@ -214,20 +256,19 @@
           </div>
           <div id="board_location_box">
           <div class="map_wrap">
-        <div id="map_write" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
-        <div class="hAddr" style="position: absolute;left: 10px;top: 10px;border-radius: 2px;background: #fff;
-            background: rgba(255, 255, 255, 0.8);z-index: 1;padding: 5px;">
-            <span class="title">지도중심기준 행정동 주소정보</span>
-            <span id="centerAddr"></span>
-        </div>
-    </div>
+            <div id="map_write" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+              <div class="hAddr" style="position: absolute;left: 10px;top: 10px;border-radius: 2px;background: #fff;
+                background: rgba(255, 255, 255, 0.8);z-index: 1;padding: 5px;">
+                <span class="title">지도중심기준 행정동 주소정보</span>
+                <span id="centerAddr"></span>
+              </div>
+            </div>
           </div>
         </div>
         <div id="board_myboard_rewrite_bottom">
-          <button id="board_myboard_rewrite_upload" type="button"  onclick="check_input()">UpLoad</button>
+          <button id="board_myboard_rewrite_upload" type="button"  onclick="valid_check_input()">UpLoad</button>
         </div>
       </form>
-
     </div>
 
     <footer>
