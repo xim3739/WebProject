@@ -11,7 +11,6 @@ if (isset($_POST["addr"])) {
             $sql = "INSERT INTO hospital_list VALUES (NULL, '$name[$i]', '$addr[$i]')";
             mysqli_query($con, $sql);
         }
-        echo "console.log('시마따!')";
     }
 }else{
     $a=$_GET["data"];

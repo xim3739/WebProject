@@ -130,31 +130,7 @@
     </div>
     <!-- center -->
     <!-- action="board_myboard_form.php?id=yy&pw=ii" -->
-<<<<<<< HEAD
-    <?php
-    $num  = $_GET["num"];
-    $page = $_GET["page"];
 
-    $con = mysqli_connect("localhost", "root", "123456", "joo_db");
-    $sql = "select * from board where num=$num";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_array($result);
-
-    $id      = $row["id"];
-    $name      = $row["name"];
-    $regist_day = $row["regist_day"];
-    $category = $row["category"];
-    $subject    = $row["subject"];
-    $content    = $row["content"];
-    $file_name    = $row["file_name"];
-    $file_type    = $row["file_type"];
-    $file_copied  = $row["file_copied"];
-    $locationX = $row["locationX"];
-    $locationY = $row["locationY"];
-    $hit = $row["hit"];
-
-    var_dump($file_name);
-=======
     <?php
     $num  = $_GET["num"];
     $page = $_GET["page"];
@@ -175,7 +151,6 @@
     $locationX = $row["locationX"];
     $locationY = $row["locationY"];
     $hit = $row["hit"];
->>>>>>> 87d0581d0e20af93c07a815879de01e6b7dd238a
 ?>
     <div class="board_myboard_rewrite">
       <form  name="board_myboard_rewrite" method="post" action="board_modify.php" enctype="multipart/form-data">

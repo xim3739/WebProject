@@ -30,7 +30,6 @@
  }
  };
  
- 
  var callback1 = function(result, status) {
  if (status === kakao.maps.services.Status.OK) {
      near_hospital_target.push(result);

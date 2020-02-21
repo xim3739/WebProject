@@ -29,7 +29,7 @@ $(document).ready(function () {
                             "addr": addr
                         },
                         success: function (response) {
-                            alert("동물병원 정보를 가져왔습니다");
+                            
                         }
                     });
                 }
