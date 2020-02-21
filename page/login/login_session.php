@@ -42,6 +42,8 @@ $con = mysqli_connect("localhost", "root", "123456789", "test");
                   $_SESSION["userid"] = $row["id"];
                   $_SESSION["username"] = $row["name"];
                   $name=$_SESSION["username"];
+                  $id=$_SESSION["userid"];
+
                   echo("
                            <script>
                            window.alert('$name');

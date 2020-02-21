@@ -17,6 +17,9 @@ if (isset($_POST["addr"])) {
     echo true;
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 63f9449d5df5bdc2d04fbaa6f8f982b241bca7ca
 ?>
