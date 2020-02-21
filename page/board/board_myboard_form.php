@@ -62,9 +62,7 @@
     body{ padding-top: 67px; }
   </style>
   <script src="../../js/main/pop_up_menu.js"></script>
-  
 </head>
-
 <body>
   <header>
     <?php include "../../lib/common_page/header.php" ?>

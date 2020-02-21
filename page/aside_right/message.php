@@ -10,7 +10,7 @@
   </head>
   <body>
     <button type="button" id="message_show" onclick="show_message()">쪽지함</button>
-    <aside id="aside_rightside">
+    <aside id="aside_rightside" class="off">
       <button type="button" name="button" id="message_exit" onclick="hide_message()"><img id="exit_img" src="../../img/message/hide.png" alt="X"> </button>
       <div id="member_list">
         <ul >
