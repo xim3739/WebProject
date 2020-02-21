@@ -1,5 +1,4 @@
 <!-- //board테이블에 저장
-<!-- //board테이블에 저장
 //파일 복사 날짜 파일명 복사 -->
 <meta charset="utf-8">
 <?php
@@ -28,7 +27,7 @@
     $subject = $_POST["subject"];
     $content = $_POST["content"];
     $category = $_POST["category"];
-    
+
     $subject = htmlspecialchars($subject, ENT_QUOTES);
     $content = htmlspecialchars($content, ENT_QUOTES);
     $regist_day = date("Y-m-d (H:i)");
@@ -90,7 +89,7 @@
 
     echo "
 	   <script>
-	    location.href = '../main/main.php';
+	    location.href = './board_form.php';
 	   </script>
 	";
 ?>

@@ -30,7 +30,6 @@
  }
  };
  
- 
  var callback1 = function(result, status) {
  if (status === kakao.maps.services.Status.OK) {
      near_hospital_target.push(result);
@@ -61,31 +60,32 @@
  geocoder.coord2Address(126.89874173588733, 37.50467450611051, callback);
  
  
- 
  // 지도에 마커를 표출하는 함수입니다
- function displayPlaces(places) {
- 
- // 몇번째 카테고리가 선택되어 있는지 얻어옵니다
- // 이 순서는 스프라이트 이미지에서의 위치를 계산하는데 사용됩니다
- var order = document.getElementById(currCategory).getAttribute('data-order');
- 
- console.log(places);
- console.log(places[0][0].x);
- 
- for ( var i=0; i<places.length; i++ ) {
- 
-         // 마커를 생성하고 지도에 표시합니다
-         var marker = addMarker(new kakao.maps.LatLng(parseFloat(places[i][0].y), parseFloat(places[i][0].x), order));
-         var x=places[i][0].x;
-         var y=places[i][0].y;
-         var name=near_hotpital[i].name;
-         kakao.maps.event.addListener(marker, 'click', function() {
-             window.open("https://map.kakao.com/link/to/"+name+","+y+","+x,"path_finder","width=1200px,height=1200px");
-         });
-         console.log(marker);
- }
- }
- 
+function displayPlaces(places) {
+
+    // 몇번째 카테고리가 선택되어 있는지 얻어옵니다
+    // 이 순서는 스프라이트 이미지에서의 위치를 계산하는데 사용됩니다
+    var order = document.getElementById(currCategory).getAttribute('data-order');
+
+    // console.log(places);
+    // console.log(places[0][0].x);
+
+    for ( var i=0; i<places.length; i++ ) {
+
+            // 마커를 생성하고 지도에 표시합니다
+            var marker = addMarker(new kakao.maps.LatLng(parseFloat(places[i][0].y), parseFloat(places[i][0].x), order));
+            var x=places[i][0].x;
+            var y=places[i][0].y;
+            var name=near_hotpital[i].name;
+            console.log("네임 :"+name);
+            kakao.maps.event.addListener(marker, 'click', makeClickListener(name,x,y));
+    }
+}
+function makeClickListener(name,x,y){
+    return function(){
+        window.open("https://map.kakao.com/link/to/"+name+","+y+","+x,"path_finder","width=1200px,height=1200px");
+    }
+}
  // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
  function addMarker(position, order) {
  var imageSrc = 'http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_category.png', // 마커 이미지 url, 스프라이트 이미지를 씁니다
