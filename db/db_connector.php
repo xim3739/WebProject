@@ -3,7 +3,7 @@
 
     define("SERVER_NAME", "127.0.0.1");
     define("USER_NAME", "root");
-    define("PASSWORD", "111111");
+    define("PASSWORD", "123456");
     define("DB_NAME", "joo_db");
 
     $dbFlag = "NO";
