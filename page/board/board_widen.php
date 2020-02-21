@@ -93,7 +93,7 @@
     <!-- header -->
     <div class="board_header">
       <div id="board_header_div">
-        <p><a href="board_form.php?num=''&page=''">BOARD</a></p>
+        <p><a href="board_form.php">BOARD</a></p>
       </div>
     </div>
     <!-- nav -->
@@ -119,7 +119,7 @@
     $page  = $_GET["page"];
 
     $con = mysqli_connect("localhost", "root", "123456", "joo_db");
-    $sql = "select * from board where num=1";
+    $sql = "select * from board where num=$num";
     $result = mysqli_query($con, $sql);
 
     $row = mysqli_fetch_array($result);
@@ -153,6 +153,7 @@
                     $file_size = filesize($file_path);
                     }
             ?>
+
           <img id="default_proflie" src=<?=$file_path?>>
         </div>
         <div id="board_widen_top">
@@ -168,12 +169,12 @@
         <div class="map_wrap">
     <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
     <ul id="category">
-        
-        <li id="PM9" data-order="2"> 
+
+        <li id="PM9" data-order="2">
             <span class="category_bg pharmacy"></span>
             동물병원
-        </li>  
-     
+        </li>
+
     </ul>
 </div>
         </div>

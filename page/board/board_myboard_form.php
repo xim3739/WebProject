@@ -70,7 +70,7 @@
 
   <div class="board_header">
     <div id="board_header_div">
-      <p><a href="./board_form.php?num=1&page=1">BOARD</a></p>
+      <p><a href="./board_form.php">BOARD</a></p>
     </div>
   </div>
   <!-- nav -->
@@ -96,7 +96,7 @@
   <!-- center -->
   <div class="board_center">
     <div id="board_center_box">
-      <a href="./board_myboard_widen.php?num=1&page=1">아직 나의 게시물이 없습니다!</a>
+      <a href="./board_myboard_widen.php">아직 나의 게시물이 없습니다!</a>
     </div>
   </div>
 
