@@ -21,6 +21,7 @@ $(document).ready(function () {
     
                         }
                     }
+                    console.log(name);
                     $.ajax({
                         type: "post",
                         url: "../../db/hospital_list/hospital_list.php",
