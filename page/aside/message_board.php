@@ -1,5 +1,5 @@
 <?php
-  // include "../../db/db_connector_main.php";
+  include "../../db/db_connector_main.php";
   date_default_timezone_set('Asia/Seoul');
   $send_id = $_GET["send_id"];
   $rv_id = $_GET["rv_id"];
@@ -10,7 +10,7 @@
   $regist_day = date("Y-m-d (H:i)");
 
 
-  $connect = mysqli_connect("localhost", "root", "123456", "test");
+  // $connect = mysqli_connect("localhost", "root", "123456", "test");
   function message_insert($connect,$send_id,$rv_id,$regist_day)
   {
     $content = $_GET["content"];

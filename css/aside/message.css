@@ -1,9 +1,10 @@
 *{margin: 0; padding: 0;}
 .message_button{font-size: 11px; border: none;}
-#message_show{float: left; position: sticky; width: 40px; height: 20px; top: 97%; left: 92%; font-size: 10px;}
 #aside_rightside{float: right; width: 203px; top: 61.1%; position: sticky;}
+#message_show{float: left; position: sticky; width: 40px; height: 20px; top: 97%; left: 92%; font-size: 10px;}
+#message_total{float: right; width: 203px; top: 61.1%; position: sticky;}
 #hidden_id{margin: 0;}
-#aside_rightside ul{list-style: none;}
+#message_total ul{list-style: none;}
 #message_exit{position: absolute; width: 20px; height: 20px; top: 5px; right: 10px; background-color: transparent; border: none; z-index: 2;}
 #message_exit img{width: 20px; height: 20px;}
 #member_list{background-color: #69E5FF; border: 3px solid #03D5FF ; height: 60px; width: 200px; overflow: auto;}
@@ -28,7 +29,7 @@
     100% { opacity: 1; -webkit-transform: translateY(0); }
 }
 @-webkit-keyframes slide-down {
-      0% { opacity: 1; -webkit-transform: translateY(0); }
+      0% { opacity: 1; -webkit-transform: translateY(-7%); }
     100% { opacity: 0; -webkit-transform: translateY(100%);}
 }
 .on{opacity: 1; z-index: auto;}
