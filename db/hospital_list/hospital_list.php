@@ -3,7 +3,7 @@
 if (isset($_POST["addr"])) {
     $name = $_POST["name"];
     $addr = $_POST["addr"];
-    $con = mysqli_connect("localhost", "root", "123456", "joo_db");
+    include "../db_connector.php";
     $sql = "SELECT * FROM hospital_list";
     $result = mysqli_query($con, $sql);
     if (!(mysqli_num_rows($result) > 0)) {
@@ -17,9 +17,6 @@ if (isset($_POST["addr"])) {
     echo true;
 }
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 63f9449d5df5bdc2d04fbaa6f8f982b241bca7ca
 ?>
