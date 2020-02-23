@@ -96,32 +96,32 @@ input {
   box-sizing: border-box;
 }
 
-#email {
+#phone {
   margin-bottom: 70px;
 }
 
-#email #email_one {
+#phone #phone_one {
   width: 175px;
   height: px;
   margin-bottom: 10px;
   box-sizing: border-box;
 }
 
-#email input {
+#phone input {
   width: 97px;
   height: 40px;
   margin-bottom: 10px;
   box-sizing: border-box;
 }
 
-#email select {
+#phone select {
   width: 95px;
   height: 40px;
   margin-bottom: 10px;
   box-sizing: border-box;
 }
 
-#email_certification {
+#phone_certification {
   display: inline-block;
   float: left;
   width: 95px;
@@ -132,12 +132,12 @@ input {
   border-radius: 2px;
 }
 
-#email_certification a {
+#phone_certification a {
   text-decoration: none;
   color: #1C1C1C;
 }
 
-#email_certification a p {
+#phone_certification a p {
   width: 95px;
   height: 33px;
   text-align: center;
@@ -146,7 +146,7 @@ input {
   padding: 7px 0px 0px 0px;
 }
 
-#email_certification_check input {
+#phone_certification_check input {
   display: inline-block;
   float: left;
   width: 175px;
@@ -156,7 +156,7 @@ input {
   box-sizing: border-box;
 }
 
-#email_certification_check_button {
+#phone_certification_check_button {
   display: inline-block;
   float: left;
   width: 112px;
@@ -168,12 +168,12 @@ input {
   border-radius: 2px;
 }
 
-#email_certification_check_button a {
+#phone_certification_check_button a {
   text-decoration: none;
   color: #1C1C1C;
 }
 
-#email_certification_check_button a p {
+#phone_certification_check_button a p {
   width: 95px;
   height: 33px;
   text-align: center;
