@@ -9,29 +9,10 @@
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script src="./js/vendor/jquery.min.js"></script>
 
-    <script src="../../js//login/signup.js"></script>
-    <script src="../../js//login/login.js"></script>
+    <script src="../../js/login/signup.js"></script>
+    <script src="../../js/login/login.js"></script>
 
-    <script type="text/javascript">
 
-      $(document).ready(function(){
-
-        $('ul.tabs li').click(function(){
-          var tab_id = $(this).attr('data-tab');
-
-          $('ul.tabs li').removeClass('current');
-          $('.tab-content').removeClass('current');
-
-          $(this).addClass('current');
-          $("#"+tab_id).addClass('current');
-        });
-    });
-    function login_done(){
-      document.login_form.submit();
-      // document.getElementById('#signUpButton').submit();
-    }
-
-    </script>
     <link rel="stylesheet" href="../../css/login/login.css">
     <link rel="stylesheet" href="../../css/login/signup.css">
   </head>
@@ -47,15 +28,20 @@
           <h1>회원가입</h1>
         </div>
         <div id="member_form">
-          <form name="member_form" action="member_insert.php" method="post">
-            <input type="text" name="id" id="input_id" placeholder=" 아이디 입력 "> <br>
-            <p id="input_id_confirm"></p>
-            <input type="password" name="password" id="input_password" placeholder=" 비밀번호 입력 "> <br>
-            <p id="input_password_confirm"></p>
-            <input type="password" name="password_check" id="input_password_check" placeholder=" 비밀번호 재입력 "> <br>
-            <p id="input_password_check_confirm"></p>
-            <input type="text" name="name" id="input_name" placeholder=" 이름 "> <br>
-            <p id="input_name_confirm"></p>
+          <form name="member_form" action="./member_insert.php" method="post">
+            <input type="text" name="inputId" id="inputId" placeholder=" 아이디 입력 "> <br>
+            <p name = "idSubMsg" id="idSubMsg" class="SubMsg">&nbsp;</p>
+
+
+            <input type="password" name="inputPassword" id="inputPassword" placeholder=" 비밀번호 입력 "> <br>
+            <p id="passwordSubMsg" class="subMsg"></p>
+
+            <input type="password" name="inputPasswordCheck" id="inputPasswordCheck" placeholder=" 비밀번호 재입력 "> <br>
+            <p id="passwordCheckSubMsg" class="subMsg"></p>
+
+            <input type="text" name="inputName" id="inputName" placeholder=" 이름 "> <br>
+            <p id="nameSubMsg" class="subMsg"></p>
+
             <div id="phone">
               <div id="phone_input">
                 <select name="phone_one" id="phone_one">
