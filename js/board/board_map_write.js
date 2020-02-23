@@ -119,10 +119,10 @@ $(document).ready(function () {
                 if (!markers.length == 0) {
                     for (var j = 0; j < markers.length; j++) {
                         markers[j].setMap(null);
-                        windows[j].close();
+                        //windows[j].close();
                     }
                     markers = [];
-                    windows = [];
+                    //windows = [];
                 }
             });
         });
