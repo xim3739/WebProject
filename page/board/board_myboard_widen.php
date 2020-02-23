@@ -176,7 +176,8 @@
   </footer>
 
   <script src="../../js/board/board.js"></script>
-  <script src="../../js/board/board_map_view.js"></script>
+  <?php include "../../js/board/board_map_view.php"?>
+  <!-- <script src="../../js/board/board_map_view.js"></script> -->
 
 </body>
 
