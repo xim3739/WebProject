@@ -6,28 +6,11 @@
 body {
   margin: 0;
   padding: 0;
-  width: 1536px;
 }
-
+section {margin-top: 60px}
+#board_widen_comment_box .imgsetting{vertical-align:unset;}
 /* ---------------------------------------------------------------- */
 /* board_form.html */
-.board_header {
-  border-bottom: 3px solid black;
-  text-align: center;
-  margin-top: 20px;
-  padding-bottom: 20px;
-}
-
-#board_header_div p {
-  font-size: 40px;
-  font-weight: bold;
-}
-
-#board_header_div a {
-  text-decoration: none;
-  color: black;
-}
-
 #board_nav_box {
   width: 921.600px;
   height: 50px;
@@ -196,7 +179,6 @@ body {
 #board_widen_box {
   width: 920px;
   height: 590px;
-  margin: 30px auto;
   border: 1px solid gray;
 }
 
@@ -234,7 +216,6 @@ body {
   display: inline-block;
   position: absolute;
   transform: translateY(75px);
-  border: 1px solid gray;
   resize: none;
   margin-top: 30px;
 }
@@ -245,7 +226,7 @@ body {
 }
 
 #board_widen_center p {
-  font-size: 13px;
+  font-size: 15px;
 }
 
 #board_widen_comment_box {
@@ -271,6 +252,7 @@ body {
   height: 30px;
   margin-left: 16px;
   margin-top: 10px;
+
 }
 
 #board_widen_comment_input_text textarea {
@@ -458,8 +440,7 @@ body {
 }
 
 #board_myboard_rewrite_content {
-  text-align: center;
-  border: 1px solid gray;
+  border:0;
   width: 552.950px;
   height: 250px;
   resize: none;
@@ -576,9 +557,10 @@ body {
   display: inline-block;
   width: 150px;
   height: 40px;
+  margin-left: 50px;
   background-color: inherit;
   border: 1px solid gray;
-  transform: translateX(390px);
+  transform: translateX(235px);
 }
 
 /* ------------------------------------------ */

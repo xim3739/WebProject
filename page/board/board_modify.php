@@ -1,6 +1,5 @@
 <?php
     $num = $_GET["num"];
-    $page = $_GET["page"];
 
     $subject = $_POST["subject"];
     $content = $_POST["content"];
@@ -54,7 +53,7 @@
 
     echo "
 	      <script>
-	         location.href = 'board_myboard_form.php?page=$page';
+	         location.href = 'board_myboard_form.php?num=$num';
 	      </script>
 	  ";
 ?>

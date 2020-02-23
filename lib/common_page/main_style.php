@@ -13,7 +13,7 @@
 
     header span { display: inline-block; width: 45px; height: 45px; }
 
-    #login_icon { background-image: url(""); } 
+    #login_icon { background-image: url(""); }
 
     #info_icon { background-image: url(""); }
 
@@ -31,7 +31,7 @@
 
     .col-lg-7 { width: 450px; }
 
-    #menu_bar { height: 48px; background-color: #443e58; font-size: 16px; }
+    #menu_bar {position: fixed; width: 100%; height: 48px; background-color: #443e58; font-size: 16px; }
 
     #menu_bar ul { width: 1200px; margin: 0 auto; padding: 14px 0 0 40px; }
 
@@ -50,4 +50,6 @@
     #buttons_box{position: fixed;right: 30px;top: 50%;}
     #buttons_box ul{list-style: none;padding: 0;}
     #pop_write{display: none;}
+    .z_index1 {z-index: 9}
+    .z_index2 {z-index: 10}
   </style>
