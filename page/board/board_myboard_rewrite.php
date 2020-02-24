@@ -138,6 +138,8 @@
                 <span id="centerAddr"></span>
               </div>
             </div>
+            <input id="locationY" name="locationY" type="text" value="" hidden>
+            <input id="locationX" name="locationX" type="text" value="" hidden>
           </div>
         </div>
         <div id="board_myboard_rewrite_bottom">

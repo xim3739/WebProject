@@ -91,6 +91,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </form>
 </div>
@@ -100,8 +101,15 @@
   <footer>
     <?php include "../../lib/common_page/footer.php" ?>
   </footer>
-  <script src="../../js/board/board.js"></script>
   <script src="../../js/board/board_map_view.js"></script>
+    </section>
+    <footer>
+      <?php include "../../lib/common_page/footer.php" ?>
+    </footer>
+    <script src="../../js/board/board.js"></script>
+    <?php include "../../js/board/board_map_view.php"?>
+    <!-- <script src="../../js/board/board_map_view.js"></script> -->
+
 
 </body>
 

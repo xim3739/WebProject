@@ -1,13 +1,13 @@
 function hide_message() {
-  $("#aside_rightside").css("-webkit-animation","slide-down 1s ease-in");
-  $("#aside_rightside").addClass("off");
-  $("#aside_rightside").removeClass("on");
+  $("#message_total").css("-webkit-animation","slide-down 1s ease-in");
+  $("#message_total").addClass("off");
+  $("#message_total").removeClass("on");
   $("#message_show").show();
 }
 function show_message() {
-  $("#aside_rightside").addClass("on");
-  $("#aside_rightside").removeClass("off");
-  $("#aside_rightside").css("-webkit-animation","slide-up 1s ease-out");
+  $("#message_total").addClass("on");
+  $("#message_total").removeClass("off");
+  $("#message_total").css("-webkit-animation","slide-up 1s ease-out");
   $("#message_show").hide();
 }
 function check_input() {
@@ -25,7 +25,7 @@ function check_input() {
 }
 function connect_memeber(check_id,now_id) {
   $.ajax({
-    url : "../aside_right/message_ajax.php",
+    url : "../aside/message_ajax.php",
     type : "get",
     traditional : true,
     data : {"check_id" : check_id, "now_id" : now_id},
@@ -64,7 +64,7 @@ function connect_memeber(check_id,now_id) {
 }
 function insert_message(send_id,rv_id,mode,content){
   $.ajax ({
-    url : "../aside_right/message_board.php",
+    url : "../aside/message_board.php",
     type : "get",
     data : {"send_id": send_id,
             "rv_id": rv_id,
@@ -95,7 +95,7 @@ function delete_message(){
   };
   var num = numData[numData.length-1];
   $.ajax ({
-    url : "../aside_right/message_board.php",
+    url : "../aside/message_board.php",
     type : "get",
     data : {"send_id": send_id,
             "rv_id": rv_id,
@@ -118,7 +118,7 @@ function recall_message(){
   var send_id=$("#hidden_send_id").val();
   var rv_id=$("#hidden_rv_id").val();
   $.ajax({
-    url : "../aside_right/message_ajax.php",
+    url : "../aside/message_ajax.php",
     type : "get",
     traditional : true,
     data : {"check_id" : rv_id, "now_id" : send_id},
