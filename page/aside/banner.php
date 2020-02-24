@@ -21,7 +21,6 @@
       $row = mysqli_fetch_array($result);
       $name= $row["name"];
       $phone= $row["phone"];
-      $email= $row["email"];
       $premium= $row["premium"];
     ?>
   <body>
@@ -31,7 +30,7 @@
       <a  href="http://www.yes24.com/campaign/01_book/yesPresent/yesPresent.aspx?EventNo=132102&CategoryNumber=001" target="_blank">
         <img src="../../img/aside/re_book.gif" alt="추천도서.gif"> </a><br>
       <button type="button" id="banner_block" onclick="ask_pay('<?=$userid?>',
-        '<?=$name?>','<?=$phone?>','<?=$email?>');"><img src="../../img/aside/hide.png" alt="광고 삭제.jpg"></button>
+        '<?=$name?>','<?=$phone?>');"><img src="../../img/aside/hide.png" alt="광고 삭제.jpg"></button>
     </aside>
     <?php
     if ($premium ==="yes") {
