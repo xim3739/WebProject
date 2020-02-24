@@ -10,6 +10,7 @@
   <link href="../../css/main/small-business.css" rel="stylesheet">
   <?php include "../../lib/common_page/main_style.php" ?>
   <script src="../../js/main/pop_up_menu.js"></script>
+
 </head>
 
 <body >
@@ -19,6 +20,7 @@
   <!-- nav -->
   <?php include "../../lib/board/nav/board_nav.php" ?>
   <?php
+    $result = mysqli_query($connect,$sql);
     if ($result) {
     mysqli_query($connect, $sql);
 
@@ -50,7 +52,8 @@
                       $file_path = "../../data/".$real_name;
                       $file_size = filesize($file_path);
                   } ?>
-            <img class="img-fluid rounded mb-4 mb-lg-0" src=<?=$file_path?> style="  max-width: 100%; height: auto !important;">
+
+            <img id="blah" name ="upfile" src='<?=$file_path?>' onerror="imagedefault(this)">
           </div>
           <div class="col-lg-5 no-flex">
             <h1 class="font-weight-light"><?=$subject?></h1>
@@ -72,7 +75,7 @@
   <footer>
     <?php include "../../lib/common_page/footer.php" ?>
   </footer>
-
+  <script src="../../js/board/board.js"></script>
 </body>
 
 </html>

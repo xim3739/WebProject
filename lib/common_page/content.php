@@ -1,6 +1,5 @@
 <section>
-  <?php include "../aside/message.php"; ?>
-  <?php include "../aside/banner.php"; ?>
+
   <!-- Aside_right Message-->
   <div class="container">
     <!-- Heading Row -->
@@ -154,4 +153,6 @@
     </div>
     <button id="btn_pop_write" onclick="pop_up(this)"><img src="../../img/main/plus_button.png" alt="버튼"></button>
   </div>
+  <?php include "../aside/message.php"; ?>
+  <?php include "../aside/banner.php"; ?>
 </section>
