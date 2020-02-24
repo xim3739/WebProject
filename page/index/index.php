@@ -34,19 +34,19 @@
 
 <body>
 
-  <?php
-@session_start();
-if (isset($_SESSION["userid"])) {
-    $userid = $_SESSION["userid"];
-} else {
-    $userid = "";
-}
-if (isset($_SESSION["username"])) {
-    $username = $_SESSION["username"];
-} else {
-    $username = "";
-}
-  echo ("<script>console.log(document.cookie)</script>;");
+<?php
+      @session_start();
+      if (isset($_SESSION["userid"])) {
+          $userid = $_SESSION["userid"];
+      } else {
+          $userid = "";
+      }
+      if (isset($_SESSION["username"])) {
+          $username = $_SESSION["username"];
+      } else {
+          $username = "";
+      }
+        echo ("<script>console.log(document.cookie)</script>");
 ?>
 
   <!-- Navigation -->
@@ -65,7 +65,7 @@ if (!$username) {
 
 
 
-            <li><a href="../login/logout.php" onclick="naver_logout()">로그아웃</a></li>
+            <li><a href="../login/logout.php">로그아웃</a></li>
 
 
           <?php

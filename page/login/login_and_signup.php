@@ -10,6 +10,7 @@
     <script src="./js/vendor/jquery.min.js"></script>
 
     <script src="../../js/login/signup.js"></script>
+
     <script src="../../js/login/login.js"></script>
 
 
@@ -56,7 +57,7 @@
               </div>
             </div>
 
-            <script type="text/javascript">
+            <!-- <script type="text/javascript">
 
             $("#phone_check").click(function() {
       var phone_one_value =  $("#phone_one").val();
@@ -87,7 +88,7 @@
         alert("휴대폰 번호가 제대로 입력되지 않았습니다!");
       }
     });
-            </script>
+            </script> -->
             <div id="phone">
               <div id="phone_certification_check">
                 <input type="text" name="input_phone_certification" id="input_phone_certification" placeholder=" 인증 번호 입력 ">
@@ -99,7 +100,7 @@
                 <p id="input_phone_confirm" name="input_phone_confirm"></p>
               </div>
             </div>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 $("#phone_certification_check").click(function () {
 if($("#input_phone_certification").val() === "") {
   $("#input_phone_confirm").html("<span style='color:red'>인증번호를 입력해주세요.</span>");
@@ -114,7 +115,7 @@ if($("#input_phone_certification").val() === "") {
   alert("문자 인증 오류입니다!")
 }
 });
-</script>
+</script> -->
 
             <div id="button">
               <div id="cancel_btn">
@@ -138,6 +139,7 @@ if($("#input_phone_certification").val() === "") {
          <input type="text" name="id" class="signUpInput" placeholder="Type your username" autofocus required>
          <input type="password" name="password" class="signUpInput" placeholder="Choose a password" required>
          <input type="button" value="로그인" id="signUpButton" class="signUpButton" onclick="login_done()">
+         <a href="./find_account.php" onClick="window.open(this.href, '', 'width=450, height=500'); return false;">계정 찾기</a>
          <div id="naverIdLogin"></div>
          <a href="#" onclick="kout()"><img src="../../img/login/kakao_account_login_btn_medium_narrow.png"</a>
 

@@ -130,6 +130,8 @@
                       <span id="centerAddr"></span>
                   </div>
                 </div>
+                <input id="locationY" name="locationY" type="text" value="">
+            <input id="locationX" name="locationX" type="text" value="">
               </div>
 
             </div>
@@ -145,7 +147,8 @@
       <?php include "../../lib/common_page/footer.php" ?>
     </footer>
     <script src="../../js/board/board.js"></script>
-    <script src="../../js/board/board_map_write.js"></script>
+
+  <script src="../../js/board/board_map_write.js"></script>
 </body>
 
 </html>

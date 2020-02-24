@@ -7,19 +7,19 @@
 #message_total ul{list-style: none;}
 #message_exit{position: absolute; width: 20px; height: 20px; top: 5px; right: 10px; background-color: transparent; border: none; z-index: 2;}
 #message_exit img{width: 20px; height: 20px;}
-#member_list{background-color: #69E5FF; border: 3px solid #03D5FF ; height: 60px; width: 200px; overflow: auto;}
+#member_list{background-color: #DAF2F2; border: 3px solid #63D1D1 ; height: 60px; width: 200px; overflow: auto;}
 #member_list::-webkit-scrollbar{display:none;}
 #member_list ul{margin: 0; padding: 0; font-size: 12px;}
 .profile_link{width: 165px; background-color: transparent; text-align: left;text-decoration: none; border: none;}
-.profile_link:hover{background-color: #3BDEFF;}
+.profile_link:hover{background-color: #3DDBE0;}
 .profile_link:focus{outline: none;}
 .profile_link:active{outline: 5px auto -webkit-focus-ring-color;}
-#message_form{background-color: #69E5FF; border: 3px solid #03D5FF ; width: 200px; border-top: none;}
+#message_form{background-color: #DAF2F2; border: 3px solid #63D1D1 ; width: 200px; border-top: none;}
 #message_view{width: 200px; height: 165px; overflow: auto; }
 #message_view::-webkit-scrollbar{display:none;}
 #message_ul{margin: 0; margin-left: 5px; padding: 0; height: 165px; font-size: 12px;}
 .time{font-size: 10px;}
-.contents{display: inline-block; max-width: 80px; background-color: #91DCEB; border-radius: 0px 40px 40px 40px;}
+.contents{display: inline-block; max-width: 80px; background-color: #9BDEDC; border-radius: 0px 40px 40px 40px;}
 .names{display: inline;}
 #message_content{width: 125px; height: 20px; font-size: 12px;}
 .button_icon{border: none; background-color: transparent;}

@@ -1,0 +1,16 @@
+<?php
+  $premiums=$_GET["premium"];
+  $now_id=$_GET["now_id"];
+  $connect = mysqli_connect("localhost","root","123456","test");
+  $sql = "select * from member where id='$now_id'";
+  $result = mysqli_query($connect,$sql);
+  $row = mysqli_fetch_array($result);
+  $premium= $row["premium"];
+  if ($premium ==="no" && $premiums ==="yes") {
+    $sql = "update member set premium='$premiums' where id='$now_id'";
+    mysqli_query($connect,$sql);
+    mysqli_close($connect);
+  }else {
+    echo "<script>alert('현재 프리미엄 회원이십니다.')</script>";
+  }
+ ?>
