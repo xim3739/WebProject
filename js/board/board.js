@@ -1,17 +1,4 @@
-// <!-- board에서 입력하지 않은 칸이 있는지 확인 -->
-function check_input() {
-  if (!document.board_write.subject.value) {
-    alert("제목을 입력하세요!");
-    document.board_write.subject.focus();
-    return;
-  }
-  if (!document.board_write.content.value) {
-    alert("내용을 입력하세요!");
-    document.board_write.content.focus();
-    return;
-  }
-  document.board_write.submit();
-}
+
 // <!-- 댓글 commet창에서 글자를 치면 자동 줄바꿈 자바스크립트 -->
 function resize(obj) {
   obj.style.height = "1px";
@@ -34,16 +21,12 @@ function hide() {
 $("#Preview_img").on('change', function() {
   readURL(this);
 });
-
-
 function readURL(input) {
   if (input.files && input.files[0]) {
     var reader = new FileReader();
-
     reader.onload = function(e) {
       $('#blah').attr('src', e.target.result);
     }
-
     reader.readAsDataURL(input.files[0]);
   }
 }

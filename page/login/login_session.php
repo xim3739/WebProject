@@ -3,7 +3,7 @@
 $id= $_POST["id"];
 $password = $_POST["password"];
 
-$con = mysqli_connect("localhost", "root", "123456789", "test");
+$con = mysqli_connect("localhost", "root", "123456", "joo_db");
   $sql = "select * from member where id='$id'";
   $result = mysqli_query($con, $sql);
 

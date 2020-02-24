@@ -1,7 +1,7 @@
 <?php
-$id   = $_POST["id"];
-$password = $_POST["password"];
-$name = $_POST["name"];
+$id   = $_POST["inputId"];
+$password = $_POST["inputPassword"];
+$name = $_POST["inputName"];
 
 $phone1 = $_POST["phone_one"];
 $phone2 = $_POST["phone_two"];
@@ -10,7 +10,7 @@ $phone3 = $_POST["phone_three"];
 
 $phone = $phone1."-".$phone2."-".$phone3;
 
-$con = mysqli_connect("localhost", "root", "123456789", "test");
+$con = mysqli_connect("localhost", "root", "123456", "joo_db");
 
     $sql = "insert into member(id, password, name, phone) ";
     $sql .= "values('$id', '$password', '$name', '$phone')";

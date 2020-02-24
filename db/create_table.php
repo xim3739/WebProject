@@ -20,7 +20,7 @@
                         `password` varchar(30),
                         `name` varchar(20),
                         `phone` varchar(30),
-                        `email` varchar(40),
+                        `premium` varchar(10),
                         PRIMARY KEY(`num`)
                     )";
                     break;
@@ -50,7 +50,7 @@
                         `file_copied` char(25),
                         `locationY` char(50),
                         `locationX` char(50),
-                        PRIMARY KEY(num) 
+                        PRIMARY KEY(num)
                     )";
                     break;
                 case 'comment' :
