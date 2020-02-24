@@ -11,13 +11,7 @@ function pop_up(id) {
     document.getElementById("pop_log").style.display = "block";
       flag = true;
     }}else if(id===document.getElementById("btn_pop_write")){
-      if(flag1===false){
-        document.getElementById("pop_write").style.display = "block";
-        flag1=true;
-      }else{
-        document.getElementById("pop_write").style.display = "none";
-        flag1=false;
-      }
+      $("#pop_write").slideToggle("slow");
     }
   }
 

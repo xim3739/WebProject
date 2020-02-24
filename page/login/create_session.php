@@ -11,7 +11,7 @@
       echo "$email";
 
 
-      $con = mysqli_connect("localhost", "root", "123456789", "test");
+      $con = mysqli_connect("localhost", "root", "123456", "joo_db");
       $sql = "select id from member where id = '$email' ";
       $result = mysqli_query($con, $sql);
 
