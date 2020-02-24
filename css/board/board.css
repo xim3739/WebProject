@@ -7,61 +7,63 @@ body {
   margin: 0;
   padding: 0;
 }
-section {margin-top: 60px}
-#board_widen_comment_box .imgsetting{vertical-align:unset;}
+
+section {
+  margin-top: 60px
+}
+
+#board_widen_comment_box .imgsetting {
+  vertical-align: unset;
+}
+
 /* ---------------------------------------------------------------- */
-/* board_form.html */
+/* board_nav.php */
 #board_nav_box {
   width: 921.600px;
   height: 50px;
   margin: 30px auto;
-  border: 1px solid gray;
-}
-
-#board_nav_box a {
-  color: black;
-  text-decoration: none;
-}
-
-#board_nav_box p {
+  border: 1px solid #84c6f0;
   text-align: center;
-  font-size: 14px;
-  font-weight: bold;
-  margin-top: 15px;
+
 }
+
+#board_nav_box span{
+  color:#6fa6c9;
+  font-weight: bold;
+}
+
 
 #board_box_message {
   display: inline-block;
-  border-right: 1px solid gray;
   width: 418.909px;
   height: 50px;
 }
 
 #board_box_writing {
   display: inline-block;
-  border-right: 1px solid gray;
   width: 138.238px;
   height: 50px;
 }
 
 #board_box_mypost {
   display: inline-block;
-  border-right: 1px solid gray;
-  width: 184.313px;
+  width: 200.313px;
   height: 50px;
 }
 
 #board_box_viewall {
   display: inline-block;
-  width: 110.588px;
+  width: 148.588px;
   height: 50px;
 }
 
+/* ---------------------------------------------------------------- */
+/* board_form.php */
 #board_center_box {
   width: 60%;
   height: 200px;
   margin: 30px auto;
-  border: 1px solid gray;
+  border: 1px solid #d1d1d1;
 }
 
 #board_center_box a {
@@ -71,7 +73,7 @@ section {margin-top: 60px}
 }
 
 /* ---------------------------------------------------------------- */
-/* board_writing.html */
+/* board_writing.php */
 .board_wirte {
   width: 920px;
   margin: 0 auto;
@@ -84,20 +86,8 @@ section {margin-top: 60px}
 }
 
 #board_wirte_photo {
-  width: 276.475px;
-  height: 320px;
-  margin: 20px 20px;
   display: inline-block;
   position: relative;
-  margin-left: 35px;
-}
-
-#board_wirte_photo input {
-  position: absolute;
-  width: 380px;
-  height: 50px;
-  font-size: 12px;
-  transform: translateY(305px);
 }
 
 #board_wirte_photo img {
@@ -105,6 +95,7 @@ section {margin-top: 60px}
   height: 300px;
   transform: translateY(-2px);
 }
+
 #board_wirte_top {
   width: 552.950px;
   height: 55px;
@@ -127,8 +118,8 @@ section {margin-top: 60px}
 #category_write {
   width: 180px;
   margin-left: 30px;
-
 }
+
 #board_wirte_center {
   width: 36%;
   height: 250px;
@@ -171,11 +162,12 @@ section {margin-top: 60px}
 }
 
 /* ---------------------------------------------------------------- */
-/* board_widen.html */
+/* board_widen.php */
 .board_widen {
   width: 920px;
   margin: 0 auto;
 }
+
 #board_widen_box {
   width: 920px;
   height: 590px;
@@ -252,7 +244,6 @@ section {margin-top: 60px}
   height: 30px;
   margin-left: 16px;
   margin-top: 10px;
-
 }
 
 #board_widen_comment_input_text textarea {
@@ -377,7 +368,7 @@ section {margin-top: 60px}
 }
 
 /* ---------------------------------------------------------------- */
-/* board_myboard_rewrite.html */
+/* board_myboard_rewrite.php */
 .board_myboard_rewrite {
   width: 920px;
   margin: 0 auto;
@@ -412,6 +403,7 @@ section {margin-top: 60px}
   height: 300px;
   transform: translateY(-2px);
 }
+
 #board_myboard_rewrite_top {
   width: 552px;
   height: 55px;
@@ -440,7 +432,7 @@ section {margin-top: 60px}
 }
 
 #board_myboard_rewrite_content {
-  border:0;
+  border: 0;
   width: 552.950px;
   height: 250px;
   resize: none;
@@ -480,16 +472,16 @@ section {margin-top: 60px}
 }
 
 /* ---------------------------------------------------------------- */
-/* board_myboard_widen.html */
+/* board_myboard_widen.php */
 .board_myboard_widen {
   width: 920px;
   margin: 0 auto;
 }
+
 #board_myboard_widen_box {
   width: 920px;
-  height: 600px;
-  margin: 0 auto;
-  border: 1px solid gray;
+  height: 582px;
+  margin: -10px auto;
 }
 
 #board_myboard_widen_photo {
@@ -531,7 +523,7 @@ section {margin-top: 60px}
 }
 
 #board_myboard_widen_center p {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 #board_location_box_edit {
@@ -564,6 +556,7 @@ section {margin-top: 60px}
 }
 
 /* ------------------------------------------ */
+/* comment,php */
 #board_widen_comment_input_retext_box {
   display: none;
   width: 870px;

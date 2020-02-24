@@ -79,17 +79,17 @@
     $copied_file_name = "";
 }
 
-    $con = mysqli_connect("localhost", "root", "123456", "joo_db");
+    $connect = mysqli_connect("localhost", "root", "123456", "joo_db");
     $sql = "insert into board values ";
     $sql .= "(null, '$userid', '$username', '$category' ,'$subject', '$content', '$regist_day', 0, ";
     $sql .= "'$upfile_name', '$upfile_type', '$copied_file_name','123456','789123')";
 
-    mysqli_query($con, $sql);
-    mysqli_close($con);
+    mysqli_query($connect, $sql);
+    mysqli_close($connect);
 
     echo "
 	   <script>
-	    location.href = './board_form.php';
+	    location.href = './board_form.php?num=$num';
 	   </script>
 	";
 ?>
