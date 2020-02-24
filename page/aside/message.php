@@ -29,7 +29,7 @@
             }
             include_once "../../db/db_connector_main.php";
             // $connect = mysqli_connect("localhost","root","123456","test");
-            $sql = "select * from member";
+            $sql = "select * from member where id NOT IN('$userid')";
             $result = mysqli_query($connect,$sql);
             $total_record = mysqli_num_rows($result);
             for ($i=0; $i <$total_record ; $i++) {

@@ -20,7 +20,7 @@
 #message_ul{margin: 0; margin-left: 5px; padding: 0; height: 165px; font-size: 12px;}
 .time{font-size: 10px;}
 .contents{display: inline-block; max-width: 80px; background-color: #9BDEDC; border-radius: 0px 40px 40px 40px;}
-.names{display: inline;}
+.names{display: inline; float: left;}
 #message_content{width: 125px; height: 20px; font-size: 12px;}
 .button_icon{border: none; background-color: transparent;}
 .button_icon img{width: 18px; height: 18px;}

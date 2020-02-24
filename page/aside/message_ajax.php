@@ -1,7 +1,7 @@
 <?php
   $check_id = $_GET["check_id"];
   $now_id = $_GET["now_id"];
-  $connect = mysqli_connect("localhost","root","123456","test");
+  include_once "../../db/db_connector_main.php";
   $sql = "select * from message where send_id in ('$check_id','$now_id') and rv_id in ('$now_id','$check_id') order by num asc ";
   $result = mysqli_query($connect,$sql);
   $total_record = mysqli_num_rows($result);
