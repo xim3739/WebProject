@@ -122,7 +122,7 @@
     </div>
   </div>
   <!-- /.container -->
-  <div id="pop_up">
+  <!-- <div id="pop_up">
     <div id="pop_box" onmouseleave="pop_down()">
       <ul>
         <li><a href="">찾아요</a></li>
@@ -135,7 +135,7 @@
       </ul>
     </div>
   </div>
-<!-- popup -->
+
   <div id="pop_log" onmouseleave="pop_down()">
     <div id="pop_login">
     </div>
@@ -143,7 +143,7 @@
         <li><a href="">로그인</a></li>
         <li><a href="">회원가입</a></li>
       </ul>
-  </div>
+  </div> -->
   <div id="buttons_box">
     <div id="pop_write">
       <ul>
@@ -152,6 +152,6 @@
         <li><a href="">뭐쓰기</a></li>
       </ul>
     </div>
-    <button id="btn_pop_write" onclick="pop_up(this)">+</button>
+    <button id="btn_pop_write" onclick="pop_up(this)"><img src="../../img/main/plus_button.png" alt="버튼"></button>
   </div>
 </section>

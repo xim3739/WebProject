@@ -5,11 +5,11 @@
 
     #header_box div { display: inline-block; }
 
-    header { position: fixed; top: 0; width: 100%; background-color: antiquewhite; }
+    header { position: fixed; top: 0; width: 100%; background-color: white; }
 
     #icon_box { margin-left: 190px;vertical-align: middle; }
 
-    #search { width: 700px; height: 50px; font-size: 20px; }
+    #search { width: 700px; height: 50px; font-size: 20px; border:none;outline:none; border:solid 2px #7ca2c3; }
 
     header span { display: inline-block; width: 45px; height: 45px; }
 
@@ -17,7 +17,7 @@
 
     #info_icon { background-image: url(""); }
 
-    #btn_search { height: 45px; width: 45px; background-image: url("../../img/main/search1.png"); border: none; background-color: none; outline: none; }
+    #btn_search { height: 45px; width: 45px; background-image: url("../../img/main/search1.png"); border: none; background-color: white; outline: none; }
 
     header a { width: 45px; height: 52px; padding: 0; margin: 0; display: inline-block; vertical-align: middle; }
 
@@ -47,9 +47,10 @@
     #pop_login{ width: 150px; }
     .reply { margin-left: 213px; }
     body{ padding-top: 67px; }
-    #buttons_box{position: fixed;right: 30px;top: 50%;}
+    #buttons_box{position: fixed;right: 30px;top: 30%;}
     #buttons_box ul{list-style: none;padding: 0;}
     #pop_write{display: none;}
+    #btn_pop_write{border:none;outline:none;background-color: white;}
     .z_index1 {z-index: 9}
     .z_index2 {z-index: 10}
   </style>
