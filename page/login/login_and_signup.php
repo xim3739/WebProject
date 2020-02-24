@@ -7,12 +7,7 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-    <script src="./js/vendor/jquery.min.js"></script>
-
     <script src="../../js/login/signup.js"></script>
-
-    <script src="../../js/login/login.js"></script>
-
 
     <link rel="stylesheet" href="../../css/login/login.css">
     <link rel="stylesheet" href="../../css/login/signup.css">
@@ -31,7 +26,7 @@
         <div id="member_form">
           <form name="member_form" action="./member_insert.php" method="post">
             <input type="text" name="inputId" id="inputId" placeholder=" 아이디 입력 "> <br>
-            <p name = "idSubMsg" id="idSubMsg" class="SubMsg">&nbsp;</p>
+            <p name = "idSubMsg" id="idSubMsg" class="SubMsg"></p>
 
 
             <input type="password" name="inputPassword" id="inputPassword" placeholder=" 비밀번호 입력 "> <br>
@@ -45,7 +40,7 @@
 
             <div id="phone">
               <div id="phone_input">
-                <select name="phone_one" id="phone_one">
+                <select name="phone_one" id="phone_one" style="width:10px">
                   <option value="010" selected>010</option>
                   <option value="011">011</option>
                 </select> -
@@ -57,38 +52,6 @@
               </div>
             </div>
 
-            <!-- <script type="text/javascript">
-
-            $("#phone_check").click(function() {
-      var phone_one_value =  $("#phone_one").val();
-      var phone_two_value = $("#phone_two").val();
-      var phone_three_value = $("#phone_three").val();
-      if(phone_one_value !== "" && phone_two_value !== "" && phone_two_value !== "") {
-        $.ajax({
-            url: "./moonja.php",
-            type: 'POST',
-            data: {
-              "mode": "send",
-              "phone_one": phone_one_value,
-              "phone_two": phone_two_value,
-              "phone_three": phone_three_value
-            },
-            success: function(data) {
-              phone_code=data;
-               if (data === "발송 실패") {
-                alert("문자 전송 실패되었습니다.");
-                phone_code_pass = false;
-                isAllPass();
-                } else {
-                alert("문자가 전송 되었습니다.");
-              }
-            }
-          })
-      } else {
-        alert("휴대폰 번호가 제대로 입력되지 않았습니다!");
-      }
-    });
-            </script> -->
             <div id="phone">
               <div id="phone_certification_check">
                 <input type="text" name="input_phone_certification" id="input_phone_certification" placeholder=" 인증 번호 입력 ">
@@ -100,22 +63,7 @@
                 <p id="input_phone_confirm" name="input_phone_confirm"></p>
               </div>
             </div>
-<!-- <script type="text/javascript">
-$("#phone_certification_check").click(function () {
-if($("#input_phone_certification").val() === "") {
-  $("#input_phone_confirm").html("<span style='color:red'>인증번호를 입력해주세요.</span>");
-  phone_code_pass = false;
-} else if($("#input_phone_certification").val() === phone_code) {
-  $("#input_phone_confirm").html("<span style='color:green'>인증에 성공하였습니다.</span>");
-  phone_code_pass = true;
-} else if ($("#input_phone_certification").val() !== phone_code){
-    $("#input_phone_confirm").html("<span style='color:red'>인증에 실패하였습니다.</span>");
-    phone_code_pass = false;
-} else {
-  alert("문자 인증 오류입니다!")
-}
-});
-</script> -->
+
 
             <div id="button">
               <div id="cancel_btn">
