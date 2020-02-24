@@ -19,42 +19,31 @@ section {
 /* ---------------------------------------------------------------- */
 /* board_nav.php */
 #board_nav_box {
-  width: 921.600px;
-  height: 50px;
-  margin: 30px auto;
-  border: 1px solid #84c6f0;
+  width: 890PX;
+  height: 40px;
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight:600;
+  padding-top: 6px;
+  border-top: 2px solid #dce8ff;
+}
+#board_nav_box a{
+  margin-right: 150px;
+  color: #4f9cdb;
+}
+
+.div_span_box_nav {
+  width: 890PX;
+  margin: 0 auto;
+  border-bottom: 2px solid #dce8ff;
+  margin-top: 10px;
   text-align: center;
-
+  padding-bottom: 7px;
+  font-weight:400;
+  font-size: 13px;
 }
-
-#board_nav_box span{
-  color:#6fa6c9;
-  font-weight: bold;
-}
-
-
-#board_box_message {
-  display: inline-block;
-  width: 418.909px;
-  height: 50px;
-}
-
-#board_box_writing {
-  display: inline-block;
-  width: 138.238px;
-  height: 50px;
-}
-
-#board_box_mypost {
-  display: inline-block;
-  width: 200.313px;
-  height: 50px;
-}
-
-#board_box_viewall {
-  display: inline-block;
-  width: 148.588px;
-  height: 50px;
+.div_span_box_nav span{
+  color:#177fd4;
 }
 
 /* ---------------------------------------------------------------- */
@@ -82,7 +71,6 @@ section {
 #board_wirte_box {
   width: 920px;
   height: 600px;
-  border: 1px solid gray;
 }
 
 #board_wirte_photo {
@@ -99,11 +87,11 @@ section {
 #board_wirte_top {
   width: 552.950px;
   height: 55px;
-  margin: 15px 8px;
+margin-top: 15px;
   display: inline-block;
   border-bottom: 1px solid gray;
   position: absolute;
-  margin-left: 5px;
+  margin-left: 13px;
 }
 
 #board_wirte_top input {
@@ -123,7 +111,7 @@ section {
 #board_wirte_center {
   width: 36%;
   height: 250px;
-  margin: 15px 8px;
+  margin: 15px 13px;
   display: inline-block;
   position: absolute;
   transform: translateY(75px);
@@ -171,7 +159,6 @@ section {
 #board_widen_box {
   width: 920px;
   height: 590px;
-  border: 1px solid gray;
 }
 
 #board_widen_photo {
@@ -193,14 +180,16 @@ section {
   height: 75px;
   margin: 15px 8px;
   display: inline-block;
-  border-bottom: 1px solid gray;
+  border-bottom: 1.5px solid #d1d1d1;
   position: absolute;
 }
-
-#board_widen_top span {
-  font-size: 13px;
+#board_widen_top_p_span_date{
+  margin-left: 410px;
 }
-
+.board_widen_top_p_span,#widen_title_span,#widen_memberId_span{
+  font-weight: 600;
+  font-size: 17px;
+}
 #board_widen_center {
   width: 552.950px;
   height: 230px;
@@ -221,17 +210,205 @@ section {
   font-size: 15px;
 }
 
+
+/* ---------------------------------------------------------------- */
+/* board_myboard_rewrite.php */
+.board_myboard_rewrite {
+  width: 920px;
+  margin: 0 auto;
+}
+
+#board_myboard_rewrite_box {
+  width: 920px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+#board_myboard_rewrite_photo {
+  width: 270px;
+  height: 320px;
+  margin: 20px 20px;
+  display: inline-block;
+  position: relative;
+  margin-left: 33px;
+}
+
+#board_myboard_rewrite_photo input {
+  position: absolute;
+  width: 380px;
+  height: 50px;
+  font-size: 12px;
+  transform: translateY(305px);
+}
+
+#board_myboard_rewrite_photo img {
+  width: 270px;
+  height: 300px;
+  transform: translateY(-2px);
+}
+
+#board_myboard_rewrite_top {
+  width: 552px;
+  height: 55px;
+  margin: 15px 8px;
+  display: inline-block;
+  border-bottom: 1px solid gray;
+  position: absolute;
+}
+
+#board_myboard_rewrite_top input {
+  width: 320px;
+  height: 30px;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-left: 5px;
+  text-align: center;
+}
+
+#board_myboard_rewrite_center {
+  width: 36%;
+  height: 250px;
+  margin: 15px 8px;
+  display: inline-block;
+  position: absolute;
+  transform: translateY(75px);
+}
+
+#board_myboard_rewrite_content {
+  border: 0;
+  width: 552.950px;
+  height: 250px;
+  resize: none;
+}
+
+#board_location_box_rewrite {
+  position: relative;
+  border: 1px solid gray;
+  margin: 3px auto;
+  width: 850px;
+  height: 200px;
+}
+
+#board_location_box_rewrite input {
+  position: absolute;
+  width: 180px;
+  height: 50px;
+  font-size: 16px;
+  margin: 10% 50%;
+  transform: translate(-50%, -50%);
+}
+
+#board_myboard_rewrite_bottom {
+  width: 606.7px;
+  height: 30px;
+  margin: 30px auto;
+  margin-bottom: 30px;
+}
+
+#board_myboard_rewrite_upload {
+  width: 200px;
+  height: 30px;
+  transform: translateX(200px);
+  background-color: inherit;
+  border: 1px solid gray;
+  font-size: 16px;
+}
+
+/* ---------------------------------------------------------------- */
+/* board_myboard_widen.php */
+.board_myboard_widen {
+  width: 920px;
+  margin: 0 auto;
+}
+
+#board_myboard_widen_box {
+  width: 920px;
+  height: 582px;
+  margin: -10px auto;
+}
+
+#board_myboard_widen_photo {
+  width: 270px;
+  height: 320px;
+  margin: 20px 20px;
+  display: inline-block;
+  position: relative;
+  margin-left: 33px;
+}
+
+#board_myboard_widen_photo img {
+  width: 270px;
+  height: 320px;
+}
+
+
+#board_myboard_widen_top {
+  width: 552.950px;
+  height: 75px;
+  margin: 15px 8px;
+  display: inline-block;
+  border-bottom: 1.5px solid #d1d1d1;
+  position: absolute;
+}
+#board_myboard_widen_top_p_span_date{
+  margin-left: 410px;
+}
+.board_myboard_widen_top_p_span,#myboard_widen_title_span,#myboard_widen_memberId_span{
+  font-weight: 600;
+  font-size: 17px;
+}
+#board_myboard_widen_center {
+  width: 552.950px;
+  height: 230px;
+  margin: 15px 8px;
+  display: inline-block;
+  position: absolute;
+  transform: translateY(75px);
+  resize: none;
+  margin-top: 30px;
+}
+
+
+#board_location_box_edit {
+  position: relative;
+  border: 1px solid gray;
+  margin: 5px auto;
+  width: 850px;
+  height: 200px;
+}
+
+#board_location_box_edit p {
+  margin: 70px auto;
+  text-align: center;
+}
+
+#board_myboard_widen_button_box {
+  width: 921.600px;
+  height: 40px;
+  margin: 30px auto;
+}
+
+#board_myboard_widen_button_box button {
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  margin-left: 50px;
+  background-color: inherit;
+  border: 1px solid gray;
+  transform: translateX(235px);
+}
+
+/* ------------------------------------------ */
+/* comment,php */
 #board_widen_comment_box {
   width: 921.600px;
   height: 700px;
   margin: 20px auto;
-  border: 1px solid gray;
   border-top: 0;
 }
 
 #board_widen_comment_input_box {
   width: 921.600px;
-  border-top: 1px solid gray;
   border-bottom: 1px solid gray;
 }
 
@@ -365,233 +542,6 @@ section {
   outline: none;
   overflow: auto;
   transform: translateY(-10px);
-}
-
-/* ---------------------------------------------------------------- */
-/* board_myboard_rewrite.php */
-.board_myboard_rewrite {
-  width: 920px;
-  margin: 0 auto;
-}
-
-#board_myboard_rewrite_box {
-  width: 920px;
-  height: 600px;
-  margin: 0 auto;
-  border: 1px solid gray;
-}
-
-#board_myboard_rewrite_photo {
-  width: 270px;
-  height: 320px;
-  margin: 20px 20px;
-  display: inline-block;
-  position: relative;
-  margin-left: 33px;
-}
-
-#board_myboard_rewrite_photo input {
-  position: absolute;
-  width: 380px;
-  height: 50px;
-  font-size: 12px;
-  transform: translateY(305px);
-}
-
-#board_myboard_rewrite_photo img {
-  width: 270px;
-  height: 300px;
-  transform: translateY(-2px);
-}
-
-#board_myboard_rewrite_top {
-  width: 552px;
-  height: 55px;
-  margin: 15px 8px;
-  display: inline-block;
-  border-bottom: 1px solid gray;
-  position: absolute;
-}
-
-#board_myboard_rewrite_top input {
-  width: 320px;
-  height: 30px;
-  font-size: 16px;
-  margin-top: 5px;
-  margin-left: 5px;
-  text-align: center;
-}
-
-#board_myboard_rewrite_center {
-  width: 36%;
-  height: 250px;
-  margin: 15px 8px;
-  display: inline-block;
-  position: absolute;
-  transform: translateY(75px);
-}
-
-#board_myboard_rewrite_content {
-  border: 0;
-  width: 552.950px;
-  height: 250px;
-  resize: none;
-}
-
-#board_location_box_rewrite {
-  position: relative;
-  border: 1px solid gray;
-  margin: 3px auto;
-  width: 850px;
-  height: 200px;
-}
-
-#board_location_box_rewrite input {
-  position: absolute;
-  width: 180px;
-  height: 50px;
-  font-size: 16px;
-  margin: 10% 50%;
-  transform: translate(-50%, -50%);
-}
-
-#board_myboard_rewrite_bottom {
-  width: 606.7px;
-  height: 30px;
-  margin: 30px auto;
-  margin-bottom: 30px;
-}
-
-#board_myboard_rewrite_upload {
-  width: 200px;
-  height: 30px;
-  transform: translateX(200px);
-  background-color: inherit;
-  border: 1px solid gray;
-  font-size: 16px;
-}
-
-/* ---------------------------------------------------------------- */
-/* board_myboard_widen.php */
-.board_myboard_widen {
-  width: 920px;
-  margin: 0 auto;
-}
-
-#board_myboard_widen_box {
-  width: 920px;
-  height: 582px;
-  margin: -10px auto;
-}
-
-#board_myboard_widen_photo {
-  width: 270px;
-  height: 320px;
-  margin: 20px 20px;
-  display: inline-block;
-  position: relative;
-  margin-left: 33px;
-}
-
-#board_myboard_widen_photo img {
-  width: 270px;
-  height: 320px;
-}
-
-#board_myboard_widen_top {
-  width: 552.950px;
-  height: 75px;
-  margin: 15px 8px;
-  display: inline-block;
-  border-bottom: 1px solid gray;
-  position: absolute;
-}
-
-#board_myboard_widen_top span {
-  font-size: 13px;
-}
-
-#board_myboard_widen_center {
-  width: 552.950px;
-  height: 230px;
-  margin: 15px 8px;
-  display: inline-block;
-  position: absolute;
-  transform: translateY(75px);
-  resize: none;
-  margin-top: 30px;
-}
-
-#board_myboard_widen_center p {
-  font-size: 15px;
-}
-
-#board_location_box_edit {
-  position: relative;
-  border: 1px solid gray;
-  margin: 5px auto;
-  width: 850px;
-  height: 200px;
-}
-
-#board_location_box_edit p {
-  margin: 70px auto;
-  text-align: center;
-}
-
-#board_myboard_widen_button_box {
-  width: 921.600px;
-  height: 40px;
-  margin: 30px auto;
-}
-
-#board_myboard_widen_button_box button {
-  display: inline-block;
-  width: 150px;
-  height: 40px;
-  margin-left: 50px;
-  background-color: inherit;
-  border: 1px solid gray;
-  transform: translateX(235px);
-}
-
-/* ------------------------------------------ */
-/* comment,php */
-#board_widen_comment_input_retext_box {
-  display: none;
-  width: 870px;
-  height: 50px;
-  margin-left: 50px;
-}
-
-#board_widen_comment_input_retext img {
-  width: 30px;
-  height: 30px;
-  margin-top: 10px;
-}
-
-#board_widen_comment_input_retext textarea {
-  margin-left: 5px;
-  width: 730px;
-  resize: none;
-  border: 0;
-  border-bottom: 1px solid gray;
-  outline: none;
-  overflow: auto;
-}
-
-#input_comment_rearea {
-  font-size: 16px;
-}
-
-#board_widen_comment_input_retext input {
-  margin-left: 10px;
-  width: 80px;
-  height: 35px;
-  font-size: 14px;
-  transform: translateY(-15px);
-  background-color: inherit;
-  border: 1px solid gray;
 }
 
 /* ------------------------------------------ */

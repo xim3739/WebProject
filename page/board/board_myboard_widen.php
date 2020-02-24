@@ -71,12 +71,12 @@
                   $file_size = filesize($file_path);
                   }
           ?>
-        <img id="Preview_img" src=<?=$file_path?>>
+          <img id="blah" name ="upfile" src='<?=$file_path?>' onerror="imagedefault(this)">
       </div>
       <div id="board_myboard_widen_top">
-        <span id="board_myboard_widen_top_p_span">TITLE :</span> <span id="myboard_widen_title_span"><?=$subject?></span><br>
-        <span id="board_myboard_widen_top_p_span">MEMBER_ID :</span> <span id="myboard_widen_memberId_span"><?=$name?></span><br>
-        <span id="board_myboard_widen_top_p_span">DATE :</span> <span id="myboard_widen_date_span"><?=$regist_day?></span><br>
+        <span class="board_myboard_widen_top_p_span">TITLE :</span> <span id="myboard_widen_title_span"><?=$subject?></span><br>
+        <span class="board_myboard_widen_top_p_span">MEMBER_ID :</span> <span id="myboard_widen_memberId_span"><?=$name?></span><br>
+        <span id="board_myboard_widen_top_p_span_date"></span> <span id="myboard_widen_date_span"><?=$regist_day?></span><br>
       </div>
       <div id="board_myboard_widen_center">
         <p><span id="myboard_widen_content_span"><?=$content?></span></p>
