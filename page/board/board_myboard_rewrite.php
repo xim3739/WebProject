@@ -80,8 +80,8 @@
                       $file_size = filesize($file_path);
                       }
               ?>
-            <input type='file' id="Preview_img" name="upfile" value='<?=$file_name?>'/>
-            <img id="blah" src=<?=$file_path?>>
+            <input type='file' id="Preview_img" name="upfile" value='<?=$file_name?>' onerror="imagedefault(this)"/>
+            <img id="blah" src='<?=$file_path?>'>
           </div>
           <div id="board_myboard_rewrite_top">
             <input id="myboard_rewrite_title" name="subject" type="text" placeholder="Title" value="<?=$subject?>">

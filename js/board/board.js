@@ -1,4 +1,3 @@
-
 // <!-- 댓글 commet창에서 글자를 치면 자동 줄바꿈 자바스크립트 -->
 function resize(obj) {
   obj.style.height = "1px";
@@ -21,6 +20,7 @@ function hide() {
 $("#Preview_img").on('change', function() {
   readURL(this);
 });
+
 function readURL(input) {
   if (input.files && input.files[0]) {
     var reader = new FileReader();
@@ -29,4 +29,8 @@ function readURL(input) {
     }
     reader.readAsDataURL(input.files[0]);
   }
+}
+// //이미지가 잇을때 FILE_PATH로 이미지를 넣고 없을땐 DEFAULT이미지로 변경
+function imagedefault(id){
+    id.src = "../../img/board/default.jpg";
 }
