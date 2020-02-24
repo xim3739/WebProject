@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -28,8 +27,8 @@
   <!-- <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="../../js/main/pop_up_menu.js"></script>
-  <script type="text/javascript">
-
+  <script>
+   // <!-- board에서 입력하지 않은 칸이 있는지 확인 -->
   function valid_check_input() {
     if (!document.board_myboard_rewrite.subject.value) {
       alert("제목을 입력하세요!");
@@ -46,53 +45,30 @@
   </script>
 </head>
   <body>
-      <?php include "../../lib/common_page/header.php" ?>
-
-    <div class="board_header">
-      <div id="board_header_div">
-        <p><a href="board_form.php">BOARD</a></p>
-      </div>
-    </div>
-    <!-- nav -->
-    <div class="board_nav">
-      <div id="board_nav_box">
-        <div id="board_box_message">
-          <p><span>"__"</span> 개의 게시물이 있습니다 !</p>
-        </div>
-        <div id="board_box_writing">
-          <p><a href="board_writing.php">+ 글쓰기</a></p>
-        </div>
-        <div id="board_box_mypost">
-          <p><a href="board_myboard_form.php">내 게시글 보기</a></p>
-        </div>
-        <div id="board_box_viewall">
-          <p><a href="board_form.php">전체보기</a></p>
-        </div>
-      </div>
-    </div>
-    <!-- center -->
-
+    <!-- header -->
+    <?php include "../../lib/common_page/header.php" ?>
+    <section>
+      <!-- nav -->
+      <?php include "../../lib/board/nav/board_nav.php" ?>
     <?php
-    $num  = $_GET["num"];
-    $con = mysqli_connect("localhost", "root", "123456", "joo_db");
-    $sql = "select * from board where num=$num";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_array($result);
+      $num  = $_GET["num"];
+      $sql = "select * from board where num=$num";
+      $row = mysqli_fetch_array($result);
 
-    $id      = $row["id"];
-    $name      = $row["name"];
-    $regist_day = $row["regist_day"];
-    $category = $row["category"];
-    $subject    = $row["subject"];
-    $content    = $row["content"];
-    $file_name    = $row["file_name"];
-    $file_type    = $row["file_type"];
-    $file_copied  = $row["file_copied"];
-    $locationX = $row["locationX"];
-    $locationY = $row["locationY"];
-    $hit = $row["hit"];
-?>
-
+      $id      = $row["id"];
+      $name      = $row["name"];
+      $regist_day = $row["regist_day"];
+      $category = $row["category"];
+      $subject    = $row["subject"];
+      $content    = $row["content"];
+      $file_name    = $row["file_name"];
+      $file_type    = $row["file_type"];
+      $file_copied  = $row["file_copied"];
+      $locationX = $row["locationX"];
+      $locationY = $row["locationY"];
+      $hit = $row["hit"];
+    ?>
+    <!-- center -->
     <div class="board_myboard_rewrite">
       <form  name="board_myboard_rewrite" method="post" action="board_modify.php?num=<?=$num?>" enctype="multipart/form-data">
         <div id="board_myboard_rewrite_box">
@@ -169,7 +145,7 @@
         </div>
       </form>
     </div>
-
+</section>
     <footer>
       <?php include "../../lib/common_page/footer.php" ?>
     </footer>

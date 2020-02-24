@@ -3,6 +3,7 @@
 
     $subject = $_POST["subject"];
     $content = $_POST["content"];
+    $category = $_POST["category"];
 
     $upload_dir = '../../data/';
     $upfile_name	 = $_FILES["upfile"]["name"];
@@ -45,11 +46,11 @@
         $upfile_type      = "";
         $copied_file_name = "";
     }
-    $con = mysqli_connect("localhost", "root", "123456", "joo_db");
+    $connect = mysqli_connect("localhost", "root", "123456", "joo_db");
     $sql = "update board set category='$category', subject='$subject', content='$content', file_name='$upfile_name', file_type='$upfile_type', file_copied='$copied_file_name' ";
     $sql .= " where num=$num";
-    mysqli_query($con, $sql);
-    mysqli_close($con);
+    mysqli_query($connect, $sql);
+    mysqli_close($connect);
 
     echo "
 	      <script>
