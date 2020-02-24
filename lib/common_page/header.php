@@ -1,45 +1,49 @@
+
+<?php
+      @session_start();
+      if (isset($_SESSION["userid"])) {
+          $userid = $_SESSION["userid"];
+      } else {
+          $userid = "";
+      }
+      if (isset($_SESSION["username"])) {
+          $username = $_SESSION["username"];
+      } else {
+          $username = "";
+      }
+        echo ("<script>console.log(document.cookie)</script>");
+?>
+
 <header class="z_index1">
   <div id="header_box">
     <div id="header_center">
       <div id="header_content" style="margin-bottom: 10px;margin-top: 10px;">
-        <a href="../../page/index/index.php" id="btn_home"></a>
+        <!-- <a href="../../page/index/index.php" id="btn_home"></a> -->
+        <button type="button" id="btn_home"></button>
         <form action="">
           <input type="text" name="" id="search">
           <input type="submit" value="  " id="btn_search">
         </form>
       </div>
 
-      <?php
-            @session_start();
-            if (isset($_SESSION["userid"])) {
-                $userid = $_SESSION["userid"];
-            } else {
-                $userid = "";
-            }
-            if (isset($_SESSION["username"])) {
-                $username = $_SESSION["username"];
-            } else {
-                $username = "";
-            }
-              echo ("<script>console.log(document.cookie)</script>");
-      ?>
-      <div id="icon_box">
 
-          <?php
-      if (!$username) {
-      ?>
-      <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/login_and_signup.php','','width=500,height=700,left=300')">
+      <div id="icon_box">
       <?php
-      } else {
-          $logged = $username."(".$userid.")님"; ?>
-            <span><?=$logged?> </span>
-            <span><a href="../../page/login/logout.php" onclick="naver_logout()">로그아웃</a></span>
-            <span> | </span>
-              <span><a href="#" onclick="naver_logout()">마이페이지</a></span>
-            <?php
+      if (!$username) {
+       ?>
+       <input type="button" class="btn btn-primary sign_btn" value="Sign In" onclick="window.open('../login/login_and_signup.php','','width=500,height=700,left=300')">
+      <?php
+      }else{
+        $logged = $username."(".$userid.")님"; ?>
+      <span><?=$logged?></span>
+      <span>&nbsp;&nbsp;| </span>
+      <span><a href="../../page/login" class="private">마이페이지</a></span>
+      <span> |</span>
+      <span><a href="../login/logout.php" class="private">로그아웃</a></span>
+
+        <?php
       }
-      ?>
-        </ul>
+       ?>
 
       </div>
     </div>
