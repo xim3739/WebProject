@@ -21,7 +21,7 @@
             } else {
                 $username = "";
             }
-              echo ("<script>console.log(document.cookie)</script>;");
+              echo ("<script>console.log(document.cookie)</script>");
       ?>
       <div id="icon_box">
 
