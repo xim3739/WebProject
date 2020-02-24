@@ -12,27 +12,23 @@
     <aside id="aside_rightside">
       <button type="button" id="message_show" onclick="show_message()">쪽지함</button>
       <div id="message_total" class="off">
-        <button type="button" name="button" id="message_exit" onclick="hide_message()"><img id="exit_img" src="../../img/message/hide.png" alt="X"> </button>
+        <button type="button" name="button" id="message_exit" onclick="hide_message()"><img id="exit_img" src="../../img/aside/hide.png" alt="X"> </button>
         <div id="member_list">
           <ul >
             <?php
             // session_start();
-            $check_id=(isset($_GET["check_id"]))?$_GET["check_id"]:"";
-            $names=(isset($_GET["names"]))?$_GET["names"]:"";
             $i=0;
-            // $now_id = "man1";
-            $now_id = "cwpark2190";
-            if (!$now_id) {
+            // $userid = "cwpark2190";
+            $userid=(isset($_SESSION["userid"]))?$_SESSION["userid"]:"";
+            $username=(isset($_SESSION["username"]))?$_SESSION["username"]:"";
+            if (!$userid) {
               echo "<script type='text/javascript'>
               $('#aside_rightside').hide();
               $('#message_show').hide();
               </script>";
             }
-            // include "../../db/db_connector_main.php";
-            // $id=(isset($_SESSION["id"]))?$_SESSION["id"]:"";
-            // $profile=(isset($_SESSION["profile"]))?$_SESSION["profile"]:"";
-            // $intro=(isset($_SESSION["intr"]))?$_SESSION["intro"]:"";
-            $connect = mysqli_connect("localhost","root","123456","test");
+            include_once "../../db/db_connector_main.php";
+            // $connect = mysqli_connect("localhost","root","123456","test");
             $sql = "select * from member";
             $result = mysqli_query($connect,$sql);
             $total_record = mysqli_num_rows($result);
@@ -42,7 +38,7 @@
               $name = $row["name"];
              ?>
             <li>
-              <span><button type="button" class="profile_link" onclick="connect_memeber('<?=$member_id?>','<?=$now_id?>');"><?=$name?></button> </span>
+              <span><button type="button" class="profile_link" onclick="connect_memeber('<?=$member_id?>','<?=$userid?>');"><?=$name?></button> </span>
             </li>
             <?php
               }//end of for
@@ -58,10 +54,10 @@
             </ul>
           </div>
           <input type="text" id="message_content" name="content" placeholder="메세지를 입력하세요.">
-          <button type="button" class="button_icon" id="message_send" onclick="check_input();"><img src="../../img/message/send.png" alt="보내기.png"></button>
-          <button type="button" class="button_icon" id="message_delete" onclick="delete_message();"><img src="../../img/message/delete.png" alt="삭제.png"></button>
+          <button type="button" class="button_icon" id="message_send" onclick="check_input();"><img src="../../img/aside/send.png" alt="보내기.png"></button>
+          <button type="button" class="button_icon" id="message_delete" onclick="delete_message();"><img src="../../img/aside/delete.png" alt="삭제.png"></button>
           <button type="button" class="button_icon" id="message_refresh" onclick="recall_message();">
-            <img src="../../img/message/refresh.png" alt="새로고침.png"></button>
+            <img src="../../img/aside/refresh.png" alt="새로고침.png"></button>
         </form>
       </div>
     </aside>

@@ -56,6 +56,7 @@
     <li class="t_co15"><a href="">후원하기</a></li>
   </ul>
 </div>
+<<<<<<< HEAD
 <!-- <div id="pop_up" class="z_index2">
   <div id="pop_box" onmouseleave="pop_down()">
     <ul class="z_index2">
@@ -79,3 +80,5 @@
 </div> -->
 
 <!-- </div> -->
+=======
+>>>>>>> 28a2c70a33a312b317ee393ac3e54eb467f15472

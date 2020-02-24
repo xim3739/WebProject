@@ -48,7 +48,7 @@ function connect_memeber(check_id,now_id) {
           html_one += "<li class='<?=$i?>' style='width: 180px; text-align: right; '>";
           html_one += "<span class='time' style='font-size: 10px;'>"+data[i].regist_day+"</span><br>";
           html_one += "<span class='names' style='display: none;'>"+data[i].name+"&nbsp;</span>";
-          html_one += "<span class='contents' style='display: inline-block; max-width : 80px; background-color: lightblue; border-radius: 40px 0px 40px 40px;'>"+data[i].content+"</span>";
+          html_one += "<span class='contents' style='display: inline-block; max-width : 120px; background-color: #15E7EB; border-radius: 40px 0px 40px 40px;'>"+data[i].content+"</span>";
           html_one += "<input name='hidden_num' value='"+data[i].num+"' hidden></input>";
           html_one += "</li>";
         }
@@ -141,7 +141,7 @@ function recall_message(){
           html_one += "<li class='<?=$i?>' style='width: 180px; text-align: right; '>";
           html_one += "<span class='time'>"+data[i].regist_day+"</span><br>";
           html_one += "<span class='names' style='display: none;'>"+data[i].name+"&nbsp;</span>";
-          html_one += "<span class='contents' style='display: inline-block; max-width : 80px; background-color: lightblue; border-radius: 40px 0px 40px 40px;'>"+data[i].content+"</span>";
+          html_one += "<span class='contents' style='display: inline-block; max-width : 120px; background-color: #15E7EB; border-radius: 40px 0px 40px 40px;'>"+data[i].content+"</span>";
           html_one += "<input name='hidden_num' value='"+data[i].num+"' hidden></input>";
           html_one += "</li>";
         }
