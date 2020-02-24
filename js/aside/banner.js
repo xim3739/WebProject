@@ -1,11 +1,11 @@
-function ask_pay(now_id,name,phone,email){
+function ask_pay(now_id,name,phone){
   if (!now_id) {
     alert("회원이 아닙니다.");
   }else {
-    pay=(confirm("광고 시청을 중단하시겠습니까?"))?call_pay(now_id,name,phone,email):alert("취소되었습니다.");
+    pay=(confirm("광고 시청을 중단하시겠습니까?"))?call_pay(now_id,name,phone):alert("취소되었습니다.");
   }
 }
-function call_pay(now_id,name,phone,email){
+function call_pay(now_id,name,phone){
   var IMP = window.IMP;
   IMP.init('imp38038723');
   IMP.request_pay({
@@ -14,7 +14,7 @@ function call_pay(now_id,name,phone,email){
       merchant_uid : 'merchant_' + new Date().getTime(),
       name : 'Ad_Blocking',
       amount : 1000,
-      buyer_email : email,
+      // buyer_email : 'cwpark2193@naver.com',
       buyer_name : name,
       buyer_tel : phone,
   }, function(rsp) {
