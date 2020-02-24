@@ -1,226 +1,247 @@
-body{
-margin-top: 50px;
-font-family: 'Trebuchet MS', serif;
-line-height: 1.6
-}
-.container{
-width: 500px;
-margin: 0 auto;
+body {
+  margin-top: 50px;
+  font-family: 'Trebuchet MS', serif;
+  line-height: 1.6
 }
 
-ul.tabs{
-margin: 0px;
-padding: 0px;
-list-style: none;
-}
-ul.tabs li{
-background: none;
-color: #222;
-display: inline-block;
-padding: 10px 15px;
-cursor: pointer;
+.container {
+  width: 500px;
+  margin: 0 auto;
 }
 
-ul.tabs li.current{
-
-color: #222;
+ul.tabs {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
 }
 
-.tab-content{
-display: none;
-
-padding: 15px;
+ul.tabs li {
+  background: none;
+  color: #222;
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
 }
 
-.tab-content.current{
-display: inherit;
+ul.tabs li.current {
+  color: #222;
+}
+
+.tab-content {
+  display: none;
+  padding: 15px;
+}
+
+.tab-content.current {
+  display: inherit;
 }
 
 /* 회원가입 */
 input {
-box-sizing: border-box;
-border: 0.5px solid lightgray;
-border-radius: 2px;
+  box-sizing: border-box;
+  border: 0.5px solid lightgray;
+  border-radius: 2px;
 }
+
+.subMsg {
+  margin-bottom: 5px;
+
+
+  font-size: 13px;
+  color: #6E6E6E;
+}
+
 #member_main_content {
-width: 400px;
-margin: 0 auto;
+  width: 400px;
+  margin: 0 auto;
 }
+
 #title_member {
-text-align: center;
-margin-top: 40px;
-margin-bottom: 20px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
+
 #member_form input {
-width: 400px;
-height: 50px;
-margin-bottom: 10px;
-box-sizing: border-box;
+  width: 400px;
+  height: 50px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
 }
+
 #phone {
-width: 400px;
-height: 40px;
-margin-bottom: 10px;
-box-sizing: border-box;
+  width: 400px;
+  height: 40px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
 }
+
 #phone #phone_input {
-display: inline-block;
-float: left;
-box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  box-sizing: border-box;
 }
+
 #phone select {
-width: 60px;
-height: 40px;
-margin-bottom: 10px;
-box-sizing: border-box;
+  width: 60px;
+  height: 40px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
 }
 
 #phone input {
-width: 103px;
-height: 40px;
-margin-bottom: 10px;
-box-sizing: border-box;
-}
-#email {
-margin-bottom: 70px;
+  width: 103px;
+  height: 40px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
 }
 
-#email #email_one {
-width: 175px;
-height: px;
-margin-bottom: 10px;
-box-sizing: border-box;
+#phone {
+  margin-bottom: 70px;
 }
 
-#email input {
-width: 97px;
-height: 40px;
-margin-bottom: 10px;
-box-sizing: border-box;
+#phone #phone_one {
+  width: 175px;
+  height: px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
 }
 
-#email select {
-width: 95px;
-height: 40px;
-margin-bottom: 10px;
-box-sizing: border-box;
+#phone input {
+  width: 97px;
+  height: 40px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
 }
 
-#email_certification {
-display: inline-block;
-float: left;
-width: 95px;
-height: 40px;
-margin-bottom: 10px;
-box-sizing: border-box;
-border: 1px solid #1C1C1C;
-border-radius: 2px;
+#phone select {
+  width: 95px;
+  height: 40px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
 }
 
-#email_certification a {
-text-decoration: none;
-color: #1C1C1C;
+#phone_certification {
+  display: inline-block;
+  float: left;
+  width: 95px;
+  height: 40px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #1C1C1C;
+  border-radius: 2px;
 }
 
-#email_certification a p {
-width: 95px;
-height: 33px;
-text-align: center;
-font-size: 13px;
-margin: 0px;
-padding: 7px 0px 0px 0px;
+#phone_certification a {
+  text-decoration: none;
+  color: #1C1C1C;
 }
 
-#email_certification_check input {
-display: inline-block;
-float: left;
-width: 175px;
-height: 40px;
-margin-bottom: 10px;
-margin-right: 7px;
-box-sizing: border-box;
+#phone_certification a p {
+  width: 95px;
+  height: 33px;
+  text-align: center;
+  font-size: 13px;
+  margin: 0px;
+  padding: 7px 0px 0px 0px;
 }
 
-#email_certification_check_button {
-display: inline-block;
-float: left;
-width: 112px;
-height: 40px;
-margin-bottom: 10px;
-margin-right: 7px;
-box-sizing: border-box;
-background-color: #0B3861;
-border-radius: 2px;
+#phone_certification_check input {
+  display: inline-block;
+  float: left;
+  width: 175px;
+  height: 40px;
+  margin-bottom: 10px;
+  margin-right: 7px;
+  box-sizing: border-box;
 }
 
-#email_certification_check_button a {
-text-decoration: none;
-color: #1C1C1C;
+#phone_certification_check_button {
+  display: inline-block;
+  float: left;
+  width: 112px;
+  height: 40px;
+  margin-bottom: 10px;
+  margin-right: 7px;
+  box-sizing: border-box;
+  background-color: #0B3861;
+  border-radius: 2px;
 }
 
-#email_certification_check_button a p {
-width: 95px;
-height: 33px;
-text-align: center;
-font-size: 13px;
-color: white;
-margin: 0px;
-padding: 9px 0px 0px 6px;
+#phone_certification_check_button a {
+  text-decoration: none;
+  color: #1C1C1C;
 }
+
+#phone_certification_check_button a p {
+  width: 95px;
+  height: 33px;
+  text-align: center;
+  font-size: 13px;
+  color: white;
+  margin: 0px;
+  padding: 9px 0px 0px 6px;
+}
+
 #button {
-width: 400px;
-height: 40px;
-box-sizing: border-box;
-margin: 0 auto;
-margin-bottom: 40px;
+  width: 400px;
+  height: 40px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-bottom: 40px;
 }
+
 #cancel_btn {
-display: inline-block;
-float: left;
-width: 130px;
-height: 40px;
-margin-bottom: 10px;
-margin-left: 60px;
-box-sizing: border-box;
-background-color: gray;
-border-radius: 2px;
+  display: inline-block;
+  float: left;
+  width: 130px;
+  height: 40px;
+  margin-bottom: 10px;
+  margin-left: 60px;
+  box-sizing: border-box;
+  background-color: gray;
+  border-radius: 2px;
 }
+
 #cancel_btn a {
-text-decoration: none;
+  text-decoration: none;
 }
+
 #cancel_btn a p {
-display: inline-block;
-width: 130px;
-height: 38px;
-text-align: center;
-font-size: 13px;
-color: white;
-margin: 0px;
-padding: 9px 0px 0px 0px;
+  display: inline-block;
+  width: 130px;
+  height: 38px;
+  text-align: center;
+  font-size: 13px;
+  color: white;
+  margin: 0px;
+  padding: 9px 0px 0px 0px;
 }
+
 #signup_btn {
-display: inline-block;
-float: left;
-width: 130px;
-height: 40px;
-margin-bottom: 10px;
-margin-left: 20px;
-box-sizing: border-box;
-background-color: #F23005;
-border-radius: 2px;
+  display: inline-block;
+  float: left;
+  width: 130px;
+  height: 40px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  box-sizing: border-box;
+  background-color: #F23005;
+  border-radius: 2px;
 }
+
 #signup_btn a {
-text-decoration: none;
-color: #1C1C1C;
+  text-decoration: none;
+  color: #1C1C1C;
 }
 
 #signup_btn a p {
-display: inline-block;
-width: 130px;
-height: 38px;
-text-align: center;
-font-size: 13px;
-color: white;
-margin: 0px;
-padding: 9px 0px 0px 0px;
+  display: inline-block;
+  width: 130px;
+  height: 38px;
+  text-align: center;
+  font-size: 13px;
+  color: white;
+  margin: 0px;
+  padding: 9px 0px 0px 0px;
 }

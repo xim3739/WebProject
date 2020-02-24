@@ -9,29 +9,10 @@
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script src="./js/vendor/jquery.min.js"></script>
 
-    <script src="../../js//login/signup.js"></script>
-    <script src="../../js//login/login.js"></script>
+    <script src="../../js/login/signup.js"></script>
+    <script src="../../js/login/login.js"></script>
 
-    <script type="text/javascript">
 
-      $(document).ready(function(){
-
-        $('ul.tabs li').click(function(){
-          var tab_id = $(this).attr('data-tab');
-
-          $('ul.tabs li').removeClass('current');
-          $('.tab-content').removeClass('current');
-
-          $(this).addClass('current');
-          $("#"+tab_id).addClass('current');
-        });
-    });
-    function login_done(){
-      document.login_form.submit();
-      // document.getElementById('#signUpButton').submit();
-    }
-
-    </script>
     <link rel="stylesheet" href="../../css/login/login.css">
     <link rel="stylesheet" href="../../css/login/signup.css">
   </head>
@@ -47,15 +28,20 @@
           <h1>회원가입</h1>
         </div>
         <div id="member_form">
-          <form name="member_form" action="member_insert.php" method="post">
-            <input type="text" name="id" id="input_id" placeholder=" 아이디 입력 "> <br>
-            <p id="input_id_confirm"></p>
-            <input type="password" name="password" id="input_password" placeholder=" 비밀번호 입력 "> <br>
-            <p id="input_password_confirm"></p>
-            <input type="password" name="password_check" id="input_password_check" placeholder=" 비밀번호 재입력 "> <br>
-            <p id="input_password_check_confirm"></p>
-            <input type="text" name="name" id="input_name" placeholder=" 이름 "> <br>
-            <p id="input_name_confirm"></p>
+          <form name="member_form" action="./member_insert.php" method="post">
+            <input type="text" name="inputId" id="inputId" placeholder=" 아이디 입력 "> <br>
+            <p name = "idSubMsg" id="idSubMsg" class="SubMsg">&nbsp;</p>
+
+
+            <input type="password" name="inputPassword" id="inputPassword" placeholder=" 비밀번호 입력 "> <br>
+            <p id="passwordSubMsg" class="subMsg"></p>
+
+            <input type="password" name="inputPasswordCheck" id="inputPasswordCheck" placeholder=" 비밀번호 재입력 "> <br>
+            <p id="passwordCheckSubMsg" class="subMsg"></p>
+
+            <input type="text" name="inputName" id="inputName" placeholder=" 이름 "> <br>
+            <p id="nameSubMsg" class="subMsg"></p>
+
             <div id="phone">
               <div id="phone_input">
                 <select name="phone_one" id="phone_one">
@@ -65,52 +51,71 @@
                 <input type="number" id="phone_two" name="phone_two" placeholder=" 0000 " > -
                 <input type="number" id="phone_three" name="phone_three" placeholder=" 0000 " >
               </div>
-              <div id="email_certification">
+              <div id="phone_certification">
                 <button type="button" id="phone_check">인증 요청</button>
-
               </div>
             </div>
 
             <script type="text/javascript">
 
-            document.getElementById('phone_check').click(function(){
-              var phone_val=document.getElementById("phone_one").value;
-              phone_val+=document.getElementById("phone_two").value;
-              phone_val+=document.getElementById("phone_three").value;
-
-              console.log(phone_val);
-              $.ajax({
-                url: 'moonja.php',
-                type: 'POST',
-                dataType : "text",
-                data: {phone:phone_val}
-              })
-              .done(function(data) {
-                console.log(data);
-                phone_num=data;
-                // alert(h_code);
-                alert("문자인증 번호가 발송되었습니다.");
-              })
-              .fail(function() {
-                alert("문자인증 번호 발송실패!");
-                console.log("error");
-              })
-              .always(function() {
-                console.log("complete");
-             });
-
-            });
+            $("#phone_check").click(function() {
+      var phone_one_value =  $("#phone_one").val();
+      var phone_two_value = $("#phone_two").val();
+      var phone_three_value = $("#phone_three").val();
+      if(phone_one_value !== "" && phone_two_value !== "" && phone_two_value !== "") {
+        $.ajax({
+            url: "./moonja.php",
+            type: 'POST',
+            data: {
+              "mode": "send",
+              "phone_one": phone_one_value,
+              "phone_two": phone_two_value,
+              "phone_three": phone_three_value
+            },
+            success: function(data) {
+              phone_code=data;
+               if (data === "발송 실패") {
+                alert("문자 전송 실패되었습니다.");
+                phone_code_pass = false;
+                isAllPass();
+                } else {
+                alert("문자가 전송 되었습니다.");
+              }
+            }
+          })
+      } else {
+        alert("휴대폰 번호가 제대로 입력되지 않았습니다!");
+      }
+    });
             </script>
-            <div id="email">
-              <div id="email_certification_check">
-                <input type="text" name="" placeholder=" 인증 번호 입력 ">
-                <div id="email_certification_check_button">
+            <div id="phone">
+              <div id="phone_certification_check">
+                <input type="text" name="input_phone_certification" id="input_phone_certification" placeholder=" 인증 번호 입력 ">
+                <div id="phone_certification_check_button">
                   <a href="#" onclick="">
                     <p>확 인</p>
                   </a>
                 </div>
+                <p id="input_phone_confirm" name="input_phone_confirm"></p>
               </div>
             </div>
+<script type="text/javascript">
+$("#phone_certification_check").click(function () {
+if($("#input_phone_certification").val() === "") {
+  $("#input_phone_confirm").html("<span style='color:red'>인증번호를 입력해주세요.</span>");
+  phone_code_pass = false;
+} else if($("#input_phone_certification").val() === phone_code) {
+  $("#input_phone_confirm").html("<span style='color:green'>인증에 성공하였습니다.</span>");
+  phone_code_pass = true;
+} else if ($("#input_phone_certification").val() !== phone_code){
+    $("#input_phone_confirm").html("<span style='color:red'>인증에 실패하였습니다.</span>");
+    phone_code_pass = false;
+} else {
+  alert("문자 인증 오류입니다!")
+}
+});
+</script>
+
             <div id="button">
               <div id="cancel_btn">
                 <a href="#" onclick="reset_form()">

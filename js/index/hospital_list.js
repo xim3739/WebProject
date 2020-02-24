@@ -21,6 +21,7 @@ $(document).ready(function () {
     
                         }
                     }
+                    console.log(name);
                     $.ajax({
                         type: "post",
                         url: "../../db/hospital_list/hospital_list.php",
@@ -40,7 +41,7 @@ $(document).ready(function () {
     $.ajax({
         type: "get",
         url: "../../db/hospital_list/hospital_list.php",
-        data: "data",
+        data: {'data':'data'},
         success: function (echo) {
             var flag=echo;
             hospital_list(flag);
