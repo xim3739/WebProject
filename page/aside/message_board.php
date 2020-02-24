@@ -4,11 +4,7 @@
   $send_id = $_GET["send_id"];
   $rv_id = $_GET["rv_id"];
   $mode = $_GET["mode"];
-  var_dump($send_id);
-  var_dump($rv_id);
-  var_dump($mode);
   $regist_day = date("Y-m-d (H:i)");
-
 
   // $connect = mysqli_connect("localhost", "root", "123456", "test");
   function message_insert($connect,$send_id,$rv_id,$regist_day)

@@ -11,28 +11,32 @@
     <script src="../../js/aside/banner.js" charset="utf-8"></script>
   </head>
     <?php
-      // include "../../db/db_connector_main.php";
-      $premiums=(isset($_GET["premium"]))?$_GET["premium"]:"";
-      $now_id="cwpark2190";
-      echo "<script>console.log('$now_id');</script>";
-      $connect = mysqli_connect("localhost","root","123456","test");
+      // $userid="cwpark2190";
+      // $connect = mysqli_connect("localhost","root","123456","test");
+      $userid=(isset($_SESSION["userid"]))?$_SESSION["userid"]:"";
+      include "../../db/db_connector_main.php";
       mysqli_connect_error($connect);
-      $sql = "select * from member where id='$now_id'";
+      $sql = "select * from member where id='$userid'";
       $result = mysqli_query($connect,$sql);
       $row = mysqli_fetch_array($result);
+      $name= $row["name"];
+      $phone= $row["phone"];
+      $email= $row["email"];
       $premium= $row["premium"];
     ?>
   <body>
     <aside id="aside_leftside">
-      <a  href="#">광고 테스트</a><br>
-      <button type="button" id="banner_block" onclick="ask_pay();">광고 안보기</button>
+      <a  href="https://e.kakao.com/t/you-are-so-cute-zzangjeolmi" target="_blank">
+        <img src="../../img/aside/emoticon.jpg" alt="짱절미 이모티콘.jpg"> </a><br>
+      <a  href="http://www.yes24.com/campaign/01_book/yesPresent/yesPresent.aspx?EventNo=132102&CategoryNumber=001" target="_blank">
+        <img src="../../img/aside/re_book.gif" alt="추천도서.gif"> </a><br>
+      <button type="button" id="banner_block" onclick="ask_pay('<?=$userid?>',
+        '<?=$name?>','<?=$phone?>','<?=$email?>');"><img src="../../img/aside/hide.png" alt="광고 삭제.jpg"></button>
     </aside>
     <?php
-    if ($premiums ==="yes") {
-      $sql = "update member set premium='$premiums' where id='$now_id'";
+    if ($premium ==="yes") {
       echo "<script>$('#aside_leftside').hide();</script>";
     }else {
-      // echo "<script>$('#aside_leftside').hide();</script>";
       echo "<script>$('#aside_leftside').show();</script>";
     }
     mysqli_close($connect);

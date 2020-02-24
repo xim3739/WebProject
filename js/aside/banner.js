@@ -1,33 +1,37 @@
-function ask_pay(){
-  pay=(confirm("광고 시청을 중단하시겠습니까?"))?call_pay():alert("취소되었습니다..");
+function ask_pay(now_id,name,phone,email){
+  pay=(confirm("광고 시청을 중단하시겠습니까?"))?call_pay(now_id,name,phone,email):alert("취소되었습니다.");
 }
-function call_pay(){
+function call_pay(now_id,name,phone,email){
   var IMP = window.IMP;
   IMP.init('imp38038723');
   IMP.request_pay({
-      pg : 'uplus',
+      pg : 'html5_inicis',
       pay_method : 'card',
       merchant_uid : 'merchant_' + new Date().getTime(),
-      name : '주문명:결제테스트',
+      name : 'Ad_Blocking',
       amount : 1000,
-      buyer_email : 'cwpark2193@naver.com',
-      buyer_name : '박재훈',
-      buyer_tel : '010-2947-1257',
-      buyer_addr : '서울특별시 동작구 사당동',
-      buyer_postcode : '123-456'
+      buyer_email : email,
+      buyer_name : name,
+      buyer_tel : phone,
   }, function(rsp) {
     if ( rsp.success ) {
-        var msg = '결제가 완료되었습니다.';
-        msg += '고유ID : ' + rsp.imp_uid;
-        msg += '상점 거래ID : ' + rsp.merchant_uid;
-        msg += '결제 금액 : ' + rsp.paid_amount;
-        msg += '카드 승인번호 : ' + rsp.apply_num;
 
-        // set_premium();
-        window.location.href="./main.php?premium=yes";
+      var msg = '결제가 완료되었습니다.';
+      var premium ="yes";
+      var now_ids=now_id;
+        // msg += '고유ID : ' + rsp.imp_uid+'<br>\n';
+        // msg += '상점 거래ID : ' + rsp.merchant_uid+'<br>\n';
+        // msg += '결제 금액 : ' + rsp.paid_amount+'<br>\n';
+        // msg += '카드 승인번호 : ' + rsp.apply_num;
+        $.ajax({
+          url:'../aside/premium_upgrade.php',
+          data : {"premium" : premium,"now_id" : now_ids },
+          type : 'get',
+        });
+        location.href="main.php";
     } else {
-        var msg = '결제에 실패하였습니다.';
-        msg += '에러내용 : ' + rsp.error_msg;
+        var msg = '결제에 실패하였습니다.\n';
+        msg += rsp.error_msg;
     }
     alert(msg);
   });

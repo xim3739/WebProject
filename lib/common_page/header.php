@@ -23,7 +23,7 @@
       <li class="t_co12"><a href="">데리고있어요</a></li>
       <li class="t_co13"><a href="">임시보호</a></li>
       <li class="t_co14"><a href="../../page/board/board_form.php">자유게시판</a></li>
-      <li class="t_co15"><a href="">후원하기</a></li>
+      <li class="t_co15"><a href="">후후후</a></li>
     </ul>
   </div>
   <div id="pop_up" class="z_index2">

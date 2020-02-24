@@ -131,7 +131,7 @@
       </ul>
       <ul>
         <li><a href="../../page/board/board_form.php">자유게시판</a></li>
-        <li><a href="">프리미엄 전환</a></li>
+        <li><a href="">후후후</a></li>
       </ul>
     </div>
   </div>
