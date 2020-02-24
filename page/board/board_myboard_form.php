@@ -18,30 +18,6 @@
   <!-- nav -->
   <?php include "../../lib/board/nav/board_nav.php" ?>
   <?php
-    // $con = mysqli_connect("localhost", "root", "123456", "joo_db");
-    // $sql = "select * from board order by num desc";
-    // $result = mysqli_query($con, $sql);
-    // if ($result) {
-    //
-    // //  $new_hit = $hit + 1;
-    // //  $sql = "update board set hit=$new_hit where num=$num";
-    //   mysqli_query($con, $sql);
-    //
-    //   for ($i = 0; $i < mysqli_num_rows($result); $i++) {
-    //     mysqli_data_seek($result, $i);
-    //     $row = mysqli_fetch_array($result);
-    //     $num = $row["num"];
-    //     $id      = $row["id"];
-    //     $name      = $row["name"];
-    //     $regist_day = $row["regist_day"];
-    //     $subject    = $row["subject"];
-    //     $content    = $row["content"];
-    //     $file_name    = $row["file_name"];
-    //     $file_type    = $row["file_type"];
-    //     $file_copied  = $row["file_copied"];
-    //     $hit          = $row["hit"];
-    //     $content = str_replace(" ", "&nbsp;", $content);
-    //     $content = str_replace("\n", "<br>", $content);
     if ($result) {
     mysqli_query($connect, $sql);
 
@@ -73,8 +49,9 @@
                     $real_name = $file_copied;
                     $file_path = "../../data/".$real_name;
                     $file_size = filesize($file_path);
-                } ?>
-          <img class="img-fluid rounded mb-4 mb-lg-0" src=<?=$file_path?> style="max-width: 100%; height: auto !important;">
+                }
+                ?>
+          <img id="blah" name ="upfile" src='<?=$file_path?>' onerror="imagedefault(this)">
         </div>
         <div class="col-lg-5 no-flex">
           <h1 class="font-weight-light"><?=$subject?></h1>
@@ -96,7 +73,6 @@
   <footer>
     <?php include "../../lib/common_page/footer.php" ?>
   </footer>
-
+<script src="../../js/board/board.js"></script>
 </body>
-
 </html>

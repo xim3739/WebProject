@@ -38,8 +38,12 @@
   <?php include "../../lib/board/nav/board_nav.php" ?>
   <?php
   $num  = $_GET["num"];
-  $sql = "select * from board where num=$num";
+
+  $sql = "select * from board where num = $num";
+  $result = mysqli_query($connect, $sql);
+
   $row = mysqli_fetch_array($result);
+
   $id      = $row["id"];
   $name      = $row["name"];
   $regist_day = $row["regist_day"];
@@ -48,8 +52,8 @@
   $file_name    = $row["file_name"];
   $file_type    = $row["file_type"];
   $file_copied  = $row["file_copied"];
-  $locationX = $row["locationX"];
-  $locationY = $row["locationY"];
+  $locationX = $row["locationY"];
+  $locationY = $row["locationX"];
   $hit = $row["hit"];
 
   $content = str_replace(" ", "&nbsp;", $content);
@@ -60,7 +64,7 @@
 ?>
   <!-- center -->
   <div class="board_widen">
-   <form name="board_write" action="board_modify.php" method="post" enctype="multipart/form-data" style="display:inline-block;">
+   <form name="board_write" action="board_modify.php?num=<?=$num?>" method="post" enctype="multipart/form-data" style="display:inline-block;">
     <div id="board_widen_box">
       <div id="board_widen_photo">
         <?php
@@ -70,12 +74,13 @@
                   $file_size = filesize($file_path);
               }
           ?>
-        <img id="default_proflie"  name="upfile"  src='<?=$file_path?>'>
+          <!-- <img id="default_proflie"  name="upfile"  src="../../img/board/default.png"> -->
+          <img id="blah"  name="upfile"  src='<?=$file_path?>' onerror="imagedefault(this)">
       </div>
       <div id="board_widen_top">
-          <span id="board_widen_top_p_span">TITLE :</span> <span id="widen_title_span"><?=$subject?></span><br>
-          <span id="board_widen_top_p_span">MEMBER_ID :</span> <span id="widen_memberId_span"><?=$name?></span><br>
-          <span id="board_widen_top_p_span">DATE :</span> <span id="widen_date_span"><?=$regist_day?></span><br>
+          <span class="board_widen_top_p_span">TITLE :</span> <span id="widen_title_span"><?=$subject?></span><br>
+          <span class="board_widen_top_p_span">MEMBER_ID :</span> <span id="widen_memberId_span"><?=$name?></span><br>
+          <span id="board_widen_top_p_span_date"></span> <span id="widen_date_span"><?=$regist_day?></span><br>
       </div>
       <div id="board_widen_center">
         <p><span id="widen_content_span"><?=$content?></span></p>
@@ -101,11 +106,8 @@
   <footer>
     <?php include "../../lib/common_page/footer.php" ?>
   </footer>
-  <script src="../../js/board/board_map_view.js"></script>
+  <!-- <script src="../../js/board/board_map_view.js"></script> -->
     </section>
-    <footer>
-      <?php include "../../lib/common_page/footer.php" ?>
-    </footer>
     <script src="../../js/board/board.js"></script>
     <?php include "../../js/board/board_map_view.php"?>
     <!-- <script src="../../js/board/board_map_view.js"></script> -->

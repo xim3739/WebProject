@@ -82,7 +82,7 @@
     $connect = mysqli_connect("localhost", "root", "123456", "joo_db");
     $sql = "insert into board values ";
     $sql .= "(null, '$userid', '$username', '$category' ,'$subject', '$content', '$regist_day', 0, ";
-    $sql .= "'$upfile_name', '$upfile_type', '$copied_file_name','123456','789123')";
+    $sql .= "'$upfile_name', '$upfile_type', '$copied_file_name','127.052665','37.494915')";
 
     mysqli_query($connect, $sql);
     mysqli_close($connect);

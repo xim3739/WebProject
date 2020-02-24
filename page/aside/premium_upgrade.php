@@ -1,12 +1,12 @@
 <?php
   $premiums=$_GET["premium"];
   $now_id=$_GET["now_id"];
-  $connect = mysqli_connect("localhost","root","123456","test");
+  include_once "../../db/db_connector_main.php";
   $sql = "select * from member where id='$now_id'";
   $result = mysqli_query($connect,$sql);
   $row = mysqli_fetch_array($result);
   $premium= $row["premium"];
-  if ($premium ==="no" && $premiums ==="yes") {
+  if ($premium === null && $premiums ==="yes") {
     $sql = "update member set premium='$premiums' where id='$now_id'";
     mysqli_query($connect,$sql);
     mysqli_close($connect);

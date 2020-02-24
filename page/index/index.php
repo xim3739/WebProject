@@ -46,7 +46,7 @@
       } else {
           $username = "";
       }
-        echo ("<script>console.log(document.cookie)</script>;");
+        echo ("<script>console.log(document.cookie)</script>");
 ?>
 
   <!-- Navigation -->
@@ -57,7 +57,7 @@
         <?php
 if (!$username) {
     ?>
-    <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/login_and_signup.php','','width=500,height=700,left=300')">
+    <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/login_and_signup.php','','width=500,height=700,left=500,top=40')">
     <?php
 } else {
         $logged = $username."(".$userid.")님"; ?>
@@ -65,7 +65,7 @@ if (!$username) {
 
 
 
-            <li><a href="../login/logout.php" onclick="naver_logout()">로그아웃</a></li>
+            <li><a href="../login/logout.php">로그아웃</a></li>
 
 
           <?php
