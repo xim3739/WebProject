@@ -6,7 +6,7 @@
   $result = mysqli_query($connect,$sql);
   $row = mysqli_fetch_array($result);
   $premium= $row["premium"];
-  if ($premium ==="no" && $premiums ==="yes") {
+  if ($premium === null && $premiums ==="yes") {
     $sql = "update member set premium='$premiums' where id='$now_id'";
     mysqli_query($connect,$sql);
     mysqli_close($connect);
