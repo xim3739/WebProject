@@ -1,2 +1,2 @@
 #aside_leftside{float: left; position: sticky; top: 30%; left: .5%; width: 190px; height: 200px; text-align: center;}
-#banner_block{margin: 0 auto; margin-top: 5px; border: none;}
+#banner_block{margin-top: 5px; background-color: transparent; border: none;}

@@ -27,7 +27,7 @@
               $('#message_show').hide();
               </script>";
             }
-            include "../../db/db_connector_main.php";
+            include_once "../../db/db_connector_main.php";
             // $connect = mysqli_connect("localhost","root","123456","test");
             $sql = "select * from member";
             $result = mysqli_query($connect,$sql);

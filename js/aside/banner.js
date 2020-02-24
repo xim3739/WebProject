@@ -1,5 +1,9 @@
 function ask_pay(now_id,name,phone,email){
-  pay=(confirm("광고 시청을 중단하시겠습니까?"))?call_pay(now_id,name,phone,email):alert("취소되었습니다.");
+  if (!now_id) {
+    alert("회원이 아닙니다.");
+  }else {
+    pay=(confirm("광고 시청을 중단하시겠습니까?"))?call_pay(now_id,name,phone,email):alert("취소되었습니다.");
+  }
 }
 function call_pay(now_id,name,phone,email){
   var IMP = window.IMP;

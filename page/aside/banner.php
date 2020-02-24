@@ -14,7 +14,7 @@
       // $userid="cwpark2190";
       // $connect = mysqli_connect("localhost","root","123456","test");
       $userid=(isset($_SESSION["userid"]))?$_SESSION["userid"]:"";
-      include "../../db/db_connector_main.php";
+      include_once "../../db/db_connector_main.php";
       mysqli_connect_error($connect);
       $sql = "select * from member where id='$userid'";
       $result = mysqli_query($connect,$sql);
