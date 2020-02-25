@@ -4,12 +4,14 @@
   <meta charset="utf-8">
   <title></title>
   <link rel="stylesheet" type="text/css" href="../../css/board/board.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
   <!-- Bootstrap core CSS -->
   <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link href="../../css/main/small-business.css" rel="stylesheet">
   <?php include "../../lib/common_page/main_style.php" ?>
   <script src="../../js/main/pop_up_menu.js"></script>
+  <script src="../../js/board/board.js"></script>
 
 </head>
 
@@ -19,10 +21,11 @@
   <section>
   <!-- nav -->
   <?php include "../../lib/board/nav/board_nav.php" ?>
+
   <?php
-    $result = mysqli_query($connect,$sql);
+    $result = mysqli_query($connect, $sql);
     if ($result) {
-    mysqli_query($connect, $sql);
+      mysqli_query($connect, $sql);
 
     for ($i = 0; $i <$page_num; $i++) {
       mysqli_data_seek($result, $i);
@@ -51,9 +54,12 @@
                       $real_name = $file_copied;
                       $file_path = "../../data/".$real_name;
                       $file_size = filesize($file_path);
-                  } ?>
-
-            <img id="blah" name ="upfile" src='<?=$file_path?>' onerror="imagedefault(this)">
+                  }else{
+                    $file_path="../../img/board/default.jpg";
+                  }
+                   ?>
+            <img id="blah" name ="upfile" src='<?=$file_path?>'>
+             <!--onerror="imagedefault(this)-->
           </div>
           <div class="col-lg-5 no-flex">
             <h1 class="font-weight-light"><?=$subject?></h1>
@@ -65,7 +71,7 @@
       </div>
     </div>
       <?php
-        }
+    }
         } else {
             echo "게시글이 없습니다.";
         }
@@ -75,7 +81,7 @@
   <footer>
     <?php include "../../lib/common_page/footer.php" ?>
   </footer>
-  <script src="../../js/board/board.js"></script>
+
 </body>
 
 </html>

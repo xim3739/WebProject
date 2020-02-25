@@ -25,11 +25,11 @@
         </div>
         <div id="member_form">
           <form name="member_form" action="./member_insert.php" method="post">
-            <input type="text" name="inputId" id="inputId" placeholder=" 아이디 입력 "> <br>
+            <input type="text" name="inputId" id="inputId" placeholder=" 영문자와 숫자를 포함한 4~12자를 입력해주세요."> <br>
             <p name = "idSubMsg" id="idSubMsg" class="SubMsg"></p>
 
 
-            <input type="password" name="inputPassword" id="inputPassword" placeholder=" 비밀번호 입력 "> <br>
+            <input type="password" name="inputPassword" id="inputPassword" placeholder=" 영문 소문자, 대문자와 숫자를 포함한 4~12자를 입력해주세요."> <br>
             <p id="passwordSubMsg" class="subMsg"></p>
 
             <input type="password" name="inputPasswordCheck" id="inputPasswordCheck" placeholder=" 비밀번호 재입력 "> <br>
@@ -40,7 +40,7 @@
 
             <div id="phone">
               <div id="phone_input">
-                <select name="phone_one" id="phone_one" style="width:10px">
+                <select name="phone_one" id="phone_one" style="width:70px">
                   <option value="010" selected>010</option>
                   <option value="011">011</option>
                 </select> -

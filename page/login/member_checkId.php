@@ -1,10 +1,12 @@
 <?php
+
+  include "../../db/db_connector.php";
+
   $id = $_POST["inputId"];
 
-  $con = mysqli_connect("localhost", "root", "123456", "joo_db");
-  $sql = "select * from member where id = '$id'";
+  $sql = "SELECT * FROM `member` WHERE `id` = '$id'";
 
-  $result = mysqli_query($con, $sql);
+  $result = mysqli_query($connect, $sql);
   $result_record = mysqli_num_rows($result);
 
   if($result_record){
@@ -13,6 +15,6 @@
     echo "0";
   }
 
-  mysqli_close($con);
+  mysqli_close($connect);
 
  ?>

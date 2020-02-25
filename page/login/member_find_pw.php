@@ -7,9 +7,9 @@ if ($_POST["userid"] == "" || $_POST["phone_two"] == "" || $_POST["phone_three"]
     $userid = $_POST['userid'];
     $phone = $_POST['phone_one'].'-'.$_POST['phone_two'].'-'.$_POST['phone_three'];
 
-    $con = mysqli_connect("localhost", "root", "123456", "joo_db");
-    $sql = "select * from member where id = '$userid' and phone = '$phone'";
-    $result = mysqli_query($con, $sql);
+    $sql = "SELECT * FROM `member` WHERE `id` = '$userid' AND `phone` = '$phone'";
+
+    $result = mysqli_query($connect, $sql);
     $row = mysqli_fetch_array($result);
 
     $db_id=$row["id"];
