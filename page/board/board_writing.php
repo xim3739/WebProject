@@ -81,7 +81,7 @@
       <!-- nav -->
       <?php include "../../lib/board/nav/board_nav.php" ?>
       <?php
-        $row = mysqli_fetch_array($result);
+        /*$row = mysqli_fetch_array($result);
 
         $id      = $row["id"];
         $name      = $row["name"];
@@ -94,7 +94,7 @@
         $file_copied  = $row["file_copied"];
         $locationX = $row["locationX"];
         $locationY = $row["locationY"];
-        $hit = $row["hit"];
+        $hit = $row["hit"];*/
       ?>
       <!-- center -->
         <div class="board_wirte">

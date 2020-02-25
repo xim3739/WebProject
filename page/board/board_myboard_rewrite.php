@@ -53,6 +53,7 @@
     <?php
       $num  = $_GET["num"];
       $sql = "select * from board where num=$num";
+      $result=mysqli_query($connect,$sql);
       $row = mysqli_fetch_array($result);
 
       $id      = $row["id"];

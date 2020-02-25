@@ -20,14 +20,14 @@
   <?php include "../../lib/common_page/header.php" ?>
   <section>
   <!-- nav -->
-  <?php include "../../lib/board/nav/board_nav.php" ?>
 
+  <?php include "../../lib/board/nav/board_nav.php" ?>
   <?php
     $result = mysqli_query($connect, $sql);
     if ($result) {
       mysqli_query($connect, $sql);
 
-    for ($i = 0; $i <$page_num; $i++) {
+    for ($i = 0; $i <$userpost_num; $i++) {
       mysqli_data_seek($result, $i);
       $row = mysqli_fetch_array($result);
       $num = $row["num"];

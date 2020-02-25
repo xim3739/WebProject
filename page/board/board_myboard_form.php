@@ -17,12 +17,23 @@
   <?php include "../../lib/common_page/header.php" ?>
   <section>
   <!-- nav -->
-  <?php include "../../lib/board/nav/board_nav.php" ?>
   <?php
+  include "../../lib/board/nav/board_nav.php";
+  if(!isset($_GET['category'])){
+    $sql    = "SELECT * FROM `board` WHERE `id`='$userid'";
+  }else{
+      $sql    = "SELECT * FROM `board` WHERE `id`='$userid' and `category`='$category'";
+  }
+  $result = mysqli_query($connect, $sql);
+
+  $count_record=mysqli_num_rows($result);
+  $id      = $count_record["id"];
+  $category = $count_record["category"];
+
     if ($result) {
     mysqli_query($connect, $sql);
 
-    for ($i = 0; $i <$page_num; $i++) {
+    for ($i = 0; $i <$count_record; $i++) {
       mysqli_data_seek($result, $i);
       $row = mysqli_fetch_array($result);
       $num = $row["num"];
@@ -38,6 +49,7 @@
       $content = str_replace(" ", "&nbsp;", $content);
       $content = str_replace("\n", "<br>", $content);
             ?>
+
   <!-- center -->
   <div class="board_center">
     <div class="container" style="margin-left : 300px;">
@@ -64,7 +76,7 @@
     </div>
   </div>
   <?php
-        }
+}
         } else {
             echo "게시글이 없습니다.";
         }
