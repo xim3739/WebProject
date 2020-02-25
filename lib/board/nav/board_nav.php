@@ -15,8 +15,6 @@
     }
   }
   $result = mysqli_query($connect, $sql);
-  //$result2 = mysqli_query($connect, $sql2);
-  //$page_num = mysqli_num_rows($result);
   $userpost_num = mysqli_num_rows($result);
  ?>
 

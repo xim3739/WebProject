@@ -88,7 +88,7 @@
 
     echo "
 	   <script>
-	    location.href = './board_form.php';
+	    location.href = './board_form.php?mode=all';
 	   </script>
 	";
 ?>
