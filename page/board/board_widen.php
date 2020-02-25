@@ -5,6 +5,7 @@
   <title></title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="../../css/board/board.css">
+    <script src="../../js/board/board.js"></script>
   <!-- Bootstrap core CSS -->
   <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
@@ -37,6 +38,7 @@
   <!-- nav -->
   <?php include "../../lib/board/nav/board_nav.php" ?>
   <?php
+  // session_start();
   $num  = $_GET["num"];
 
   $sql = "select * from board where num = $num";
@@ -61,6 +63,7 @@
 
   $new_hit = $hit + 1;
   $sql = "update board set hit=$new_hit where num=$num";
+  mysqli_query($connect,$sql);
 ?>
   <!-- center -->
   <div class="board_widen">
@@ -108,7 +111,7 @@
   </footer>
   <!-- <script src="../../js/board/board_map_view.js"></script> -->
     </section>
-    <script src="../../js/board/board.js"></script>
+
     <?php include "../../js/board/board_map_view.php"?>
     <!-- <script src="../../js/board/board_map_view.js"></script> -->
 

@@ -45,7 +45,7 @@
                         `content` text NOT NULL,
                         `regist_day` char(30) NOT NULL,
                         `hit` int NOT NULL,
-                        `file_name` char(25),
+                        `file_name` varchar(200),
                         `file_type` char(25),
                         `file_copied` char(25),
                         `locationY` char(50),
