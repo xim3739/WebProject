@@ -5,6 +5,7 @@
   <title></title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="../../css/board/board.css">
+  <link rel="stylesheet" type="text/css" href="../../css/comment/comment.css">
   <!-- Bootstrap core CSS -->
   <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->

@@ -1,4 +1,10 @@
 <!-- 댓글 -->
+<!--
+댓글은 각 게시물의 댓글만 가져온다
+댓글은 수정없이 삭제 기능만 넣는다
+답글은 한 댓글에 한번 이상만 달수 있고 대대댓글은 달수 없다
+ -->
+
     <div id="board_widen_comment_box">
       <div id="board_widen_comment_input_box">
         <div id="board_widen_comment_input_span">

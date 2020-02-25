@@ -5,7 +5,8 @@
   <title></title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="../../css/board/board.css">
-    <script src="../../js/board/board.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../css/comment/comment.css">
+  <script src="../../js/board/board.js"></script>
   <!-- Bootstrap core CSS -->
   <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
@@ -30,7 +31,6 @@
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="../../js/main/pop_up_menu.js"></script>
 </head>
-
 <body>
   <!-- header -->
   <?php include "../../lib/common_page/header.php" ?>
@@ -40,10 +40,8 @@
   <?php
   // session_start();
   $num  = $_GET["num"];
-
   $sql = "select * from board where num = $num";
   $result = mysqli_query($connect, $sql);
-
   $row = mysqli_fetch_array($result);
 
   $id      = $row["id"];
@@ -77,7 +75,6 @@
                   $file_size = filesize($file_path);
               }
           ?>
-          <!-- <img id="default_proflie"  name="upfile"  src="../../img/board/default.png"> -->
           <img id="blah"  name="upfile"  src='<?=$file_path?>' onerror="imagedefault(this)">
       </div>
       <div id="board_widen_top">
@@ -99,7 +96,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </form>
 </div>

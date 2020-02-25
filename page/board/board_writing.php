@@ -6,9 +6,9 @@
   <link rel="stylesheet" type="text/css" href="../../css/board/board.css">
   <!-- Bootstrap core CSS -->
   <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
   <!-- Custom styles for this template -->
   <link href="../../css/main/small-business.css" rel="stylesheet">
+
   <style>
     .reply {
       margin-left: 213px;
@@ -80,22 +80,6 @@
     <section>
       <!-- nav -->
       <?php include "../../lib/board/nav/board_nav.php" ?>
-      <?php
-        /*$row = mysqli_fetch_array($result);
-
-        $id      = $row["id"];
-        $name      = $row["name"];
-        $regist_day = $row["regist_day"];
-        $category = $row["category"];
-        $subject    = $row["subject"];
-        $content    = $row["content"];
-        $file_name    = $row["file_name"];
-        $file_type    = $row["file_type"];
-        $file_copied  = $row["file_copied"];
-        $locationX = $row["locationX"];
-        $locationY = $row["locationY"];
-        $hit = $row["hit"];*/
-      ?>
       <!-- center -->
         <div class="board_wirte">
           <form name="board_write" action="./board_insert.php" method="post" enctype="multipart/form-data" style="display:inline-block;">
@@ -133,21 +117,17 @@
                 <input id="locationY" name="locationY" type="text" value="">
             <input id="locationX" name="locationX" type="text" value="">
               </div>
-
             </div>
             <div id="board_wirte_bottom">
               <button id="wirte_upload" type="button" onclick="check_input();">UpLoad</button>
             </div>
           </form>
         </div>
-
     </section>
-
     <footer>
       <?php include "../../lib/common_page/footer.php" ?>
     </footer>
     <script src="../../js/board/board.js"></script>
-
   <script src="../../js/board/board_map_write.js"></script>
 </body>
 
