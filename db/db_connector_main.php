@@ -7,6 +7,6 @@
     createTable($connect, 'board', DB_NAME);
     createTable($connect, 'comment', DB_NAME);
     createTable($connect, 'hospital_list', DB_NAME);
-
+    createTable($connect, 'counter', DB_NAME);
     
 ?>

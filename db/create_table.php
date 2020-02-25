@@ -75,6 +75,14 @@
                         PRIMARY KEY(`num`)
                     )";
                     break;
+                case 'counter' :
+                    $sql = "CREATE TABLE `counter`(
+                        `num` int NOT NULL AUTO_INCREMENT,
+                        `date` varchar(30) NOT NULL,
+                        `count` int NOT NULL DEFAULT 0,
+                        PRIMARY KEY(num)
+                    )";
+                    break;
                 default:
                     echo "<script>alert('해당 테이블이름이 없습니다. ');</script>";
                     break;

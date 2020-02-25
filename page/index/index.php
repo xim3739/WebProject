@@ -3,9 +3,7 @@
 
 <head>
 
-  <?php
-    include "../../db/db_connector_main.php";
-  ?>
+  <?php include "../../db/db_connector_main.php"; ?>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -60,6 +58,7 @@ if (!$username) {
     <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/login_and_signup.php','','width=500,height=700,left=500,top=40')">
     <?php
 } else {
+        include "../../count.php";
         $logged = $username."(".$userid.")님"; ?>
           <li><?=$logged?> </li>
 
