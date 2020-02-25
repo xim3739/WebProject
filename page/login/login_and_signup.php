@@ -40,7 +40,7 @@
 
             <div id="phone">
               <div id="phone_input">
-                <select name="phone_one" id="phone_one" style="width:10px">
+                <select name="phone_one" id="phone_one" style="width:70px">
                   <option value="010" selected>010</option>
                   <option value="011">011</option>
                 </select> -
