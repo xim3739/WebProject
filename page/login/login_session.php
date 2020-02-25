@@ -1,11 +1,13 @@
 <!-- <meta charset="utf-8"> -->
 <?php
+
+include "../../db/db_connector.php";
+
 $id= $_POST["id"];
 $password = $_POST["password"];
 
-$con = mysqli_connect("localhost", "root", "123456", "joo_db");
-  $sql = "select * from member where id='$id'";
-  $result = mysqli_query($con, $sql);
+  $sql = "SELECT * FROM `member` WHERE `id` = '$id'";
+  $result = mysqli_query($connect, $sql);
 
   $num_match = mysqli_num_rows($result);
 
@@ -22,7 +24,7 @@ $con = mysqli_connect("localhost", "root", "123456", "joo_db");
      $row = mysqli_fetch_array($result);
       $db_pass = $row["password"];
 
-      mysqli_close($con);
+      mysqli_close($connect);
 
               if($password != $db_pass)
               {
@@ -48,7 +50,7 @@ $con = mysqli_connect("localhost", "root", "123456", "joo_db");
                            <script>
                            window.alert('$name');
                            opener.parent.location.reload();
-       window.close();
+                            window.close();
                            </script>
                         ");
               }

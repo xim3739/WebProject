@@ -14,7 +14,7 @@ function call_pay(now_id,name,phone){
       merchant_uid : 'merchant_' + new Date().getTime(),
       name : 'Ad_Blocking',
       amount : 1000,
-      // buyer_email : 'cwpark2193@naver.com',
+      buyer_email : ' ',
       buyer_name : name,
       buyer_tel : phone,
   }, function(rsp) {
