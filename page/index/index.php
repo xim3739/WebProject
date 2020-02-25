@@ -28,6 +28,8 @@
   <link href="../../css/index/landing-page.min.css" rel="stylesheet">
   <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
+
+
 </head>
 
 <body>
@@ -49,24 +51,37 @@
 
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
-    <div class="container">
+    <div class="container" style="vertical-align: text-top;">
       <a class="navbar-brand" href="#">어도러블</a>
-      <ul>
+  <div id="icon_box" style=" vertical-align: text-top;">
         <?php
 if (!$username) {
     ?>
-    <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/login_and_signup.php','','width=500,height=700,left=500,top=40')">
+    <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/login_and_signup.php','','resizable=no,width=500,height=700,left=500,top=40');">
     <?php
 } else {
 
         $logged = $username."(".$userid.")님"; ?>
+<<<<<<< HEAD
+        <span><?=$logged?></span>
+        <span>&nbsp;&nbsp; | &nbsp;&nbsp;</span>
+        <!-- <span><a href="../../page/login/member_modify_form.php" target="_blank" class="private">마이페이지</a></span> -->
+        <span><a href="#" onclick="window.open('../../page/login/member_modify_form.php','정보 수정','width=500,height=700,left=500');" style="text-align: center;">마이페이지</a></span>
+
+        <span>&nbsp;&nbsp; | &nbsp;&nbsp;</span>
+        <span><a href="../login/logout.php" style=" width: 100px;text-align: center;">로그아웃</a></span>
+
+=======
           <li><?=$logged?> </li>
           <li><a href="../login/logout.php">로그아웃</a></li>
+>>>>>>> 911dd84a960ec1ae8013edbd6a55eb8cefd5a1f2
           <?php
     }
 ?>
-      </ul>
+
     </div>
+  </div>
+
   </nav>
 
   <!-- Masthead -->
