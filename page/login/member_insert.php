@@ -13,8 +13,8 @@ $phone3 = $_POST["phone_three"];
 
 $phone = $phone1."-".$phone2."-".$phone3;
 
-$sql = "INSERT INTO `member`(`id`, `password`, `name`, `phone`) ";
-$sql .= "VALUES('$id', '$password', '$name', '$phone')";
+$sql = "INSERT INTO `member`(`id`, `password`, `name`, `phone`)";
+$sql .="VALUES('$id', '$password', '$name', '$phone')";
 
 mysqli_query($connect, $sql);  // $sql 에 저장된 명령 실행
 mysqli_close($connect);

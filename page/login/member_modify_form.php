@@ -37,9 +37,9 @@ if (isset($_SESSION["username"])) {
             }
         ?>
 <?php
-    $con = mysqli_connect("localhost", "root", "123456", "joo_db");
-    $sql    = "select * from member where id='$userid'";
-    $result = mysqli_query($con, $sql);
+include "../../db/db_connector.php";
+    $sql    = "SELECT * FROM `member` WHERE `id`='$userid'";
+    $result = mysqli_query($connect, $sql);
     $row    = mysqli_fetch_array($result);
 
     $id = $row["id"];
@@ -52,7 +52,7 @@ if (isset($_SESSION["username"])) {
     $phone2 = $phone[1];
     $phone3 = $phone[2];
 
-    mysqli_close($con);
+    mysqli_close($connect);
 ?>
 <div id="signup" class="tab-content current">
   <div id="member_main_content">

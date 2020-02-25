@@ -3,6 +3,8 @@
   if(!isset($_SESSION['username'])) {
       $name = $_POST['name'];
       $email = $_POST['email'];
+      // $password = "0000";
+      // $phone = "010-0000-0000";
 
       $_SESSION['username'] = $name;
       $_SESSION['userid'] = $email;
@@ -19,8 +21,8 @@
 
       if(!$num_record){
 
-      $sql = "INSERT INTO `member`(`id`,`name`) ";
-      $sql .= "VALUES('$email','$name')";
+      $sql = "INSERT INTO `member`(`id`,`password`,`name`,`phone`) ";
+      $sql .= "VALUES('$email','0000','$name','010-0000-0000')";
 
       mysqli_query($connect, $sql);  // $sql 에 저장된 명령 실행
       mysqli_close($connect);
