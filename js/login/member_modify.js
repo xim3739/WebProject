@@ -1,5 +1,4 @@
-var id_exp = /^(?=.*[a-zA-Z])(?=.*[0-9]).{4,12}$/;
-var pw_exp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{4,12}$/;
+var pw_exp = /^(?=.*[a-zA-Z])(?=.*[A-Z])(?=.*[0-9]).{4,12}$/;
 var name_exp = /^[가-힣]{2,4}$/;
 var phone_exp = /^[0-9]{3,4}$/;
 var phone_code_pass = false;
@@ -7,55 +6,15 @@ var id_check = false;
 
 $(document).ready(function() {
 
-  var inputId = $("#inputId"),
-    inputPassword = $("#inputPassword"),
+
+
+  var inputPassword = $("#inputPassword"),
     inputPasswordCheck = $("#inputPasswordCheck"),
     inputName = $("#inputName"),
-    idSubMsg = $("#idSubMsg"),
     passwordSubMsg = $("#passwordSubMsg"),
     passwordCheckSubMsg = $("#passwordCheckSubMsg");
     nameSubMsg = $("#nameSubMsg");
 
-
-    inputId.blur(function() {
-      var idValue = inputId.val();
-
-      if (idValue === "") {
-        idSubMsg.html("<span style='color:#FA5858'>아이디를 입력해 주세요.</span>");
-      } else if (!id_exp.test(idValue)) {
-        idSubMsg.html("<span style='color:#FA5858'>아이디 형식이 맞지 않습니다.</span>");
-      } else {
-        $.ajax({
-            url: '../../page/login/member_checkId.php',
-            type: 'POST',
-            data: {
-              "inputId": idValue
-            },
-            success: function(data) {
-              console.log(data);
-              if (data === "1") {
-                idSubMsg.html("<span style='color:#FA5858'>이미 사용 중인 아이디입니다.</span>");
-                id_check=false;
-              } else if (data === "0") {
-                idSubMsg.html("<span style='color:#FA5858'>사용 가능한 아이디입니다.</span>");
-                id_check=true;
-              } else {
-                idSubMsg.html("<span style='color:#FA5858'>ERROR</span>");
-                id_check=false;
-              }
-            }
-          })
-          .done(function() {
-            console.log("success");
-          })
-          .fail(function() {
-            console.log("error");
-          })
-          .always(function() {
-            console.log("complete");
-          });
-      }
-    }); //inputId.blur end
 
   inputPassword.blur(function (){
     var passValue = inputPassword.val();
@@ -152,17 +111,8 @@ $(document).ready(function() {
   });
 }); //document ready end
 
-function done(){
-      if(!(document.member_form.inputId.value.match(id_exp))){
-        alert("아이디를 형식에 맞게 입력하시오.n\(대문자와 소문자, 숫자를 포함해서 4~12자)");
-        document.member_form.inputId.focus();
-          return;
-      }
-      if(!id_check){
-        alert("아이디 중복체크 여부를 확인해주세요.");
-        document.member_form.inputId.focus();
-        return;
-      }
+function modify_done(){
+
       if (!(document.member_form.inputPassword.value.match(pw_exp))) {
           alert("비밀번호를 형식에 맞게 입력하세요!");
           document.member_form.inputPassword.focus();

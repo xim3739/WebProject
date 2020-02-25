@@ -58,6 +58,7 @@
 
     $new_hit = $hit + 1;
     $sql = "update board set hit=$new_hit where num=$num";
+    mysqli_query($connect,$sql);
   ?>
   <!-- center -->
 <div class="board_myboard_widen">

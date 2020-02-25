@@ -6,6 +6,7 @@
   <link rel="stylesheet" type="text/css" href="../../css/board/board.css">
   <!-- Bootstrap core CSS -->
   <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
   <!-- Custom styles for this template -->
   <link href="../../css/main/small-business.css" rel="stylesheet">
   <?php include "../../lib/common_page/main_style.php" ?>
