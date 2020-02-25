@@ -7,8 +7,6 @@ var id_check = false;
 
 $(document).ready(function() {
 
-
-
   var inputId = $("#inputId"),
     inputPassword = $("#inputPassword"),
     inputPasswordCheck = $("#inputPasswordCheck"),

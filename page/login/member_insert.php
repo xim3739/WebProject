@@ -10,10 +10,10 @@ $phone3 = $_POST["phone_three"];
 
 $phone = $phone1."-".$phone2."-".$phone3;
 
-$con = mysqli_connect("localhost", "root", "123456", "joo_db");
+$con = mysqli_connect("localhost", "root", "111111", "joo_db");
 
-    $sql = "insert into member(id, password, name, phone) ";
-    $sql .= "values('$id', '$password', '$name', '$phone')";
+    $sql = "INSERT INTO `member`(`id`, `password`, `name`, `phone`) ";
+    $sql .= "VALUES('$id', '$password', '$name', '$phone')";
 
     mysqli_query($con, $sql);  // $sql 에 저장된 명령 실행
     mysqli_close($con);
