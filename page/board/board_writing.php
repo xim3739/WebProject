@@ -49,7 +49,7 @@
       white-space: nowrap;
     }
   </style>
-  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+
   <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2bc44b6ace455f7c953f89057af1aeae&libraries=services"></script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
   <script src="../../js/main/pop_up_menu.js"></script>

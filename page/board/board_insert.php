@@ -24,10 +24,12 @@
         exit;
     }
 
+    $hit = 0;
     $subject = $_POST["subject"];
     $content = $_POST["content"];
     $category = $_POST["category"];
-
+    $locationX = $_POST["locationX"];
+    $locationY = $_POST["locationY"];
     $subject = htmlspecialchars($subject, ENT_QUOTES);
     $content = htmlspecialchars($content, ENT_QUOTES);
     $regist_day = date("Y-m-d (H:i)");
@@ -48,8 +50,7 @@
         $copied_file_name = $new_file_name.".".$file_ext;
         $uploaded_file = $upload_dir.$copied_file_name;
 
-        echo ($upfile_tmp_name);
-
+        echo($upfile_tmp_name);
 
         if ($upfile_size  > 10000000) {
             echo("
@@ -62,34 +63,32 @@
         }
         //move_uploaded_file($upfile_tmp_name, $uploaded_file);
         if (move_uploaded_file($upfile_tmp_name, $uploaded_file)) {
-          echo "김치";
-        }else{
-          echo("
+            echo "김치";
+        } else {
+            echo("
           <script>
           alert('파일을 지정한 디렉토리에 복사하는데 실패했습니다.');
           history.go(-1)
           </script>
           ");
-          exit;
-
+            exit;
         }
-    }else{
-    $upfile_name      = "";
-    $upfile_type      = "";
-    $copied_file_name = "";
-}
+    } else {
+        $upfile_name      = "";
+        $upfile_type      = "";
+        $copied_file_name = "";
+    }
 
     $connect = mysqli_connect("localhost", "root", "123456", "joo_db");
     $sql = "insert into board values ";
-    $sql .= "(null, '$userid', '$username', '$category' ,'$subject', '$content', '$regist_day', 0, ";
-    $sql .= "'$upfile_name', '$upfile_type', '$copied_file_name','127.052665','37.494915')";
+    $sql .= "(null, '$userid', '$username', '$category' ,'$subject', '$content', '$regist_day', '$hit', '$upfile_name', '$upfile_type', '$copied_file_name','$locationX','$locationY')";
 
     mysqli_query($connect, $sql);
     mysqli_close($connect);
 
     echo "
 	   <script>
-	    location.href = './board_form.php?num=$num';
+	    location.href = './board_form.php';
 	   </script>
 	";
 ?>

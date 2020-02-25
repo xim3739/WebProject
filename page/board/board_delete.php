@@ -1,9 +1,9 @@
 <?php
-    $num   = $_GET["num"];
 
-    $con = mysqli_connect("localhost", "root", "123456", "joo_db");
+    include "../../db/db_connector.php";
+    $num   = $_GET["num"];
     $sql = "select * from board where num = $num";
-    $result = mysqli_query($con, $sql);
+    $result = mysqli_query($connect, $sql);
     $row = mysqli_fetch_array($result);
 
     $copied_name = $row["file_copied"];
@@ -15,8 +15,8 @@
     }
 
     $sql = "delete from board where num = $num";
-    mysqli_query($con, $sql);
-    mysqli_close($con);
+    mysqli_query($connect, $sql);
+    mysqli_close($connect);
 
     echo "
 	     <script>
