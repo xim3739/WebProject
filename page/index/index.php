@@ -3,9 +3,7 @@
 
 <head>
 
-  <?php
-    include "../../db/db_connector_main.php";
-  ?>
+  <?php include "../../db/db_connector_main.php"; ?>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -62,7 +60,9 @@ if (!$username) {
     <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/login_and_signup.php','','resizable=no,width=500,height=700,left=500,top=40');">
     <?php
 } else {
+
         $logged = $username."(".$userid.")님"; ?>
+<<<<<<< HEAD
         <span><?=$logged?></span>
         <span>&nbsp;&nbsp; | &nbsp;&nbsp;</span>
         <!-- <span><a href="../../page/login/member_modify_form.php" target="_blank" class="private">마이페이지</a></span> -->
@@ -71,6 +71,10 @@ if (!$username) {
         <span>&nbsp;&nbsp; | &nbsp;&nbsp;</span>
         <span><a href="../login/logout.php" style=" width: 100px;text-align: center;">로그아웃</a></span>
 
+=======
+          <li><?=$logged?> </li>
+          <li><a href="../login/logout.php">로그아웃</a></li>
+>>>>>>> 911dd84a960ec1ae8013edbd6a55eb8cefd5a1f2
           <?php
     }
 ?>
@@ -111,7 +115,7 @@ if (!$username) {
         </div>
       </div>
       <div>
-          <button><a href="../main/main.php">go</a></button>
+          <button type="button" onclick="location.href='../main/main.php'">go</button>
       </div>
     </form>
   </div>

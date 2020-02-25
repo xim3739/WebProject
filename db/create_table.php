@@ -45,7 +45,7 @@
                         `content` text NOT NULL,
                         `regist_day` char(30) NOT NULL,
                         `hit` int NOT NULL,
-                        `file_name` char(25),
+                        `file_name` varchar(200),
                         `file_type` char(25),
                         `file_copied` char(25),
                         `locationY` char(50),
@@ -73,6 +73,14 @@
                         `name` char(30) NOT NULL,
                         `address` char(60) NOT NULL,
                         PRIMARY KEY(`num`)
+                    )";
+                    break;
+                case 'counter' :
+                    $sql = "CREATE TABLE `counter`(
+                        `num` int NOT NULL AUTO_INCREMENT,
+                        `date` varchar(30) NOT NULL,
+                        `count` int NOT NULL DEFAULT 0,
+                        PRIMARY KEY(num)
                     )";
                     break;
                 default:

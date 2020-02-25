@@ -4,11 +4,22 @@
   $sql = "select * from board order by num desc";
   $result = mysqli_query($connect, $sql);
   if ($result) {
-  mysqli_query($connect, $sql);
-  $page_num = mysqli_num_rows($result);
-}
+      mysqli_query($connect, $sql);
+      $page_num = mysqli_num_rows($result);
+  }
  ?>
  <div id="board_nav_box">
+<?php
+  if (!$userid) {
+      echo("
+    <script>
+    alert('게시판 글쓰기는 로그인 후 이용해 주세요!');
+    history.go(-1)
+    </script>
+    ");
+      exit;
+}
+ ?>
       <a href="./board_writing.php" class="top_box" style="margin-left : 180px;"><span>Writing</span></a>
       <a href="./board_myboard_form.php"class="top_box"><span>My Board</span></a>
       <a href="./board_form.php"class="top_box"><span>All View</span></a>
