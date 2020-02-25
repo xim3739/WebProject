@@ -45,6 +45,7 @@ $password = $_POST["password"];
                   $_SESSION["username"] = $row["name"];
                   $name=$_SESSION["username"];
                   $id=$_SESSION["userid"];
+                  include "../../count.php";
 
                   echo("
                            <script>

@@ -58,15 +58,10 @@ if (!$username) {
     <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/login_and_signup.php','','width=500,height=700,left=500,top=40')">
     <?php
 } else {
-        include "../../count.php";
+
         $logged = $username."(".$userid.")님"; ?>
           <li><?=$logged?> </li>
-
-
-
-            <li><a href="../login/logout.php">로그아웃</a></li>
-
-
+          <li><a href="../login/logout.php">로그아웃</a></li>
           <?php
     }
 ?>
@@ -105,7 +100,7 @@ if (!$username) {
         </div>
       </div>
       <div>
-          <button><a href="../main/main.php">go</a></button>
+          <button type="button" onclick="location.href='../main/main.php'">go</button>
       </div>
     </form>
   </div>
