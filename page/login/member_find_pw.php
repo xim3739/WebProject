@@ -7,9 +7,9 @@ if ($_POST["userid"] == "" || $_POST["phone_two"] == "" || $_POST["phone_three"]
     $userid = $_POST['userid'];
     $phone = $_POST['phone_one'].'-'.$_POST['phone_two'].'-'.$_POST['phone_three'];
 
-    $sql = "SELECT * FROM 'member' WHERE 'id' = '$userid' AND 'phone' = '$phone'";
+    $sql = "SELECT * FROM `member` WHERE `id` = '$userid' AND `phone` = '$phone'";
 
-    $result = mysqli_query($con, $sql);
+    $result = mysqli_query($connect, $sql);
     $row = mysqli_fetch_array($result);
 
     $db_id=$row["id"];

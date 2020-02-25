@@ -1,4 +1,4 @@
-var pw_exp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{4,12}$/;
+var pw_exp = /^(?=.*[a-zA-Z])(?=.*[A-Z])(?=.*[0-9]).{4,12}$/;
 var name_exp = /^[가-힣]{2,4}$/;
 var phone_exp = /^[0-9]{3,4}$/;
 var phone_code_pass = false;

@@ -6,8 +6,8 @@ if ($_POST["name"] == "" || $_POST["phone_two"] == "" || $_POST["phone_three"] =
     $username = $_POST['name'];
     $phone = $_POST['phone_one'].'-'.$_POST['phone_two'].'-'.$_POST['phone_three'];
 
-    $sql = "SELECT * FROM 'member' WHERE 'name' = '$username' AND 'phone' = '$phone'";
-    $result = mysqli_query($con, $sql);
+    $sql = "SELECT * FROM `member` WHERE `name` = '$username' AND `phone` = '$phone'";
+    $result = mysqli_query($connect, $sql);
     $row = mysqli_fetch_array($result);
 
     $db_name=$row["name"];

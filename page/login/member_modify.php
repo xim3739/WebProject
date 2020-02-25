@@ -10,11 +10,11 @@ $phone3 = $_POST["phone_three"];
 
     include "../../db/db_connector.php";
 
-    $sql = "UPDATE 'member' SET 'password'='$pass', 'name'='$name', 'phone'='$phone' WHERE 'id'='$id'";
+    $sql = "UPDATE `member` SET `password`='$pass', `name`='$name', `phone`='$phone' WHERE `id`='$id'";
 
-    mysqli_query($con, $sql);
+    mysqli_query($connect, $sql);
 
-    mysqli_close($con);
+    mysqli_close($connect);
 
 
 ?>
