@@ -41,7 +41,7 @@
   font-size: 16px;
 }
 
-#board_widen_comment_input_text input {
+#board_widen_comment_input_text button {
   margin-left: 10px;
   width: 80px;
   height: 35px;
@@ -78,7 +78,7 @@
   font-size: 16px;
 }
 
-#board_widen_comment_input_retext input {
+#board_widen_comment_input_retext button {
   margin-left: 10px;
   width: 80px;
   height: 35px;
