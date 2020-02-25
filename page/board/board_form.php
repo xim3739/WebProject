@@ -21,6 +21,7 @@
   <section>
   <!-- nav -->
   <?php include "../../lib/board/nav/board_nav.php" ?>
+
   <?php
     $result = mysqli_query($connect, $sql);
     if ($result) {
