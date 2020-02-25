@@ -6,8 +6,7 @@ if ($_POST["name"] == "" || $_POST["phone_two"] == "" || $_POST["phone_three"] =
     $username = $_POST['name'];
     $phone = $_POST['phone_one'].'-'.$_POST['phone_two'].'-'.$_POST['phone_three'];
 
-    $con = mysqli_connect("localhost", "root", "123456", "joo_db");
-    $sql = "select * from member where name = '$username' and phone = '$phone'";
+    $sql = "SELECT * FROM 'member' WHERE 'name' = '$username' AND 'phone' = '$phone'";
     $result = mysqli_query($con, $sql);
     $row = mysqli_fetch_array($result);
 

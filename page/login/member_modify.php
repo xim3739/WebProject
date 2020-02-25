@@ -8,9 +8,10 @@ $phone3 = $_POST["phone_three"];
 
     $phone = $phone1."-".$phone2."-".$phone3;
 
-    $con = mysqli_connect("localhost", "root", "123456", "joo_db");
-    $sql = "update member set password='$pass', name='$name', phone='$phone'";
-    $sql .= " where id='$id'";
+    include "../../db/db_connector.php";
+
+    $sql = "UPDATE 'member' SET 'password'='$pass', 'name'='$name', 'phone'='$phone' WHERE 'id'='$id'";
+
     mysqli_query($con, $sql);
 
     mysqli_close($con);
