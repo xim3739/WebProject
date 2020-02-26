@@ -1,8 +1,8 @@
 <section style="margin-top : 90px">
-<?php
-include "../../db/db_connector.php";
-var_dump("ddd");
-  $sql = "SELECT * FROM `board`";
+  <script src="../../js/main/scroll.js"></script>
+  <?php
+//include "../../db/db_connector.php";
+  $sql = "SELECT * FROM `board` limit 5";
 
   $result = mysqli_query($connect, $sql);
   $page_num = mysqli_num_rows($result);
