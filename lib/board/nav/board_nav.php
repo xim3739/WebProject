@@ -1,7 +1,7 @@
 <div class="board_nav">
 <?php
   include "../../db/db_connector.php";
-  $sql = "select * from board order by num desc";
+  $sql = "SELECT * FROM `board` ORDER BY `num` DESC";
   $result = mysqli_query($connect, $sql);
   if ($result) {
       mysqli_query($connect, $sql);

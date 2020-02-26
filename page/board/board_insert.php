@@ -24,6 +24,8 @@
         exit;
     }
 
+    include "../../db/db_connector.php";
+
     $hit = 0;
     $subject = $_POST["subject"];
     $content = $_POST["content"];
@@ -79,8 +81,7 @@
         $copied_file_name = "";
     }
 
-    $connect = mysqli_connect("localhost", "root", "123456", "joo_db");
-    $sql = "insert into board values ";
+    $sql = "INSERT INTO `board` VALUES ";
     $sql .= "(null, '$userid', '$username', '$category' ,'$subject', '$content', '$regist_day', '$hit', '$upfile_name', '$upfile_type', '$copied_file_name','$locationX','$locationY')";
 
     mysqli_query($connect, $sql);

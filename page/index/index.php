@@ -60,7 +60,8 @@ if (!$username) {
     <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/signup.php','','width=500,height=1000,left=500,top=40');">
     <?php
 } else {
-
+        
+        include "../../count.php";
         $logged = $username."(".$userid.")님"; ?>
 
         <span><?=$logged?></span>

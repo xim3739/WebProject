@@ -82,7 +82,7 @@
         kakao.maps.event.addListener(my_marker, 'click', function () {
             window.open("https://map.kakao.com/link/to/분실장소," + <?=$locationY?> + "," + <?=$locationX?>, "path_finder", "width=1200px,height=1200px");
         });
-
+        console.log(<?=$locationX?>);
         // 버튼에 클릭 이벤트를 등록합니다
         addCategoryClickEvent();
         geocoder.coord2Address(<?=$locationX?>, <?=$locationY?>, callback);
