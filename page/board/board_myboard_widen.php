@@ -37,8 +37,10 @@
     <!-- nav -->
     <?php include "../../lib/board/nav/board_nav.php" ?>
   <?php
+
     $num  = $_GET["num"];
-    $sql = "select * from board where num=$num";
+    $sql = "SELECT * FROM `board` WHERE `num`=$num";
+    $result = mysqli_query($connect, $sql);
     $row = mysqli_fetch_array($result);
     $id      = $row["id"];
     $name      = $row["name"];
@@ -55,9 +57,9 @@
 
     $content = str_replace(" ", "&nbsp;", $content);
     $content = str_replace("\n", "<br>", $content);
-
+    
     $new_hit = $hit + 1;
-    $sql = "update board set hit=$new_hit where num=$num";
+    $sql = "UPDATE `board` SET `hit`=$new_hit WHERE `num`=$num";
     mysqli_query($connect,$sql);
   ?>
   <!-- center -->
@@ -106,7 +108,7 @@
     <?php include "../../lib/common_page/footer.php" ?>
   </footer>
   <script src="../../js/board/board.js"></script>
-  <script src="../../js/board/board_map_view.js"></script>
+  <script src="../../js/board/board_map_view.php"></script>
 </body>
 
 </html>
