@@ -103,7 +103,7 @@
   </div>
 </section>
   <!-- 댓글기능 -->
-  <?php include "../../lib/comment/comment.php" ?>
+  <?php include "../../lib/comment/comment_form.php" ?>
   <footer>
     <?php include "../../lib/common_page/footer.php" ?>
   </footer>

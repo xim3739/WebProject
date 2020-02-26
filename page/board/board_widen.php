@@ -28,6 +28,7 @@
   <?php include "../../lib/common_page/main_style.php";?>
   <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2bc44b6ace455f7c953f89057af1aeae&libraries=services"></script>
   <!-- <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="../../js/main/pop_up_menu.js"></script>
 </head>
@@ -101,7 +102,7 @@
 </div>
 </section>
   <!-- 댓글기능 -->
-  <?php include "../../lib/comment/comment.php" ?>
+  <?php include "../../lib/comment/comment_form.php" ?>
   <footer>
     <?php include "../../lib/common_page/footer.php" ?>
   </footer>

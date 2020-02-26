@@ -60,8 +60,6 @@
                         `depth` int NOT NULL,
                         `ord` int NOT NULL,
                         `id` char(15) NOT NULL,
-                        `name` char(10) NOT NULL,
-                        `subject` varchar(100) NOT NULL,
                         `content` text NOT NULL,
                         `regist_day` char(20),
                         PRIMARY KEY(`num`)
