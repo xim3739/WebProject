@@ -45,15 +45,17 @@ $password = $_POST["password"];
                   $_SESSION["username"] = $row["name"];
                   $name=$_SESSION["username"];
                   $id=$_SESSION["userid"];
-                  include "../../count.php";
 
                   echo("
                            <script>
                            window.alert('$name');
-                           opener.parent.location.reload();
-                            window.close();
+                           window.close();
+                           opener.location.reload();
+
+
                            </script>
                         ");
+
               }
            }
       ?>
