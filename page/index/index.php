@@ -11,9 +11,7 @@
   <meta name="author" content="">
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
-  <title>Landing Page - Start Bootstrap Theme</title>
-
-
+  <title>찾아Joo</title>
 
   <!-- Bootstrap core CSS -->
   <link href="../../css/index/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,9 +24,8 @@
   <script src="../../js/index/hospital_list.js"></script>
   <!-- Custom styles for this template -->
   <link href="../../css/index/landing-page.min.css" rel="stylesheet">
+  <!-- KaKao API-->
   <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-
-
 
 </head>
 
@@ -52,34 +49,30 @@
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container" style="vertical-align: text-top;">
-      <a class="navbar-brand" href="#">어도러블</a>
-  <div id="icon_box" style=" vertical-align: text-top;">
+      <a class="navbar-brand" href="./index.php">찾아Joo</a>
+        <div id="icon_box" style=" vertical-align: text-top;">
         <?php
-if (!$username) {
-    ?>
-    <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/login_and_signup.php','','resizable=no,width=500,height=700,left=500,top=40');">
-    <?php
-} else {
-        
-        include "../../count.php";
-        $logged = $username."(".$userid.")님"; ?>
+          if (!$username) {
+              ?>
+              <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/login_and_signup.php','','resizable=no,width=500,height=700,left=500,top=40');">
+              <?php
+          } else {
+                  
+              include "../../count.php";
+              $logged = $username."(".$userid.")님"; ?>
 
-        <span><?=$logged?></span>
-        <span>&nbsp;&nbsp; | &nbsp;&nbsp;</span>
-        <!-- <span><a href="../../page/login/member_modify_form.php" target="_blank" class="private">마이페이지</a></span> -->
-        <span><a href="#" onclick="window.open('../../page/login/member_modify_form.php','정보 수정','width=500,height=700,left=500');" style="text-align: center;">마이페이지</a></span>
+              <span><?=$logged?></span>
+              <span>&nbsp;&nbsp; | &nbsp;&nbsp;</span>
+              <span><a href="#" onclick="window.open('../../page/login/member_modify_form.php','정보 수정','width=500,height=700,left=500');" style="text-align: center;">마이페이지</a></span>
 
-        <span>&nbsp;&nbsp; | &nbsp;&nbsp;</span>
-        <span><a href="../login/logout.php" style=" width: 100px;text-align: center;">로그아웃</a></span>
+              <span>&nbsp;&nbsp; | &nbsp;&nbsp;</span>
+              <span><a href="../login/logout.php" style=" width: 100px;text-align: center;">로그아웃</a></span>
 
-
-          <?php
-    }
-?>
-
+              <?php
+              }
+              ?>
+        </div>
     </div>
-  </div>
-
   </nav>
 
   <!-- Masthead -->
@@ -100,20 +93,21 @@ if (!$username) {
     </div>
   </header>
   <div class="col-xl-9 mx-auto">
-    <h1 id="seek_h1" class="mb-5">찾을 내용을 입력해 주세요!</h1>
+    <h1 id="seek_h1" class="mb-5">찾아Joo의 협곡에 오신 것을 환영합니다.</h1>
   </div>
   <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-    <form>
+    <form name="search" method="POST" action="../../lib/search/search.php">
       <div class="form-row">
         <div class="col-12 col-md-9 mb-2 mb-md-0">
-          <input type="email" class="form-control form-control-lg" placeholder="키워드나 내용을 입력해주세요">
+          <input type="text" class="form-control form-control-lg" placeholder="키워드를 입력해 주세요">
         </div>
-        <div class="col-12 col-md-3">
-          <button type="submit" class="btn btn-block btn-lg btn-primary">시작하기</button>
+        <div class="col-12 col-md-3" id="inputSearch_div">
+          <button type="submit" class="btn btn-block btn-lg btn-primary" name="inputSearch">검색</button>
         </div>
       </div>
-      <div>
-          <button type="button" onclick="location.href='../main/main.php'">go</button>
+      <div id="buttonDiv">
+          <button type="button" onclick="location.href='../main/main.php?category=찾아요'" class="btn btn-block btn-lg btn-primary">찾아요</button>
+          <button type="button" onclick="location.href='../main/main.php?category=데리고있어요'" class="btn btn-block btn-lg btn-primary">데리고 있어요</button>
       </div>
     </form>
   </div>
