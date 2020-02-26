@@ -62,22 +62,22 @@
   <?php include "../../lib/common_page/header.php"; ?>
   <!-- Page Content -->
   <section style="margin-top : 90px">
-  <?php 
+  <?php
     if(isset($_GET['category'])) {
-  
+
         $getCategory = $_GET['category'];
-        
+
         $sql = "SELECT * FROM `board` WHERE `category` = '$getCategory'";
-        
+
         $result = mysqli_query($connect, $sql);
         $page_num = mysqli_num_rows($result);
 
         if($page_num) {
           for($i = 0; $i < $page_num; $i++) {
             mysqli_data_seek($result, $i);
-      
+
             $row = mysqli_fetch_array($result);
-            
+
             $num = $row['num'];
             $id = $row['id'];
             $name = $row["name"];
@@ -90,13 +90,13 @@
             $hit = $row["hit"];
             $content = str_replace(" ", "&nbsp;", $content);
             $content = str_replace("\n", "<br>", $content);
-      
+
       ?>
         <div class="container">
           <!-- Heading Row -->
           <div class="row align-items-center my-5">
             <div class="col-lg-7 no-flex" style="width: 420px; height: 186.66px; overflow : hidden;">
-            <?php 
+            <?php
               if ($file_name) {
                 $real_name = $file_copied;
                 $file_path = "../../data/".$real_name;
@@ -123,7 +123,7 @@
           <!-- Heading Row -->
           <div class="row align-items-center my-5">
             <div class="col-lg-7 no-flex" style="width: 420px; height: 186.66px; overflow : hidden;">
-            <?php 
+            <?php
               if ($file_name) {
                 $real_name = $file_copied;
                 $file_path = "../../data/".$real_name;
@@ -159,11 +159,11 @@
     } else {
       include "../../lib/common_page/content.php";
     }
-    
+
   ?>
 
   </section>
-  
+
   <!-- Footer -->
   <?php include "../../lib/common_page/footer.php"; ?>
 

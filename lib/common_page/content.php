@@ -1,7 +1,6 @@
 <section style="margin-top : 90px">
 <?php
-include "../../db/db_connector.php";
-var_dump("ddd");
+
   $sql = "SELECT * FROM `board`";
 
   $result = mysqli_query($connect, $sql);
@@ -24,13 +23,13 @@ var_dump("ddd");
       $hit = $row["hit"];
       $content = str_replace(" ", "&nbsp;", $content);
       $content = str_replace("\n", "<br>", $content);
-?>  
+?>
       <!-- Aside_right Message-->
   <div class="container">
     <!-- Heading Row -->
     <div class="row align-items-center my-5">
       <div class="col-lg-7 no-flex" style="width: 420px; height: 186.66px; overflow : hidden;">
-      <?php 
+      <?php
         if ($file_name) {
           $real_name = $file_copied;
           $file_path = "../../data/".$real_name;
@@ -57,7 +56,7 @@ var_dump("ddd");
     <!-- Heading Row -->
     <div class="row align-items-center my-5">
       <div class="col-lg-7 no-flex" style="width: 420px; height: 186.66px; overflow : hidden;">
-      <?php 
+      <?php
         if ($file_name) {
           $real_name = $file_copied;
           $file_path = "../../data/".$real_name;
