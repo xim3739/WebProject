@@ -31,7 +31,7 @@
       <?php
       if (!$username) {
        ?>
-       <input type="button" class="btn btn-primary sign_btn" value="Sign In" onclick="window.open('../login/login_and_signup.php','','width=500,height=700,left=500,top=40')">
+       <input type="button" class="btn btn-primary sign_btn" value="Sign In" onclick="window.open('../login/signup.php','','width=500,height=700,left=500,top=40')">
       <?php
       }else{
         $logged = $username."(".$userid.")님"; ?>
