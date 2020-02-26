@@ -52,26 +52,29 @@
       <a class="navbar-brand" href="./index.php">찾아Joo</a>
         <div id="icon_box" style=" vertical-align: text-top;">
         <?php
-          if (!$username) {
-              ?>
-              <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/login_and_signup.php','','resizable=no,width=500,height=700,left=500,top=40');">
-              <?php
-          } else {
-                  
-              include "../../count.php";
-              $logged = $username."(".$userid.")님"; ?>
 
-              <span><?=$logged?></span>
-              <span>&nbsp;&nbsp; | &nbsp;&nbsp;</span>
-              <span><a href="#" onclick="window.open('../../page/login/member_modify_form.php','정보 수정','width=500,height=700,left=500');" style="text-align: center;">마이페이지</a></span>
+if (!$username) {
+    ?>
+    <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/signup.php','','width=500,height=1000,left=500,top=40');">
+    <?php
+} else {
+        
+        include "../../count.php";
+        $logged = $username."(".$userid.")님"; ?>
 
-              <span>&nbsp;&nbsp; | &nbsp;&nbsp;</span>
-              <span><a href="../login/logout.php" style=" width: 100px;text-align: center;">로그아웃</a></span>
+        <span><?=$logged?></span>
+        <span>&nbsp;&nbsp; | &nbsp;&nbsp;</span>
+        <!-- <span><a href="../../page/login/member_modify_form.php" target="_blank" class="private">마이페이지</a></span> -->
+        <span><a href="#" onclick="window.open('../../page/login/member_modify_form.php','정보 수정','width=500,height=700,left=500');" style="text-align: center;">마이페이지</a></span>
 
-              <?php
-              }
-              ?>
-        </div>
+        <span>&nbsp;&nbsp; | &nbsp;&nbsp;</span>
+        <span><a href="../login/logout.php" style=" width: 100px;text-align: center;">로그아웃</a></span>
+
+
+          <?php
+    }
+?>
+
     </div>
   </nav>
 
