@@ -165,7 +165,7 @@
   </section>
   
   <!-- Footer -->
-  <?php include "../../lib/common_page/footer.php"; ?>
+ <?php //include "../../lib/common_page/footer.php"; ?>    
 
   <!-- Bootstrap core JavaScript -->
   <!-- <script src="../../js/main/jquery/jquery.min.js"></script>
