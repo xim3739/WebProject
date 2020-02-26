@@ -30,7 +30,7 @@ $(document).ready(function () {
                             "addr": addr
                         },
                         success: function (response) {
-                            alert("SUCCESS");
+                            
                         }
                     });
                 }
