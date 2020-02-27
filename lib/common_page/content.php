@@ -1,8 +1,8 @@
-<section style="margin-top : 90px">
-  <script src="../../js/main/scroll.js"></script>
+
+  
   <?php
 //include "../../db/db_connector.php";
-  $sql = "SELECT * FROM `board` limit 5";
+  $sql = "SELECT * FROM `board` ORDER BY `num`DESC limit 5";
 
   $result = mysqli_query($connect, $sql);
   $page_num = mysqli_num_rows($result);
@@ -87,5 +87,5 @@
     <button id="btn_pop_write" onclick="pop_up(this)"><img src="../../img/main/plus_button.png" alt="버튼"></button>
   </div>
   <?php include "../aside/message.php"; ?>
-  <?php include "../aside/banner.php"; ?>
-</section>
+  <?php include "../aside/banner.php"; include "../../js/main/scroll.php"; ?>
+

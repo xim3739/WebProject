@@ -1,5 +1,4 @@
 <?php
-    include "./db/db_connector.php";
 
     $sum = 0;
     $today = date("Y-m-d");
@@ -16,7 +15,7 @@
     }
     $sql = "SELECT * FROM `counter` WHERE `date` = '$today'";
     $result = mysqli_query($connect, $sql);
-    $row = mysqli_fetch_array($reuslt);
+    $row = mysqli_fetch_array($result);
     $count = $row['count'];
 
     $sql = "SELECT * FROM `counter`";

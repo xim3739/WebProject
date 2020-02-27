@@ -37,7 +37,7 @@
     <!-- nav -->
     <?php include "../../lib/board/nav/board_nav.php" ?>
   <?php
-
+    
     $num  = $_GET["num"];
     $sql = "SELECT * FROM `board` WHERE `num`=$num";
     $result = mysqli_query($connect, $sql);
@@ -108,6 +108,7 @@
     <?php include "../../lib/common_page/footer.php" ?>
   </footer>
   <script src="../../js/board/board.js"></script>
+  
   <script src="../../js/board/board_map_view.php"></script>
 </body>
 
