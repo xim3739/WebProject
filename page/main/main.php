@@ -102,16 +102,8 @@
           <!-- Heading Row -->
           <div class="row align-items-center my-5">
             <div class="col-lg-7 no-flex" style="width: 420px; height: 186.66px; overflow : hidden;">
-            <?php
-              if ($file_name) {
-                $real_name = $file_copied;
-                $file_path = "../../data/".$real_name;
-                $file_size = filesize($file_path);
-              }else{
-                $file_path="../../img/board/default.jpg";
-              }
-            ?>
-              <img class="img-fluid rounded mb-4 mb-lg-0" src="<?=$file_path?>">
+
+              <img class="img-fluid rounded mb-4 mb-lg-0" src="../../img/board/default.jpg">
             </div>
             <div class="col-lg-5 no-flex">
               <h1 class="font-weight-light">게시글이 없습니다.</h1>
