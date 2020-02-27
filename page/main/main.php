@@ -41,6 +41,7 @@
   <?php include "../../lib/common_page/header.php"; ?>
   <!-- Page Content -->
   <section style="margin-top : 90px">
+<<<<<<< HEAD
   <?php
     if(isset($_GET['category'])) {
 
@@ -113,34 +114,58 @@
           </div>
         </div>
       <?php
+=======
+        <?php 
+        if(isset($_GET['category'])){
+          $category=$_GET['category'];
+          $sql="SELECT * FROM `board` WHERE `category` = '$category'";
+        }else{
+
+          $sql="SELECT * FROM `board`";
+>>>>>>> a5505168f0b894388e28ce13770b3ef6f1ebb2e1
         }
+        $result=mysqli_query($connect,$sql);
+        $page_num=mysqli_num_rows($result);
+        if($page_num==0){
+          
+        
         ?>
+  <div class="container">
+    <!-- Heading Row -->
+    <div class="row align-items-center my-5">
+      <div class="col-lg-7 no-flex" style="width: 420px; height: 186.66px; overflow : hidden;">
+        <img class="img-fluid rounded mb-4 mb-lg-0" src="../../img/board/default.jpg">
+      </div>
+      <div class="col-lg-5 no-flex">
+        <h1 class="font-weight-light"></h1>
+        <p>게시글이 없습니다.</p>
+      </div>
+    </div>
+  </div>
+
+
+        <?php } ?>
         <div id="buttons_box">
             <div id="pop_write">
               <ul>
-                <li><a href="../../page/board/board_writing">글쓰기</a></li>
+                <li><a href="../../page/board/board_writing.php">글쓰기</a></li>
                 <li><a href="">쪽지쓰기</a></li>
               </ul>
             </div>
             <button id="btn_pop_write" onclick="pop_up(this)"><img src="../../img/main/plus_button.png" alt="버튼"></button>
           </div>
           <?php include "../aside/message.php"; ?>
-          <?php include "../aside/banner.php"; ?>
-  <?php
-    } else {
-      include "../../lib/common_page/content.php";
-    }
+          <?php include "../aside/banner.php"; include "../../js/main/scroll.php";?>
 
-  ?>
 
   </section>
 
   <!-- Footer -->
-  <?php include "../../lib/common_page/footer.php"; ?>
+ <?php //include "../../lib/common_page/footer.php"; ?>    
 
   <!-- Bootstrap core JavaScript -->
-  <!-- <script src="../../js/main/jquery/jquery.min.js"></script>
-  <script src="../../js/main/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+  <script src="../../js/main/jquery/jquery.min.js"></script>
+  <script src="../../js/main/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

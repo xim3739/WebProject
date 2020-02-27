@@ -37,7 +37,7 @@
     <!-- nav -->
     <?php include "../../lib/board/nav/board_nav.php" ?>
   <?php
-
+    
     $num  = $_GET["num"];
     $sql = "SELECT * FROM `board` WHERE `num`=$num";
     $result = mysqli_query($connect, $sql);
@@ -51,8 +51,8 @@
     $file_name    = $row["file_name"];
     $file_type    = $row["file_type"];
     $file_copied  = $row["file_copied"];
-    $locationX = $row["locationX"];
-    $locationY = $row["locationY"];
+    $locationX = $row["locationY"];
+    $locationY = $row["locationX"];
     $hit = $row["hit"];
 
     $content = str_replace(" ", "&nbsp;", $content);
@@ -108,7 +108,8 @@
     <?php include "../../lib/common_page/footer.php" ?>
   </footer>
   <script src="../../js/board/board.js"></script>
-  <script src="../../js/board/board_map_view.php"></script>
+  
+  <?php include "../../js/board/board_map_view.php"?>
 </body>
 
 </html>

@@ -113,6 +113,7 @@
     </section>
 
     <?php include "../../js/board/board_map_view.php"?>
+
     <!-- <script src="../../js/board/board_map_view.js"></script> -->
 
 

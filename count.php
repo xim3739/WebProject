@@ -1,5 +1,4 @@
 <?php
-    // include "./db/db_connector.php";
 
     $sum = 0;
     $today = date("Y-m-d");
