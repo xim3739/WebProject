@@ -24,13 +24,13 @@
       $hit = $row["hit"];
       $content = str_replace(" ", "&nbsp;", $content);
       $content = str_replace("\n", "<br>", $content);
-?>  
+?>
       <!-- Aside_right Message-->
   <div class="container">
     <!-- Heading Row -->
     <div class="row align-items-center my-5">
       <div class="col-lg-7 no-flex" style="width: 420px; height: 186.66px; overflow : hidden;">
-      <?php 
+      <?php
         if ($file_name) {
           $real_name = $file_copied;
           $file_path = "../../data/".$real_name;
@@ -57,7 +57,7 @@
     <!-- Heading Row -->
     <div class="row align-items-center my-5">
       <div class="col-lg-7 no-flex" style="width: 420px; height: 186.66px; overflow : hidden;">
-      <?php 
+      <?php
         if ($file_name) {
           $real_name = $file_copied;
           $file_path = "../../data/".$real_name;

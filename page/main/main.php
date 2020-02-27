@@ -81,16 +81,10 @@
           </div>
           <?php include "../aside/message.php"; ?>
           <?php include "../aside/banner.php"; include "../../js/main/scroll.php";?>
-          
-  <?php
-    // } else {
-    //   include "../../lib/common_page/content.php";
-    // }
-    
-  ?>
+
 
   </section>
-  
+
   <!-- Footer -->
  <?php //include "../../lib/common_page/footer.php"; ?>    
 
