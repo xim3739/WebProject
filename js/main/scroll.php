@@ -66,10 +66,28 @@ $(document).ready(function () {
                         var hit=response[i].hit;
                         var file_path=response[i].file;
                         var num=response[i].num;
-
+                        var id=response[i].id;
                         console.log(file_path);
 
-                        if('<?=$board?>'){
+                        if('<?=$board?>'&&'<?=$form?>'){
+                            var html=`
+                            <div class="board_center">
+                            <div class="container" style="margin-left : 300px;">
+                        <div class="row align-items-center my-5">
+                          <div class="col-lg-7 content_img no-flex" style="width: 420px; height: 186.66px; overflow : hidden;">
+                            <img class="img-fluid rounded mb-4 mb-lg-0" src='`+file_path+`'>
+                          </div>
+                          <div class="col-lg-5 no-flex">
+                            <h1 class="font-weight-light">`+subject+`</h1>
+                            <p style="word-wrap : break-word;">`+content +`</p>
+                            <a class="btn btn-primary" href="../../page/board/board_myboard_widen.php?num=`+num+`">Call to Action!</a>
+                            <span class="reply"><img src="" alt="">조회수 : `+hit+`회</span>
+                          </div>
+                        </div>
+                      </div>
+                      </div>`;
+
+                        }else{
                             var html=`
                             <div class="board_center">
                             <div class="container" style="margin-left : 300px;">
@@ -86,9 +104,11 @@ $(document).ready(function () {
                         </div>
                       </div>
                       </div>`;
-
-                        }else{
-                        var html=`<div class="container">
+                      if(<?=isset($_SESSION['userid'])?>){
+                            if(id==='<?=$_SESSION['userid']?>'){
+                                var html=`
+                            <div class="board_center">
+                            <div class="container" style="margin-left : 300px;">
                         <div class="row align-items-center my-5">
                           <div class="col-lg-7 content_img no-flex" style="width: 420px; height: 186.66px; overflow : hidden;">
                             <img class="img-fluid rounded mb-4 mb-lg-0" src='`+file_path+`'>
@@ -96,13 +116,21 @@ $(document).ready(function () {
                           <div class="col-lg-5 no-flex">
                             <h1 class="font-weight-light">`+subject+`</h1>
                             <p style="word-wrap : break-word;">`+content +`</p>
-                            <a class="btn btn-primary" href="../../page/board/board_widen.php?num=`+num+`">Call to Action!</a>
+                            <a class="btn btn-primary" href="../../page/board/board_myboard_widen.php?num=`+num+`">Call to Action!</a>
                             <span class="reply"><img src="" alt="">조회수 : `+hit+`회</span>
                           </div>
                         </div>
+                      </div>
                       </div>`;
 
+                            }else{
+
+                            }
                         }
+
+                        }
+
+                        
                         $('section').append(html);
                     }
                     console.log(page);

@@ -91,8 +91,8 @@ session_start();
             'subject'=>$subject,
             'content'=>$content,
             'file'=>$file_path,
-            'hit'=>$hit);
-
+            'hit'=>$hit,
+            'id'=>$id);
         $count++;
     }
 
