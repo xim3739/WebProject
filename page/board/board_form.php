@@ -23,16 +23,16 @@
   <?php include "../../lib/board/nav/board_nav.php" ?>
   <?php 
         if($page_num==0){
-          
-        
+
+
         ?>
           <div class="board_center">
-          
+
             <div class="container" style='margin-left : 300px;'>
               <!-- Heading Row -->
               <div class="row align-items-center my-5">
                 <div class="col-lg-7 no-flex" style="width: 420px; height: 186.66px; overflow : hidden;">
-                  
+
         <img class="img-fluid rounded mb-4 mb-lg-0" src="../../img/board/default.jpg">
       </div>
       <div class="col-lg-5 no-flex">
@@ -45,9 +45,9 @@
 
 
         <?php } ?>
-  
+
   </section>
-      
+
   <footer>
     <?php include "../../lib/common_page/footer.php" ?>
   </footer>

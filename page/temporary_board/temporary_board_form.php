@@ -30,29 +30,18 @@
         document.board_form.submit();
     }
   </script>
-    <?php
-        @session_start();
-        if (isset($_SESSION["userid"])) {
-            $userid = $_SESSION["userid"];
-        } else {
-            $userid = "";
-        }
-        if (isset($_SESSION["username"])) {
-            $username = $_SESSION["username"];
-        } else {
-            $username = "";
-        }
-          echo ("<script>console.log(document.cookie)</script>");
-  ?>
+
   <body>
     <?php include "../../lib/common_page/header.php" ?>
 
     <section>
+      <?php include "../../lib/board/nav/board_nav.php" ?>
+
       <div id="board_box">
         <h3 id="board_title">
             임시보호 > 글쓰기
         </h3>
-        <form  name="board_form" method="post" action="board_insert.php" enctype="multipart/form-data">
+        <form  name="board_form" method="post" action="temporary_board_insert.php" enctype="multipart/form-data">
             <ul id="board_form">
               <li>
                   <span class="col1">이름 : </span>
@@ -75,7 +64,7 @@
             </ul>
             <ul class="buttons">
               <li><button type="button" onclick="check_input()">완료</button></li>
-              <li><button type="button" onclick="location.href='board_list.php'">목록</button></li>
+              <li><button type="button" onclick="location.href='temporary_board_list.php'">목록</button></li>
             </ul>
         </form>
       </div> <!-- board_box -->
