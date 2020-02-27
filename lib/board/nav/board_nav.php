@@ -16,6 +16,7 @@
   }
   $result = mysqli_query($connect, $sql);
   $userpost_num = mysqli_num_rows($result);
+
  ?>
 
  <div id="board_nav_box">

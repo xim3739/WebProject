@@ -2,7 +2,8 @@
 <?php
     include "../../db/db_connector.php";
     session_start();
-    $num  = $_GET["num"];
+    $group_num  = $_GET["num"];
+    var_dump($num);
     $userid=$_SESSION['userid'];
     function test_input($data)
     {
@@ -22,7 +23,6 @@
     $q_userid = mysqli_real_escape_string($connect, $userid);
     $regist_day=date("Y-m-d (H:i)");
 
-    $group_num = 0;
     $depth=0;
     $ord=0;
 
@@ -41,6 +41,6 @@
     mysqli_close($connect);
     echo "
           <script>
-          location.href='../../page/board/board_widen.php?mode=all&num=$num';
+          location.href='../../page/board/board_widen.php?mode=all&num=$group_num';
           </script>";
 ?>

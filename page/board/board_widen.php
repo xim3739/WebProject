@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="../../css/board/board.css">
   <link rel="stylesheet" type="text/css" href="../../css/comment/comment.css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="../../js/board/board.js"></script>
   <!-- Bootstrap core CSS -->
   <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,9 +30,8 @@
   <?php include "../../lib/common_page/main_style.php";?>
   <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2bc44b6ace455f7c953f89057af1aeae&libraries=services"></script>
   <!-- <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
-  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="../../js/main/pop_up_menu.js"></script>
+
 </head>
 <body>
   <!-- header -->
@@ -38,6 +39,7 @@
 <section>
   <!-- nav -->
   <?php include "../../lib/board/nav/board_nav.php" ?>
+
   <?php
   // session_start();
   $num  = $_GET["num"];

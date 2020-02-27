@@ -50,14 +50,6 @@
   background-color: inherit;
   border: 1px solid gray;
 }
-
-#board_widen_comment_input_retext_box {
-  width: 870px;
-  height: 50px;
-  margin-left: 50px;
-  display: none;
-}
-
 #board_widen_comment_input_retext img {
   width: 30px;
   height: 30px;
@@ -66,7 +58,7 @@
 
 #board_widen_comment_input_retext textarea {
   margin-left: 5px;
-  width: 730px;
+  width: 708px;
   resize: none;
   border: 0;
   border-bottom: 1px solid gray;
