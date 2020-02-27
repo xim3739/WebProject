@@ -3,6 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="../../css/temporary_board/board.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <!-- Bootstrap core CSS -->
+  <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="../../css/main/small-business.css" rel="stylesheet">
+  <?php include "../../lib/common_page/main_style.php" ?>
+  <script src="../../js/main/pop_up_menu.js"></script>
+
   </head>
   <script>
     function check_input() {
@@ -21,7 +30,23 @@
         document.board_form.submit();
     }
   </script>
+    <?php
+        @session_start();
+        if (isset($_SESSION["userid"])) {
+            $userid = $_SESSION["userid"];
+        } else {
+            $userid = "";
+        }
+        if (isset($_SESSION["username"])) {
+            $username = $_SESSION["username"];
+        } else {
+            $username = "";
+        }
+          echo ("<script>console.log(document.cookie)</script>");
+  ?>
   <body>
+    <?php include "../../lib/common_page/header.php" ?>
+
     <section>
       <div id="board_box">
         <h3 id="board_title">
