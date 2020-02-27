@@ -17,7 +17,9 @@
    <body>
      <?php
      $num  = $_GET["num"];
-     $sql = "select * from comment where num=$num";
+     $group_num  = $_GET["group_num"];
+     var_dump($num);
+     $sql = "select * from comment where num=$group_num";
      $result = mysqli_query($connect, $sql);
      $row = mysqli_fetch_array($result);
      $id      = $row["id"];
