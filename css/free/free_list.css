@@ -1,0 +1,13 @@
+.bottom_tr{text-align: center;}
+.bottom_tr:hover{background-color: #bcdaba;}
+#input_table{width: 710px;}
+.back_tr{font-size: 12px; padding: 5px;}
+.col1{width: 60px; padding-top: 5px; padding-bottom: 5px;}
+.col2{width: 380px; padding-top: 5px; padding-bottom: 5px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.col2 a{text-decoration: none; color: black;}
+.col3{width: 100px; padding-top: 5px; padding-bottom: 5px;}
+.col4{width: 50px; padding-top: 5px; padding-bottom: 5px;}
+.col5{width: 60px; padding-top: 5px; padding-bottom: 5px;}
+.col6{width: 40px; padding-top: 5px; padding-bottom: 5px;}
+.page_tr a{text-decoration: none; color: black;}
+#search_ul {margin-left: 80px;}

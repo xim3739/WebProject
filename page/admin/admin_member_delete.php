@@ -1,6 +1,6 @@
 <?php
   // session_start();
-  // $userid=(isset($_SESSION["userid"]))?$_SESSION["userid"]:"";
+  // $userid =(isset($_SESSION["userid"]))?$_SESSION["userid"]:"";
   // if ($userid !== "admin1234") {
   //   echo "
   //         <script>

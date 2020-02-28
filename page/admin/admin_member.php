@@ -4,13 +4,27 @@
     <meta charset="utf-8">
     <title></title>
     <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <link rel="stylesheet" href="../../css/admin/admin.css">
+    <link rel="stylesheet" href="../../css/admin/admin_member.css">
   </head>
+  <?php
+  // session_start();
+  // $userid =(isset($_SESSION["userid"]))?$_SESSION["userid"]:"";
+  // if ($userid !== "admin1234") {
+  //   echo "
+  //         <script>
+  //         alert('관리자가 아닙니다! 관리자 페이지 입장은 관리자만 가능합니다!');
+  //         history.go(-1)
+  //         </script>
+  //        ";
+  //   exit;
+  // }
+   ?>
   <body>
     <aside id="admin_aside_left">
         <ul>
           <li><a href="./admin_member.php">회원 목록 관리</a></li>
           <li><a href="./admin_board.php?category='찾아요'">게시판 관리</a></li>
+          <li><a href="#">사이트 통계</a></li>
         </ul>
       </aside>
       <section>
