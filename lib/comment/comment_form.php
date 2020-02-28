@@ -11,19 +11,17 @@
 전 글을 삭제하면 다음글이 이전글위치에 있어야 한다
 대댓글이 없으면 대댓글을 보여주지 않는다
  -->
-
   <?php
       $num  = $_GET["num"];
       $sql = "SELECT * FROM `comment` WHERE `group_num`=$num";
       $result = mysqli_query($connect, $sql);
       $commentpost_num = mysqli_num_rows($result);
-      if($commentpost_num){
-        for($i = 0; $i < $commentpost_num; $i++){
-          $row = mysqli_fetch_array($result);
-          $id      = $row["id"];
-          $regist_day = $row["regist_day"];
-          $content    = $row["content"];
-        ?>
+      if ($commentpost_num) {
+          for ($i = 0; $i < $commentpost_num; $i++) {
+              $row = mysqli_fetch_array($result);
+              $id      = $row["id"];
+              $regist_day = $row["regist_day"];
+              $content    = $row["content"]; ?>
         <script>
         // 댓글 숨기기 기능
           var flag = false;
@@ -46,7 +44,7 @@
               <div id="board_widen_comment_input_text">
                 <img class="imgsetting" id="board_widen_comment_input_text_image" src="../../img/board/default_proflie.png" >
                 <textarea name="content" id="input_comment_area" rows="1" onkeydown="resize(this)" onkeyup="resize(this)" placeholder="Comment"></textarea>
-                <button type="submit" name="button">Add</button>
+                <button type="submit" id="submit" name="button">Add</button>
               </div>
             </div>
             <?php
@@ -56,8 +54,7 @@
                    $row = mysqli_fetch_array($result);
                    $id      = $row["id"];
                    $regist_day = $row["regist_day"];
-                   $content    = $row["content"];
-                 ?>
+                   $content    = $row["content"]; ?>
                    <div id="board_widen_comment_show_text">
                      <img class="imgsetting" src="../../img/board/default_proflie.png">
                      <div id="board_widen_comment_show_text_member">
@@ -74,31 +71,30 @@
                    <div id="board_widen_comment_input_retext_box<?=$i?>" style="margin-left : 60px; display : none;">
                      <div id="board_widen_comment_input_retext">
                        <img class="imgsetting" id="board_widen_comment_input_retext_image" src="../../img/board/default_proflie.png">
-                       <textarea id="input_comment_rearea" rows="1" onkeydown="resize(this)" onkeyup="resize(this)" placeholder="Comment"></textarea>
-                       <button type="button" name="button" >Add</button>
+                       <textarea name="content" id="input_comment_area" rows="1" onkeydown="resize(this)" onkeyup="resize(this)" placeholder="Comment"></textarea>
+                       <button type="submit" id="submit" name="button" >Add</button>
                      </div>
                    </div>
                    <div id="board_widen_comment_viewmore_click">
                      <img src="../../img/board/default_proflie.png">
                      <div id="board_widen_comment_show_text_member">
-                       <span>작성자명</span><br>
+                       <span><?=$id?></span><br>
                        <input type="hidden" name="id" value="<?=$id?>">
-                       <span>댓글 내용이 옵니다</span><br>
+                       <span><?=$content?></span><br>
                        <input type="hidden" name="re_content" value="<?=$content?>">
-                       <span>날짜</span>
+                       <span><?=$regist_day?></span>
                        <input type="hidden" name="date" value="<?=$regist_day?>">
                        <span>삭제</span>
                      </div>
                    </div>
                    <?php
-               }
-            ?>
+               } ?>
            </div>
           </form>
         <?php
-        }
-      }else{
-        ?>
+          }
+      } else {
+          ?>
         <div class="board_widen_comment_box">
           <form name="comment_form" action="../../lib/comment/comment_insert.php?num=<?=$num?>"  method="post">
             <div id="board_widen_comment_input_box">
