@@ -57,7 +57,7 @@
 				<?php
 					if($file_name) {
 						$real_name = $file_copied;
-						$file_path = "./data/".$real_name;
+						$file_path = "../../data/".$real_name;
 						$file_size = filesize($file_path);
 
 						echo "▷ 첨부파일 : $file_name ($file_size Byte) &nbsp;&nbsp;&nbsp;&nbsp;
@@ -76,9 +76,6 @@
 		</ul>
 	</div> <!-- board_box -->
 </section>
-<footer>
-  <?php include "../../lib/common_page/footer.php" ?>
-</footer>
-  <?php include "../../js/main/scroll.php"; ?>
+
 </body>
 </html>
