@@ -80,9 +80,6 @@
 	    </form>
 	</div> <!-- board_box -->
 </section>
-<footer>
-  <?php include "../../lib/common_page/footer.php" ?>
-</footer>
-  <?php include "../../js/main/scroll.php"; ?>
+
 </body>
 </html>
