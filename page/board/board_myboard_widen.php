@@ -98,6 +98,7 @@
       <div id="board_myboard_widen_button_box">
         <button type="button"><a href="board_myboard_rewrite.php?num=<?=$num?>">Edit</a></button>
         <button type="button"><a href="board_delete.php?num=<?=$num?>">Delete</a></button>
+        <br><br><br>
       </div>
     </form>
   </div>

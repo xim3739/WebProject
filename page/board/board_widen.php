@@ -98,21 +98,17 @@
               </ul>
           </div>
         </div>
-      </div>
+      </div><br><br>
     </div>
   </form>
 </div>
 </section>
   <!-- 댓글기능 -->
   <?php include "../../lib/comment/comment_form.php" ?>
-  <footer>
-    <?php include "../../lib/common_page/footer.php" ?>
-  </footer>
   <!-- <script src="../../js/board/board_map_view.js"></script> -->
-    </section>
-
-    <?php include "../../js/board/board_map_view.php"?>
-    <!-- <script src="../../js/board/board_map_view.js"></script> -->
+  </section>
+  <?php include "../../js/board/board_map_view.php"?>
+  <!-- <script src="../../js/board/board_map_view.js"></script> -->
 
 
 </body>
