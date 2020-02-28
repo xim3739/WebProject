@@ -41,6 +41,7 @@
   <?php include "../../lib/common_page/header.php"; ?>
   <!-- Page Content -->
   <section style="margin-top : 90px">
+
         <?php 
         if(isset($_GET['category'])){
           $category=$_GET['category'];
@@ -48,6 +49,7 @@
         }else{
 
           $sql="SELECT * FROM `board`";
+
         }
         $result=mysqli_query($connect,$sql);
         $page_num=mysqli_num_rows($result);

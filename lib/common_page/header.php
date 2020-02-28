@@ -57,7 +57,7 @@
   <ul>
     <li class="t_co11"><a href="../main/main.php?category=찾아요">찾아요</a></li>
     <li class="t_co12"><a href="../main/main.php?category=데리고있어요">데리고있어요</a></li>
-    <li class="t_co13"><a href="../main/main.php?category=임시보호">임시보호</a></li>
+    <li class="t_co13"><a href="../../page/temporary_board/temporary_board_form.php">임시보호</a></li>
     <li class="t_co14"><a href="../main/main.php?category=자유게시판">자유게시판</a></li>
   </ul>
 </div>
