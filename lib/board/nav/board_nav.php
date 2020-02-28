@@ -1,27 +1,13 @@
 <div class="board_nav">
 
 <?php
-  /* include "../../db/db_connector.php";
-  if(isset($_GET['mode'])){
-    switch ($_GET['mode']) {
-      case 'my':
-      $sql = "select * from board where id = '$userid'";
-        break;
-
-      case 'all':
-      $sql = "select * from board order by num desc";
-        break;
-
-      default : break;
-    }
-  }
-  $result = mysqli_query($connect, $sql);
-  $userpost_num = mysqli_num_rows($result);
- */
-
-<?php
   include "../../db/db_connector.php";
-  $sql = "SELECT * FROM `board` ORDER BY `num` DESC";
+  if(isset($_GET['form'])){
+    $sql = "SELECT * FROM `board` WHERE `id` = '$userid' ORDER BY `num` DESC";
+  }else{
+    $sql = "SELECT * FROM `board` ORDER BY `num` DESC";
+  }
+
   $result = mysqli_query($connect, $sql);
   if ($result) {
       mysqli_query($connect, $sql);
@@ -43,21 +29,15 @@
       exit;
 }
  ?>
+
       <a href="./board_writing.php" class="top_box" style="margin-left : 180px;"><span>Writing</span></a>
       <a href="./board_myboard_form.php?form=my&board=ok"class="top_box"><span>My Board</span></a>
       <a href="./board_form.php?board=ok"class="top_box"><span>All View</span></a>
-
   </div>
-  <?php
-  if(!isset($_GET['mode'])){
-    ?>
-  <div class="div_span_box_nav"></div>
-<?php }else{ ?>
-  <div class="div_span_box_nav">
-    <span id="span_box"><?=$userpost_num?>개의 게시물이 있어요 </span>
+    <div class="div_span_box_nav">
+        <span id="span_box"><?=$page_num?>개의 게시물이 있어요 </span>
+      </div>
   </div>
-<?php } ?>
-</div>
 <!-- <script>
     function settingspan(mode){
       if (mode === 1){

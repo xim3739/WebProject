@@ -16,7 +16,6 @@
 <body>
   <?php include "../../lib/common_page/header.php" ?>
 <section>
-  <?php include "../../lib/board/nav/board_nav.php" ?>
 
    	<div id="board_box">
 	    <h3>

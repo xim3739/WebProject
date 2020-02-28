@@ -16,10 +16,7 @@
   <link rel="stylesheet" href="../../css/aside/message.css">
   <script src="../../js/aside/message.js" charset="utf-8"></script>
   <!-- banner core CSS&JS -->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
   <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
   <link rel="stylesheet" href="../../css/aside/banner.css">
   <script src="../../js/aside/banner.js" charset="utf-8"></script>
   <!-- Bootstrap core CSS -->
@@ -42,7 +39,7 @@
   <!-- Page Content -->
   <section style="margin-top : 90px">
 
-        <?php 
+        <?php
         if(isset($_GET['category'])){
           $category=$_GET['category'];
           $sql="SELECT * FROM `board` WHERE `category` = '$category'";
@@ -54,8 +51,8 @@
         $result=mysqli_query($connect,$sql);
         $page_num=mysqli_num_rows($result);
         if($page_num==0){
-          
-        
+
+
         ?>
   <div class="container">
     <!-- Heading Row -->
@@ -88,7 +85,7 @@
   </section>
 
   <!-- Footer -->
- <?php //include "../../lib/common_page/footer.php"; ?>    
+ <?php //include "../../lib/common_page/footer.php"; ?>
 
   <!-- Bootstrap core JavaScript -->
   <script src="../../js/main/jquery/jquery.min.js"></script>

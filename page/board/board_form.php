@@ -21,9 +21,6 @@
   <section>
   <!-- nav -->
   <?php
-  // include "../../lib/board/nav/board_nav.php"
-  ?>
-  <?php
     // $result = mysqli_query($connect, $sql);
     // if ($result) {
     //   mysqli_query($connect, $sql);
@@ -42,7 +39,7 @@
     //     $hit          = $row["hit"];
     //     $content = str_replace(" ", "&nbsp;", $content);
     //     $content = str_replace("\n", "<br>", $content);
-
+?>
   <?php include "../../lib/board/nav/board_nav.php" ?>
   <?php
         if($page_num==0){
@@ -71,13 +68,8 @@
 
   </div>
 </div>
-
-
         <?php } ?>
-
-
   </section>
-
   <footer>
     <?php include "../../lib/common_page/footer.php" ?>
   </footer>
