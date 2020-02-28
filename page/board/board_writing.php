@@ -98,8 +98,8 @@
                 <select id="category_write" name="category">
                   <option value="찾아요">찾아요</option>
                   <option value="데리고있어요">데리고 있어요</option>
-                  <option value="자유게시판">자유게시판</option>
-                  <option value="흐흐흐">흐흐흐</option>
+                  <option value="자유게시판">임시보호</option>
+                  <option value="흐흐흐">자유게시판</option>
                 </select>
               </div>
               <div id="board_wirte_center">

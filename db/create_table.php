@@ -41,7 +41,7 @@
                         `id` char(20) NOT NULL,
                         `name` char(20) NOT NULL,
                         `category` char(20) NOT NULL,
-                        `subject` char(20) NOT NULL,
+                        `subject` varchar(200) NOT NULL,
                         `content` text NOT NULL,
                         `regist_day` char(30) NOT NULL,
                         `hit` int NOT NULL,
@@ -53,7 +53,22 @@
                         PRIMARY KEY(num)
                     )";
                     break;
-                case 'comment' :
+                case 'temporary_board' :
+                    $sql = "CREATE TABLE `temporary_board`(
+                        `num` int NOT NULL AUTO_INCREMENT,
+                        `id` char(20) NOT NULL,
+                        `name` char(20) NOT NULL,
+                        `subject` varchar(200) NOT NULL,
+                        `content` text NOT NULL,
+                        `regist_day` char(30) NOT NULL,
+                        `hit` int NOT NULL,
+                        `file_name` varchar(200),
+                        `file_type` char(25),
+                        `file_copied` char(25),
+                        PRIMARY KEY(num)
+                    )";
+                    break;
+                  case 'comment' :
                     $sql = "CREATE TABLE `comment`(
                         `num` int NOT NULL AUTO_INCREMENT,
                         `group_num` int NOT NULL,

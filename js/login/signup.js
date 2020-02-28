@@ -1,4 +1,4 @@
-var id_exp = /^(?=.*[a-A-Z])(?=.*[0-9]).{4,12}$/;
+var id_exp = /^(?=.*[a-zA-Z])(?=.*[0-9]).{4,12}$/;
 var pw_exp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{4,12}$/;
 var name_exp = /^[가-힣]{2,4}$/;
 var phone_exp = /^[0-9]{3,4}$/;
@@ -21,7 +21,7 @@ $(document).ready(function() {
       var idValue = inputId.val();
 
       if (idValue === "") {
-        idSubMsg.html("<span style='color:#FA5858'>아이디를 입력해 주세요.</span>");
+        idSubMsg.html("<span>영문자와 숫자를 포함한 4~12자를 입력해주세요.</span>");
       } else if (!id_exp.test(idValue)) {
         idSubMsg.html("<span style='color:#FA5858'>아이디 형식이 맞지 않습니다.</span>");
       } else {
@@ -61,11 +61,11 @@ $(document).ready(function() {
     var passValue = inputPassword.val();
 
     if(passValue ===""){
-      passwordSubMsg.html("<span style='color:#FA5858'>패스워드를 입력해 주세요.</span>");
+      passwordSubMsg.html("<span>영문 소문자, 대문자와 숫자를 포함한 4~12자를 <br>입력해주세요.</span>");
     }else if(!pw_exp.test(passValue)){
         passwordSubMsg.html("<span style='color:#FA5858'>패스워드 형식이 맞지 않습니다.</span>");
     }else{
-      passwordSubMsg.html("<span style='color:#FA5858'></span>");
+      passwordSubMsg.html("<span style='color:#FA5858'>사용가능한 패스워드입니다.</span>");
     }
   });
 

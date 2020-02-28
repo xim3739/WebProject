@@ -49,10 +49,13 @@ $password = $_POST["password"];
                   echo("
                            <script>
                            window.alert('$name');
-                           opener.parent.location.reload();
-                            window.close();
+                           window.close();
+                           opener.location.reload();
+
+
                            </script>
                         ");
+
               }
            }
       ?>

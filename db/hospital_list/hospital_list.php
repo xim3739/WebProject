@@ -1,15 +1,15 @@
 <?php
 
 include "../db_connector.php";
-$sql = "SELECT * FROM hospital_list";
+$sql = "SELECT * FROM `hospital_list`";
 if (isset($_POST["addr"])) {
     $name = $_POST["name"];
     $addr = $_POST["addr"];
     $result = mysqli_query($connect, $sql);
     if (!(mysqli_num_rows($result) > 0)) {
         for ($i = 0; $i < count($name); $i++) {
-            $sql = "INSERT INTO hospital_list VALUES (NULL, '$name[$i]', '$addr[$i]')";
-            mysqli_query($con, $sql);
+            $sql = "INSERT INTO `hospital_list` VALUES (NULL, '$name[$i]', '$addr[$i]')";
+            mysqli_query($connect, $sql);
         }
     }
 }elseif(isset($_GET['data'])){
