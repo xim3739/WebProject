@@ -8,5 +8,6 @@
     createTable($connect, 'comment', DB_NAME);
     createTable($connect, 'hospital_list', DB_NAME);
     createTable($connect, 'counter', DB_NAME);
-    
+    createTable($connect, 'temporary_board', DB_NAME);
+
 ?>

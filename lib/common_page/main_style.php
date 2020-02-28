@@ -46,4 +46,6 @@
     #btn_pop_write{border:none;outline:none;background-color: white;}
     .z_index1 {z-index: 9}
     .z_index2 {z-index: 10}
+    .container p{ overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:8;-webkit-box-orient:vertical;
+    word-wrap:break-word;}
   </style>

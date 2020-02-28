@@ -1,158 +1,91 @@
-<section>
 
-  <!-- Aside_right Message-->
-  <div class="container">
-    <!-- Heading Row -->
-    <div class="row align-items-center my-5">
-      <div class="col-lg-7 no-flex">
-        <img class="img-fluid rounded mb-4 mb-lg-0" src="http://placehold.it/900x400" alt="">
-      </div>
-      <div class="col-lg-5 no-flex">
-        <h1 class="font-weight-light">Business Name or Tagline</h1>
-        <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
-        <a class="btn btn-primary" href="../../page/board/board_widen.php">Call to Action!</a>
-        <span class="reply"><img src="" alt="">댓글 "15개"</span>
-      </div>
-    </div>
-  </div>
-  <!-- /.container -->
-  <div class="container">
-    <!-- Heading Row -->
-    <div class="row align-items-center my-5">
-      <div class="col-lg-7 no-flex">
-        <img class="img-fluid rounded mb-4 mb-lg-0" src="http://placehold.it/900x400" alt="">
-      </div>
-      <div class="col-lg-5 no-flex">
-        <h1 class="font-weight-light">Business Name or Tagline</h1>
-        <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
-        <a class="btn btn-primary" href="../../page/board/board_widen.php?num=''&page=''">Call to Action!</a>
-        <span class="reply"><img src="" alt="">댓글 "15개"</span>
-      </div>
-    </div>
-  </div>
-  <!-- /.container -->
-  <div class="container">
-    <!-- Heading Row -->
-    <div class="row align-items-center my-5">
-      <div class="col-lg-7 no-flex">
-        <img class="img-fluid rounded mb-4 mb-lg-0" src="http://placehold.it/900x400" alt="">
-      </div>
-      <div class="col-lg-5 no-flex">
-        <h1 class="font-weight-light">Business Name or Tagline</h1>
-        <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
-        <a class="btn btn-primary" href="../../page/board/board_widen.php">Call to Action!</a>
-        <span class="reply"><img src="" alt="">댓글 "15개"</span>
-      </div>
-    </div>
-  </div>
-  <!-- /.container -->
-  <div class="container">
-    <!-- Heading Row -->
-    <div class="row align-items-center my-5">
-      <div class="col-lg-7 no-flex">
-        <img class="img-fluid rounded mb-4 mb-lg-0" src="http://placehold.it/900x400" alt="">
-      </div>
-      <div class="col-lg-5 no-flex">
-        <h1 class="font-weight-light">Business Name or Tagline</h1>
-        <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
-        <a class="btn btn-primary" href="../../page/board/board_widen.php">Call to Action!</a>
-        <span class="reply"><img src="" alt="">댓글 "15개"</span>
-      </div>
-    </div>
-  </div>
-  <!-- /.container -->
-  <div class="container">
-    <!-- Heading Row -->
-    <div class="row align-items-center my-5">
-      <div class="col-lg-7 no-flex">
-        <img class="img-fluid rounded mb-4 mb-lg-0" src="http://placehold.it/900x400" alt="">
-      </div>
-      <div class="col-lg-5 no-flex">
-        <h1 class="font-weight-light">Business Name or Tagline</h1>
-        <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
-        <a class="btn btn-primary" href="../../page/board/board_widen.php">Call to Action!</a>
-        <span class="reply"><img src="" alt="">댓글 "15개"</span>
-      </div>
-    </div>
-  </div>
-  <!-- /.container -->
-  <div class="container">
-    <!-- Heading Row -->
-    <div class="row align-items-center my-5">
-      <div class="col-lg-7 no-flex">
-        <img class="img-fluid rounded mb-4 mb-lg-0" src="http://placehold.it/900x400" alt="">
-      </div>
-      <div class="col-lg-5 no-flex">
-        <h1 class="font-weight-light">Business Name or Tagline</h1>
-        <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
-        <a class="btn btn-primary" href="../../page/board/board_widen.php">Call to Action!</a>
-        <span class="reply"><img src="" alt="">댓글 "15개"</span>
-      </div>
-    </div>
-  </div>
-  <!-- /.container -->
-  <div class="container">
-    <!-- Heading Row -->
-    <div class="row align-items-center my-5">
-      <div class="col-lg-7 no-flex">
-        <img class="img-fluid rounded mb-4 mb-lg-0" src="http://placehold.it/900x400" alt="">
-      </div>
-      <div class="col-lg-5 no-flex">
-        <h1 class="font-weight-light">Business Name or Tagline</h1>
-        <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
-        <a class="btn btn-primary" href="../../page/board/board_widen.php">Call to Action!</a>
-        <span class="reply"><img src="" alt="">댓글 "15개"</span>
-      </div>
-    </div>
-  </div>
-  <!-- /.container -->
-  <div class="container">
-    <!-- Heading Row -->
-    <div class="row align-items-center my-5">
-      <div class="col-lg-7 no-flex">
-        <img class="img-fluid rounded mb-4 mb-lg-0" src="http://placehold.it/900x400" alt="">
-      </div>
-      <div class="col-lg-5 no-flex">
-        <h1 class="font-weight-light">Business Name or Tagline</h1>
-        <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
-        <a class="btn btn-primary" href="../../page/board/board_widen.php">Call to Action!</a>
-        <span class="reply"><img src="" alt="">댓글 "15개"</span>
-      </div>
-    </div>
-  </div>
-  <!-- /.container -->
-  <!-- <div id="pop_up">
-    <div id="pop_box" onmouseleave="pop_down()">
-      <ul>
-        <li><a href="">찾아요</a></li>
-        <li><a href="">데리고있어요</a></li>
-        <li><a href="">임시보호</a></li>
-      </ul>
-      <ul>
-        <li><a href="../../page/board/board_form.php">자유게시판</a></li>
-        <li><a href="">후후후</a></li>
-      </ul>
-    </div>
-  </div>
+  
+  <?php
+//include "../../db/db_connector.php";
+  $sql = "SELECT * FROM `board` ORDER BY `num`DESC limit 5";
 
-  <div id="pop_log" onmouseleave="pop_down()">
-    <div id="pop_login">
+  $result = mysqli_query($connect, $sql);
+  $page_num = mysqli_num_rows($result);
+  if($page_num) {
+    for($i = 0; $i < $page_num; $i++) {
+      mysqli_data_seek($result, $i);
+
+      $row = mysqli_fetch_array($result);
+
+      $num = $row['num'];
+      $id = $row['id'];
+      $name = $row["name"];
+      $regist_day = $row["regist_day"];
+      $subject = $row["subject"];
+      $content = $row["content"];
+      $file_name = $row["file_name"];
+      $file_type = $row["file_type"];
+      $file_copied = $row["file_copied"];
+      $hit = $row["hit"];
+      $content = str_replace(" ", "&nbsp;", $content);
+      $content = str_replace("\n", "<br>", $content);
+?>
+      <!-- Aside_right Message-->
+  <div class="container">
+    <!-- Heading Row -->
+    <div class="row align-items-center my-5">
+      <div class="col-lg-7 no-flex" style="width: 420px; height: 186.66px; overflow : hidden;">
+      <?php
+        if ($file_name) {
+          $real_name = $file_copied;
+          $file_path = "../../data/".$real_name;
+          $file_size = filesize($file_path);
+        }else{
+          $file_path="../../img/board/default.jpg";
+        }
+      ?>
+        <img class="img-fluid rounded mb-4 mb-lg-0" src="<?=$file_path?>">
+      </div>
+      <div class="col-lg-5 no-flex">
+        <h1 class="font-weight-light"><?=$subject?></h1>
+        <p><?=$content?></p>
+        <a class="btn btn-primary" href="../../page/board/board_widen.php?num=<?=$num?>">Call to Action!</a>
+        <span class="reply"><img src="" alt="">조회수 : <?=$hit?></span>
+      </div>
     </div>
-      <ul>
-        <li><a href="">로그인</a></li>
-        <li><a href="">회원가입</a></li>
-      </ul>
-  </div> -->
-  <div id="buttons_box">
+  </div>
+  <?php
+    }
+  } else {
+    ?>
+    <div class="container">
+    <!-- Heading Row -->
+    <div class="row align-items-center my-5">
+      <div class="col-lg-7 no-flex" style="width: 420px; height: 186.66px; overflow : hidden;">
+      <?php
+        if ($file_name) {
+          $real_name = $file_copied;
+          $file_path = "../../data/".$real_name;
+          $file_size = filesize($file_path);
+        }else{
+          $file_path="../../img/board/default.jpg";
+        }
+      ?>
+        <img class="img-fluid rounded mb-4 mb-lg-0" src="<?=$file_path?>">
+      </div>
+      <div class="col-lg-5 no-flex">
+        <h1 class="font-weight-light"></h1>
+        <p>게시글이 없습니다.</p>
+      </div>
+    </div>
+  </div>
+  <?php
+  }
+  ?>
+    <div id="buttons_box">
     <div id="pop_write">
       <ul>
-        <li><a href="">글쓰기</a></li>
-        <li><a href="">시쓰기</a></li>
-        <li><a href="">뭐쓰기</a></li>
+        <li><a href="../../page/board/board_writing">글쓰기</a></li>
+        <li><a href="">쪽지쓰기</a></li>
       </ul>
     </div>
     <button id="btn_pop_write" onclick="pop_up(this)"><img src="../../img/main/plus_button.png" alt="버튼"></button>
   </div>
   <?php include "../aside/message.php"; ?>
-  <?php include "../aside/banner.php"; ?>
-</section>
+  <?php include "../aside/banner.php"; include "../../js/main/scroll.php"; ?>
+

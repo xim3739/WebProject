@@ -13,6 +13,8 @@ $(document).ready(function () {
             success: function (response) {
                 //제이슨 해당정보를 해독을 함
                 var a = JSON.parse(response);
+                console.log(response);
+                console.log(a);
                 for (var i = 0; i < a.length; i++) {
                     list.push(a[i]);
                 }

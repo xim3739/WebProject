@@ -2,7 +2,7 @@
 
     include "../../db/db_connector.php";
     $num   = $_GET["num"];
-    $sql = "select * from board where num = $num";
+    $sql = "SELECT * FROM `board` WHERE `num` = $num";
     $result = mysqli_query($connect, $sql);
     $row = mysqli_fetch_array($result);
 
@@ -14,13 +14,14 @@
 		unlink($file_path);
     }
 
-    $sql = "delete from board where num = $num";
+    $sql = "DELETE FROM `board` WHERE `num` = $num";
     mysqli_query($connect, $sql);
     mysqli_close($connect);
 
     echo "
-	     <script>
-	         location.href = 'board_myboard_form.php?num=$num';
+       <script>
+        alert('삭제했습니다.');   
+	      location.href = 'board_myboard_form.php';
 	     </script>
 	   ";
 ?>
