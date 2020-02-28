@@ -38,14 +38,3 @@
         <span id="span_box"><?=$page_num?>개의 게시물이 있어요 </span>
       </div>
   </div>
-<!-- <script>
-    function settingspan(mode){
-      if (mode === 1){
-        document.getElementById('span_box').innerText="<?=$userpost_num?> 개의 게시물이 있습니다 !";
-      }else if(mode === 2){
-        document.getElementById('span_box').innerText="<?=$page_num?>개의 게시물이 있습니다 !";
-      } else {
-        document.getElementById('span_box').innerText='error';
-      }
-    }
-</script> -->
