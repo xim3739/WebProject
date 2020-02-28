@@ -18,10 +18,10 @@ $(document).ready(function () {
                         } else {
                             name.push(a[i].NM);
                             addr.push(a[i].ADDR_OLD);
-    
+
                         }
                     }
-                    console.log(name);
+                    console.log("111");
                     $.ajax({
                         type: "post",
                         url: "../../db/hospital_list/hospital_list.php",
@@ -30,13 +30,21 @@ $(document).ready(function () {
                             "addr": addr
                         },
                         success: function (response) {
-                            
+                          console.log("222");
+                        },
+                        fail:
+                        function (error){
+                          console.log(error);
                         }
                     });
+                },
+                fail:
+                function (error){
+                  console.log(error);
                 }
             });
         }
-        
+        console.log("333");
     }
     $.ajax({
         type: "get",
@@ -45,6 +53,11 @@ $(document).ready(function () {
         success: function (echo) {
             var flag=echo;
             hospital_list(flag);
+            console.log("444");
+        },
+        fail:
+        function (error){
+          console.log(error);
         }
     });
 });
