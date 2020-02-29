@@ -11,7 +11,10 @@
   <body>
     <?php
       $connect = mysqli_connect("localhost","root","123456","test");
-      $sql = "select * from free";
+      $num = $_GET["num"];
+      $page = $_GET["page"];
+      $q_num = mysqli_real_escape_string($connect, $num);
+      $sql = "select * from free where num = $q_num";
       $result = mysqli_query($connect,$sql);
       $row = mysqli_fetch_array($result);
       $num = $row["num"];
@@ -23,7 +26,18 @@
       $regist_day = $row["regist_day"];
       $time = substr($regist_day,12,5);
       $hit = $row["hit"];
-      $chu = $row["chu"];
+      $new_hit=$hit+1;
+      $sql="update free set hit=$new_hit where num=$q_num;";
+      $result = mysqli_query($connect,$sql);
+
+      $sql = "select num from free where num > $num order by num limit 1";
+      $result = mysqli_query($connect,$sql);
+      $row = mysqli_fetch_array($result);
+      $pre_num = $row["num"];
+      $sql = "select num from free where num < $num order by num desc limit 1";
+      $result = mysqli_query($connect,$sql);
+      $row = mysqli_fetch_array($result);
+      $odd_num = $row["num"];
      ?>
     <div class="">
       <table style="width: 710px;">
@@ -33,7 +47,7 @@
               <ul class="total_ul">
                 <li class="col1"><?=$name?></li>
                 <li class="col2"><strong><?=$regist_day?></strong></li>
-                <li class="col3"><strong>조회 : </strong><?=$hit?>&nbsp;&nbsp;&nbsp;&nbsp;<strong>추천 : </strong><?=$chu?></li>
+                <li class="col3"><strong>조회 : </strong><?=$new_hit?></li>
               </ul>
             </td>
           </tr>
@@ -42,7 +56,7 @@
               <span><?=$r_category?></span>
               <ul class="total_ul" style="float : right">
                 <li><a href="./free_list.php">목록</a></li>
-                <li>댓글</li>
+                <li> <a href="javascript:void(0);" onclick="move_comment();">댓글</a></li>
               </ul>
             </td>
           </tr>
@@ -66,54 +80,71 @@
           </tr>
           <tr>
             <td>
-              <div class="main_container">
-                <div id="content_bottom">
-                  <ul class="total_ul"  style="float : left">
-                    <li><a href="./free_list.php">목록</a></li>
-                    <li>댓글</li>
-                  </ul>
-                  <button type="button" name="button">추천</button>
-                  <button type="button" name="button">신고하기</button>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <div class="">
-                <div class="main_container">
+              <div id="comment_div" class="main_container">
+                <?php
+                  $sql = "select * from free_comment order by group_num desc, ord asc;";
+                  $result = mysqli_query($connect,$sql);
+                  $total_record = mysqli_num_rows($result);
+
+                  for ($i=0; $i < $total_record; $i++) {
+                    mysqli_data_seek($result,$i);
+                    $row = mysqli_fetch_array($result);
+                    $num = $row["num"];
+                    $id = $row["id"];
+                    $name = $row["name"];
+                    $subject = $row["subject"];
+                    $subject=str_replace("\n", "<br>",$subject);
+                    $subject=str_replace(" ", "&nbsp;",$subject);
+                    $regist_day = $row["regist_day"];
+                    $depth=(int)$row['depth'];
+                    $space="";
+                    for($j=0;$j<$depth;$j++){
+                      $space="↳&nbsp;".$space;
+                    }
+                  }
+                  mysqli_close($connect);
+                ?>
+                <div id="comment_head">
                   <h4 style="display: inline;">코멘트</h4>
                   <ul class="total_ul">
                     <li>등록순</li>
                     <li>최신순</li>
                   </ul>
-                  <div class="" style="display: inline; float : right">
+                  <div class="button_refresh" style="display: inline; float : right">
                     새로고침
                   </div>
+                </div><!-- 코멘트 헤드 -->
+                <div id="comment_main">
+                  <ul class="total_ul">
+                    <?php  ?>
+                    <li>
+                      <div class="">
+                        <!-- <strong><span></span><span></span>작성자<span></span></strong><br>
+                        <div class="">
+                          <span>내용</span>
+                        </div>
+                        <div class="">
+                          <a href="#">답글</a>
+                        </div> -->
+                      </div>
+                    </li>
+                  </ul>
+                </div><!-- 코멘트 내용 -->
+                <div class="" style="text-align: right;">
+                  새로고침
                 </div>
-              </div>
-              <div class="main_container">
-                <div class="">
-                  댓글 보기
-                </div>
-              </div>
-              <div class="" style="text-align: right;">
-                새로고침
-              </div>
-              <div class="main_container">
-                <div class="">
-                  <form class="" action="index.html" method="post">
+                <div id="comment_wirte">
+                  <form id="comment_form" class="" action="#" method="post">
                     <table>
                       <tbody>
                         <tr>
-                          <td><span>이름</span> </td>
-                          <td><textarea name="name" rows="8" cols="80"></textarea> </td>
-                          <td><input type="button" name="" value="등록"></td>
+                          <td><textarea id="input_comment" rows="8" cols="80"></textarea></td>
+                          <td><input type="button" name="" value="등록" onclick="upload_comment();"></td>
                         </tr>
                       </tbody>
                     </table>
                   </form>
-                </div>
+                </div><!-- 코멘트 작성 -->
               </div>
             </td>
           </tr>
@@ -122,8 +153,18 @@
               <div class="">
                 <ul class="total_ul">
                   <li><a href="./free_list.php">목록</a></li>
-                  <li>다음글</li>
-                  <li>이전글</li>
+                  <?php
+                    if ($pre_num) {
+                      echo "<li><a href='./free_read_form.php?num=$pre_num&page=$page'>다음글&nbsp;</a></li>";
+                    }else {
+                      echo "<li><a href='#'>다음글&nbsp;</a></li>";
+                    }
+                    if ($odd_num) {
+                      echo "<li><a href='./free_read_form.php?num=$odd_num&page=$page'>&nbsp;이전글</a></li>";
+                    }else {
+                      echo "<li><a href='#'>&nbsp;이전글</a></li>";
+                    }
+                   ?>
                 </ul>
                 <ul class="total_ul" style="float : right">
                   <li><a href="#" onclick="history.back();">이전페이지</a></li>

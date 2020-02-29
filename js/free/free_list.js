@@ -1,9 +1,6 @@
-function change_category(categorys){
+function change_category(){
   var category=$("#category_select option:selected").val();
   if (category) {
-    // if ($("#category_select option").val()==categorys) {
-    //   $("#category_select option").attr("selected","selected");
-    // }
     window.location.href="free_list.php?category="+category+"";
   }else{
     window.location.href="free_list.php";
