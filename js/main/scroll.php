@@ -77,11 +77,13 @@ $(document).ready(function () {
                           <div class="col-lg-7 content_img no-flex" style="width: 420px; height: 186.66px; overflow : hidden;">
                             <img class="img-fluid rounded mb-4 mb-lg-0" src='`+file_path+`'>
                           </div>
-                          <div class="col-lg-5 no-flex" style="max-width : 45.666667%">
+                          <div class="col-lg-5 no-flex" style="max-width : 42.666667%">
                             <h1 class="font-weight-light">`+subject+`</h1>
                             <p style="word-wrap : break-word;">`+content +`</p>
-                            <a class="btn btn-primary" href="../../page/board/board_myboard_widen.php?num=`+num+`">Call to Action!</a>
-                            <span class="reply"><img src="" alt="">조회수 : `+hit+`회</span>
+                            <a class="btn btn-primary" href="../../page/board/board_myboard_widen.php?num=`+num+`">게시글 보기</a>
+                            <span class="reply"><img src="" alt="">
+                              <span id="span_hit" style="margin-left: 205px;">조회수 : `+hit+`회</span>
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -95,11 +97,13 @@ $(document).ready(function () {
                           <div class="col-lg-7 content_img no-flex" style="width: 420px; height: 186.66px; overflow : hidden;">
                             <img class="img-fluid rounded mb-4 mb-lg-0" src='`+file_path+`'>
                           </div>
-                          <div class="col-lg-5 no-flex" style="max-width : 45.666667%">
+                          <div class="col-lg-5 no-flex" style="max-width : 42.666667%">
                             <h1 class="font-weight-light">`+subject+`</h1>
                             <p style="word-wrap : break-word;">`+content +`</p>
-                            <a class="btn btn-primary" href="../../page/board/board_widen.php?num=`+num+`">Call to Action!</a>
-                            <span class="reply"><img src="" alt="">조회수 : `+hit+`회</span>
+                            <a class="btn btn-primary" href="../../page/board/board_widen.php?num=`+num+`">게시글 보기</a>
+                            <span class="reply"><img src="" alt="">
+                              <span id="span_hit" style="margin-left: 205px;">조회수 : `+hit+`회</span>
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -113,11 +117,13 @@ $(document).ready(function () {
                           <div class="col-lg-7 content_img no-flex" style="width: 420px; height: 186.66px; overflow : hidden;">
                             <img class="img-fluid rounded mb-4 mb-lg-0" src='`+file_path+`'>
                           </div>
-                          <div class="col-lg-5 no-flex" style="max-width : 45.666667%">
+                          <div class="col-lg-5 no-flex" style="max-width : 42.666667%">
                             <h1 class="font-weight-light">`+subject+`</h1>
                             <p style="word-wrap : break-word;">`+content +`</p>
-                            <a class="btn btn-primary" href="../../page/board/board_myboard_widen.php?num=`+num+`">Call to Action!</a>
-                            <span class="reply"><img src="" alt="">조회수 : `+hit+`회</span>
+                            <a class="btn btn-primary" href="../../page/board/board_myboard_widen.php?num=`+num+`">게시글 보기</a>
+                            <span class="reply"><img src="" alt="">
+                              <span id="span_hit" style="margin-left: 205px;">조회수 : `+hit+`회</span>
+                            </span>
                           </div>
                         </div>
                       </div>

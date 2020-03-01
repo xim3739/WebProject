@@ -108,9 +108,9 @@ if (!$username) {
           <button type="submit" class="btn btn-block btn-lg btn-primary" name="inputSearch">검색</button>
         </div>
       </div>
-      <div id="buttonDiv">
-          <button type="button" onclick="location.href='../main/main.php?category=찾아요'" class="btn btn-block btn-lg btn-primary">찾아요</button>
-          <button type="button" onclick="location.href='../main/main.php?category=데리고있어요'" class="btn btn-block btn-lg btn-primary">데리고 있어요</button>
+      <div class="buttonDiv" style="margin-bottom: 15px;">
+          <button type="button" onclick="location.href='../main/main.php?category=찾아요'" class="btn btn-block btn-lg btn-primary" id="button1" style="width:20%; display: inline-block; margin-left: 17%; background-color: #7ca2c3; border: 1px solid #7ca2c3;">찾아요</button>
+          <button type="button" onclick="location.href='../main/main.php?category=데리고있어요'" class="btn btn-block btn-lg btn-primary" id="button2" style="margin-top: 0; width:20%; display: inline-block; margin-left: 17%; background-color: #7ca2c3; border: 1px solid #7ca2c3;">데리고 있어요</button>
       </div>
     </form>
   </div>
@@ -161,8 +161,6 @@ if (!$username) {
       </div>
     </div>
   </footer>
-
-
 
   <!-- Bootstrap core JavaScript -->
   <script src="../../js/index/vendor/jquery/jquery.min.js"></script>
