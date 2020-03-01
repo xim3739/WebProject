@@ -22,7 +22,7 @@
 
     header a { width: 100px; height: 52px; padding: 0; margin: 0; display: inline-block; vertical-align: unset; }
 
-    #btn_home { background-image: url("../../img/main/home1.png"); display: inline-block; width: 45px; height: 45px;  vertical-align: bottom;}
+    #btn_home { border: none; background-color: white;background-image: url("../../img/main/home1.png"); display: inline-block; width: 45px; height: 45px;  vertical-align: bottom;}
 
     #btn_info { background-image: url("../../img/main/info1.png"); }
 
@@ -32,12 +32,12 @@
 
     .col-lg-7 { width: 450px; }
 
-    #menu_bar {position: fixed; width: 100%; height: 48px; background-color: #443e58; font-size: 16px; }
+    #menu_bar {position: fixed; width: 100%; height: 48px; background-color: #7ca2c3; font-size: 16px; }
 
-    #menu_bar ul { width: 70%; padding: 11px 0 0 0; margin-right: 300px; margin-left: 250px;}
+    #menu_bar ul { max-width: 75%; padding: 11px 0 0 0; margin-right: auto; margin-left: auto;}
 
-    #menu_bar li { display: inline; margin-left:13.5%; color: white; }
-
+    #menu_bar li { display: inline; margin-left: 15%; color: white; }
+    #menu_bar a {color : white;};
     .reply { margin-left: 213px; }
     body{ padding-top: 67px; }
     #buttons_box{position: fixed;right: 30px;top: 30%;}

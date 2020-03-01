@@ -5,7 +5,10 @@
   <title></title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="../../css/board/board.css">
-    <script src="../../js/board/board.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../css/comment/comment.css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="../../js/board/board.js"></script>
   <!-- Bootstrap core CSS -->
   <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
@@ -27,23 +30,21 @@
   <?php include "../../lib/common_page/main_style.php";?>
   <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2bc44b6ace455f7c953f89057af1aeae&libraries=services"></script>
   <!-- <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
-  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="../../js/main/pop_up_menu.js"></script>
-</head>
 
+</head>
 <body>
   <!-- header -->
   <?php include "../../lib/common_page/header.php" ?>
 <section>
   <!-- nav -->
   <?php include "../../lib/board/nav/board_nav.php" ?>
+
   <?php
   // session_start();
   $num  = $_GET["num"];
-
   $sql = "select * from board where num = $num";
   $result = mysqli_query($connect, $sql);
-
   $row = mysqli_fetch_array($result);
 
   $id      = $row["id"];
@@ -77,7 +78,6 @@
                   $file_size = filesize($file_path);
               }
           ?>
-          <!-- <img id="default_proflie"  name="upfile"  src="../../img/board/default.png"> -->
           <img id="blah"  name="upfile"  src='<?=$file_path?>' onerror="imagedefault(this)">
       </div>
       <div id="board_widen_top">
@@ -98,23 +98,17 @@
               </ul>
           </div>
         </div>
-      </div>
-
+      </div><br><br>
     </div>
   </form>
 </div>
 </section>
   <!-- 댓글기능 -->
-  <?php include "../../lib/comment/comment.php" ?>
-  <footer>
-    <?php include "../../lib/common_page/footer.php" ?>
-  </footer>
+  <?php include "../../lib/comment/comment_form.php" ?>
   <!-- <script src="../../js/board/board_map_view.js"></script> -->
-    </section>
-
-    <?php include "../../js/board/board_map_view.php"?>
-
-    <!-- <script src="../../js/board/board_map_view.js"></script> -->
+  </section>
+  <?php include "../../js/board/board_map_view.php"?>
+  <!-- <script src="../../js/board/board_map_view.js"></script> -->
 
 
 </body>

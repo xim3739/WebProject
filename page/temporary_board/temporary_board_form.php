@@ -35,7 +35,10 @@
     <?php include "../../lib/common_page/header.php" ?>
 
     <section>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2e113cd064ab29268bf78a853947f5a267d5fd7d
 
       <div id="board_box">
         <h3 id="board_title">
