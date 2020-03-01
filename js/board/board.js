@@ -4,18 +4,7 @@ function resize(obj) {
   obj.style.height = (1 + obj.scrollHeight) + "px";
 }
 // 댓글안에 답글글자를 누르면 답글을 달수가 있고 다시 누르면 숨겨지는 기능
-var flag = true;
 
-function hide() {
-  if (flag === false) {
-    document.getElementById("board_widen_comment_input_retext_box").style.display = "none";
-    flag = true;
-  } else {
-    document.getElementById("board_widen_comment_input_retext_box").style.display = "inline-block";
-    flag = false;
-  }
-
-}
 // 이미지 미리보기 기능
 $("#Preview_img").on('change', function() {
   readURL(this);

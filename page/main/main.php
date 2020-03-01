@@ -41,7 +41,7 @@
   <!-- Page Content -->
   <section style="margin-top : 90px">
 
-        <?php 
+        <?php
         if(isset($_GET['category'])){
           $category=$_GET['category'];
           $sql="SELECT * FROM `board` WHERE `category` = '$category'";
