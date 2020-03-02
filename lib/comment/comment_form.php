@@ -38,7 +38,7 @@
         function comment_delete(){
           var result = confirm("댓글을 삭제 하시겠습니까?");
           if(result){
-            location.href="../../lib/comment/comment_delete.php";
+            location.href="../../lib/comment/comment_delete.php?num=$group_num";
             alert("삭제 완료 페이지를 다시 불러 옵니다!");
           }else{
             alert("삭제 취소");
@@ -89,7 +89,6 @@
 
                   ?>
                   <!--대댓글-->
-                  <!-- 대댓글의 폼이 시작 되는 부분 -->
                   <div id="board_widen_comment_viewmore_click">
                     <img src="../../img/board/default_proflie.png">
                     <div id="board_widen_comment_show_text_member">

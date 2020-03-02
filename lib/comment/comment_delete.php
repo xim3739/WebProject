@@ -22,6 +22,6 @@ $result = mysqli_query($connect,$sql);
 
 mysqli_close($connect);
 echo "<script>
-        //location.href='../../page/board/board_widen.php?num=$group_num';
+        location.href='../../page/board/board_widen.php?num=$group_num';
       </script>";
  ?>
