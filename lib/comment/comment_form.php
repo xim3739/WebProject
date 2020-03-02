@@ -1,5 +1,5 @@
 <!-- 댓글 -->
-<!-- 
+<!--
 삭제 할땐 내가 단 댓글만 지울수 있고 다른 사람의 댓글은 지울수 없다
 내가 쓴 댓글은 삭제버튼이 생겨져 있다
 내가 쓴 댓글의 이미지는 기본 이미지와 다르다(색상을 주어 눈에 띄게 보임)
@@ -14,6 +14,7 @@
     // 코멘트 넘버로 오름차순으로 가져옴
       $result = mysqli_query($connect, $sql);
       $commentpost_num = mysqli_num_rows($result);
+
       if ($commentpost_num) {
           for ($i = 0; $i < $commentpost_num; $i++) {
               $row = mysqli_fetch_array($result);

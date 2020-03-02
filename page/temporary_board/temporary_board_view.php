@@ -117,7 +117,7 @@
 
 
 </section>
-
+  <?php include "../../lib/comment/comment_form.php" ?>
 
 </body>
 </html>
