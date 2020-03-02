@@ -96,15 +96,19 @@
                   )";
                   break;
 
-                  case 'comment' :
-                    $sql = "CREATE TABLE `comment`(
-                        `num` int NOT NULL AUTO_INCREMENT,
-                        `group_num` int NOT NULL,
-                        `depth` int NOT NULL,
-                        `ord` int NOT NULL,
-                        `id` char(15) NOT NULL,
+                  case 'free' :
+                    $sql = "CREATE TABLE `free`(
+                        `num` int AUTO_INCREMENT,
+                        `id` varchar(30) NOT NULL,
+                        `name` varchar(15) NOT NULL,
+                        `category` varchar(20) NOT NULL,
+                        `subject` varchar(200) NOT NULL,
                         `content` text NOT NULL,
-                        `regist_day` char(20),
+                        `regist_day` char(20) NOT NULL,
+                        `hit` int NOT NULL,
+                        `file_name` char(40),
+                        `file_type` char(40),
+                        `file_copied` char(40),
                         PRIMARY KEY(`num`)
                     )";
                     break;
