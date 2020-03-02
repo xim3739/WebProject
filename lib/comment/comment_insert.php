@@ -33,13 +33,9 @@
     $q_content = mysqli_real_escape_string($connect, $content);
     $q_userid = mysqli_real_escape_string($connect, $userid);
     $regist_day=date("Y-m-d (H:i)");
-
-
-
     $ord=0;
 
     if($mode && $comment_num){
-
       $depth=1;
       $sql="INSERT INTO `comment` VALUES (null,$group_num,$comment_num,$depth,$ord,'$userid','$q_content','$regist_day')";
       mysqli_query($connect, $sql);
@@ -53,7 +49,7 @@
       $sql = "SELECT max(`comment_num`) FROM `comment`";
       $result = mysqli_query($connect, $sql);
       $row = mysqli_fetch_array($result);
-      $comment_num = $row[0];
+      $comment_num = $row[0]
       $comment_num = (int)$comment_num;
       $sql="INSERT INTO `comment` VALUES (null,$group_num,$comment_num+1,$depth,$ord,'$userid','$q_content','$regist_day')";
       $result = mysqli_query($connect, $sql);
