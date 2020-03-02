@@ -34,9 +34,9 @@
 
     #menu_bar {position: fixed; width: 100%; height: 48px; background-color: #7ca2c3; font-size: 16px; }
 
-    #menu_bar ul { width: 70%; padding: 11px 0 0 0; margin-right: 300px; margin-left: 250px;}
+    #menu_bar ul { max-width: 75%; padding: 11px 0 0 0; margin-right: auto; margin-left: auto;}
 
-    #menu_bar li { display: inline; margin-left:13.5%; color: white; }
+    #menu_bar li { display: inline; margin-left: 15%; color: white; }
     #menu_bar a {color : white;};
     .reply { margin-left: 213px; }
     body{ padding-top: 67px; }
