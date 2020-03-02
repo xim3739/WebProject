@@ -115,7 +115,7 @@
                             <input type="hidden" name="re_content" value="<?=$content?>">
                             <span id ="date"><?=$regist_day?></span>&nbsp;&nbsp;
                             <span id = "reple_comment" style="cursor:pointer"  onclick="hide('board_widen_comment_input_retext_box<?=$i?>');">▼ 답글</span>
-                            <button type="submit" name="button">삭제</button>
+                            <button type="submit" name="button" id="comment_delete_btn">삭제</button>
                             <input type="hidden" name="date" value="<?=$regist_day?>">
                           </div>
                         </div>
