@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Small Business - Start Bootstrap Template</title>
+  <title>찾아Joo</title>
   <!-- jquery -->
   <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
 
@@ -45,6 +45,11 @@
         if(isset($_GET['category'])){
           $category=$_GET['category'];
           $sql="SELECT * FROM `board` WHERE `category` = '$category'";
+        } else if(isset($_POST['inputSearch'])) {
+          $category = "찾아요";
+          $inputSearch = $_POST['inputSearch'];
+          $sql = "SELECT * FROM `board` WHERE `category` = '$category' AND `subject` LIKE '%$inputSearch%'";
+
         }else{
 
           $sql="SELECT * FROM `board`";
@@ -52,6 +57,7 @@
         }
         $result=mysqli_query($connect,$sql);
         $page_num=mysqli_num_rows($result);
+      
         if($page_num==0){
           
         ?>
@@ -74,7 +80,6 @@
             <div id="pop_write">
               <ul>
                 <li><a href="../../page/board/board_writing.php">글쓰기</a></li>
-                <li><a href="">쪽지쓰기</a></li>
               </ul>
             </div>
             <button id="btn_pop_write" onclick="pop_up(this)"><img src="../../img/main/plus_button.png" alt="버튼"></button>
