@@ -20,6 +20,7 @@
   <?php include "../../lib/common_page/header.php" ?>
   <section>
   <!-- nav -->
+
   <?php include "../../lib/board/nav/board_nav.php" ?>
 
   <?php
