@@ -10,8 +10,6 @@ session_start();
       if($_GET['form']=='my'){
         $id=$_SESSION['userid'];
         $sql = "SELECT * FROM `board` WHERE `category` = '$category' and `id` = '$id' ORDER BY `num` DESC";
-
-        
       }else{
         $sql = "SELECT * FROM `board` WHERE `category` = '$category' ORDER BY `num` DESC";
       }
@@ -37,7 +35,7 @@ session_start();
 
   }
 
-  if(!(isset($_GET['search']) === null)) {
+  if(!(isset($_GET['search']) == "null")) {
     $search = $_GET['search'];
     $sql = "SELECT * FROM `board` WHERE `category` = '찾아요' AND `subject` LIKE '%$search%' ORDER BY `num` DESC";
   } 

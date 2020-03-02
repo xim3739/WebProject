@@ -50,7 +50,7 @@ $(document).ready(function () {
         if(isset($_POST['inputSearch'])) {
           $inputSearch = $_POST['inputSearch'];
         } else {
-          $inputSearch = null;
+          $inputSearch = "null";
         }
         ?>
         
