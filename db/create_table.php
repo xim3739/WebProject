@@ -68,6 +68,35 @@
                         PRIMARY KEY(num)
                     )";
                     break;
+<<<<<<< HEAD
+                case 'comment' :
+                  $sql = "CREATE TABLE `comment`(
+                      `num` int NOT NULL AUTO_INCREMENT,
+                      `group_num` int NOT NULL,
+                      `depth` int NOT NULL,
+                      `ord` int NOT NULL,
+                      `id` char(15) NOT NULL,
+                      `name` char(10) NOT NULL,
+                      `subject` varchar(200) NOT NULL,
+                      `content` text NOT NULL,
+                      `regist_day` char(20),
+                      PRIMARY KEY(`num`)
+                  )";
+                  break;
+                case 'temporary_comment' :
+                  $sql = "CREATE TABLE `temporary_comment`(
+                      `num` int NOT NULL AUTO_INCREMENT,
+                      `group_num` int NOT NULL,
+                      `depth` int NOT NULL,
+                      `ord` int NOT NULL,
+                      `id` char(15) NOT NULL,
+                      `name` char(10) NOT NULL,
+                      `content` text NOT NULL,
+                      `regist_day` char(20),
+                      PRIMARY KEY(`num`)
+                  )";
+                  break;
+=======
                   case 'comment' :
                     $sql = "CREATE TABLE `comment`(
                         `num` int NOT NULL AUTO_INCREMENT,
@@ -80,6 +109,7 @@
                         PRIMARY KEY(`num`)
                     )";
                     break;
+>>>>>>> 2e113cd064ab29268bf78a853947f5a267d5fd7d
                 case 'hospital_list' :
                     $sql = "CREATE TABLE `hospital_list`(
                         `num` int NOT NULL AUTO_INCREMENT,

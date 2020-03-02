@@ -9,9 +9,7 @@
   <meta name="author" content="">
 
   <title>Small Business - Start Bootstrap Template</title>
-
-  <!-- message core CSS&JS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+  <!-- jquery -->
   <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
   <link rel="stylesheet" href="../../css/aside/message.css">
   <script src="../../js/aside/message.js" charset="utf-8"></script>
@@ -22,16 +20,19 @@
   <!-- <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script> -->
   <link rel="stylesheet" href="../../css/aside/banner.css">
   <script src="../../js/aside/banner.js" charset="utf-8"></script>
-  <!-- Bootstrap core CSS -->
-  <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
+  <!-- aside css -->
+  <link rel="stylesheet" href="../../css/aside/message.css">
+  <link rel="stylesheet" href="../../css/aside/banner.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+
+  <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../../css/main/small-business.css" rel="stylesheet">
 
-  <script src="../../js/main/pop_up_menu.js"></script>
-
-  <!-- internal style -->
+  <!-- main header css -->
   <?php include "../../lib/common_page/main_style.php";?>
+
   <?php include "../../db/db_connector.php"; ?>
 
 </head>
@@ -55,15 +56,14 @@
         $page_num=mysqli_num_rows($result);
         if($page_num==0){
 
-
         ?>
-  <div class="container">
+  <div class="container" style="padding-left:146px;">
     <!-- Heading Row -->
     <div class="row align-items-center my-5">
       <div class="col-lg-7 no-flex" style="width: 420px; height: 186.66px; overflow : hidden;">
         <img class="img-fluid rounded mb-4 mb-lg-0" src="../../img/board/default.jpg">
       </div>
-      <div class="col-lg-5 no-flex">
+      <div class="col-lg-5 no-flex" style="max-width : 45.666667%">
         <h1 class="font-weight-light"></h1>
         <p>게시글이 없습니다.</p>
       </div>
@@ -86,9 +86,6 @@
 
 
   </section>
-
-  <!-- Footer -->
- <?php //include "../../lib/common_page/footer.php"; ?>
 
   <!-- Bootstrap core JavaScript -->
   <script src="../../js/main/jquery/jquery.min.js"></script>

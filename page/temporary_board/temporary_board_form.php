@@ -35,6 +35,10 @@
     <?php include "../../lib/common_page/header.php" ?>
 
     <section>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 2e113cd064ab29268bf78a853947f5a267d5fd7d
 
       <div id="board_box">
         <h3 id="board_title">
@@ -66,6 +70,7 @@
               <li><button type="button" onclick="location.href='temporary_board_list.php'">목록</button></li>
             </ul>
         </form>
+
       </div> <!-- board_box -->
     </section>
         <!-- 생략 -->

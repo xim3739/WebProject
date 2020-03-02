@@ -2983,7 +2983,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-block {
-  display: block;
+  display: inline-block;
   width: 100%;
 }
 
