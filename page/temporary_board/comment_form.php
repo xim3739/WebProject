@@ -153,6 +153,7 @@
 전 글을 삭제하면 다음글이 이전글위치에 있어야 한다
  -->
   <?php
+  $page = $_GET["page"];
       $passFlag=false;
       $sql = "SELECT * FROM (SELECT * FROM `temporary_comment` ORDER BY `group_num` DESC, `comment_num`) `comment` WHERE `group_num` = $num group by `depth`, `comment_num` ORDER BY `comment_num`";
     // 코멘트 테이블(그룹넘버로 내림차순, 코멘트 넘버로 오름차순)을 한 테이블에서 그룹넘버가 10인
@@ -232,7 +233,7 @@
                       <input type="hidden" name="re_content" value="<?=$content?>">
                       <span><?=$recomment_regist_day?></span>
                       <input type="hidden" name="date" value="<?=$regist_day?>">
-                      <span onclick="location.href='./comment_delete.php?comment_num=<?=$comment_num?>&depth=<?=$depth?>'">삭제</span>
+                      <span style="cursor:pointer" >삭제</span>
 
                     </div>
                   </div>
@@ -252,7 +253,7 @@
                          <input type="hidden" name="re_content" value="<?=$content?>">
                          <span id ="date"><?=$regist_day?></span>&nbsp;&nbsp;
                          <span id = "reple_comment" style="cursor:pointer"  onclick="hide('board_widen_comment_input_retext_box<?=$i?>');">▼ 답글</span>
-                         <span>삭제</span>
+                         <span style="cursor:pointer" onclick="location.href='./comment_delete.php?comment_num=<?=$comment_num?>&depth=<?=$depth?>&num=<?=$num?>&page=<?=$page?>'">삭제</span>
 
                          <input type="hidden" name="date" value="<?=$regist_day?>">
                        </div>
@@ -281,7 +282,7 @@
       } else {
           ?>
         <div class="board_widen_comment_box">
-          <form name="comment_form" action="./comment_insert.php?num=<?=$num?>"  method="post">
+          <form name="comment_form" action="./comment_insert.php?num=<?=$num?>&mode=recomment&comment_num=<?=$comment_num?>&page=<?=$page?>"  method="post">
             <div id="board_widen_comment_input_box">
               <div id="board_widen_comment_input_span">
                 <p>댓글 <span><?=$commentpost_num?></span>개</p>
