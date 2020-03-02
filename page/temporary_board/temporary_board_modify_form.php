@@ -12,6 +12,8 @@
 <!-- Custom styles for this template -->
 <link href="../../css/main/small-business.css" rel="stylesheet">
 <?php include "../../lib/common_page/main_style.php" ?>
+<?php include "../../db/db_connector.php"; ?>
+
 <script src="../../js/main/pop_up_menu.js"></script></head>
 <script>
   function check_input() {
@@ -34,7 +36,6 @@
 <body>
   <?php include "../../lib/common_page/header.php" ?>
 <section>
-  <?php include "../../lib/board/nav/board_nav.php" ?>
 
    	<div id="board_box">
 	    <h3 id="board_title">
@@ -43,6 +44,7 @@
 <?php
 	$num  = $_GET["num"];
 	$page = $_GET["page"];
+  $exist = $_GET["exist"];
 
 	$sql = "select * from temporary_board where num=$num";
 	$result = mysqli_query($connect, $sql);
@@ -51,8 +53,10 @@
 	$subject    = $row["subject"];
 	$content    = $row["content"];
 	$file_name  = $row["file_name"];
+  $file_copied = $row["file_copied"];
+
 ?>
-	    <form  name="board_form" method="post" action="temporary_board_modify.php?num=<?=$num?>&page=<?=$page?>" enctype="multipart/form-data">
+	    <form  name="board_form" method="post" action="temporary_board_modify.php?num=<?=$num?>&page=<?=$page?>&exist=<?=$exist?>&originFile=<?=$file_copied?>" enctype="multipart/form-data">
 	    	 <ul id="board_form">
 				<li>
 					<span class="col1">이름 : </span>
@@ -71,6 +75,15 @@
 	    		<li>
 			        <span class="col1"> 첨부 파일 : </span>
 			        <span class="col2"><?=$file_name?></span>
+              <?php
+            if($exist==="exist"){
+             echo ("
+             <li>
+             <span class='col1'> 원본 파일 : </span>
+             <span class='col2'><input type='file' name='upfile'></span></li>
+             ");
+           };
+             ?>
 			    </li>
 	    	    </ul>
 	    	<ul class="buttons">

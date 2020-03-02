@@ -35,11 +35,6 @@
     <?php include "../../lib/common_page/header.php" ?>
 
     <section>
-<<<<<<< HEAD
-
-=======
->>>>>>> 2e113cd064ab29268bf78a853947f5a267d5fd7d
-
       <div id="board_box">
         <h3 id="board_title">
             임시보호 > 글쓰기
@@ -67,7 +62,7 @@
             </ul>
             <ul class="buttons">
               <li><button type="button" onclick="check_input()">완료</button></li>
-              <li><button type="button" onclick="location.href='temporary_board_list.php'">목록</button></li>
+              <li><button type="button" onclick="location.href='./temporary_board_list.php'">목록</button></li>
             </ul>
         </form>
 

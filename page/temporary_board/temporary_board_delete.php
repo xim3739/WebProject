@@ -4,7 +4,7 @@ include "../../db/db_connector.php";
     $num   = $_GET["num"];
     $page   = $_GET["page"];
 
-    $sql = "select * from board where num = $num";
+    $sql = "select * from temporary_board where num = $num";
     $result = mysqli_query($connect, $sql);
     $row = mysqli_fetch_array($result);
 
@@ -12,7 +12,7 @@ include "../../db/db_connector.php";
 
 	if ($copied_name)
 	{
-		$file_path = "./data/".$copied_name;
+		$file_path = "../../data/".$copied_name;
 		unlink($file_path);
     }
 

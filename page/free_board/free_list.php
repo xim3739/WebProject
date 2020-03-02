@@ -17,7 +17,7 @@
   <body>
     <section>
       <?php include "../aside/message.php"; ?>
-      <?php include "../aside/banner.php"; include "../../js/main/scroll.php";?>
+      <?php include "../aside/banner.php"; ?>
       <div id="list_total">
         <?php
           include_once "../../db/db_connector_main.php";
