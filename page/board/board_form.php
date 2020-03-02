@@ -40,7 +40,7 @@
     //     $content = str_replace(" ", "&nbsp;", $content);
     //     $content = str_replace("\n", "<br>", $content);
 ?>
-  <?php include "../../lib/board/nav/board_nav.php" ?>
+
   <?php
         if($page_num==0){
         ?>

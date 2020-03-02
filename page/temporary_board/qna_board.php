@@ -13,6 +13,24 @@ if (isset($_SESSION["username"])) {
     $username = "";
 }
 
+if(isset($_GET['num'])&&isset($_GET['page'])){
+  $num=$_GET['num'];
+  $page=$_GET['page'];
+}else{
+  echo "<script>
+    alert('error_num_page');
+    history.go(-1);
+  </script>";
+}
+
+if(isset($_GET['mode'])){
+  $mode=$_GET['mode'];
+}else{
+  echo "<script>
+    alert('error_mode');
+    history.go(-1);
+  </script>";
+}
 
 
 $dbconn = mysqli_select_db($connect,"joo_db") or die('Error: '.mysqli_error($connect));
@@ -35,7 +53,8 @@ $userid = $_SESSION['userid'];
 $username = $_SESSION['username'];
 
 // 삽입하는경우
-if (isset($_GET["mode"])&&$_GET["mode"]=="reply") {
+if ($mode=="reply") {
+
     $r_content = trim($_POST["r_content"]);
     if (empty($r_content)) {
         echo "<script>alert('댓글 내용 입력요망!');history.go(-1);</script>";
@@ -82,7 +101,7 @@ if (isset($_GET["mode"])&&$_GET["mode"]=="reply") {
     // echo "<script>location.href='./qna_view.php?num=$max_num&hit=$hit';</script>";
     echo "<script>location.href='./temporary_board_view.php';</script>";
 
-}elseif (isset($_GET["mode"])&&$_GET["mode"]=="update_reply") {
+}elseif ($mode=="update_reply") {
     $r_content = trim($_POST["r_content"]);
     if (empty($r_content)) {
         echo "<script>alert('댓글 내용 입력요망!');history.go(-1);</script>";
@@ -106,7 +125,7 @@ if (isset($_GET["mode"])&&$_GET["mode"]=="reply") {
 
 
 
-} elseif (isset($_GET["mode"])&&$_GET["mode"]=="re_reply") {
+} elseif ($mode=="re_reply") {
     $content = trim($_POST["r_content"]);
     if (empty($content)) {
       echo "<script>alert('댓글 내용 입력요망!');history.go(-1);</script>";
