@@ -73,13 +73,12 @@
                   $sql = "CREATE TABLE `comment`(
                       `num` int NOT NULL AUTO_INCREMENT,
                       `group_num` int NOT NULL,
+                      `comment_num` int NOT NULL,
                       `depth` int NOT NULL,
                       `ord` int NOT NULL,
-                      `id` char(15) NOT NULL,
-                      `name` char(10) NOT NULL,
-                      `subject` varchar(200) NOT NULL,
+                      `id` varchar(15) NOT NULL,
                       `content` text NOT NULL,
-                      `regist_day` char(20),
+                      `regist_day` varchar(20),
                       PRIMARY KEY(`num`)
                   )";
                   break;
