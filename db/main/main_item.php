@@ -25,20 +25,22 @@ session_start();
         $sql = "SELECT * FROM `board` WHERE `category` = '$category' ORDER BY `num` DESC";
       }
       break;
-
+    
     default:
-    if($_GET['form']=='my'){
-      $id=$_SESSION['userid'];
-      $sql = "SELECT * FROM `board` WHERE `id` = '$id' ORDER BY `num` DESC";
-    }else{
-      $sql = "SELECT * FROM `board` ORDER BY `num` DESC";
-    }
-     
-    break;
+      if($_GET['form']=='my'){
+        $id=$_SESSION['userid'];
+        $sql = "SELECT * FROM `board` WHERE `id` = '$id' ORDER BY `num` DESC";
+      }else{
+        $sql = "SELECT * FROM `board` ORDER BY `num` DESC";
+      }
+      break;
 
   }
 
-
+  if(!(isset($_GET['search']) === null)) {
+    $search = $_GET['search'];
+    $sql = "SELECT * FROM `board` WHERE `category` = '찾아요' AND `subject` LIKE '%$search%' ORDER BY `num` DESC";
+  } 
 
   $scale=5;
 
