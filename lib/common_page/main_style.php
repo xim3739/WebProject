@@ -48,4 +48,5 @@
     .z_index2 {z-index: 10}
     .container p{ overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:8;-webkit-box-orient:vertical;
     word-wrap:break-word;}
+    #span_id { cursor: pointer }
   </style>
