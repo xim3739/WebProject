@@ -20,6 +20,7 @@
   <?php include "../../lib/common_page/header.php" ?>
   <section>
   <!-- nav -->
+<<<<<<< HEAD
   <?php
     // $result = mysqli_query($connect, $sql);
     // if ($result) {
@@ -40,7 +41,10 @@
     //     $content = str_replace(" ", "&nbsp;", $content);
     //     $content = str_replace("\n", "<br>", $content);
 ?>
+
+=======
   <?php include "../../lib/board/nav/board_nav.php" ?>
+>>>>>>> 852b1d48fed94ef97b6a869623cbbdd0be877c62
   <?php
         if($page_num==0){
         ?>
@@ -58,13 +62,6 @@
         <p>게시글이 없습니다.</p>
       </div>
     </div>
-
-      <?php
-        //   }
-        // } else {
-        //     echo "게시글이 없습니다.";
-        // }
-      ?>
 
   </div>
 </div>

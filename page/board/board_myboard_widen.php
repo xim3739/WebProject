@@ -30,7 +30,6 @@
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="../../js/main/pop_up_menu.js"></script>
 </head>
-
 <body>
   <!-- header -->
   <?php include "../../lib/common_page/header.php" ?>
@@ -74,7 +73,9 @@
                   $real_name = $file_copied;
                   $file_path = "../../data/".$real_name;
                   $file_size = filesize($file_path);
-                  }
+                }else{
+                  $file_path = "./default.jpg";
+                }
           ?>
           <img id="blah" name ="upfile" src='<?=$file_path?>' onerror="imagedefault(this)">
       </div>
@@ -107,9 +108,6 @@
 </section>
   <!-- 댓글기능 -->
   <?php include "../../lib/comment/comment_form.php" ?>
-  <footer>
-    <?php include "../../lib/common_page/footer.php" ?>
-  </footer>
   <script src="../../js/board/board.js"></script>
 
   <?php include "../../js/board/board_map_view.php"?>

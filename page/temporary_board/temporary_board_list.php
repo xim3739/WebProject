@@ -12,7 +12,10 @@
 <!-- Custom styles for this template -->
 <link href="../../css/main/small-business.css" rel="stylesheet">
 <?php include "../../lib/common_page/main_style.php" ?>
-<script src="../../js/main/pop_up_menu.js"></script></head>
+<script src="../../js/main/pop_up_menu.js"></script>
+<?php include "../../db/db_connector.php" ?>
+
+</head>
 <body>
   <?php include "../../lib/common_page/header.php" ?>
 <section>
@@ -123,13 +126,13 @@
 		}
 		else
 		{
-			echo "<li><a href='board_list.php?page=$i'> $i </a><li>";
+			echo "<li><a href='temporary_board_list.php?page=$i'> $i </a><li>";
 		}
    	}
    	if ($total_page>=2 && $page != $total_page) //현재 페이지가 마지막 페이지만 아니면 보여준다.
    	{
 		$new_page = $page+1;
-		echo "<li> <a href='board_list.php?page=$new_page'>다음 ▶</a> </li>";
+		echo "<li> <a href='temporary_board_list.php?page=$new_page'>다음 ▶</a> </li>";
 	}
 	else
 		echo "<li>&nbsp;</li>";
