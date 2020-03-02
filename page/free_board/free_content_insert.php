@@ -3,7 +3,8 @@
   error_reporting(E_ALL);
   ini_set("display_errors", 1);
   $name = $_GET["name"];
-
+  $id = $_GET["id"];
+  include_once "../../db/db_connector_main.php";
   $category = $_POST["category"];
   $subject = $_POST["subject"];
   $content = $_POST["content"];
@@ -49,19 +50,20 @@
     $upfile_type = "";
     $copied_file_name = "";
   }
-  $connect = mysqli_connect("localhost", "root", "123456", "test");
+  // $connect = mysqli_connect("localhost", "root", "123456", "test");
   $sql = "select * from member where name='$name'";
   $result = mysqli_query($connect, $sql);
   $num_record = mysqli_num_rows($result);
   if ($num_record) {
-    $sql = "insert into free (num, name, category, subject, content,regist_day,hit,file_name,file_type,file_copied)";
-    $sql .= "values(null,'$name','$category','$subject','$content','$regist_day',0,";
+    $sql = "insert into free (num, id, name, category, subject, content,regist_day,hit,file_name,file_type,file_copied)";
+    $sql .= "values(null,'$id','$name','$category','$subject','$content','$regist_day',0,";
     $sql .= "'$upfile_name','$upfile_type','$copied_file_name')";
     mysqli_query($connect,$sql);
     mysqli_close($connect);
   }else {
     echo "<script>
             alert('수신 아이디가 잘못 되었습니다.');
+            history.go(-1);
             </script>
             ";
     exit;

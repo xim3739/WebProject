@@ -1,8 +1,8 @@
 *{margin: 0;padding: 0;border-collapse: collapse; font-family: gulim, 굴림, Helvetica;}
 .total_ul{margin: 0; padding: 0; display: inline-block;}
 .total_ul li{display: inline-block; list-style: none;}
-.table_border{height: 2px; background-color: #bcdaba;}
-.bottom_tr{ border-bottom: 1px solid #bcdaba;}
-.back_tr{background-color: #e6f2e6; text-align: center;}
+.table_border{height: 2px; background-color: #7ca2c3;}
+.bottom_tr{ border-bottom: 1px solid #7ca2c3;}
+.back_tr{background-color: #7ca2c3; text-align: center; color: white;}
 .subject{color: red; font-weight: bold; font-size: 24px;}
 #content_bottom{text-align: right;}

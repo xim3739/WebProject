@@ -10,12 +10,12 @@
   </head>
   <body>
     <?php
-    // include_once "../../db/db_connector_main.php";
-    // $userid=(isset($_SESSION["userid"]))?$_SESSION["userid"]:"";
+    include_once "../../db/db_connector_main.php";
+    $userid=(isset($_SESSION["userid"]))?$_SESSION["userid"]:"";
     $num = $_GET["num"];
     $page = $_GET["page"];
     $userid = "cwpark2190";
-    $connect = mysqli_connect("localhost","root","123456","test");
+    // $connect = mysqli_connect("localhost","root","123456","test");
     $sql = "select * from free where num = $num";
     $result = mysqli_query($connect,$sql);
     $row = mysqli_fetch_array($result);

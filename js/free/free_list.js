@@ -9,3 +9,7 @@ function change_category(){
 function goList(){
   window.location.href="free_list.php?new_cate=1";
 }
+function connect_message(id){
+  show_message();
+  recall_message();
+}

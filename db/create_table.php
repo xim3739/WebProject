@@ -68,7 +68,7 @@
                         PRIMARY KEY(num)
                     )";
                     break;
-<<<<<<< HEAD
+
                 case 'comment' :
                   $sql = "CREATE TABLE `comment`(
                       `num` int NOT NULL AUTO_INCREMENT,
@@ -96,7 +96,7 @@
                       PRIMARY KEY(`num`)
                   )";
                   break;
-=======
+
                   case 'comment' :
                     $sql = "CREATE TABLE `comment`(
                         `num` int NOT NULL AUTO_INCREMENT,
@@ -109,7 +109,7 @@
                         PRIMARY KEY(`num`)
                     )";
                     break;
->>>>>>> 2e113cd064ab29268bf78a853947f5a267d5fd7d
+
                 case 'hospital_list' :
                     $sql = "CREATE TABLE `hospital_list`(
                         `num` int NOT NULL AUTO_INCREMENT,

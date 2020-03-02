@@ -1,4 +1,6 @@
+#list_total{width: 800px; margin: 0 auto; margin-top: 100px;}
 .bottom_tr{text-align: center;}
+.bottom_tr a{text-decoration: none;}
 .bottom_tr:hover{background-color: #bcdaba;}
 #input_table{width: 710px;}
 .back_tr{font-size: 12px; padding: 5px;}
@@ -11,3 +13,6 @@
 .col6{width: 40px; padding-top: 5px; padding-bottom: 5px;}
 .page_tr a{text-decoration: none; color: black;}
 #search_ul {margin-left: 80px;}
+#search_ul li{display: inline-block; list-style: none;}
+.page_table{width: 100%};
+.search_td{text-align: right;}
