@@ -233,7 +233,7 @@
                       <input type="hidden" name="re_content" value="<?=$content?>">
                       <span><?=$recomment_regist_day?></span>
                       <input type="hidden" name="date" value="<?=$regist_day?>">
-                      <span style="cursor:pointer" >삭제</span>
+                      <span style="cursor:pointer"onclick="location.href='./recomment_delete.php?comment_num=<?=$comment_num?>&depth=<?=$depth?>&num=<?=$num?>&page=<?=$page?>'">삭제</span>
 
                     </div>
                   </div>
