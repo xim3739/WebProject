@@ -38,15 +38,12 @@
         function comment_delete(){
           var result = confirm("댓글을 삭제 하시겠습니까?");
           if(result){
-            location.href="../../lib/comment/comment_delete.php?num=$group_num";
             alert("삭제 완료 페이지를 다시 불러 옵니다!");
           }else{
             alert("삭제 취소");
           }
         }
         </script>
-
-
         <!-- basic comment input -->
         <div class="board_widen_comment_box">
           <form name="comment_form" action="../../lib/comment/comment_insert.php?num=<?=$num?>"  method="post">
@@ -108,18 +105,21 @@
                     $passFlag = false;
                       ?>
                       <!-- comment show & recomment input -->
-                     <div id="board_widen_comment_show_text">
-                       <img class="imgsetting" src="../../img/board/default_proflie.png">
-                       <div id="board_widen_comment_show_text_member">
-                         <span id ="id"><?=$id?></span><br>
-                         <input type="hidden" name="id" value="<?=$id?>">
-                         <span id ="re_content"><?=$content?></span><br>
-                         <input type="hidden" name="re_content" value="<?=$content?>">
-                         <span id ="date"><?=$regist_day?></span>&nbsp;&nbsp;
-                         <span id = "reple_comment" style="cursor:pointer"  onclick="hide('board_widen_comment_input_retext_box<?=$i?>');">▼ 답글</span><span onclick="comment_delete();"  style="cursor:pointer">삭제</span>
-                         <input type="hidden" name="date" value="<?=$regist_day?>">
-                       </div>
-                     </div>
+                      <form name = "comment_delete" action="../../lib/comment/comment_delete.php?num=<?=$num?>comment_num=<?=$comment_num?>" method="post">
+                        <div id="board_widen_comment_show_text">
+                          <img class="imgsetting" src="../../img/board/default_proflie.png">
+                          <div id="board_widen_comment_show_text_member">
+                            <span id ="id"><?=$id?></span><br>
+                            <input type="hidden" name="id" value="<?=$id?>">
+                            <span id ="re_content"><?=$content?></span><br>
+                            <input type="hidden" name="re_content" value="<?=$content?>">
+                            <span id ="date"><?=$regist_day?></span>&nbsp;&nbsp;
+                            <span id = "reple_comment" style="cursor:pointer"  onclick="hide('board_widen_comment_input_retext_box<?=$i?>');">▼ 답글</span>
+                            <button type="submit" name="button">삭제</button>
+                            <input type="hidden" name="date" value="<?=$regist_day?>">
+                          </div>
+                        </div>
+                      </form>
                      <form name = "recomment_form" action="../../lib/comment/comment_insert.php?num=<?=$num?>&mode=recomment&comment_num=<?=$comment_num?>" method="post">
                        <div id="board_widen_comment_input_retext_box<?=$i?>" style="margin-left : 60px; display : none;">
                          <div id="board_widen_comment_input_retext">
