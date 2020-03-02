@@ -15,7 +15,7 @@
       $key_word=(isset($_GET["key_word"]))?$_GET["key_word"]:" ";
       $page=(isset($_GET["page"]))?$_GET["page"]:1;
       $scale=(isset($_GET["scale"]))?$_GET["scale"]:20;
-      $search_subject=(isset($_GET["search_subject"]))?$_GET["search_subject"]:" ";
+      $search_subject=(isset($_POST["search_subject"]))?$_POST["search_subject"]:" ";
       $page_num=10;
       $new_cate=(isset($_GET["new_cate"]))?$_GET["new_cate"]:0;
       if ($new_cate==="1") {
@@ -98,7 +98,6 @@
                       $regist_day = $row["regist_day"];
                       $time = substr($regist_day,12,5);
                       $hit = $row["hit"];
-                      $chu = $row["chu"];
                       ?>
                   <tbody>
                     <tr class="bottom_tr">

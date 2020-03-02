@@ -42,7 +42,7 @@
   <!-- Page Content -->
   <section style="margin-top : 90px">
 
-        <?php 
+        <?php
         if(isset($_GET['category'])){
           $category=$_GET['category'];
           $sql="SELECT * FROM `board` WHERE `category` = '$category'";
@@ -54,8 +54,8 @@
         $result=mysqli_query($connect,$sql);
         $page_num=mysqli_num_rows($result);
         if($page_num==0){
-          
-        
+
+
         ?>
   <div class="container">
     <!-- Heading Row -->
@@ -88,7 +88,7 @@
   </section>
 
   <!-- Footer -->
- <?php //include "../../lib/common_page/footer.php"; ?>    
+ <?php //include "../../lib/common_page/footer.php"; ?>
 
   <!-- Bootstrap core JavaScript -->
   <script src="../../js/main/jquery/jquery.min.js"></script>

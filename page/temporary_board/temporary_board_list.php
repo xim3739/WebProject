@@ -16,7 +16,6 @@
 <body>
   <?php include "../../lib/common_page/header.php" ?>
 <section>
-  <?php include "../../lib/board/nav/board_nav.php" ?>
 
    	<div id="board_box">
 	    <h3>
@@ -154,9 +153,7 @@
 			</ul>
 	</div> <!-- board_box -->
 </section>
-<footer>
-  <?php include "../../lib/common_page/footer.php" ?>
-</footer>
-  <?php include "../../js/main/scroll.php"; ?>
+
+
 </body>
 </html>

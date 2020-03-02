@@ -20,11 +20,29 @@
   <?php include "../../lib/common_page/header.php" ?>
   <section>
   <!-- nav -->
+  <?php
+    // $result = mysqli_query($connect, $sql);
+    // if ($result) {
+    //   mysqli_query($connect, $sql);
+    //   for ($i = 0; $i <$userpost_num; $i++) {
+    //     mysqli_data_seek($result, $i);
+    //     $row = mysqli_fetch_array($result);
+    //     $num = $row["num"];
+    //     $id      = $row["id"];
+    //     $name      = $row["name"];
+    //     $regist_day = $row["regist_day"];
+    //     $subject    = $row["subject"];
+    //     $content    = $row["content"];
+    //     $file_name    = $row["file_name"];
+    //     $file_type    = $row["file_type"];
+    //     $file_copied  = $row["file_copied"];
+    //     $hit          = $row["hit"];
+    //     $content = str_replace(" ", "&nbsp;", $content);
+    //     $content = str_replace("\n", "<br>", $content);
+?>
   <?php include "../../lib/board/nav/board_nav.php" ?>
-  <?php 
+  <?php
         if($page_num==0){
-
-
         ?>
           <div class="board_center">
 
@@ -40,14 +58,18 @@
         <p>게시글이 없습니다.</p>
       </div>
     </div>
+
+      <?php
+        //   }
+        // } else {
+        //     echo "게시글이 없습니다.";
+        // }
+      ?>
+
   </div>
 </div>
-
-
         <?php } ?>
-
   </section>
-
   <footer>
     <?php include "../../lib/common_page/footer.php" ?>
   </footer>

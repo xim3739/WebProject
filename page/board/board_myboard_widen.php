@@ -5,6 +5,7 @@
   <title></title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="../../css/board/board.css">
+  <link rel="stylesheet" type="text/css" href="../../css/comment/comment.css">
   <!-- Bootstrap core CSS -->
   <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
@@ -37,8 +38,9 @@
     <!-- nav -->
     <?php include "../../lib/board/nav/board_nav.php" ?>
   <?php
-    
+
     $num  = $_GET["num"];
+
     $sql = "SELECT * FROM `board` WHERE `num`=$num";
     $result = mysqli_query($connect, $sql);
     $row = mysqli_fetch_array($result);
@@ -57,7 +59,7 @@
 
     $content = str_replace(" ", "&nbsp;", $content);
     $content = str_replace("\n", "<br>", $content);
-    
+
     $new_hit = $hit + 1;
     $sql = "UPDATE `board` SET `hit`=$new_hit WHERE `num`=$num";
     mysqli_query($connect,$sql);
@@ -98,17 +100,18 @@
       <div id="board_myboard_widen_button_box">
         <button type="button"><a href="board_myboard_rewrite.php?num=<?=$num?>">Edit</a></button>
         <button type="button"><a href="board_delete.php?num=<?=$num?>">Delete</a></button>
+        <br><br><br>
       </div>
     </form>
   </div>
 </section>
   <!-- 댓글기능 -->
-  <?php include "../../lib/comment/comment.php" ?>
+  <?php include "../../lib/comment/comment_form.php" ?>
   <footer>
     <?php include "../../lib/common_page/footer.php" ?>
   </footer>
   <script src="../../js/board/board.js"></script>
-  
+
   <?php include "../../js/board/board_map_view.php"?>
 </body>
 

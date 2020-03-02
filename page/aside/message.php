@@ -16,7 +16,7 @@
           $('#message_show').hide();
           </script>";
         }
-        // include_once "../../db/db_connector_main.php";
+        include_once "../../db/db_connector_main.php";
         $sql = "select * from member where id NOT IN('$userid')";
         $result = mysqli_query($connect,$sql);
         $total_record = mysqli_num_rows($result);
