@@ -1,0 +1,25 @@
+ul{margin: 0; padding: 0;}
+#admin_aside_left{position: absolute; width: 10%; left: 20%; top: 10%;}
+#admin_aside_left ul{border-collapse: collapse; list-style: none;}
+#admin_aside_left ul li{ padding: 10px;}
+#admin_aside_left ul li a{text-decoration: none; color: black; font-weight: bold;}
+/* 관리자 회원 목록보기(admin_list.php) */
+#admin_box { width: 580px; margin: 0 auto;}
+#admin_box #member_title { margin: 30px 0 10px 0;}
+#member_list {list-style: none; margin: 10px 0 30px 0; }
+#member_list ul{list-style-type: none;}
+#member_list ul li{list-style: none; height: 20px;}
+#member_list li:nth-child(1) { font-weight: bold; border-top: solid 2px #dddddd; border-bottom: solid 2px #dddddd; background-color: #eeeeee;}
+#member_list li { padding: 10px 0; border-bottom: solid 1px #dddddd; }
+#member_list span { display: inline-block; text-align: center;}
+#member_list input { width: 40px; height: 20px; text-align: center;}
+#member_list button { padding: 3px 10px;}
+#member_list .col1 { width: 50px; }
+#member_list .col2 { width: 110px; }
+#member_list .col3 { width: 60px; }
+#member_list .col4 { width: 130px; }
+#member_list .col5 { width: 120px;}
+#member_list .col6 { width: 80px; }
+#page_num {	text-align: center;	margin: 15px 0;}
+#page_num li { display: inline; border: none}
+#page_num li a{text-decoration: none; color: black;}
