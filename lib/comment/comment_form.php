@@ -105,7 +105,7 @@
                     $passFlag = false;
                       ?>
                       <!-- comment show & recomment input -->
-                      <form name = "comment_delete" action="../../lib/comment/comment_delete.php?num=<?=$num?>comment_num=<?=$comment_num?>" method="post">
+                      <form name = "comment_delete" action="../../lib/comment/comment_delete.php?num=<?=$num?>&comment_num=<?=$comment_num?>" method="post">
                         <div id="board_widen_comment_show_text">
                           <img class="imgsetting" src="../../img/board/default_proflie.png">
                           <div id="board_widen_comment_show_text_member">

@@ -9,6 +9,7 @@ if(isset($_GET['comment_num'])) {
 } else {
   $comment_num = 0;
 }
+var_dump( $_GET['comment_num']);
 function test_input($data)
 {
     $data = stripslashes($data);
@@ -24,12 +25,12 @@ if($confirm){
           alert('삭제가 완료된 페이지를 다시 불러 옵니다!');
         </script>";
 
-        $sql ="DELETE FROM `comment` WHERE `group_num`=$group_num AND `comment_num`=$comment_num";
+        $sql ="DELETE FROM `comment` WHERE `comment_num`=$comment_num";
         $result = mysqli_query($connect,$sql);
 
         mysqli_close($connect);
         echo "<script>
-              location.href='../../page/board/board_widen.php?num=$group_num';
+             location.href='../../page/board/board_widen.php?num=$group_num';
               </script>";
 }else{
         echo "<script>
