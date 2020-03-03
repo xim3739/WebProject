@@ -85,8 +85,8 @@
             <form name="member_form"action="./member_insert.php" method="post">
               <div class="row">
                 <div class="input-field col s12 center">
-                  <h4>Register</h4>
-                  <p class="center">Join to our community now !</p>
+                  <h4>찾아ZOO</h4>
+                  <p class="center">회원가입</p>
                 </div>
               </div>
 

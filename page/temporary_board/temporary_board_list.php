@@ -58,7 +58,7 @@
 <section>
   <?php
 
-  $sql=$result=$total_record=$total_page=$start="";
+  $sql=$total_record=$total_page=$start="";
   $row="";
 
   if (isset($_GET["mode"])&&$_GET["mode"]=="search") {

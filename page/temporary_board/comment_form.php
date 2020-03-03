@@ -190,7 +190,7 @@
               </div>
               <div id="board_widen_comment_input_text">
                 <img class="imgsetting" id="board_widen_comment_input_text_image" src="../../img/board/default_proflie.png" >
-                <textarea name="content" id="input_comment_area" rows="1" onkeydown="resize(this)" onkeyup="resize(this)" placeholder="Comment"></textarea>
+                <textarea name="content" id="input_comment_area" rows="1"  placeholder="Comment"></textarea>
                 <button type="submit" id="submit" name="button">Add</button>
               </div>
             </div>
@@ -262,7 +262,7 @@
                        <div id="board_widen_comment_input_retext_box<?=$i?>" style="margin-left : 60px; display : none;">
                          <div id="board_widen_comment_input_retext">
                            <img class="imgsetting" id="board_widen_comment_input_retext_image" src="../../img/board/default_proflie.png">
-                           <textarea name="content" id="input_comment_area" rows="1" onkeydown="resize(this)" onkeyup="resize(this)" placeholder="Comment"></textarea>
+                           <textarea name="content" id="input_comment_area" rows="1"  placeholder="Comment"></textarea>
                            <button type="submit" id="submit" name="button" >Add</button>
                          </div>
                        </div>
@@ -289,7 +289,7 @@
               </div>
               <div id="board_widen_comment_input_text">
                 <img class="imgsetting" id="board_widen_comment_input_text_image" src="../../img/board/default_proflie.png" >
-                <textarea name="content" id="input_comment_area" rows="1" onkeydown="resize(this)" onkeyup="resize(this)" placeholder="Comment"></textarea>
+                <textarea name="content" id="input_comment_area" rows="1" placeholder="Comment"></textarea>
                 <button type="submit" name="button">Add</button>
               </div>
             </div><br><br><br><br>

@@ -40,7 +40,7 @@
     $ord=0;
 
     if($mode && $comment_num){
-
+      var_dump($q_content);
       $depth=1;
       $sql="INSERT INTO `temporary_comment` VALUES (null,$group_num,$comment_num,$depth,$ord,'$userid','$q_content','$regist_day')";
       mysqli_query($connect, $sql);
@@ -60,7 +60,7 @@
       $result = mysqli_query($connect, $sql);
 
       //현재 최대큰번호를 가져와서 그룹번호로 저장하기
-      $sql2="SELECT max(num) from temporary_comment;";
+      $sql2="SELECT max(num) FROM `temporary_comment`;";
       $result = mysqli_query($connect, $sql2);
       $row=mysqli_fetch_array($result);
       $max_num=$row['max(num)'];

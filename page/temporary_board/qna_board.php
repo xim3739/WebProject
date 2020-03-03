@@ -84,7 +84,7 @@ if ($mode=="reply") {
     }
 
     //현재 최대큰번호를 가져와서 그룹번호로 저장하기
-    $sql="SELECT max(num) from temporary_comment;";
+    $sql="SELECT max(num) FROM `temporary_comment`;";
     $result = mysqli_query($connect, $sql);
     if (!$result) {
         die('Error: ' . mysqli_error($connect));
@@ -140,7 +140,7 @@ if ($mode=="reply") {
     $q_num = mysqli_real_escape_string($connect, $num);
     $regist_day=date("Y-m-d (H:i)");
 
-    $sql="SELECT * from temporary_comment where num =$q_num;"; //부모넘버
+    $sql="SELECT * FROM `temporary_comment` WHERE `num`=$q_num;"; //부모넘버
     $result = mysqli_query($connect, $sql);
     if (!$result) {
         die('Error: ' . mysqli_error($connect));
