@@ -24,8 +24,8 @@
       <div id="header_content" style="margin-bottom: 10px;margin-top: 10px;">
         <!-- <a href="../../page/index/index.php" id="btn_home"></a> -->
         <button type="button" id="btn_home" onclick="location.href='../index/index.php'"></button>
-        <form action="">
-          <input type="text" name="" id="search">
+        <form action="./main.php" method="POST">
+          <input type="text" name="inputSearch" id="search">
           <input type="submit" value="  " id="btn_search">
         </form>
       </div>
