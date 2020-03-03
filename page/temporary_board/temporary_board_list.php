@@ -14,18 +14,114 @@
 <?php include "../../lib/common_page/main_style.php" ?>
 <script src="../../js/main/pop_up_menu.js"></script>
 <?php include "../../db/db_connector.php" ?>
+<style media="screen">
 
+      #list_search {
+      height:30px;
+      padding-top:10px;
+      margin-left: 535px;
+      }
+
+      #list_search #list_search3 {
+      float:left;
+      margin-left:5px;
+      margin-top:1px;
+      }
+
+      #list_search #list_search3 select {
+      width:80px;
+      height:21px;
+      border:solid 1px #cccccc;
+      }
+
+      #list_search #list_search4 {
+      float:left;
+      margin-left:3px;
+      }
+
+      #list_search #list_search4 input {
+      width:120px;
+      height:18px;
+      border:solid 1px #cccccc;
+      }
+
+      #list_search #list_search5 {
+      float:left;
+      margin-left:5px;
+      margin-top:1px;
+      }
+
+</style>
 </head>
 <body>
-  <?php include "../../lib/common_page/header.php" ?>
+  <?php include "../../lib/common_page/header.php";?>
 <section>
+  <?php
 
-   	<div id="board_box">
+  $sql=$result=$total_record=$total_page=$start="";
+  $row="";
+
+  if (isset($_GET["mode"])&&$_GET["mode"]=="search") {
+      //제목, 내용, 아이디
+      $find = $_POST["find"];
+      $search = $_POST["search"];
+      $q_search = mysqli_real_escape_string($connect, $search);
+      $sql="SELECT * from `temporary_board` where $find like '%$q_search%' order by num desc;";
+  } else {
+      $sql="SELECT * from `temporary_board` order by num desc;";
+  }
+
+
+  	$result = mysqli_query($connect, $sql); //위의 쿼리문을 실행한 결과값을 result에 레코드셋으로 저장을 하게된다.
+  	$total_record = mysqli_num_rows($result); // 전체 글 수 //mysqli_num_rows 함수는 리절트 셋(result set)의 총 레코드 수를 반환합니다.
+
+
+
+
+    if (isset($_GET["page"]))//존재하는 키값에 페이지가 존재하느냐
+  		$page = $_GET["page"];
+  	else
+  		$page = 1;
+  	$scale = 10; //목록 수 = scale
+
+  // 1. 페이지를 정하려면 전체 갯수를 알아야한다. 138
+  // 2. 목록 수를 결정한다. 10
+  // 3. 페이지 수가 나온다. 14 (페이지수는 나눠떨어지지 않을 수 있다. => 그때는 1을 더해야 한다. ex. 138/10 + 1)
+  // 4. 시작할 페이지를 정한다. 1
+  // 5. 페이지 세팅 넘버 page set number = (시작페이지-1)*목록 수
+  // 6. 페이지 별로 시작하는 번호 (138-x =138) 138 --- 129개가 나온다
+
+  	// 전체 페이지 수($total_page) 계산
+  	if ($total_record % $scale == 0)
+  		$total_page = floor($total_record/$scale); //소수점 내림 함수
+  	else
+  		$total_page = floor($total_record/$scale) + 1;
+
+  	// 표시할 페이지($page)에 따라 $start 계산
+  	$start = ($page - 1) * $scale;
+  //page = 14
+  	$number = $total_record - $start;
+  ?>
+   	<div id="board_box" style="padding-top:100px;">
 	    <h3>
 	    	임시보호 > 목록보기
 		</h3>
+    <form name="board_form" action="temporary_board_list.php?mode=search" method="post">
+      <div id="list_search">
+          <div id="list_search3">
+            <select name="find">
+              <option value="subject">제목</option>
+              <option value="content">내용</option>
+              <option value="name">이름</option>
+            </select>
+          </div><!--end of list_search3  -->
+          <div id="list_search4"><input type="text" name="search" style="height: 21px;"></div>
+          <div id="list_search5"> <input type="image" src="../../img/board/list_search_button.gif"></div>
+        </div><!--end of list_search  -->
+    </form>
 	    <ul id="board_list">
 				<li>
+
 					<span class="col1">번호</span>
 					<span class="col2">제목</span>
 					<span class="col3">글쓴이</span>
@@ -33,38 +129,8 @@
 					<span class="col5">등록일</span>
 					<span class="col6">조회</span>
 				</li>
+
 <?php
-
-	if (isset($_GET["page"]))//존재하는 키값에 페이지가 존재하느냐
-		$page = $_GET["page"];
-	else
-		$page = 1;
-
-  //샘플이라는 디비를 가리키는 포인터가 con에 담기게 된다. 저장장소를 가리키게 된다.
-	$sql = "select * from temporary_board order by num desc";
-	$result = mysqli_query($connect, $sql); //위의 쿼리문을 실행한 결과값을 result에 레코드셋으로 저장을 하게된다.
-	$total_record = mysqli_num_rows($result); // 전체 글 수 //mysqli_num_rows 함수는 리절트 셋(result set)의 총 레코드 수를 반환합니다.
-
-	$scale = 10; //목록 수 = scale
-
-// 1. 페이지를 정하려면 전체 갯수를 알아야한다. 138
-// 2. 목록 수를 결정한다. 10
-// 3. 페이지 수가 나온다. 14 (페이지수는 나눠떨어지지 않을 수 있다. => 그때는 1을 더해야 한다. ex. 138/10 + 1)
-// 4. 시작할 페이지를 정한다. 1
-// 5. 페이지 세팅 넘버 page set number = (시작페이지-1)*목록 수
-// 6. 페이지 별로 시작하는 번호 (138-x =138) 138 --- 129개가 나온다
-
-	// 전체 페이지 수($total_page) 계산
-	if ($total_record % $scale == 0)
-		$total_page = floor($total_record/$scale); //소수점 내림 함수
-	else
-		$total_page = floor($total_record/$scale) + 1;
-
-	// 표시할 페이지($page)에 따라 $start 계산
-	$start = ($page - 1) * $scale;
-//page = 14
-	$number = $total_record - $start;
-
    for ($i=$start; $i<$start+$scale && $i < $total_record; $i++)
    {
       mysqli_data_seek($result, $i); //리절트=레코드셋에서 원하는 데이터를 선택
