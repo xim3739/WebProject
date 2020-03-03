@@ -46,13 +46,15 @@
         } else {
             $username = "";
         }
-
-        if(!$userid) {
     ?>
     <nav class="navbar navbar-light bg-light static-top">
         <div class="container" style="vertical-align: text-top;">
-            <a class="navbar-brand" href="../main/main.php">찾아Joo</a>
+            <a class="navbar-brand" href="../index/index.php">찾아Joo</a>
                 <div id="icon_box" style=" vertical-align: text-top;">
+    <?php
+        if(!$userid) {
+    ?>
+    
                 <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/signup.php','','width=500,height=1000,left=500,top=40');">
     <?php
 
@@ -70,7 +72,7 @@
 
         <span>&nbsp;&nbsp; | &nbsp;&nbsp;</span>
         <span><a href="../login/logout.php" style=" width: 100px;text-align: center;">로그아웃</a></span>
-        <?php include "../../lib/common_page/header.php"; ?>
+        
     <?php
         }
     ?>
