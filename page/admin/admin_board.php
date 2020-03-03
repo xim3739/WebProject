@@ -13,8 +13,8 @@
           <li><a href="./admin_board.php?category='찾아요'">게시판 관리</a>
             <ul id="admin_list_category">
               <li><a href="./admin_board.php?category='찾아요'">찾아요 게시판</a></li>
-              <li><a href="./admin_board.php?category='데리고 있어요'">데리고 있어요</a></li>
-              <li><a href="./admin_board.php?category='임시 보호'">임시 보호</a></li>
+              <li><a href="./admin_board.php?category='데리고있어요'">데리고 있어요</a></li>
+              <li><a href="./admin_board.php?category='임시보호'">임시 보호</a></li>
               <li><a href="./admin_board.php?category='자유게시판'">자유게시판</a></li>
             </ul>
           </li>
