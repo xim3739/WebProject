@@ -148,20 +148,20 @@
 <!--
 삭제 할땐 내가 단 댓글만 지울수 있고 다른 사람의 댓글은 지울수 없다
 내가 쓴 댓글은 삭제버튼이 생겨져 있다
-내가 쓴 댓글의 이미지는 기본 이미지와 다르다(색상을 주어 눈에 띄게 보임)
+내가 쓴 댓글의 이미지는 기본 이미지와 다르다 색상을 주어 눈에 띄게 보임
 삭제 -  댓글에 삭제를 하면 대댓긇도 없어진다
 전 글을 삭제하면 다음글이 이전글위치에 있어야 한다
  -->
   <?php
   $page = $_GET["page"];
       $passFlag=false;
-      $sql = "SELECT * FROM (SELECT * FROM `temporary_comment` ORDER BY `group_num` DESC, `comment_num`) `comment` WHERE `group_num` = $num group by `depth`, `comment_num` ORDER BY `comment_num`";
+      $sql = "SELECT * FROM (SELECT * FROM `temporary_comment` ORDER BY `group_num` DESC, `comment_num`) `comment` WHERE `group_num` = $num group by `depth`,`comment_num` ORDER BY `comment_num`";
     // 코멘트 테이블(그룹넘버로 내림차순, 코멘트 넘버로 오름차순)을 한 테이블에서 그룹넘버가 10인
     // 데이터만 가져오는데 뎁스로 그룹바이를 해서 정렬해서 가져오고 코멘트 넘버로도 구룹 바이로 해서 가져온후
     // 코멘트 넘버로 오름차순으로 가져옴
       $result = mysqli_query($connect, $sql);
       $commentpost_num = mysqli_num_rows($result);
-
+      
       if ($commentpost_num) {
           for ($i = 0; $i < $commentpost_num; $i++) {
               $row = mysqli_fetch_array($result);
