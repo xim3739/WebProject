@@ -10,14 +10,21 @@
     <link rel="stylesheet" href="../../css/notice/notice.css">
 
     <?php include "../../lib/common_page/main_style.php";?>
+    <script>
+        $(document).ready(function() {
+            $('section').show(3000);
+        });        
+    </script>
 </head>
 <body>
 
     <?php include "../../lib/common_page/header.php"; ?>
 
-    <section id="section" style="margin-top: 48px;">
+    <section id="section" style="display: none;">
     <div id="div_top_notice">
-        <h1>안녕하세요 찾아JOO 입니다</h1>
+        <br>
+        <br>
+        <h1 style="margin-top: 30px;">안녕하세요 찾아JOO 입니다</h1>
         <br/>
         <ul>
             <h4>ABOUT 찾아JOO</h4>
@@ -91,4 +98,5 @@
     </section>
 
 </body>
+
 </html>
