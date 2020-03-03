@@ -33,10 +33,10 @@
     $q_content = mysqli_real_escape_string($connect, $content);
     $q_userid = mysqli_real_escape_string($connect, $userid);
     $regist_day=date("Y-m-d (H:i)");
-    $ord=0;
 
     if($mode && $comment_num){
       $depth=1;
+      $ord=1;
       $sql="INSERT INTO `comment` VALUES (null,$group_num,$comment_num,$depth,$ord,'$userid','$q_content','$regist_day')";
       mysqli_query($connect, $sql);
       mysqli_close($connect);
@@ -59,7 +59,8 @@
       $result = mysqli_query($connect, $sql2);
       $row=mysqli_fetch_array($result);
       $max_num=$row['max(num)'];
-      $sql="UPDATE `comment` SET `group_num`= $max_num WHERE `num`=$max_num;";
+      $ord=(int)$row['ord'] + 1;
+      $sql="UPDATE `comment` SET `group_num`= $max_num WHERE `num`=$max_num `ord` >= $ord;";
       if (!$result) {
         die('Error: ' . mysqli_error($connect));
       }

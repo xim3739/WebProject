@@ -141,7 +141,7 @@
   transform: translateY(-10px);
 }
 
-#comment_delete_btn {
+.comment_delete_btn {
   background-color: transparent !important;
   background-image: none !important;
   border-color: transparent;
