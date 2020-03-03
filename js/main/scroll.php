@@ -87,7 +87,7 @@ $(document).ready(function () {
                           </div>
                           <div class="col-lg-5 no-flex" style="max-width : 42.666667%">
                             <span id="span_id">작성자 : `+name+`</span>
-                            <h1 class="font-weight-light">`+subject+`</h1>
+                            <h1 class="font-weight-light" style="width: 400.5px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">`+subject+`</h1>
                             <p style="word-wrap : break-word;">`+content +`</p>
                             <a class="btn btn-primary" href="../../page/board/board_myboard_widen.php?num=`+num+`">게시글 보기</a>
                             <span class="reply"><img src="" alt="">
@@ -108,7 +108,7 @@ $(document).ready(function () {
                           </div>
                           <div class="col-lg-5 no-flex" style="max-width : 42.666667%">
                             <span id="span_id">작성자 : `+name+`</span>
-                            <h1 class="font-weight-light">`+subject+`</h1>
+                            <h1 class="font-weight-light" style="width: 400.5px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">`+subject+`</h1>
                             <p style="word-wrap : break-word;">`+content +`</p>
                             <a class="btn btn-primary" href="../../page/board/board_widen.php?num=`+num+`">게시글 보기</a>
                             <span class="reply"><img src="" alt="">
@@ -129,7 +129,7 @@ $(document).ready(function () {
                           </div>
                           <div class="col-lg-5 no-flex" style="max-width : 42.666667%">
                             <span id="span_id">작성자 : `+name+`</span>
-                            <h1 class="font-weight-light">`+subject+`</h1>
+                            <h1 class="font-weight-light" style="width: 400.5px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">`+subject+`</h1>
                             <p style="word-wrap : break-word;">`+content +`</p>
                             <a class="btn btn-primary" href="../../page/board/board_myboard_widen.php?num=`+num+`">게시글 보기</a>
                             <span class="reply"><img src="" alt="">
