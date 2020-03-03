@@ -53,7 +53,7 @@
   //*****************************************************
 ?>
 <section>
-   	<div id="board_box">
+   	<div id="board_box" style="padding-top:100px;">
 	    <h3 class="title">
 			임시보호 > 내용보기
 		</h3>
