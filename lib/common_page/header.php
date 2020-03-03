@@ -4,14 +4,18 @@
       if (isset($_SESSION["userid"])) {
           $userid = $_SESSION["userid"];
       } else {
-          $userid = "";
+          echo"
+            <script>
+              alert('로그인 후 이용 가능합니다.');
+              location.href='../index/index.php';
+            </script>
+          ";
       }
       if (isset($_SESSION["username"])) {
           $username = $_SESSION["username"];
       } else {
           $username = "";
       }
-        echo ("<script>console.log(document.cookie)</script>");
 ?>
 
 <header class="z_index1">

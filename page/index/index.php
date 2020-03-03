@@ -43,13 +43,12 @@
       } else {
           $username = "";
       }
-        echo ("<script>console.log(document.cookie)</script>");
 ?>
 
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container" style="vertical-align: text-top;">
-      <a class="navbar-brand" href="./index.php">찾아Joo</a>
+      <a class="navbar-brand" href="../notice/notice.php">찾아Joo</a>
         <div id="icon_box" style=" vertical-align: text-top;">
         <?php
 
@@ -70,10 +69,9 @@ if (!$username) {
         <span>&nbsp;&nbsp; | &nbsp;&nbsp;</span>
         <span><a href="../login/logout.php" style=" width: 100px;text-align: center;">로그아웃</a></span>
 
-
-          <?php
+    <?php
     }
-?>
+    ?>
 
     </div>
   </nav>
