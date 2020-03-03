@@ -120,7 +120,7 @@
 
 
 </section>
-  <?php include "./comment_form.php"; ?>
+  <?php include "comment_form.php"; ?>
 
 </body>
 </html>

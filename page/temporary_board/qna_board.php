@@ -115,7 +115,7 @@ if ($mode=="reply") {
     $q_num = mysqli_real_escape_string($connect, $num);
     $regist_day=date("Y-m-d (H:i)");
 
-    $sql="UPDATE `qna` SET `content`='$q_content',`regist_day`='$regist_day' WHERE `num`=$q_num;";
+    $sql="UPDATE `temporary_comment` SET `content`='$q_content',`regist_day`='$regist_day' WHERE `num`=$q_num;";
     $result = mysqli_query($connect, $sql);
     if (!$result) {
         die('Error: ' . mysqli_error($connect));
@@ -162,14 +162,14 @@ if ($mode=="reply") {
         die('Error: ' . mysqli_error($connect));
     }
 
-    $sql="INSERT INTO `qna` VALUES (null,$group_num,$depth,$ord,
+    $sql="INSERT INTO `temporary_comment` VALUES (null,$group_num,$depth,$ord,
     '$q_userid','$username','$q_content','$regist_day');";
     $result = mysqli_query($connect, $sql);
     if (!$result) {
         die('Error: ' . mysqli_error($connect));
     }
 
-    $sql="SELECT max(num) from temporary_comment;";
+    $sql="SELECT max(num) from `temporary_comment`;";
     $result = mysqli_query($connect, $sql);
     if (!$result) {
         die('Error: ' . mysqli_error($connect));
