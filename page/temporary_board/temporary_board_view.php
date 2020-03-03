@@ -37,6 +37,9 @@
   <?php include "../../lib/common_page/header.php" ?>
   <?php  //*****************************************************
   $id= $_SESSION['userid'];
+  $group_num = $_GET['num'];
+  $page  = $_GET["page"];
+  $group_num = (int)$group_num;
 
   $r_sql=$r_result=$r_total_record=$r_start="";
   $r_total_record=0;
@@ -107,7 +110,7 @@
 			</li>
 	    </ul>
 	    <ul class="buttons">
-				<li><button onclick="location.href='temporary_board_list.php?page=<?=$page?>'">목록</button></li>
+				<li><button onclick="location.href='temporary_board_list.php?num=<?=$num?>&page=<?=$page?>'">목록</button></li>
 				<li><button onclick="location.href='temporary_board_modify_form.php?num=<?=$num?>&page=<?=$page?>&exist=<?=$exist?>'">수정</button></li>
 				<li><button onclick="location.href='temporary_board_delete.php?num=<?=$num?>&page=<?=$page?>'">삭제</button></li>
 				<li><button onclick="location.href='temporary_board_form.php'">글쓰기</button></li>
@@ -117,7 +120,7 @@
 
 
 </section>
-
+  <?php include "./comment_form.php"; ?>
 
 </body>
 </html>

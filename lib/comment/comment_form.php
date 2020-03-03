@@ -14,6 +14,7 @@
     // 코멘트 넘버로 오름차순으로 가져옴
       $result = mysqli_query($connect, $sql);
       $commentpost_num = mysqli_num_rows($result);
+
       if ($commentpost_num) {
           for ($i = 0; $i < $commentpost_num; $i++) {
               $row = mysqli_fetch_array($result);
