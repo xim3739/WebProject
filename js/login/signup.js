@@ -198,17 +198,7 @@ function done(){
 }
 
 
-function reset_form() {
-   document.member_form.inputId.value = "";
-   document.member_form.inputPassword.value = "";
-   document.member_form.inputPasswordCheck.value = "";
-   document.member_form.inputName.value = "";
-   document.member_form.phone_two.value = "";
-   document.member_form.phone_three.value = "";
 
-   document.member_form.inputId.focus();
-   return;
-}
 
 function login_done(){
   document.login_form.submit();

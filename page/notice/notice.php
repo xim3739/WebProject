@@ -3,21 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>찾아JOO</title>
 
     <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
     <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../css/notice/notice.css">
 
+    <link href="../../css/index/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="../../css/index/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="../../css/index/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="../../js/index/hospital_list.js"></script>
+    <!-- Custom styles for this template -->
+    <link href="../../css/index/landing-page.min.css" rel="stylesheet">
+    <!-- KaKao API-->
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
     <?php include "../../lib/common_page/main_style.php";?>
+    <script>
+        $(document).ready(function() {
+            $('section').show(3000);
+        });        
+    </script>
 </head>
-<body>
 
-    <?php include "../../lib/common_page/header.php"; ?>
+<body style="padding-top: 0px">
+    <?php
+        @session_start();
+        if (isset($_SESSION["userid"])) {
+            $userid = $_SESSION["userid"];
+        } else {
+            $userid = "";
+        }
+        if (isset($_SESSION["username"])) {
+            $username = $_SESSION["username"];
+        } else {
+            $username = "";
+        }
+    ?>
+    <nav class="navbar navbar-light bg-light static-top">
+        <div class="container" style="vertical-align: text-top;">
+            <a class="navbar-brand" href="../index/index.php">찾아Joo</a>
+                <div id="icon_box" style=" vertical-align: text-top;">
+    <?php
+        if(!$userid) {
+    ?>
+    
+                <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/signup.php','','width=500,height=1000,left=500,top=40');">
+    <?php
 
-    <section id="section" style="margin-top: 48px;">
+        } else {
+    ?>
+
+    <?php
+        include "../../count.php";
+        $logged = $username."(".$userid.")님"; ?>
+
+        <span><?=$logged?></span>
+        <span>&nbsp;&nbsp; | &nbsp;&nbsp;</span>
+        <!-- <span><a href="../../page/login/member_modify_form.php" target="_blank" class="private">마이페이지</a></span> -->
+        <span><a href="#" onclick="window.open('../../page/login/member_modify_form.php','정보 수정','width=500,height=700,left=500');" style="text-align: center;">마이페이지</a></span>
+
+        <span>&nbsp;&nbsp; | &nbsp;&nbsp;</span>
+        <span><a href="../login/logout.php" style=" width: 100px;text-align: center;">로그아웃</a></span>
+        
+    <?php
+        }
+    ?>
+    
+        </div>
+    </nav>
+    <section id="section" style="display: none;">
     <div id="div_top_notice">
-        <h1>안녕하세요 찾아JOO 입니다</h1>
+        <br>
+        <br>
+        <h1 style="margin-top: 30px;">안녕하세요 찾아JOO 입니다</h1>
         <br/>
         <ul>
             <h4>ABOUT 찾아JOO</h4>
@@ -91,4 +157,5 @@
     </section>
 
 </body>
+
 </html>

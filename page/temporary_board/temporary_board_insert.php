@@ -83,7 +83,7 @@
 
 
 
-    $sql = "INSERT INTO `temporary_board` (id, name, subject, content, regist_day, hit,  file_name, file_type, file_copied) ";
+    $sql = "INSERT INTO `temporary_board` (`id`, `name`, `subject`, `content`, `regist_day`, `hit`,  `file_name`, `file_type`, `file_copied`) ";
     $sql .= "VALUES('$userid', '$username', '$subject', '$content', '$regist_day', 0, ";
     $sql .= "'$upfile_name', '$upfile_type', '$copied_file_name')"; //sql에는 진짜 파일명이 저장된다.
 

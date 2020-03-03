@@ -8,10 +8,40 @@
   </head>
   <body>
     <aside id="admin_aside_left">
+<<<<<<< HEAD
       <ul id="admin_list">
         <li><a href="./admin_member.php" class="bolds">회원 목록 관리</a></li>
         <li><a href="./admin_board.php?category='찾아요'" class="bolds">게시판 관리</a>
           <ul id="admin_list_category">
+=======
+        <ul>
+          <li><a href="./admin_member.php">회원 목록 관리</a></li>
+          <li><a href="./admin_board.php?category='찾아요'">게시판 관리</a>
+            <ul id="admin_list_category">
+              <li><a href="./admin_board.php?category='찾아요'">찾아요 게시판</a></li>
+              <li><a href="./admin_board.php?category='데리고있어요'">데리고 있어요</a></li>
+              <li><a href="./admin_board.php?category='임시보호'">임시 보호</a></li>
+              <li><a href="./admin_board.php?category='자유게시판'">자유게시판</a></li>
+            </ul>
+          </li>
+        </ul>
+      </aside>
+      <section>
+        <div id="admin_box">
+          <h3 id="member_title">관리자 모드 > 찾아요 게시판 관리</h3>
+          <ul id="board_list">
+            <li class="title">
+              <span class="col1">번호</span>
+              <span class="col2">아이디</span>
+              <span class="col3">이름</span>
+              <span class="col4">카테고리</span>
+              <span class="col5">제목</span>
+              <span class="col6">등록일</span>
+              <span class="col7">조회수</span>
+              <span class="col8">파일 이름</span>
+              <span class="col9">선택</span>
+            </li>
+>>>>>>> 145f254b15be9a5c7ab8dd7bdfb94c5d60ba4354
             <?php
             include_once "../../db/db_connector.php";
             $category=(isset($_GET["category"]))?$_GET["category"]:"";

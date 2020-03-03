@@ -34,13 +34,13 @@
   <body>
     <?php include "../../lib/common_page/header.php" ?>
 
-    <section>
-      <div id="board_box">
+    <section >
+      <div id="board_box" style="padding-top:100px;">
         <h3 id="board_title">
             임시보호 > 글쓰기
         </h3>
-        <form  name="board_form" method="post" action="temporary_board_insert.php" enctype="multipart/form-data">
-            <ul id="board_form">
+        <form  name="board_form" method="post" action="./temporary_board_insert.php" enctype="multipart/form-data">
+            <ul id="board_form" style="list-style:none;">
               <li>
                   <span class="col1">이름 : </span>
                   <span class="col2"><?=$username?></span>
@@ -52,12 +52,12 @@
               <li id="text_area">
                   <span class="col1">내용 : </span>
                   <span class="col2">
-                      <textarea name="content"></textarea>
+                      <textarea name="content" style="height:130px;"></textarea>
                   </span>
               </li>
               <li>
                 <span class="col1"> 첨부 파일</span>
-                <span class="col2"><input type="file" name="upfile"></span>
+                <span class="col2"><input type="file" name="upfile" style="height:30px;"></span>
               </li>
             </ul>
             <ul class="buttons">

@@ -37,7 +37,7 @@
   <?php include "../../lib/common_page/header.php" ?>
 <section>
 
-   	<div id="board_box">
+   	<div id="board_box" style="padding-top:100px;">
 	    <h3 id="board_title">
 	    		게시판 > 글 쓰기
 		</h3>
@@ -69,7 +69,7 @@
 	    		<li id="text_area">
 	    			<span class="col1">내용 : </span>
 	    			<span class="col2">
-	    				<textarea name="content"><?=$content?></textarea>
+	    				<textarea name="content"  style="height:130px;"><?=$content?></textarea>
 	    			</span>
 	    		</li>
 	    		<li>
@@ -80,7 +80,7 @@
              echo ("
              <li>
              <span class='col1'> 원본 파일 : </span>
-             <span class='col2'><input type='file' name='upfile'></span></li>
+             <span class='col2'><input type='file' name='upfile' style='height:30px';></span></li>
              ");
            };
              ?>

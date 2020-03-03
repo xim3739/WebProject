@@ -43,13 +43,12 @@
       } else {
           $username = "";
       }
-        echo ("<script>console.log(document.cookie)</script>");
 ?>
 
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container" style="vertical-align: text-top;">
-      <a class="navbar-brand" href="./index.php">찾아Joo</a>
+      <a class="navbar-brand" href="../notice/notice.php">찾아Joo</a>
         <div id="icon_box" style=" vertical-align: text-top;">
         <?php
 
@@ -70,10 +69,9 @@ if (!$username) {
         <span>&nbsp;&nbsp; | &nbsp;&nbsp;</span>
         <span><a href="../login/logout.php" style=" width: 100px;text-align: center;">로그아웃</a></span>
 
-
-          <?php
+    <?php
     }
-?>
+    ?>
 
     </div>
   </nav>
@@ -99,13 +97,13 @@ if (!$username) {
     <h1 id="seek_h1" class="mb-5">찾아Joo의 협곡에 오신 것을 환영합니다.</h1>
   </div>
   <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-    <form name="search" method="POST" action="../../lib/search/search.php">
+    <form name="search" method="POST" action="../main/main.php">
       <div class="form-row">
         <div class="col-12 col-md-9 mb-2 mb-md-0">
-          <input type="text" class="form-control form-control-lg" placeholder="키워드를 입력해 주세요">
+          <input type="text" class="form-control form-control-lg" placeholder="키워드를 입력해 주세요" name="inputSearch">
         </div>
         <div class="col-12 col-md-3" id="inputSearch_div">
-          <button type="submit" class="btn btn-block btn-lg btn-primary" name="inputSearch">검색</button>
+          <button type="submit" class="btn btn-block btn-lg btn-primary">검색</button>
         </div>
       </div>
       <div class="buttonDiv" style="margin-bottom: 15px;">
