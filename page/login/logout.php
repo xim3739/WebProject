@@ -25,7 +25,7 @@
   echo("
            <script>
              window.alert('로그아웃 되었습니다')
-        history.go(-1);
+        location.href='../index/index.php';
            </script>
         ");
         ?>
