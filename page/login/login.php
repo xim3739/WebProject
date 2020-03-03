@@ -76,6 +76,7 @@
         transform: translateY(0%);
       }
     </style>
+
   </head>
   <body>
 
@@ -102,7 +103,19 @@
           <div class="input-field col s12">
             <!-- <i class="mdi-action-lock-outline prefix"></i> -->
             <i class="material-icons prefix">vpn_key</i>
-            <input id="password" name="password" type="password" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;);"/>
+            <input id="password" name="password" type="password" onkeyup="enterkey();" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;);"/>
+            <script>
+
+  $('#password').keypress(function(event){
+       if ( event.which == 13 ) {
+           $('#signUpButton').click();
+           return false;
+       }
+  });
+  </script>
+
+
+
             <label for="password">Password</label>
           </div>
         </div>
@@ -111,7 +124,7 @@
 
         <div class="row">
           <div class="input-field col s12">
-            <button type="button" onclick="login_done()" id="signUpButton" class="btn waves-effect waves-light col s12" style="margin-bottom:7px; height: 50px;">Login</button>
+            <button type="button" onclick="login_done()" onkeyup="onEnterLogin();;"id="signUpButton" class="btn waves-effect waves-light col s12" style="margin-bottom:7px; height: 50px;">Login</button>
             <div id="naverIdLogin" >NAVER Login</div>
             <a href="#" onclick="kout()"><img src="../../img/login/kakao_btn.png" style="width:277px;"></a>
 

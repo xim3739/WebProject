@@ -147,16 +147,8 @@ function modify_done(){
       document.member_form.submit();
 }
 
-
-function reset_form() {
-   document.member_form.inputId.value = "";
-   document.member_form.inputPassword.value = "";
-   document.member_form.inputPasswordCheck.value = "";
-   document.member_form.inputName.value = "";
-   document.member_form.phone_two.value = "";
-   document.member_form.phone_three.value = "";
-
-   document.member_form.inputId.focus();
+function reset_form(){
+window.close();
    return;
 }
 

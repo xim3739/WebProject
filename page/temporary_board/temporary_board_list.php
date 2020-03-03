@@ -22,7 +22,7 @@
 
    	<div id="board_box">
 	    <h3>
-	    	게시판 > 목록보기
+	    	임시보호 > 목록보기
 		</h3>
 	    <ul id="board_list">
 				<li>
