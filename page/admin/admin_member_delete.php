@@ -11,7 +11,7 @@
   //   exit;
   // }
   $num = $_GET["num"];
-  include_once "../../db/db_connector_main.php";
+  include_once "../../db/db_connector.php";
   $sql = "delete from member where num=$num";
   mysqli_query($connect,$sql);
   mysqli_close($connect);

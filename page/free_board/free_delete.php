@@ -4,8 +4,7 @@
   var_dump($num);
   var_dump($page);
 
-  include_once "../../db/db_connector_main.php";
-  // $connect = mysqli_connect("localhost","root","123456","test");
+  include_once "../../db/db_connector.php";
 
   $sql = "select * from free where num = $num";
   $result = mysqli_query($connect,$sql);

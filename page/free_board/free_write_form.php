@@ -14,10 +14,8 @@
     <section>
       <div id="write_total">
         <?php
-        include_once "../../db/db_connector_main.php";
+        include_once "../../db/db_connector.php";
         $userid=(isset($_SESSION["userid"]))?$_SESSION["userid"]:"";
-        // $userid = "cwpark2190";
-        // $connect = mysqli_connect("localhost","root","123456","test");
         $sql = "select * from member where id = '$userid'";
         $result = mysqli_query($connect,$sql);
         $row = mysqli_fetch_array($result);

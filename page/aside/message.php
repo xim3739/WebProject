@@ -5,8 +5,6 @@
     <div id="member_list">
       <ul >
         <?php
-        // $userid = "cwpark2190";
-        // $connect = mysqli_connect("localhost","root","123456","test");
         $i=0;
         $userid=(isset($_SESSION["userid"]))?$_SESSION["userid"]:"";
         $username=(isset($_SESSION["username"]))?$_SESSION["username"]:"";
@@ -16,27 +14,32 @@
           $('#message_show').hide();
           </script>";
         }
-        include_once "../../db/db_connector_main.php";
-        $sql = "select * from member where id NOT IN('$userid')";
+        include_once "../../db/db_connector.php";
+        $sql = "select distinct send_id,rv_id,send_name,rv_name from message";
         $result = mysqli_query($connect,$sql);
         $total_record = mysqli_num_rows($result);
         for ($i=0; $i <$total_record ; $i++) {
           $row = mysqli_fetch_array($result);
-          $member_id= $row["id"];
-          $name = $row["name"];
-         ?>
-        <li>
-          <span><button type="button" class="profile_link" onclick="connect_memeber('<?=$member_id?>','<?=$userid?>');"><?=$name?></button> </span>
-        </li>
-        <?php
+          $send_id= $row["send_id"];
+          $rv_id= $row["rv_id"];
+          $send_name = $row["send_name"];
+          $rv_name = $row["rv_name"];
+          if ($rv_id===$userid) {
+            ?>
+            <li>
+              <span><button type="button" class="profile_link" onclick="connect_memeber('<?=$rv_id?>','<?=$send_id?>','<?=$userid?>');"><?=$send_name?></button> </span>
+            </li>
+            <?php
+          }
           }//end of for
          ?>
       </ul>
     </div>
     <form name="message_form" id="message_form" action="#" method="post">
       <h6 id="name_head">&nbsp;</h6>
-      <input id="hidden_send_id"hidden></input>
-      <input id="hidden_rv_id"hidden></input>
+      <input id="hidden_send_id"  value="<?=$send_id?>"></input>
+      <input id="hidden_rv_id"  value="<?=$rv_id?>"></input>
+      <input id="hidden_user_id"  value="<?=$userid?>"></input>
       <div id="message_view">
         <ul id="message_ul">
         </ul>

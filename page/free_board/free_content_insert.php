@@ -4,7 +4,7 @@
   ini_set("display_errors", 1);
   $name = $_GET["name"];
   $id = $_GET["id"];
-  include_once "../../db/db_connector_main.php";
+  include_once "../../db/db_connector.php";
   $category = $_POST["category"];
   $subject = $_POST["subject"];
   $content = $_POST["content"];

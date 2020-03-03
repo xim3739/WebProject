@@ -13,7 +13,7 @@
         <li><a href="./admin_board.php?category='찾아요'" class="bolds">게시판 관리</a>
           <ul id="admin_list_category">
             <?php
-            include_once "../../db/db_connector_main.php";
+            include_once "../../db/db_connector.php";
             $category=(isset($_GET["category"]))?$_GET["category"]:"";
             $str1="'"."찾아요"."'";
             $str2="'"."데리고 있어요"."'";

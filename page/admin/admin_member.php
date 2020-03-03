@@ -41,7 +41,7 @@
             </li>
             <?php
               $page=(isset($_GET["page"]))?$_GET["page"]:1;
-              include_once "../../db/db_connector_main.php";
+              include_once "../../db/db_connector.php";
               $sql = "select * from member order by num desc";
               $result = mysqli_query($connect,$sql);
               $total_record = mysqli_num_rows($result);

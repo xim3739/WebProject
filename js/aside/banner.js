@@ -7,7 +7,7 @@ function ask_pay(now_id,name,phone){
 }
 function call_pay(now_id,name,phone){
   var IMP = window.IMP;
-  IMP.init('imp38038723');
+  IMP.init("imp38038723");
   IMP.request_pay({
       pg : 'html5_inicis',
       pay_method : 'card',

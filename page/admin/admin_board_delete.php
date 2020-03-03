@@ -20,7 +20,7 @@
           </script>
          ";
   }
-  include_once "../../db/db_connector_main.php";
+  include_once "../../db/db_connector.php";
   for ($i=0; $i <$num_item ; $i++) {
     $num = $_POST["item"][$i];
     $q_num = mysqli_real_escape_string($connect, $num);

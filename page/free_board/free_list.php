@@ -16,12 +16,10 @@
   <?php include "../../lib/common_page/header.php" ?>
   <body>
     <section>
-      <?php include "../aside/message.php"; ?>
-      <?php include "../aside/banner.php"; ?>
+
       <div id="list_total">
         <?php
-          include_once "../../db/db_connector_main.php";
-          // $connect = mysqli_connect("localhost","root","123456","test");
+          include_once "../../db/db_connector.php";
           $userid=(isset($_SESSION["userid"]))?$_SESSION["userid"]:"";
           $username=(isset($_SESSION["username"]))?$_SESSION["username"]:"";
           if (!$userid) {
@@ -44,7 +42,7 @@
           $category=(isset($_GET["category"]))?$_GET["category"]:" ";
           if ($key_word===" ") {
             if ($category===" ") {
-              $sql = "select * from free order by num desc";
+              $sql = "SELECT * FROM `free` ORDER BY `num` DESC";
             }else {
               $sql = "select * from free where category='$category' order by num desc";
             }
@@ -74,7 +72,7 @@
                 }
                 break;
             }
-          }
+          }//end of else
           $result = mysqli_query($connect,$sql);
           $total_record = mysqli_num_rows($result);
           $total_page=ceil($total_record/$scale);
@@ -143,15 +141,15 @@
                         <td class="col1"><?=$num?></td>
                         <td class="col2" style="text-align: left;}"><a href="./free_read_form.php?num=<?=$num?>&page=<?=$page?>"><?=$total_subject?></a></td>
                         <td hidden><?=$id?></td>
-                        <td class="col3"><a href="#" onclick="connect_message('<?=$id?>');"><?=$name?></a></td>
+                        <td class="col3"><a href="#" onclick="connect_message('<?=$userid?>','<?=$id?>','<?=$userid?>');"><?=$name?></a></td>
                         <td class="col4"><?=$time?></td>
                         <td class="col5"><?=$hit?></td>
                       </tr>
                     </tbody>
                     <?php
                       $number --;
-                      }
-                      mysqli_close($connect);
+                    }//end of for
+                      // mysqli_close($connect);
                     ?>
                   </table>
                 </form>
@@ -283,5 +281,7 @@
         </table>
       </div>
     </section>
+    <?php include "../aside/message.php"; ?>
+    <?php include "../aside/banner.php"; ?>
   </body>
 </html>

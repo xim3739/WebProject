@@ -13,6 +13,7 @@
   <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
   <link rel="stylesheet" href="../../css/aside/message.css">
   <script src="../../js/aside/message.js" charset="utf-8"></script>
+
   <!-- banner core CSS&JS -->
   <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script> -->
   <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
@@ -21,9 +22,6 @@
   <link rel="stylesheet" href="../../css/aside/banner.css">
   <script src="../../js/aside/banner.js" charset="utf-8"></script>
 
-  <!-- aside css -->
-  <link rel="stylesheet" href="../../css/aside/message.css">
-  <link rel="stylesheet" href="../../css/aside/banner.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
 

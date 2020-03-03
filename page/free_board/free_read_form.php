@@ -18,8 +18,7 @@
           $page = $_GET["page"];
           $userid=(isset($_SESSION["userid"]))?$_SESSION["userid"]:"";
           $username=(isset($_SESSION["username"]))?$_SESSION["username"]:"";
-          // $connect = mysqli_connect("localhost","root","123456","test");
-          include_once "../../db/db_connector_main.php";
+          include_once "../../db/db_connector.php";
           $sql = "select * from free";
           $result = mysqli_query($connect,$sql);
           $row = mysqli_fetch_array($result);

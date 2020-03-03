@@ -3,8 +3,7 @@
   error_reporting(E_ALL);
   ini_set("display_errors", 1);
   $num = $_GET["num"];
-  include_once "../../db/db_connector_main.php";
-  // $connect = mysqli_connect("localhost","root","123456","test");
+  include_once "../../db/db_connector.php";
   $sql = "select * from free where num = $num";
   $result = mysqli_query($connect,$sql);
   $row = mysqli_fetch_array($result);
