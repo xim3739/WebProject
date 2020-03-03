@@ -37,9 +37,8 @@
   <?php include "../../lib/common_page/header.php" ?>
   <?php  //*****************************************************
   $id= $_SESSION['userid'];
-  $comment_num  = $_GET["comment_num"];
   $group_num = $_GET['num'];
-    $page  = $_GET["page"];
+  $page  = $_GET["page"];
   $group_num = (int)$group_num;
 
   $r_sql=$r_result=$r_total_record=$r_start="";
