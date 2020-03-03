@@ -50,6 +50,7 @@
   background-color: inherit;
   border: 1px solid gray;
 }
+
 #board_widen_comment_input_retext img {
   width: 30px;
   height: 30px;
@@ -138,6 +139,14 @@
   outline: none;
   overflow: auto;
   transform: translateY(-10px);
+}
+
+#comment_delete_btn {
+  background-color: transparent !important;
+  background-image: none !important;
+  border-color: transparent;
+  border: none;
+  font-size: 13.1px;
 }
 
 /* ------------------------------------------ */
