@@ -165,110 +165,116 @@
               <td>
                 <form class="" action="./free_list_search.php" method="post">
                   <table class="page_table">
-                    <tr class="back_tr page_tr total_ul" style="width: 700px;">
-                      <?php
-                        if ($page<=1) {
-                          echo "<td><b></b></td>";
-                        }else {
-                          if ($key_word===" ") {
-                            if ($category===" ") {
-                              echo "<td><a href='free_list.php'>처음</a></td>";
-                            }else {
-                              echo "<td><a href='free_list.php?category=$category'>처음</a></td>";
-                            }
-                          }else {
-                            if ($category===" ") {
-                              echo "<td><a href='free_list.php'>처음</a></td>";
-                            }else {
-                              echo "<td><a href='free_list.php?key_word=$key_word&category=$category'>처음</a></td>";
-                            }
-                          }
-                        }
-                        if ($block<=1) {
-                          echo "<td></td>";
-                        }else {
-                          $new_page = $start_page -1;
-                          if ($key_word===" ") {
-                            if ($category===" ") {
-                              echo "<td><a href='free_list.php?page=$new_page'><b> ◀ 이전 </b></a></td>";
-                            }else {
-                              echo "<td><a href='free_list.php?category=$q_category&page=$new_page'><b> ◀ 이전 </b></a></td>";
-                            }
-                          }else {
-                            if ($category===" ") {
-                              echo "<td><a href='free_list.php?key_word=$key_word&page=$new_page&search_option=$search_option'><b> ◀ 이전 </b></a></td>";
-                            }else {
-                              echo "<td><a href='free_list.php?key_word=$key_word&category=$q_category&page=$new_page&search_option=$search_option'><b> ◀ 이전 </b></a></td>";
-                            }
-                          }
-                        }
-                        for ($i=$start_page; $i <=$end_page; $i++) {
-                          if ($page == $i) {
-                            echo "<td><b>&nbsp;$i&nbsp;</b></td>";
-                          }else {
-                            if ($key_word===" ") {
-                              if ($category===" ") {
-                                echo "<td><a href='free_list.php?page=$i'>&nbsp;$i&nbsp;</a></td>";
+                    <tr class="back_tr page_tr total_ul" style="width: 790px;">
+                      <td>
+                        <div id="page_div">
+                          <ul>
+                            <?php
+                              if ($page<=1) {
+                                echo "<li><b></b></li>";
                               }else {
-                                echo "<td><a href='free_list.php?category=$q_category&page=$i'>&nbsp;$i&nbsp;</a></td>";
+                                if ($key_word===" ") {
+                                  if ($category===" ") {
+                                    echo "<li><a href='free_list.php'>처음</a></li>";
+                                  }else {
+                                    echo "<li><a href='free_list.php?category=$category'>처음</a></li>";
+                                  }
+                                }else {
+                                  if ($category===" ") {
+                                    echo "<li><a href='free_list.php'>처음</a></li>";
+                                  }else {
+                                    echo "<li><a href='free_list.php?key_word=$key_word&category=$category'>처음</a></li>";
+                                  }
+                                }
                               }
-                            }else {
-                              if ($category===" ") {
-                                echo "<td><a href='free_list.php?key_word=$key_word&search_option=$search_option&page=$i'>&nbsp;$i&nbsp;</a></td>";
+                              if ($block<=1) {
+                                echo "<li></li>";
                               }else {
-                                echo "<td><a href='free_list.php?key_word=$key_word&search_option=$search_option&category=$q_category&page=$i'>&nbsp;$i&nbsp;</a></td>";
+                                $new_page = $start_page -1;
+                                if ($key_word===" ") {
+                                  if ($category===" ") {
+                                    echo "<li><a href='free_list.php?page=$new_page'><b> ◀ 이전 </b></a></li>";
+                                  }else {
+                                    echo "<li><a href='free_list.php?category=$q_category&page=$new_page'><b> ◀ 이전 </b></a></li>";
+                                  }
+                                }else {
+                                  if ($category===" ") {
+                                    echo "<li><a href='free_list.php?key_word=$key_word&page=$new_page&search_option=$search_option'><b> ◀ 이전 </b></a></li>";
+                                  }else {
+                                    echo "<li><a href='free_list.php?key_word=$key_word&category=$q_category&page=$new_page&search_option=$search_option'><b> ◀ 이전 </b></a></li>";
+                                  }
+                                }
                               }
-                            }
-                          }
-                        }
-                        if ($total_page>=2 && $page != $total_page) {
-                          $new_page =($end_page>10)?$end_page+1:$end_page;
-                          if ($key_word===" ") {
-                            if ($category===" ") {
-                              echo "<td><a href='free_list.php?page=$end_page'><b> 다음 ▶ </b></a></td>";
-                            }else {
-                              echo "<td><a href='free_list.php?category=$q_category&page=$end_page'><b> 다음 ▶ </b></a></td>";
-                            }
-                          }else {
-                            if ($category===" ") {
-                              echo "<td><a href='free_list.php?key_word=$key_word&search_option=$search_option&page=$end_page'><b> 다음 ▶ </b></a></td>";
-                            }else {
-                              echo "<td><a href='free_list.php?key_word=$key_word&search_option=$search_option&category=$q_category&page=$end_page'><b> 다음 ▶ </b></a></td>";
-                            }
-                          }
-                        }else {
-                          echo "<td></td>";
-                        }
-                        if ($page>=$total_page) {
-                          echo "<td><b></b></td>";
-                        }else {
-                          if ($key_word===" ") {
-                            if ($category===" ") {
-                              echo "<td><a href='free_list.php?page=$total_page'> 마지막 </a></td>";
-                            }else {
-                              echo "<td><a href='free_list.php?category=$q_category&page=$total_page'> 마지막 </a></td>";
-                            }
-                          }else {
-                            if ($category===" ") {
-                              echo "<td><a href='free_list.php?key_word=$key_word&search_option=$search_option&page=$total_page'> 마지막 </a></td>";
-                            }else {
-                              echo "<td><a href='free_list.php?key_word=$key_word&search_option=$search_option&category=$q_category&page=$total_page'> 마지막 </a></td>";
-                            }
-                          }
-                        }
-                     ?>
-                     <td class="search_td">
-                       <ul id="search_ul">
-                         <li><select class="" name="search_option">
-                           <option value="title" <?php if($search_option === "title") echo "SELECTED"; ?>>제목</option>
-                           <option value="content" <?php if($search_option === "content") echo "SELECTED"; ?>>내용</option>
-                           <option value="name" <?php if($search_option === "name") echo "SELECTED"; ?>>글쓴이</option>
-                         </select> </li>
-                         <li><input type="text" name="search_word" value="<?=$key_word?>" style="width: 100px;"></li>
-                         <li><input type="hidden" name="category" value="<?=$category?>"></li>
-                         <li><button type="submit" name="button">검색</button></li>
-                       </ul>
-                     </td>
+                              for ($i=$start_page; $i <=$end_page; $i++) {
+                                if ($page == $i) {
+                                  echo "<li><b>&nbsp;$i&nbsp;</b></li>";
+                                }else {
+                                  if ($key_word===" ") {
+                                    if ($category===" ") {
+                                      echo "<li><a href='free_list.php?page=$i'>&nbsp;$i&nbsp;</a></li>";
+                                    }else {
+                                      echo "<li><a href='free_list.php?category=$q_category&page=$i'>&nbsp;$i&nbsp;</a></li>";
+                                    }
+                                  }else {
+                                    if ($category===" ") {
+                                      echo "<li><a href='free_list.php?key_word=$key_word&search_option=$search_option&page=$i'>&nbsp;$i&nbsp;</a></li>";
+                                    }else {
+                                      echo "<li><a href='free_list.php?key_word=$key_word&search_option=$search_option&category=$q_category&page=$i'>&nbsp;$i&nbsp;</a></li>";
+                                    }
+                                  }
+                                }
+                              }
+                              if ($total_page>=2 && $page != $total_page) {
+                                $new_page =($end_page>10)?$end_page+1:$end_page;
+                                if ($key_word===" ") {
+                                  if ($category===" ") {
+                                    echo "<li><a href='free_list.php?page=$end_page'><b> 다음 ▶ </b></a></li>";
+                                  }else {
+                                    echo "<li><a href='free_list.php?category=$q_category&page=$end_page'><b> 다음 ▶ </b></a></li>";
+                                  }
+                                }else {
+                                  if ($category===" ") {
+                                    echo "<li><a href='free_list.php?key_word=$key_word&search_option=$search_option&page=$end_page'><b> 다음 ▶ </b></a></li>";
+                                  }else {
+                                    echo "<li><a href='free_list.php?key_word=$key_word&search_option=$search_option&category=$q_category&page=$end_page'><b> 다음 ▶ </b></a></li>";
+                                  }
+                                }
+                              }else {
+                                echo "<li></li>";
+                              }
+                              if ($page>=$total_page) {
+                                echo "<li><b></b></li>";
+                              }else {
+                                if ($key_word===" ") {
+                                  if ($category===" ") {
+                                    echo "<li><a href='free_list.php?page=$total_page'> 마지막 </a></li>";
+                                  }else {
+                                    echo "<li><a href='free_list.php?category=$q_category&page=$total_page'> 마지막 </a></li>";
+                                  }
+                                }else {
+                                  if ($category===" ") {
+                                    echo "<li><a href='free_list.php?key_word=$key_word&search_option=$search_option&page=$total_page'> 마지막 </a></li>";
+                                  }else {
+                                    echo "<li><a href='free_list.php?key_word=$key_word&search_option=$search_option&category=$q_category&page=$total_page'> 마지막 </a></li>";
+                                  }
+                                }
+                              }
+                           ?>
+                          </ul>
+                        </div>
+                        <div id="search_div">
+                          <ul id="search_ul">
+                            <li><select class="" name="search_option">
+                              <option value="title" <?php if($search_option === "title") echo "SELECTED"; ?>>제목</option>
+                              <option value="content" <?php if($search_option === "content") echo "SELECTED"; ?>>내용</option>
+                              <option value="name" <?php if($search_option === "name") echo "SELECTED"; ?>>글쓴이</option>
+                            </select> </li>
+                            <li><input type="text" name="search_word" value="<?=$key_word?>" style="width: 100px;"></li>
+                            <li><input type="hidden" name="category" value="<?=$category?>"></li>
+                            <li><button type="submit" name="button">검색</button></li>
+                          </ul>
+                        </div>
+                      </td>
                     </tr>
                     <tr>
                       <td class="table_border"></td>
