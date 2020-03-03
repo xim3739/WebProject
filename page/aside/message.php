@@ -37,9 +37,9 @@
     </div>
     <form name="message_form" id="message_form" action="#" method="post">
       <h6 id="name_head">&nbsp;</h6>
-      <input id="hidden_send_id"  value="<?=$send_id?>"></input>
-      <input id="hidden_rv_id"  value="<?=$rv_id?>"></input>
-      <input id="hidden_user_id"  value="<?=$userid?>"></input>
+      <input id="hidden_send_id" hidden value="<?=$send_id?>"></input>
+      <input id="hidden_rv_id" hidden value="<?=$rv_id?>"></input>
+      <input id="hidden_user_id" hidden value="<?=$userid?>"></input>
       <div id="message_view">
         <ul id="message_ul">
         </ul>
