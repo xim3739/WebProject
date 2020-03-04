@@ -36,7 +36,7 @@
     <section >
       <div id="board_box" style="padding-top:100px;">
         <h3 id="board_title">
-            임시보호 > 글쓰기
+            임시보호
         </h3>
         <form  name="board_form" method="post" action="./temporary_board_insert.php" enctype="multipart/form-data">
             <ul id="board_form" style="list-style:none;">

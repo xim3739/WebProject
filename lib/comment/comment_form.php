@@ -6,6 +6,10 @@
 삭제 -  댓글에 삭제를 하면 대댓긇도 없어진다
 전 글을 삭제하면 다음글이 이전글위치에 있어야 한다
  -->
+ <?php
+ $num = $_GET["num"];
+
+ ?>
   <?php
       $passFlag=false;
       $sql = "SELECT * FROM (SELECT * FROM `comment` ORDER BY `group_num` DESC, `comment_num`) `comment` WHERE `group_num` = $num group by `depth`, `comment_num` ORDER BY `comment_num`, `depth`";

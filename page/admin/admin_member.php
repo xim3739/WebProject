@@ -7,17 +7,17 @@
     <link rel="stylesheet" href="../../css/admin/admin_member.css">
   </head>
   <?php
-  // session_start();
-  // $userid =(isset($_SESSION["userid"]))?$_SESSION["userid"]:"";
-  // if ($userid !== "admin1234") {
-  //   echo "
-  //         <script>
-  //         alert('관리자가 아닙니다! 관리자 페이지 입장은 관리자만 가능합니다!');
-  //         history.go(-1)
-  //         </script>
-  //        ";
-  //   exit;
-  // }
+  session_start();
+  $userid =(isset($_SESSION["userid"]))?$_SESSION["userid"]:"";
+  if ($userid !== "admin1234") {
+    echo "
+          <script>
+          alert('관리자가 아닙니다! 관리자 페이지 입장은 관리자만 가능합니다!');
+          history.go(-1)
+          </script>
+         ";
+    exit;
+  }
    ?>
   <body>
     <aside id="admin_aside_left">

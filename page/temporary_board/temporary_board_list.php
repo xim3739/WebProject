@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <title>PHP 프로그래밍 입문</title>
 <link rel="stylesheet" href="../../css/temporary_board/board.css">
+<link rel="stylesheet" type="text/css" href="../../css/board/board.css">
+
 <link rel="stylesheet" href="../../css/temporary_board/common.css">
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
@@ -50,6 +52,7 @@
       margin-left:5px;
       margin-top:1px;
       }
+
 
 </style>
 </head>
@@ -104,7 +107,7 @@
   ?>
    	<div id="board_box" style="padding-top:100px;">
 	    <h3>
-	    	임시보호 > 목록보기
+	    	임시보호
 		</h3>
     <form name="board_form" action="temporary_board_list.php?mode=search" method="post">
       <div id="list_search">
@@ -122,12 +125,12 @@
 	    <ul id="board_list">
 				<li>
 
-					<span class="col1">번호</span>
-					<span class="col2">제목</span>
-					<span class="col3">글쓴이</span>
-					<span class="col4">첨부</span>
-					<span class="col5">등록일</span>
-					<span class="col6">조회</span>
+					<span class="col1" style="font-weight:bold;"></span>
+					<span class="col2" style="font-weight:bold;">제목</span>
+					<span class="col3" style="font-weight:bold;">글쓴이</span>
+					<span class="col4" style="font-weight:bold;">첨부</span>
+					<span class="col5" style="font-weight:bold;">등록일</span>
+					<span class="col6" style="font-weight:bold;">조회</span>
 				</li>
 
 <?php
@@ -146,7 +149,7 @@
       //fetch_array는 인덱스와 키값으로 찾을 수 있다.
       //fetch_row는 인덱스로 찾을 수 있다.
       // 하나의 레코드 가져오기
-	  $num         = $row["num"];
+
 	  $id          = $row["id"];
 	  $name        = $row["name"];
 	  $subject     = $row["subject"];
@@ -158,7 +161,7 @@
       	$file_image = " ";
 ?>
 				<li>
-					<span class="col1"><?=$number?></span>
+					<span class="col1"></span>
 					<span class="col2"><a href="temporary_board_view.php?num=<?=$num?>&page=<?=$page?>"><?=$subject?></a></span>
 					<span class="col3"><?=$name?></span>
 					<span class="col4"><?=$file_image?></span>

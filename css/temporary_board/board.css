@@ -1,6 +1,7 @@
 /* 게시판 글쓰기(board_form.php) */
 #board_box { position: relative; width: 800px; margin: 0 auto; }
-#board_box h3 { margin-top: 30px;	padding: 10px; border-bottom: solid 2px #516e7f; font-size: 20px; }
+#board_box h3 { margin-top: 30px;	padding: 10px;  font-size: 20px; background-color: #7ca2c3;
+    color: white;}
 #board_form span { display: inline-block; }
 #board_form .col1 { width: 150px; }
 #board_form li {	padding: 12px; border-bottom: solid 1px #dddddd; }
@@ -30,4 +31,3 @@
 #view_content .col2 { float: right; }
 #view_content li:nth-child(2) {	padding: 15px 15px 80px 15px; border-bottom: solid 1px #cccccc; }
 #view_content li:nth-child(3) button { padding: 5px 20px; margin: 15px 0 40px 720px; cursor: pointer; }
-
