@@ -4,10 +4,12 @@
   $user_id = $_GET["user_id"];
   include_once "../../db/db_connector.php";
   $sql = "select * from message where send_id = '$rv_id' or rv_id = '$rv_id' order by num asc ";
+  // var_dump($sql);
   $result = mysqli_query($connect,$sql);
   $total_record = mysqli_num_rows($result);
   if ($total_record === 0) {
     $sql = "select * from member where id = '$rv_id'";
+    // var_dump($sql);
     $result = mysqli_query($connect,$sql);
     $total_record = mysqli_num_rows($result);
     $row = mysqli_fetch_array($result);
@@ -16,13 +18,13 @@
     $list=array();
     array_push($list,array("result"=>$total_record,"send_id"=>$send_id,"rv_id"=>$rv_id,"send_name"=>" ",
     "rv_name"=>" ","title_name"=>$title_name,"content"=>" ","regist_day"=>" "));
-
   }else {
     $sql = "select name from member where id = '$rv_id'";
     $result = mysqli_query($connect,$sql);
     $row = mysqli_fetch_array($result);
     $title_name=$row["name"];
     $sql = "select * from message where send_id in ('$send_id','$rv_id') and rv_id in ('$rv_id','$send_id') order by num asc ";
+    // var_dump($sql);
     $result = mysqli_query($connect,$sql);
     $total_record = mysqli_num_rows($result);
     $list=array();

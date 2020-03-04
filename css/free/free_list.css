@@ -1,17 +1,9 @@
 #list_total{width: 800px; margin: 0 auto; margin-top: 100px;}
 #category_select {font-size: 14px;}
-
-
-
-
-
-
-
-
 .bottom_tr{text-align: center;}
 .bottom_tr a{text-decoration: none;}
-.bottom_tr:hover{background-color: #bcdaba;}
-#input_table{width: 800px;}
+.list_tr:hover{background-color: #bcdaba;}
+#input_table{width: 800px; font-size: 14px;}
 .back_tr{font-size: 12px; padding: 5px;}
 .col1{width: 60px; padding-top: 5px; padding-bottom: 5px;}
 .col2{width: 380px; padding-top: 5px; padding-bottom: 5px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
@@ -20,9 +12,10 @@
 .col4{width: 50px; padding-top: 5px; padding-bottom: 5px;}
 .col5{width: 60px; padding-top: 5px; padding-bottom: 5px;}
 .page_tr a{text-decoration: none; color: black;}
-#search_ul {margin-left: 80px;}
+#search_ul {margin: 0; padding: 0;}
 #search_ul li{display: inline-block; list-style: none;}
 .page_table{width: 100%};
 .search_td{text-align: right;}
-#page_div{text-align: left; display: inline-block; width: 300px;}
-#search_div{text-align: right; display: inline-block; width: 400px;}
+#page_div{text-align: left; display: inline-block; width: 390px;}
+#page_div ul{margin: 0; padding: 0;}
+#search_div{text-align: right; display: inline-block; width: 390px;}

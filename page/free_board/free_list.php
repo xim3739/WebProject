@@ -14,11 +14,6 @@
     <script src="../../js/free/free_list.js" charset="utf-8"></script>
     <link rel="stylesheet" href="../../css/free/free.css">
     <link rel="stylesheet" href="../../css/free/free_list.css">
-    <!-- aside CSS&JS -->
-    <link rel="stylesheet" href="../../css/aside/message.css">
-    <script src="../../js/aside/message.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="../../css/aside/banner.css">
-    <script src="../../js/aside/banner.js" charset="utf-8"></script>
   </head>
     <body>
       <?php include "../../lib/common_page/header.php";?>
@@ -103,7 +98,7 @@
                       <option value="질문" <?php if($category === "질문") echo "SELECTED"; ?>>질문</option>
                     </select>
                     <ul class="total_ul" style="float: right;">
-                      <li><a href="#" onclick="goList();">목록</a></li>
+                      <li><button type="button" class="go_list_button" onclick="goList();">목록</button></li>
                       <li><a href="./free_write_form.php"><img src="../../img/free/write.gif" alt="글쓰기.gif"></a></li>
                     </ul>
                   </div>
@@ -126,6 +121,7 @@
                           <td class="col5">조회</td>
                         </tr>
                       </thead>
+                      <tbody>
                       <?php
                         for ($i=$start; $i <$start+$scale && $i < $total_record ; $i++) {
                           mysqli_data_seek($result,$i);
@@ -141,27 +137,26 @@
                           $time = substr($regist_day,12,5);
                           $hit = $row["hit"];
                           ?>
-                      <tbody>
-                        <tr class="bottom_tr">
+                        <tr class="bottom_tr list_tr">
                           <td class="col1"><?=$num?></td>
                           <td class="col2" style="text-align: left;}"><a href="./free_read_form.php?num=<?=$num?>&page=<?=$page?>"><?=$total_subject?></a></td>
                           <td hidden><?=$id?></td>
-                          <td class="col3"><a href="#" onclick="connect_message('<?=$userid?>','<?=$id?>','<?=$userid?>');"><?=$name?></a></td>
+                          <td class="col3"><?=$name?></td>
                           <td class="col4"><?=$time?></td>
                           <td class="col5"><?=$hit?></td>
                         </tr>
-                      </tbody>
                       <?php
                         $number --;
                       }//end of for
                         // mysqli_close($connect);
                       ?>
+                    </tbody>
                     </table>
                   </form>
                 </td>
               </tr>
               <tr>
-                <td style="text-align: right;" class="back_tr"><a href="./free_write_form.php"><img src="../../img/free/write.gif" alt="글쓰기.gif"></a></td>
+                <td style="text-align: right;" class="back_tr "><a href="./free_write_form.php"><img src="../../img/free/write.gif" alt="글쓰기.gif"></a></td>
               </tr>
               <tr>
                 <td class="table_border"></td>
@@ -170,7 +165,7 @@
                 <td>
                   <form class="" action="./free_list_search.php" method="post">
                     <table class="page_table">
-                      <tr class="back_tr page_tr total_ul" style="width: 790px;">
+                      <tr class="back_tr page_tr total_ul" style="width: 800px;">
                         <td>
                           <div id="page_div">
                             <ul>
@@ -292,7 +287,5 @@
           </table>
         </div>
       </section>
-    <?php include "../aside/message.php"; ?>
-    <?php include "../aside/banner.php"; ?>
   </body>
 </html>
