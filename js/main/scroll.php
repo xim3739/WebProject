@@ -87,8 +87,8 @@ $(document).ready(function () {
                             <img class="img-fluid rounded mb-4 mb-lg-0" src='`+file_path+`'>
                           </div>
                           <div class="col-lg-5 no-flex" style="max-width : 42.666667%">
-                          <span id="span_id" hidden>`+id+`</span>
-                          <span id="span_name"><a href="#" onclick="connect_message('`+user_id+`','`+id+`','`+user_id+`');">작성자 : `+name+`</a></span>
+                          <span class="span_id" >`+id+`</span>
+                          <span id="span_name"><a href="#" class="link_message">작성자 : `+name+`</a></span>
                             <h1 class="font-weight-light" style="width: 400.5px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">`+subject+`</h1>
                             <p style="word-wrap : break-word;">`+content +`</p>
                             <a class="btn btn-primary" href="../../page/board/board_myboard_widen.php?num=`+num+`">게시글 보기</a>
@@ -99,7 +99,6 @@ $(document).ready(function () {
                         </div>
                       </div>
                       </div>`;
-
                         }else{
                             var html=`
                             <div class="board_center">
@@ -109,8 +108,8 @@ $(document).ready(function () {
                             <img class="img-fluid rounded mb-4 mb-lg-0" src='`+file_path+`'>
                           </div>
                           <div class="col-lg-5 no-flex" style="max-width : 42.666667%">
-                            <span id="span_id" hidden>`+id+`</span>
-                            <span id="span_name"><a href="#" onclick="connect_message('`+user_id+`','`+id+`','`+user_id+`');">작성자 : `+name+`</a></span>
+                            <span class="span_id" >`+id+`</span>
+                            <span id="span_name"><a href="#" class="link_message"">작성자 : `+name+`</a></span>
                             <h1 class="font-weight-light" style="width: 400.5px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">`+subject+`</h1>
                             <p style="word-wrap : break-word;">`+content +`</p>
                             <a class="btn btn-primary" href="../../page/board/board_widen.php?num=`+num+`">게시글 보기</a>
@@ -131,8 +130,8 @@ $(document).ready(function () {
                             <img class="img-fluid rounded mb-4 mb-lg-0" src='`+file_path+`'>
                           </div>
                           <div class="col-lg-5 no-flex" style="max-width : 42.666667%">
-                            <span id="span_id" hidden>`+id+`</span>
-                            <span id="span_name"><a href="#" onclick="connect_message('`+user_id+`','`+id+`','`+user_id+`');">작성자 : `+name+`</a></span>
+                            <span class="span_id" >`+id+`</span>
+                            <span id="span_name"><a href="#" class="link_message">작성자 : `+name+`</a></span>
                             <h1 class="font-weight-light" style="width: 400.5px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">`+subject+`</h1>
                             <p style="word-wrap : break-word;">`+content +`</p>
                             <a class="btn btn-primary" href="../../page/board/board_myboard_widen.php?num=`+num+`">게시글 보기</a>
@@ -143,17 +142,24 @@ $(document).ready(function () {
                         </div>
                       </div>
                       </div>`;
-
                             }else{
 
                             }
                         }
 
                         }
-
-
                         $('section').append(html);
+                        $('.link_message').click(function(){
+                          // var check_id=$('.span_id').var();
+                          if (id!=user_id) {
+                            console.log(user_id);
+                            console.log(id);
+                            show_message();
+                            connect_memeber(user_id,id,user_id);
+                          }
+                        });
                     }
+
                     page+=5;
                     console.log(page);
 
@@ -169,6 +175,5 @@ $(document).ready(function () {
         });
 
     }
-    $("#id").click
 });
 </script>

@@ -57,6 +57,7 @@
 
 <body>
 <aside id="admin_aside_left">
+  <button type="button" id="exit_admin" name="button" onclick="location.href='../index/index.php'">나가기</button>
         <ul>
           <li><a href="./admin_member.php">회원 목록 관리</a></li>
           <li><a href="./admin_board.php?category='찾아요'">게시판 관리</a></li>
@@ -69,12 +70,12 @@
           <div id="statis_nav">
             <select name="" id="select_year"></select>
                 <ul>
-                    <li class="cols" id="visitor" onclick="setData(this)">방문자수</li> | 
-                    <li class="cols" id="seek_keep" onclick="setData(this)">찾아요/데리고있어요</li> | 
-                    <li class="cols" id="temp" onclick="setData(this)">임시보호</li> | 
+                    <li class="cols" id="visitor" onclick="setData(this)">방문자수</li> |
+                    <li class="cols" id="seek_keep" onclick="setData(this)">찾아요/데리고있어요</li> |
+                    <li class="cols" id="temp" onclick="setData(this)">임시보호</li> |
                     <li class="cols" id="free" onclick="setData(this)">자유게시판</li>
                 </ul>
-        
+
 
         </div>
         <hr>
