@@ -1,4 +1,4 @@
-*{margin: 0;padding: 0;border-collapse: collapse; font-family: gulim, 굴림, Helvetica;}
+*{margin: 0;padding: 0;border-collapse: collapse;}
 .total_ul{margin: 0; padding: 0; display: inline-block;}
 .total_ul li{display: inline-block; list-style: none;}
 .table_border{height: 2px; background-color: #7ca2c3;}
