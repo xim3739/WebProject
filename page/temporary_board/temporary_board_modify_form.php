@@ -39,7 +39,7 @@
 
    	<div id="board_box" style="padding-top:100px;">
 	    <h3 id="board_title">
-	    		게시판 > 글 쓰기
+	    		임시보호
 		</h3>
 <?php
 	$num  = $_GET["num"];
