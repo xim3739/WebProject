@@ -10,10 +10,10 @@ $(document).ready(function () {
             let scrollTop = $window.scrollTop();
             let windowHeight = $window.height();
             let documentHeight = $(document).height();
-            
-            
+
+
            // console.log("documentHeight:" + documentHeight + " | scrollTop:" + scrollTop + " | windowHeight: " + windowHeight );
-            
+
             // scrollbar의 thumb가 바닥 전 30px까지 도달 하면 리스트를 가져온다.
             if(flag){
               if( scrollTop + windowHeight + 30 > documentHeight ){
@@ -24,14 +24,14 @@ $(document).ready(function () {
         })
         fetchList();
     })
-    
+
     let fetchList = function(){
         flag=false;
         if(isEnd == true){
             return;
         }
         console.log("부르냐");
-        <?php 
+        <?php
         if(isset($_GET['category'])){
             $cate=$_GET['category'];
         }else{
@@ -53,18 +53,18 @@ $(document).ready(function () {
           $inputSearch = "null";
         }
         ?>
-        
+
         $.ajax({
             url:"../../db/main/main_item.php",
             type: "GET",
             data:{'page':page,'category':"<?=$cate?>","form":"<?=$form?>",'search':"<?=$inputSearch?>"},
-             
+
             success: function(result){
                 setTimeout(function(){flag=true;},500);
                 // 컨트롤러에서 가져온 방명록 리스트는 result.data에 담겨오도록 했다.
                 // 남은 데이터가 5개 이하일 경우 무한 스크롤 종료
                 if(!result.includes('empty')){
-                    
+
                     var response=JSON.parse(result);
                     console.log(response);
 
@@ -76,7 +76,7 @@ $(document).ready(function () {
                         var file_path=response[i].file;
                         var num=response[i].num;
                         var id=response[i].id;
-                        
+
                         if('<?=$board?>'&&'<?=$form?>'){
                             var html=`
                             <div class="board_center">
@@ -91,13 +91,13 @@ $(document).ready(function () {
                             <p style="word-wrap : break-word;">`+content +`</p>
                             <a class="btn btn-primary" href="../../page/board/board_myboard_widen.php?num=`+num+`">게시글 보기</a>
                             <span class="reply"><img src="" alt="">
-                              <span id="span_hit" style="margin-left: 205px;">조회수 : `+hit+`회</span>
+                              <span id="span_hit" style="margin-left: 100px;">조회수 : `+hit+`회</span>
                             </span>
                           </div>
                         </div>
                       </div>
                       </div>`;
-           
+
                         }else{
                             var html=`
                             <div class="board_center">
@@ -112,7 +112,7 @@ $(document).ready(function () {
                             <p style="word-wrap : break-word;">`+content +`</p>
                             <a class="btn btn-primary" href="../../page/board/board_widen.php?num=`+num+`">게시글 보기</a>
                             <span class="reply"><img src="" alt="">
-                              <span id="span_hit" style="margin-left: 205px;">조회수 : `+hit+`회</span>
+                              <span id="span_hit" style="margin-left: 100px;">조회수 : `+hit+`회</span>
                             </span>
                           </div>
                         </div>
@@ -133,7 +133,7 @@ $(document).ready(function () {
                             <p style="word-wrap : break-word;">`+content +`</p>
                             <a class="btn btn-primary" href="../../page/board/board_myboard_widen.php?num=`+num+`">게시글 보기</a>
                             <span class="reply"><img src="" alt="">
-                              <span id="span_hit" style="margin-left: 205px;">조회수 : `+hit+`회</span>
+                              <span id="span_hit" style="margin-left: 100px;">조회수 : `+hit+`회</span>
                             </span>
                           </div>
                         </div>
@@ -147,23 +147,23 @@ $(document).ready(function () {
 
                         }
 
-                        
+
                         $('section').append(html);
                     }
                     page+=5;
                     console.log(page);
-                    
+
                 }else{
 
                     isEnd = true
                 }
-                
+
             },error:function(){
                 alert("error");
             }
-            
+
         });
-      
+
     }
 });
 </script>
