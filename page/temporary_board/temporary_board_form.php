@@ -10,7 +10,6 @@
   <!-- Custom styles for this template -->
   <link href="../../css/main/small-business.css" rel="stylesheet">
   <?php include "../../lib/common_page/main_style.php" ?>
-  <script src="../../js/main/pop_up_menu.js"></script>
 
   </head>
   <script>
