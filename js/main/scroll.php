@@ -2,6 +2,7 @@
 $(document).ready(function () {
     console.log('<?=$_SESSION['userid']?>');
     let isEnd = false;
+    let user_id='<?=$_SESSION['userid']?>';
     var page=0;
     var flag=true;
     $(function(){
@@ -86,7 +87,8 @@ $(document).ready(function () {
                             <img class="img-fluid rounded mb-4 mb-lg-0" src='`+file_path+`'>
                           </div>
                           <div class="col-lg-5 no-flex" style="max-width : 42.666667%">
-                            <span id="span_id">작성자 : `+name+`</span>
+                          <span id="span_id" hidden>`+id+`</span>
+                          <span id="span_name"><a href="#" onclick="connect_message('`+user_id+`','`+id+`','`+user_id+`');">작성자 : `+name+`</a></span>
                             <h1 class="font-weight-light" style="width: 400.5px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">`+subject+`</h1>
                             <p style="word-wrap : break-word;">`+content +`</p>
                             <a class="btn btn-primary" href="../../page/board/board_myboard_widen.php?num=`+num+`">게시글 보기</a>
@@ -107,7 +109,8 @@ $(document).ready(function () {
                             <img class="img-fluid rounded mb-4 mb-lg-0" src='`+file_path+`'>
                           </div>
                           <div class="col-lg-5 no-flex" style="max-width : 42.666667%">
-                            <span id="span_id">작성자 : `+name+`</span>
+                            <span id="span_id" hidden>`+id+`</span>
+                            <span id="span_name"><a href="#" onclick="connect_message('`+user_id+`','`+id+`','`+user_id+`');">작성자 : `+name+`</a></span>
                             <h1 class="font-weight-light" style="width: 400.5px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">`+subject+`</h1>
                             <p style="word-wrap : break-word;">`+content +`</p>
                             <a class="btn btn-primary" href="../../page/board/board_widen.php?num=`+num+`">게시글 보기</a>
@@ -128,7 +131,8 @@ $(document).ready(function () {
                             <img class="img-fluid rounded mb-4 mb-lg-0" src='`+file_path+`'>
                           </div>
                           <div class="col-lg-5 no-flex" style="max-width : 42.666667%">
-                            <span id="span_id">작성자 : `+name+`</span>
+                            <span id="span_id" hidden>`+id+`</span>
+                            <span id="span_name"><a href="#" onclick="connect_message('`+user_id+`','`+id+`','`+user_id+`');">작성자 : `+name+`</a></span>
                             <h1 class="font-weight-light" style="width: 400.5px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">`+subject+`</h1>
                             <p style="word-wrap : break-word;">`+content +`</p>
                             <a class="btn btn-primary" href="../../page/board/board_myboard_widen.php?num=`+num+`">게시글 보기</a>
@@ -165,5 +169,6 @@ $(document).ready(function () {
         });
 
     }
+    $("#id").click
 });
 </script>
