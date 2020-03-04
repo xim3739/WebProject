@@ -9,6 +9,7 @@
   <meta name="author" content="">
 
   <title>찾아Joo</title>
+  <link rel="stylesheet" type="text/css" href="../../css/board/board.css">
   <!-- jquery -->
   <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
   <link rel="stylesheet" href="../../css/aside/message.css">
@@ -30,8 +31,6 @@
 
   <!-- main header css -->
   <?php include "../../lib/common_page/main_style.php";?>
-
-  <?php include "../../db/db_connector.php"; ?>
   <script>
 function pop_up(id) {
       $("#pop_write").slideToggle("slow");
@@ -44,7 +43,9 @@ function pop_up(id) {
 
   <?php include "../../lib/common_page/header.php"; ?>
   <!-- Page Content -->
-  <section style="margin-top : 90px">
+  <section style="margin-top : 60px">
+    <!-- nav -->
+    <?php include "../../lib/board/nav/board_nav.php" ?>
 
         <?php
         if(isset($_GET['category'])){
@@ -62,7 +63,7 @@ function pop_up(id) {
         }
         $result=mysqli_query($connect,$sql);
         $page_num=mysqli_num_rows($result);
-      
+
         if($page_num==0){
 
         ?>
