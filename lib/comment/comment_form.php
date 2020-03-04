@@ -114,12 +114,12 @@
                           <input type="hidden" name="date" value="<?=$recomment_regist_day?>">
                           <?php
                           if(isset($_SESSION['userid'])){
-                            if($_SESSION['userid']==$id){
+                            if($_SESSION['userid']==$recomment_id){
                               ?>
                           <button type="button" class="comment_delete_btn" onclick="reremove('remove_recomment<?=$i?><?=$j?>',<?=$d_num?>);">삭제</button>
                           <?php
-                        }
-                      }
+                              }
+                            }
                        ?>
                         </div>
                       </div>
