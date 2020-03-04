@@ -4,64 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     <style>
-        #statis_nav ul{
+        #statis_nav ul {
             display: inline-block;
             margin: 0;
+            margin-left: 345px;
             padding: 0;
         }
+
         .cols {
             padding: 10px auto;
             border: 0;
             margin: 0;
             list-style: none;
             display: inline-block;
-            cursor:pointer;
+            cursor: pointer;
             height: 50px;
             font-size: 17px;
         }
-        #statis_nav{
+
+        #statis_nav {
             padding: 10px 0;
         }
-        #select_year{
+
+        #select_year {
             font-size: 27px;
-            color:#7ca2c3;
-            border:none;
+            color: #7ca2c3;
+            border: none;
             outline: none;
         }
-        #div_center{
-            width:1100px;
+
+        #div_center {
+            width: 1100px;
             margin: 0 auto;
         }
-        #wing_tab{
+
+        #wing_tab {
             display: inline-block;
-            float: left;
+        }
+        #admin_aside_left ul li a{
+            text-decoration: none;
+    color: black;
+    font-weight: bold;
         }
     </style>
+     <link rel="stylesheet" href="../../css/admin/admin_board.css">
     <title>통계</title>
 </head>
 
 <body>
-    <div id="wing_tab">
+<aside id="admin_aside_left">
         <ul>
-            <li><a href="">관리자</a></li>
-            <li><a href="">관리자</a></li>
-            <li><a hef="">관리자</a></li>
+          <li><a href="./admin_member.php">회원 목록 관리</a></li>
+          <li><a href="./admin_board.php?category='찾아요'">게시판 관리</a></li>
+          <li><a href="./admin_statistic.php">통계</a></li>
         </ul>
-
-    </div>
-    <div id="div_center">
-       
-        <div id="statis_nav">
+      </aside>
+      <section>
+        <div id="admin_box" style="text-align: unset">
+          <h3 id="member_title">관리자 모드 > 통계</h3>
+          <div id="statis_nav">
             <select name="" id="select_year"></select>
                 <ul>
-                    <li class="cols" id="visitor" onclick="setData(this)">방문자수</li>
-                    <li class="cols" id="seek_keep" onclick="setData(this)">찾아요/데리고있어요</li>
-                    <li class="cols" id="temp" onclick="setData(this)">임시보호</li>
+                    <li class="cols" id="visitor" onclick="setData(this)">방문자수</li> | 
+                    <li class="cols" id="seek_keep" onclick="setData(this)">찾아요/데리고있어요</li> | 
+                    <li class="cols" id="temp" onclick="setData(this)">임시보호</li> | 
                     <li class="cols" id="free" onclick="setData(this)">자유게시판</li>
                 </ul>
         
@@ -69,26 +79,14 @@
         </div>
         <hr>
         <canvas id="myChart" width="1100" height="400"></canvas>
-    </div>
-
-
+        </div>
+      </section>
     <script>
-        window.chartColors = {
-            red: 'rgb(255, 99, 132)',
-            orange: 'rgb(255, 159, 64)',
-            yellow: 'rgb(255, 205, 86)',
-            green: 'rgb(75, 192, 192)',
-            blue: 'rgb(54, 162, 235)',
-            purple: 'rgb(153, 102, 255)',
-            grey: 'rgb(201, 203, 207)'
-        };
-
         var myChart = null;
         var name_list = [];
         var data = [];
         var now = new Date();
         var year = now.getUTCFullYear();
-        //var month = now.getMonth() + 1;
         var start_year = 2019;
         var select_year = document.querySelector('#select_year');
         var label_names = [];
@@ -111,20 +109,24 @@
 
         //데이터셋 설정
         function setData(id) {
+            var line_set=document.querySelectorAll('.cols');
+            for(var i=0;i<line_set.length;i++){
+                line_set[i].style.textDecorationLine='none';
+            }
             switch (id.id) {
                 case 'seek_keep':
-
                     while (myChartData.datasets.length) {
                         myChartData.datasets.pop();
                     }
                     callItem('seek_keep');
-                    myChart.reponsive=false;
+                    id.style.textDecorationLine='underLine';
                     break;
                 case 'temp':
-                    callItem('temp');
                     while (myChartData.datasets.length) {
                         myChartData.datasets.pop();
                     }
+                    callItem('temp');
+                    id.style.textDecorationLine='underLine';
                     break;
                 case 'free':
 
@@ -132,6 +134,7 @@
                         myChartData.datasets.pop();
                     }
                     callItem('free');
+                    id.style.textDecorationLine='underLine';
                     break;
                 case 'visitor':
 
@@ -139,6 +142,7 @@
                         myChartData.datasets.pop();
                     }
                     callItem('visitor');
+                    id.style.textDecorationLine='underLine';
                     break;
 
             }
@@ -156,7 +160,7 @@
             }
 
             var ctx = document.getElementById('myChart');
-    
+
             myChart = new Chart(ctx, {
                 type: 'bar',
                 data: myChartData,
@@ -179,28 +183,28 @@
                     'category': category
                 },
                 success: function (response) {
-                    if(!response.includes('Undefined')){
+                    if (!response.includes('Undefined')) {
                         var result = JSON.parse(response);
-                    }else{
-                        var result=null;
+                    } else {
+                        var result = null;
                     }
                     var check_year = [];
                     if (category === 'seek_keep') {
                         var seek = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
                         var keep = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-                        if(result){
+                        if (result) {
 
-                        for (var i = 0; i < result.length; i++) {
+                            for (var i = 0; i < result.length; i++) {
 
-                            if (result[i].regist.includes(select_year.value)) {
-                                check_year.push(result[i]);
-                                if (check_year[i].category.includes('찾아요')) {
-                                    seek[(parseInt(check_year[i].regist.substr(5, 2))) - 1]++;
-                                } else {
-                                    keep[(parseInt(check_year[i].regist.substr(5, 2))) - 1]++;
+                                if (result[i].regist.includes(select_year.value)) {
+                                    check_year.push(result[i]);
+                                    if (check_year[i].category.includes('찾아요')) {
+                                        seek[(parseInt(check_year[i].regist.substr(5, 2))) - 1]++;
+                                    } else {
+                                        keep[(parseInt(check_year[i].regist.substr(5, 2))) - 1]++;
+                                    }
                                 }
                             }
-                        }
                         }
 
                         var newData1 = {
@@ -228,18 +232,18 @@
 
                     } else if (category === 'visitor') {
                         var visitor = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-                        if(result){
+                        if (result) {
 
-                        for (var i = 0; i < result.length; i++) {
+                            for (var i = 0; i < result.length; i++) {
 
-                            if (result[i].regist.includes(select_year.value)) {
-                                check_year.push(result[i]);
+                                if (result[i].regist.includes(select_year.value)) {
+                                    check_year.push(result[i]);
 
-                                visitor[(parseInt(check_year[i].regist.substr(5, 2))) - 1] += parseInt(
-                                    check_year[i].count);
+                                    visitor[(parseInt(check_year[i].regist.substr(5, 2))) - 1] += parseInt(
+                                        check_year[i].count);
 
+                                }
                             }
-                        }
                         }
 
                         var newData1 = {
@@ -255,30 +259,30 @@
 
                         myChartData.datasets.push(newData1);
                         myChart.update();
-                    } else if(category==='temp'){
+                    } else if (category === 'temp') {
                         var etc = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-                        if(result){
-                        for (var i = 0; i < result.length; i++) {
+                        if (result) {
+                            for (var i = 0; i < result.length; i++) {
 
-                            if (result[i].regist.includes(select_year.value)) {
-                                check_year.push(result[i]);
+                                if (result[i].regist.includes(select_year.value)) {
+                                    check_year.push(result[i]);
 
-                                etc[(parseInt(check_year[i].regist.substr(5, 2))) - 1]++;
+                                    etc[(parseInt(check_year[i].regist.substr(5, 2))) - 1]++;
 
+                                }
                             }
+
+                            var newData1 = {
+                                labels: label_names,
+                                label: "임시보호",
+                                backgroundColor: 'rgba(75, 192, 192,0.5)',
+                                borderColor: 'green',
+                                borderWidth: 1,
+                                data: etc
+                            }
+
                         }
 
-                        var newData1 = {
-                            labels: label_names,
-                            label: "임시보호",
-                            backgroundColor: 'rgba(75, 192, 192,0.5)',
-                            borderColor: 'green',
-                            borderWidth: 1,
-                            data: etc
-                        }
-
-                        }
-                        
 
 
 
@@ -286,23 +290,23 @@
                         myChartData.datasets.push(newData1);
                         myChart.update();
 
-                    }else{
+                    } else {
                         var etc = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-                       if(result){
+                        if (result) {
 
-                        for (var i = 0; i < result.length; i++) {
+                            for (var i = 0; i < result.length; i++) {
 
-                            if (result[i].regist.includes(select_year.value)) {
-                                check_year.push(result[i]);
+                                if (result[i].regist.includes(select_year.value)) {
+                                    check_year.push(result[i]);
 
-                                etc[(parseInt(check_year[i].regist.substr(5, 2))) - 1]++;
+                                    etc[(parseInt(check_year[i].regist.substr(5, 2))) - 1]++;
 
+                                }
                             }
                         }
-                       }
 
-                      
-                       
+
+
                         var newData1 = {
                             labels: label_names,
                             label: "자유게시판",

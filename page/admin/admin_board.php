@@ -16,12 +16,12 @@
               include_once "../../db/db_connector.php";
               $category=(isset($_GET["category"]))?$_GET["category"]:"";
               $str1="'"."찾아요"."'";
-              $str2="'"."데리고 있어요"."'";
-              $str3="'"."임시 보호"."'";
+              $str2="'"."데리고있어요"."'";
+              $str3="'"."임시보호"."'";
               $str4="'"."자유게시판"."'";
               $str5="%27"."찾아요"."%27";
-              $str6="%27"."데리고 있어요"."%27";
-              $str7="%27"."임시 보호"."%27";
+              $str6="%27"."데리고있어요"."%27";
+              $str7="%27"."임시보호"."%27";
               $str8="%27"."자유게시판"."%27";
               switch ($category) {
                 case $str1:
@@ -59,6 +59,7 @@
                ?>
             </ul>
           </li>
+          <li><a href="./admin_statistic.php" class="admin_list">통계</a>
         </ul>
       </aside>
     <section>

@@ -1,7 +1,6 @@
 <?php
     $category=$_POST['category'];
-
-    $connect=mysqli_connect("localhost","root","123456","joo_db");
+    include "../../db/db_connector.php";
     if($category=='seek_keep'){
         $sql="SELECT * FROM `board`";
         $result=mysqli_query($connect,$sql);
