@@ -146,11 +146,7 @@ $(document).ready(function () {
                         }
 
                         }
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 6a47beb297279d178f0b4237f20dfa287d52973e
                         $('section').append(html);
                         $('#link_'+i).on("click",message_seek_id(id,user_id));
                     }//end of for
@@ -171,7 +167,6 @@ $(document).ready(function () {
 
     }
 });
-<<<<<<< HEAD
 
 function message_seek_id(id,user_id){
   return function(){
@@ -184,6 +179,4 @@ function message_seek_id(id,user_id){
     }
   }
 }
-=======
->>>>>>> 6a47beb297279d178f0b4237f20dfa287d52973e
 </script>
