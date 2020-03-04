@@ -13,7 +13,7 @@ function call_pay(now_id,name,phone){
       pay_method : 'card',
       merchant_uid : 'merchant_' + new Date().getTime(),
       name : 'Ad_Blocking',
-      amount : 1000,
+      amount : 9900,
       buyer_email : ' ',
       buyer_name : name,
       buyer_tel : phone,

@@ -152,22 +152,31 @@
 삭제 -  댓글에 삭제를 하면 대댓긇도 없어진다
 전 글을 삭제하면 다음글이 이전글위치에 있어야 한다
  -->
+
   <?php
+  $num = $_GET["num"];
   $page = $_GET["page"];
+
       $passFlag=false;
-      $sql = "SELECT * FROM (SELECT * FROM `temporary_comment` ORDER BY `group_num` DESC, `comment_num`) `comment` WHERE `group_num` = $num group by `depth`,`comment_num` ORDER BY `comment_num`";
+
+      $sql = "SELECT * FROM (SELECT * FROM `temporary_comment` ORDER BY `group_num` DESC, `comment_num`) `temporary_comment` WHERE `group_num` = $num GROUP BY `depth`,`comment_num` ORDER BY `comment_num`, `depth`";
     // 코멘트 테이블(그룹넘버로 내림차순, 코멘트 넘버로 오름차순)을 한 테이블에서 그룹넘버가 10인
     // 데이터만 가져오는데 뎁스로 그룹바이를 해서 정렬해서 가져오고 코멘트 넘버로도 구룹 바이로 해서 가져온후
     // 코멘트 넘버로 오름차순으로 가져옴
+
       $result = mysqli_query($connect, $sql);
       $commentpost_num = mysqli_num_rows($result);
-      
+
+
       if ($commentpost_num) {
           for ($i = 0; $i < $commentpost_num; $i++) {
               $row = mysqli_fetch_array($result);
-              $id      = $row["id"];
+              $id = $row["id"];
               $regist_day = $row["regist_day"];
-              $content    = $row["content"]; ?>
+              $content = $row["content"];
+
+
+              ?>
         <script>
         // 댓글 숨기기 기능
           var flag = false;
@@ -207,6 +216,7 @@
                    $depth = $row["depth"];
                    $comment_num = $row['comment_num'];
 
+
                     ?>
 
                   <?php
@@ -221,6 +231,7 @@
                         $recomment_regist_day = $row["regist_day"];
                         $recomment_content    = $row["content"];
 
+
                   ?>
                   <!--대댓글-->
                   <!-- 대댓글의 폼이 시작 되는 부분 -->
@@ -233,7 +244,7 @@
                       <input type="hidden" name="re_content" value="<?=$content?>">
                       <span><?=$recomment_regist_day?></span>
                       <input type="hidden" name="date" value="<?=$regist_day?>">
-                      <span style="cursor:pointer"onclick="location.href='./recomment_delete.php?comment_num=<?=$comment_num?>&depth=<?=$depth?>&num=<?=$num?>&page=<?=$page?>'">삭제</span>
+                      <span style="cursor:pointer;" onclick="location.href='./recomment_delete.php?comment_num=<?=$comment_num?>&depth=<?=$depth?>&num=<?=$num?>&page=<?=$page?>'">삭제</span>
 
                     </div>
                   </div>
@@ -258,7 +269,8 @@
                          <input type="hidden" name="date" value="<?=$regist_day?>">
                        </div>
                      </div>
-                     <form name = "recomment_form" action="./comment_insert.php?num=<?=$num?>&mode=recomment&comment_num=<?=$comment_num?>&page=<?=$page?>" method="post">
+                     <!-- 대댓글폼 -->
+                     <form name = "recomment_form" action="./comment_insert.php?num=<?=$num?>&mode=re_reply&comment_num=<?=$comment_num?>&page=<?=$page?>" method="post">
                        <div id="board_widen_comment_input_retext_box<?=$i?>" style="margin-left : 60px; display : none;">
                          <div id="board_widen_comment_input_retext">
                            <img class="imgsetting" id="board_widen_comment_input_retext_image" src="../../img/board/default_proflie.png">
@@ -282,17 +294,19 @@
       } else {
           ?>
         <div class="board_widen_comment_box">
-          <form name="comment_form" action="./comment_insert.php?num=<?=$num?>&mode=recomment&comment_num=<?=$comment_num?>&page=<?=$page?>"  method="post">
+          <!-- 댓글 -->
+          <form name="comment_form" action="./comment_insert.php?num=<?=$num?>&mode=reply&page=<?=$page?>"  method="post">
             <div id="board_widen_comment_input_box">
               <div id="board_widen_comment_input_span">
                 <p>댓글 <span><?=$commentpost_num?></span>개</p>
               </div>
               <div id="board_widen_comment_input_text">
-                <img class="imgsetting" id="board_widen_comment_input_text_image" src="../../img/board/default_proflie.png" >
+                <img class="imgsetting" id="board_widen_comment_input_text_image" src="../../img/board/default_proflie.png"/>
                 <textarea name="content" id="input_comment_area" rows="1" placeholder="Comment"></textarea>
                 <button type="submit" name="button">Add</button>
               </div>
-            </div><br><br><br><br>
+            </div>
+          </form></div><br><br><br><br>
         <?php
       }
       mysqli_close($connect);
