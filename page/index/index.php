@@ -99,7 +99,7 @@ c.parentNode.insertBefore(cp, c); })(); </script>
     </div>
   </header>
   <div class="col-xl-9 mx-auto">
-    <h1 id="seek_h1" class="mb-5">찾아Joo의 협곡에 오신 것을 환영합니다.</h1>
+    <br>
   </div>
   <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
     <form name="search" method="POST" action="../main/main.php">
