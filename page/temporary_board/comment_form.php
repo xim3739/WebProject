@@ -155,7 +155,7 @@
   <?php
   $page = $_GET["page"];
       $passFlag=false;
-      $sql = "SELECT * FROM (SELECT * FROM `temporary_comment` ORDER BY `group_num` DESC, `comment_num`) `comment` WHERE `group_num` = $num group by `depth`,`comment_num` ORDER BY `comment_num`";
+      $sql = "SELECT * FROM (SELECT * FROM `temporary_comment` ORDER BY `group_num` DESC, `comment_num`) `comment` WHERE `group_num` = $num GROUP BY `depth`,`comment_num` ORDER BY `comment_num`, `depth`";
     // 코멘트 테이블(그룹넘버로 내림차순, 코멘트 넘버로 오름차순)을 한 테이블에서 그룹넘버가 10인
     // 데이터만 가져오는데 뎁스로 그룹바이를 해서 정렬해서 가져오고 코멘트 넘버로도 구룹 바이로 해서 가져온후
     // 코멘트 넘버로 오름차순으로 가져옴
@@ -281,18 +281,20 @@
           }
       } else {
           ?>
-        <div class="board_widen_comment_box">
-          <form name="comment_form" action="./comment_insert.php?num=<?=$num?>&mode=recomment&comment_num=<?=$comment_num?>&page=<?=$page?>"  method="post">
-            <div id="board_widen_comment_input_box">
-              <div id="board_widen_comment_input_span">
-                <p>댓글 <span><?=$commentpost_num?></span>개</p>
-              </div>
-              <div id="board_widen_comment_input_text">
-                <img class="imgsetting" id="board_widen_comment_input_text_image" src="../../img/board/default_proflie.png" >
-                <textarea name="content" id="input_comment_area" rows="1" placeholder="Comment"></textarea>
-                <button type="submit" name="button">Add</button>
-              </div>
+      <div class="board_widen_comment_box">
+        <form name="comment_form" action="./comment_insert.php?num=<?=$num?>&mode=recomment&page=<?=$page?>"  method="post">
+          <div id="board_widen_comment_input_box">
+            <div id="board_widen_comment_input_span">
+              <p>댓글 <span><?=$commentpost_num?></span>개</p>
+            </div>
+            <div id="board_widen_comment_input_text">
+              <img class="imgsetting" id="board_widen_comment_input_text_image" src="../../img/board/default_proflie.png" >
+              <textarea name="content" id="input_comment_area" rows="1" placeholder="Comment"></textarea>
+              <button type="submit" name="button">Add</button>
+            </div>
             </div><br><br><br><br>
+          <form>
+        </div>
         <?php
       }
       mysqli_close($connect);

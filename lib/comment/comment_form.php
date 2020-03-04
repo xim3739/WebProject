@@ -8,7 +8,7 @@
  -->
   <?php
       $passFlag=false;
-      $sql = "SELECT * FROM (SELECT * FROM `comment` ORDER BY `group_num` DESC, `comment_num`) `comment` WHERE `group_num` = $num group by `depth`, `comment_num` ORDER BY `comment_num`";
+      $sql = "SELECT * FROM (SELECT * FROM `comment` ORDER BY `group_num` DESC, `comment_num`) `comment` WHERE `group_num` = $num group by `depth`, `comment_num` ORDER BY `comment_num`, `depth`";
     // 코멘트 테이블(그룹넘버로 내림차순, 코멘트 넘버로 오름차순)을 한 테이블에서 그룹넘버가 10인
     // 데이터만 가져오는데 뎁스로 그룹바이를 해서 정렬해서 가져오고 코멘트 넘버로도 구룹 바이로 해서 가져온후
     // 코멘트 넘버로 오름차순으로 가져옴
