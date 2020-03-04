@@ -54,7 +54,7 @@
 
 if (!$username) {
     ?>
-    <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/signup.php','','width=500,height=1000,left=500,top=40');">
+    <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/signup.php','zoo','width=500,height=1000,left=500,top=40');">
     <?php
 } else {
         
