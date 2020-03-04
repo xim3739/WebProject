@@ -84,7 +84,7 @@
         <span class="board_myboard_widen_top_p_span">MEMBER_ID :</span> <span id="myboard_widen_memberId_span"><?=$name?></span><br>
         <span id="board_myboard_widen_top_p_span_date"></span> <span id="myboard_widen_date_span"><?=$regist_day?></span><br>
       </div>
-      <div id="board_myboard_widen_center">
+      <div id="board_myboard_widen_center" style="overflow: auto">
         <p><span id="myboard_widen_content_span"><?=$content?></span></p>
       </div>
       <!-- 지도 div -->

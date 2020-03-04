@@ -29,7 +29,8 @@
                         `num` int NOT NULL AUTO_INCREMENT,
                         `send_id` varchar(30) NOT NULL,
                         `rv_id` varchar(30) NOT NULL,
-                        `name` varchar(20) NOT NULL,
+                        `send_name` varchar(20) NOT NULL,
+                        `rv_name` varchar(20) NOT NULL,
                         `content` text NOT NULL,
                         `regist_day` char(20),
                         PRIMARY KEY(num)
@@ -98,7 +99,7 @@
 
                   case 'free' :
                     $sql = "CREATE TABLE `free`(
-                        `num` int AUTO_INCREMENT,
+                        `num` int NOT NULL AUTO_INCREMENT,
                         `id` varchar(30) NOT NULL,
                         `name` varchar(15) NOT NULL,
                         `category` varchar(20) NOT NULL,

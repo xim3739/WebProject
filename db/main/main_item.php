@@ -35,7 +35,7 @@ session_start();
 
   }
 
-  if(!(isset($_GET['search']) == "null")) {
+  if(!($_GET['search']=="null")) {
     $search = $_GET['search'];
     $sql = "SELECT * FROM `board` WHERE `category` = '찾아요' AND `subject` LIKE '%$search%' ORDER BY `num` DESC";
   } 

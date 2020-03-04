@@ -1,8 +1,6 @@
 <?php
-  // $userid="cwpark2190";
-  // $connect = mysqli_connect("localhost","root","123456","test");
   $userid=(isset($_SESSION["userid"]))?$_SESSION["userid"]:"";
-  // include_once "../../db/db_connector_main.php";
+  include_once "../../db/db_connector.php";
   mysqli_connect_error($connect);
   $sql = "select * from member where id='$userid'";
   $result = mysqli_query($connect,$sql);
@@ -20,10 +18,10 @@
     '<?=$name?>','<?=$phone?>');"><img src="../../img/aside/hide.png" alt="광고 삭제.jpg"></button>
 </aside>
 <?php
-if ($premium ==="yes") {
-  echo "<script>$('#aside_leftside').hide();</script>";
-}else {
-  echo "<script>$('#aside_leftside').show();</script>";
-}
-mysqli_close($connect);
+  if ($premium ==="yes") {
+    echo "<script>$('#aside_leftside').hide();</script>";
+  }else {
+    echo "<script>$('#aside_leftside').show();</script>";
+  }
+  mysqli_close($connect);
 ?>

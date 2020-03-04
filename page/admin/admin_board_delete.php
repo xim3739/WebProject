@@ -1,4 +1,15 @@
 <?php
+  // session_start();
+  // $userid =(isset($_SESSION["userid"]))?$_SESSION["userid"]:"";
+  // if ($userid !== "admin1234") {
+  //   echo "
+  //         <script>
+  //         alert('관리자가 아닙니다! 회원정보 수정은 관리자만 가능합니다!');
+  //         history.go(-1)
+  //         </script>
+  //        ";
+  //   exit;
+  // }
   if (isset($_POST["item"])) {
     $num_item = count($_POST["item"]);
   }else {
@@ -9,10 +20,11 @@
           </script>
          ";
   }
-  include_once "../../db/db_connector_main.php";
+  include_once "../../db/db_connector.php";
   for ($i=0; $i <$num_item ; $i++) {
     $num = $_POST["item"][$i];
-    $sql = "select * from board where num=$num";
+    $q_num = mysqli_real_escape_string($connect, $num);
+    $sql = "select * from board where num=$q_num";
     $result = mysqli_query($connect,$sql);
     $row = mysqli_fetch_array($result);
     $category = $row["category"];
@@ -21,7 +33,7 @@
       $file_path = "./data/".$file_copied;
       unlink($file_path);
     }
-    $sql = "delete from board where num = $num";
+    $sql = "delete from board where num = $q_num";
     mysqli_query($connect,$sql);
   }
   $category="%27".$category."%27";

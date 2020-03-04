@@ -1,7 +1,7 @@
 <?php
   $premiums=$_GET["premium"];
   $now_id=$_GET["now_id"];
-  include_once "../../db/db_connector_main.php";
+  include_once "../../db/db_connector.php";
   $sql = "select * from member where id='$now_id'";
   $result = mysqli_query($connect,$sql);
   $row = mysqli_fetch_array($result);
