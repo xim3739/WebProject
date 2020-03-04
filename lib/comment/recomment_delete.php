@@ -4,32 +4,15 @@ include "../../db/db_connector.php";
 session_start();
 $group_num  = $_GET["num"];
 $group_num = (int)$group_num;
-$depth = $_GET["depth"];
+$recomment_num = (int)$_GET["d_num"];
+$comment_num = $_GET["comment_num"];
 $ord = $_GET["ord"];
-if(isset($_GET['comment_num'])) {
-  $comment_num = $_GET['comment_num'];
-} else {
-  $comment_num = 0;
-}
-var_dump($comment_num);
-function test_input($data)
-{
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-$num = test_input($_GET["num"]);
-$q_num = mysqli_real_escape_string($connect, $num);
-
-
-var_dump($depth);
-
-$sql ="DELETE FROM `comment` WHERE `num`=$q_num AND `ord`=$ord";
+var_dump($recomment_num);
+$sql ="DELETE FROM `comment` WHERE `num`=$recomment_num";
 $result = mysqli_query($connect,$sql);
-
 mysqli_close($connect);
 echo "<script>
-  location.href='../../page/board/board_widen.php?num=$group_num';
-    </script>";
+      // location.href='../../page/board/board_widen.php?num=$group_num';
+      </script>";
 
  ?>

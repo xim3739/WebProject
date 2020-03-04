@@ -9,6 +9,7 @@ if(isset($_GET['comment_num'])) {
 } else {
   $comment_num = 0;
 }
+$deleteNum = $_GET['delete_num'];
 function test_input($data)
 {
     $data = stripslashes($data);
@@ -18,12 +19,12 @@ function test_input($data)
 $num = test_input($_GET["num"]);
 $q_num = mysqli_real_escape_string($connect, $num);
 
-$sql ="DELETE FROM `comment` WHERE `comment_num`=$comment_num";
+$sql ="DELETE FROM `comment` WHERE `num`=$deleteNum";
 $result = mysqli_query($connect,$sql);
-
+var_dump($deleteNum);
 mysqli_close($connect);
 echo "<script>
-  location.href='../../page/board/board_widen.php?num=$group_num';
+  //location.href='../../page/board/board_widen.php?num=$group_num';
     </script>";
 
  ?>
