@@ -87,11 +87,11 @@
       display: inline-block;
       }
 
-      #board_widen_comment_show_text_member {
+      .board_widen_comment_show_text_member {
       display: inline-block;
       }
 
-      #board_widen_comment_show_text_member span {
+      .board_widen_comment_show_text_member span {
       font-size: 13px;
       margin-left: 10px;
       }
@@ -144,6 +144,7 @@
       /* ------------------------------------------ */
 </style>
 
+
 <!-- 댓글 -->
 <!--
 삭제 할땐 내가 단 댓글만 지울수 있고 다른 사람의 댓글은 지울수 없다
@@ -156,6 +157,20 @@
   <?php
   $num = $_GET["num"];
   $page = $_GET["page"];
+  ?>
+  <script>
+        function open_delete(x,y,z){
+          alert(x+" "+y+" "+z);
+          location.href="./comment_delete.php?comment_num="+x+"&depth="+y+"&num="+z+"&page=<?=$page?>";
+        }
+  </script>
+  <script>
+        function open_redelete(x,y,z){
+          alert(x+" "+y+" "+z);
+          location.href="./recomment_delete.php?comment_num="+x+"&num="+y+"&ord="+z+"&page=<?=$page?>";
+        }
+  </script>
+  <?php
 
       $passFlag=false;
 
@@ -174,7 +189,7 @@
               $id = $row["id"];
               $regist_day = $row["regist_day"];
               $content = $row["content"];
-
+              $ord = $row["ord"];
 
               ?>
         <script>
@@ -215,6 +230,7 @@
                    $content    = $row["content"];
                    $depth = $row["depth"];
                    $comment_num = $row['comment_num'];
+                   $ord = $row["ord"];
 
 
                     ?>
@@ -230,21 +246,27 @@
                         $recomment_id      = $row["id"];
                         $recomment_regist_day = $row["regist_day"];
                         $recomment_content    = $row["content"];
-
+                        $ord = $row["ord"];
 
                   ?>
                   <!--대댓글-->
                   <!-- 대댓글의 폼이 시작 되는 부분 -->
                   <div id="board_widen_comment_viewmore_click">
                     <img src="../../img/board/default_proflie.png">
-                    <div id="board_widen_comment_show_text_member">
+                    <div id="board_widen_comment_show_text_member<?=$j?>" class="board_widen_comment_show_text_member">
                       <span><?=$recomment_id?></span><br>
                       <input type="hidden" name="id" value="<?=$id?>">
                       <span><?=$recomment_content?></span><br>
                       <input type="hidden" name="re_content" value="<?=$content?>">
                       <span><?=$recomment_regist_day?></span>
                       <input type="hidden" name="date" value="<?=$regist_day?>">
-                      <span style="cursor:pointer;" onclick="location.href='./recomment_delete.php?comment_num=<?=$comment_num?>&depth=<?=$depth?>&num=<?=$num?>&page=<?=$page?>'">삭제</span>
+                      <?php
+                          if (isset($_SESSION['userid'])) {
+                            if ($_SESSION['userid']==$recomment_id) {
+                              echo("<span style='cursor:pointer;' onclick='open_redelete($comment_num,$num,$ord);'>삭제</span>");
+                            }
+                          }
+                       ?>
 
                     </div>
                   </div>
@@ -257,14 +279,20 @@
                       <!-- comment show & recomment input -->
                      <div id="board_widen_comment_show_text">
                        <img class="imgsetting" src="../../img/board/default_proflie.png">
-                       <div id="board_widen_comment_show_text_member">
+                       <div id="board_widen_comment_show_text_member<?=$i?>" class="board_widen_comment_show_text_member">
                          <span id ="id"><?=$id?></span><br>
                          <input type="hidden" name="id" value="<?=$id?>">
                          <span id ="re_content"><?=$content?></span><br>
                          <input type="hidden" name="re_content" value="<?=$content?>">
                          <span id ="date"><?=$regist_day?></span>&nbsp;&nbsp;
                          <span id = "reple_comment" style="cursor:pointer"  onclick="hide('board_widen_comment_input_retext_box<?=$i?>');">▼ 답글</span>
-                         <span style="cursor:pointer" onclick="location.href='./comment_delete.php?comment_num=<?=$comment_num?>&depth=<?=$depth?>&num=<?=$num?>&page=<?=$page?>'">삭제</span>
+                         <?php
+                             if (isset($_SESSION['userid'])) {
+                               if ($_SESSION['userid']==$id) {
+                                 echo("<span style='cursor:pointer;' onclick='open_delete($comment_num,$depth,$num);'>삭제</span>");
+                               }
+                             }
+                          ?>
 
                          <input type="hidden" name="date" value="<?=$regist_day?>">
                        </div>
@@ -307,7 +335,10 @@
               </div>
             </div>
           </form></div><br><br><br><br>
+
         <?php
       }
+
+
       mysqli_close($connect);
    ?>
