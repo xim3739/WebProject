@@ -106,21 +106,6 @@
                   <option value="흐흐흐">흐흐흐</option>
                   <?php
                   break;
-                  case '자유게시판' :
-                  ?>
-                  <option value="찾아요" >찾아요</option>
-                  <option value="데리고 있어요">데리고 있어요</option>
-                  <option value="자유게시판"selected="selected">자유게시판</option>
-                  <option value="흐흐흐">흐흐흐</option>
-                  <?php
-                  break;
-                  case '흐흐흐' :
-                   ?>
-                   <option value="찾아요" >찾아요</option>
-                   <option value="데리고 있어요">데리고 있어요</option>
-                   <option value="자유게시판">자유게시판</option>
-                   <option value="흐흐흐"selected="selected">흐흐흐</option>
-                   <?php
                    default:
                    break;
                  }
