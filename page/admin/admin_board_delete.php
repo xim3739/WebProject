@@ -30,7 +30,7 @@
     $category = $row["category"];
     $file_copied = $row["file_copied"];
     if ($file_copied){
-      $file_path = "./data/".$file_copied;
+      $file_path = "../../data/".$file_copied;
       unlink($file_path);
     }
     $sql = "delete from board where num = $q_num";

@@ -21,6 +21,7 @@
    ?>
   <body>
     <aside id="admin_aside_left">
+      <button type="button" id="exit_admin" name="button" onclick="location.href='../index/index.php'">나가기</button>
         <ul>
           <li><a href="./admin_member.php">회원 목록 관리</a></li>
           <li><a href="./admin_board.php?category='찾아요'">게시판 관리</a></li>

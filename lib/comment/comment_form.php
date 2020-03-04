@@ -49,7 +49,7 @@
               }
             }
             //대댓글을 삭제 시 사용하는 함수
-            function reremove(text){
+            function reremove(text,x){
               var result = confirm("댓글을 삭제 하시겠습니까?");
               if(result){
                 alert("삭제 완료 페이지를 다시 불러 옵니다!");
@@ -116,7 +116,15 @@
                           <input type="hidden" name="re_content" value="<?=$recomment_content?>">
                           <span><?=$recomment_regist_day?></span>
                           <input type="hidden" name="date" value="<?=$recomment_regist_day?>">
+                          <?php
+                          if(isset($_SESSION['userid'])){
+                            if($_SESSION['userid']==$recomment_id){
+                              ?>
                           <button type="button" class="comment_delete_btn" onclick="reremove('remove_recomment<?=$i?><?=$j?>',<?=$d_num?>);">삭제</button>
+                          <?php
+                              }
+                            }
+                       ?>
                         </div>
                       </div>
                   </form>
@@ -138,7 +146,15 @@
                             <input type="hidden" name="re_content" value="<?=$content?>">
                             <span id ="date"><?=$regist_day?></span>&nbsp;&nbsp;
                             <span id = "reple_comment" style="cursor:pointer"  onclick="hide('board_widen_comment_input_retext_box<?=$i?>');">▼ 답글</span>
-                            <button type="button" class="comment_delete_btn" onclick="remove('remove_recomment<?=$i?>');">삭제</button>
+                            <?php
+                            if(isset($_SESSION['userid'])){
+                              if($_SESSION['userid']==$id){
+                                ?>
+                                  <button type='button' class='comment_delete_btn' onclick="remove('remove_comment<?=$i?>');">삭제</button>
+                                <?php
+                              }
+                            }
+                             ?>
                             <input type="hidden" name="date" value="<?=$regist_day?>">
                           </div>
                         </div>
