@@ -67,7 +67,7 @@
   mysqli_query($connect,$sql);
 ?>
   <!-- center -->
-  <div class="board_widen">
+  <div class="board_widen"style="margin-top : 20px;">
    <form name="board_write" action="board_modify.php?num=<?=$num?>" method="post" enctype="multipart/form-data" style="display:inline-block;">
     <div id="board_widen_box">
       <div id="board_widen_photo">

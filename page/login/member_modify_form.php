@@ -88,8 +88,8 @@ include "../../db/db_connector.php";
 
         <div id="phone">
           <div id="phone_certification_check">
-            <input type="text" name="input_phone_certification" id="input_phone_certification" placeholder=" 인증 번호 입력 ">
-            <div id="phone_certification_check_button">
+            <input type="text" name="input_phone_certification" id="input_phone_certification" placeholder=" 인증 번호 입력 " style="width: 270px;">
+            <div id="phone_certification_check_button" style="width:110px; margin-left:6px;">
               <a href="#" onclick="">
                 <p>확 인</p>
               </a>
