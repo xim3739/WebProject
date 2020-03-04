@@ -24,7 +24,7 @@
         <ul>
           <li><a href="./admin_member.php">회원 목록 관리</a></li>
           <li><a href="./admin_board.php?category='찾아요'">게시판 관리</a></li>
-          <li><a href="#">사이트 통계</a></li>
+          <li><a href="./admin_statistic.php">통계</a></li>
         </ul>
       </aside>
       <section>
