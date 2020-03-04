@@ -42,7 +42,12 @@
     if($mode && $comment_num){
       var_dump($q_content);
       $depth=1;
+      $sql="SELECT max(ord) FROM `temporary_comment` where `comment_num`=$comment_num;";
+      $result=mysqli_query($connect, $sql);
+      $row=mysqli_fetch_array($result);
+      $ord=$row['max(ord)']+1;
       $sql="INSERT INTO `temporary_comment` VALUES (null,$group_num,$comment_num,$depth,$ord,'$userid','$q_content','$regist_day')";
+
       mysqli_query($connect, $sql);
       mysqli_close($connect);
       echo "
