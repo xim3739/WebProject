@@ -65,7 +65,7 @@
       </aside>
     <section>
       <div id="admin_box">
-        <h3 id="board_title">관리자 모드 > 게시판 관리</h3>
+        <h3 id="board_title">관리자 모드 > 게시판 관리 ><?=$category?></h3>
         <ul id="board_list">
           <li class="title">
             <span class="col1">번호</span>
@@ -80,7 +80,51 @@
           </li>
           <?php
             $page=(isset($_GET["page"]))?$_GET["page"]:1;
-            $sql = "select * from board where category = $category";
+            if($category===$str3){
+              $sql = "select * from temporary_board";
+              $result = mysqli_query($connect,$sql);
+              $total_record = mysqli_num_rows($result);
+              $scale = 10;
+              $total_page=($total_record % $scale == 0)?floor($total_record/$scale):(floor($total_record/$scale)+1);
+              $start = ($page-1) * $scale;
+              $number = $total_record - $start;
+              for ($i=$start; $i <$start+$scale && $i < $total_record ; $i++) {
+                mysqli_data_seek($result,$i);
+                $row = mysqli_fetch_array($result);
+                $num = $row["num"];
+                $id = $row["id"];
+                $name = $row["name"];
+                $subject = $row["subject"];
+                $regist_day = $row["regist_day"];
+                $hit = $row["hit"];
+                $file_name = $row["file_name"];
+                if (!$file_name) {
+                  $file_name="자료 없음";
+                }
+                ?>
+                <li>
+                  <form action="admin_board_delete.php" method="post">
+                    <span class="col1"><?=$i+1?></span>
+                    <span class="col2"><?=$id?></span>
+                    <span class="col3"><?=$name?></span>
+                    <span class="col4">임시보호</span>
+                    <span class="col5"><?=$subject?></span>
+                    <span class="col6"><?=$regist_day?></span>
+                    <span class="col7"><?=$hit?></span>
+                    <span class="col8"><?=$file_name?></span>
+                    <span class="col9"><input type="checkbox" name="item[]" value="<?=$num?>"></span>
+                </li>
+              <?php
+                $number --;
+                }
+                mysqli_close($connect);
+              
+            }else{
+              if($category===$str4){
+              $sql = "select * from free";
+            }else{
+              $sql = "select * from board where category = $category";
+            }
             $result = mysqli_query($connect,$sql);
             $total_record = mysqli_num_rows($result);
             $scale = 10;
@@ -104,7 +148,7 @@
               ?>
               <li>
                 <form action="admin_board_delete.php" method="post">
-                  <span class="col1"><?=$num?></span>
+                  <span class="col1"><?=$i+1?></span>
                   <span class="col2"><?=$id?></span>
                   <span class="col3"><?=$name?></span>
                   <span class="col4"><?=$category?></span>
@@ -118,6 +162,7 @@
               $number --;
               }
               mysqli_close($connect);
+            }
             ?>
         </ul>
         <ul id="page_num">
