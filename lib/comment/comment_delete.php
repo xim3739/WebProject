@@ -21,10 +21,9 @@ $q_num = mysqli_real_escape_string($connect, $num);
 
 $sql ="DELETE FROM `comment` WHERE `num`=$deleteNum";
 $result = mysqli_query($connect,$sql);
-var_dump($deleteNum);
 mysqli_close($connect);
 echo "<script>
-  //location.href='../../page/board/board_widen.php?num=$group_num';
+  location.href='../../page/board/board_widen.php?num=$group_num';
     </script>";
 
  ?>

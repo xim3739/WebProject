@@ -35,20 +35,20 @@
               }
             }
             //댓글을 삭제 시 사용하는 함수
-            function remove(){
+            function remove(text){
               var result = confirm("댓글을 삭제 하시겠습니까?");
               if(result){
                 alert("삭제 완료 페이지를 다시 불러 옵니다!");
-                document.getElementById('remove_comment').submit();
+                document.getElementById(text).submit();
               }else{
                 alert("삭제 취소");
               }
             }
             //대댓글을 삭제 시 사용하는 함수
-            function reremove(text,x){
+            function reremove(text){
               var result = confirm("댓글을 삭제 하시겠습니까?");
               if(result){
-                alert("삭제 완료 페이지를 다시 불러 옵니다!"+x);
+                alert("삭제 완료 페이지를 다시 불러 옵니다!");
                 document.getElementById(text).submit();
               }else{
                 alert("삭제 취소");
@@ -108,7 +108,7 @@
                         <div id="board_widen_comment_show_text_member">
                           <span><?=$recomment_id?></span><br>
                           <input type="hidden" name="id" value="<?=$recomment_id?>">
-                          <span><?=$recomment_content?>: <?=$d_num?></span><br>
+                          <span><?=$recomment_content?></span><br>
                           <input type="hidden" name="re_content" value="<?=$recomment_content?>">
                           <span><?=$recomment_regist_day?></span>
                           <input type="hidden" name="date" value="<?=$recomment_regist_day?>">
@@ -134,7 +134,7 @@
                             <input type="hidden" name="re_content" value="<?=$content?>">
                             <span id ="date"><?=$regist_day?></span>&nbsp;&nbsp;
                             <span id = "reple_comment" style="cursor:pointer"  onclick="hide('board_widen_comment_input_retext_box<?=$i?>');">▼ 답글</span>
-                            <button type="button" class="comment_delete_btn" onclick="remove();">삭제</button>
+                            <button type="button" class="comment_delete_btn" onclick="remove('remove_recomment<?=$i?>');">삭제</button>
                             <input type="hidden" name="date" value="<?=$regist_day?>">
                           </div>
                         </div>
