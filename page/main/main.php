@@ -32,7 +32,12 @@
   <?php include "../../lib/common_page/main_style.php";?>
 
   <?php include "../../db/db_connector.php"; ?>
+  <script>
+function pop_up(id) {
+      $("#pop_write").slideToggle("slow");
+  }
 
+</script>
 </head>
 
 <body>
