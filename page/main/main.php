@@ -11,20 +11,20 @@
   <title>찾아Joo</title>
   <!-- jquery -->
   <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
-
-  <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
-  <!-- popup js -->
-  <script src="../../js/main/pop_up_menu.js"></script>
-  <!-- aside js -->
+  <link rel="stylesheet" href="../../css/aside/message.css">
   <script src="../../js/aside/message.js" charset="utf-8"></script>
+
+  <!-- banner core CSS&JS -->
+  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script> -->
+  <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+  <!-- <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script> -->
+  <link rel="stylesheet" href="../../css/aside/banner.css">
   <script src="../../js/aside/banner.js" charset="utf-8"></script>
 
-  <!-- aside css -->
-  <link rel="stylesheet" href="../../css/aside/message.css">
-  <link rel="stylesheet" href="../../css/aside/banner.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-  
+
   <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../../css/main/small-business.css" rel="stylesheet">
 
@@ -32,7 +32,12 @@
   <?php include "../../lib/common_page/main_style.php";?>
 
   <?php include "../../db/db_connector.php"; ?>
+  <script>
+function pop_up(id) {
+      $("#pop_write").slideToggle("slow");
+  }
 
+</script>
 </head>
 
 <body>
@@ -59,7 +64,7 @@
         $page_num=mysqli_num_rows($result);
       
         if($page_num==0){
-          
+
         ?>
   <div class="container" style="padding-left:146px;">
     <!-- Heading Row -->

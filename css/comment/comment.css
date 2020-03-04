@@ -113,25 +113,25 @@
   transform: translateY(-10px);
 }
 
-#board_widen_comment_viewmore_click {
+.board_widen_comment_viewmore_click {
   margin-top: 10px;
   margin-bottom: 10px;
   transform: translateX(60px);
 }
 
-#board_widen_comment_viewmore_click span {
+.board_widen_comment_viewmore_click span {
   font-size: 13px;
   margin-left: 10px;
 }
 
-#board_widen_comment_viewmore_click img {
+.board_widen_comment_viewmore_click img {
   width: 40px;
   height: 40px;
   margin-left: 16px;
   transform: translateY(-15px);
 }
 
-#board_widen_comment_viewmore_click textarea {
+.board_widen_comment_viewmore_click textarea {
   width: 750px;
   margin-left: 10px;
   resize: none;
@@ -141,7 +141,7 @@
   transform: translateY(-10px);
 }
 
-#comment_delete_btn {
+.comment_delete_btn {
   background-color: transparent !important;
   background-image: none !important;
   border-color: transparent;

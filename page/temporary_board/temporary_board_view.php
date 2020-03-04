@@ -120,7 +120,11 @@
 
 
 </section>
+<<<<<<< .merge_file_LRaRMO
   <?php include "./comment_form.php"; ?>
+=======
+  <?php include "comment_form.php"; ?>
+>>>>>>> .merge_file_2dLprc
 
 </body>
 </html>

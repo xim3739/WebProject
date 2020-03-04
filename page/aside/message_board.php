@@ -1,24 +1,35 @@
 <?php
-  include "../../db/db_connector_main.php";
+  include "../../db/db_connector.php";
   date_default_timezone_set('Asia/Seoul');
   $send_id = $_GET["send_id"];
   $rv_id = $_GET["rv_id"];
+  $user_id = $_GET["user_id"];
   $mode = $_GET["mode"];
   $regist_day = date("Y-m-d (H:i)");
 
-  // $connect = mysqli_connect("localhost", "root", "123456", "test");
-  function message_insert($connect,$send_id,$rv_id,$regist_day)
+  function message_insert($connect,$send_id,$rv_id,$user_id,$regist_day)
   {
     $content = $_GET["content"];
+    $content = trim($content);
     $content = htmlspecialchars($content, ENT_QUOTES);
-    $sql = "select * from member where id='$send_id'";
+    $sql = "select name from member where id='$send_id'";
     $result = mysqli_query($connect, $sql);
     $row = mysqli_fetch_array($result);
-    $name = $row["name"];
+    $send_name = $row["name"];
+
+    $sql = "select name from member where id='$rv_id'";
+    $result = mysqli_query($connect, $sql);
+    $row = mysqli_fetch_array($result);
+    $rv_name = $row["name"];
+
     $num_record = mysqli_num_rows($result);
     if($num_record)
   	{
-  		$sql = "insert into message values(null,'$send_id','$rv_id', '$name', '$content', '$regist_day')";
+      if ($send_id===$user_id) {
+        $sql = "insert into message values(null,'$send_id','$rv_id','$send_name','$rv_name', '$content', '$regist_day')";
+      }else {
+        $sql = "insert into message values(null,'$rv_id','$send_id','$rv_name','$send_name', '$content', '$regist_day')";
+      }
   		mysqli_query($connect, $sql);  // $sql 에 저장된 명령 실행
   	} else {
   		echo("
@@ -50,7 +61,7 @@
         message_delete($connect,$send_id,$rv_id);
         break;
       case 'insert':
-        message_insert($connect,$send_id,$rv_id,$regist_day);
+        message_insert($connect,$send_id,$rv_id,$user_id,$regist_day);
         break;
 
       default:

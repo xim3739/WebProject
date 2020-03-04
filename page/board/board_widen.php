@@ -30,7 +30,6 @@
   <?php include "../../lib/common_page/main_style.php";?>
   <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2bc44b6ace455f7c953f89057af1aeae&libraries=services"></script>
   <!-- <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
-  <script src="../../js/main/pop_up_menu.js"></script>
 
 </head>
 <body>
