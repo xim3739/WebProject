@@ -14,7 +14,7 @@
   <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
   <link rel="stylesheet" href="../../css/aside/message.css">
   <script src="../../js/aside/message.js" charset="utf-8"></script>
-
+  <script src="../../js/main/pop_up_menu.js"></script>
   <!-- banner core CSS&JS -->
   <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script> -->
   <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>

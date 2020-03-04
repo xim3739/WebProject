@@ -24,41 +24,6 @@ function check_input() {
   }
   insert_message(send_id,rv_id,user_id,mode,content);
 }
-function member_list(){
-  var send_id=$("#hidden_send_id").val();
-  var rv_id=$("#hidden_rv_id").val();
-  var user_id=$("#hidden_user_id").val();
-  $.ajax({
-    url : "../aside/message_member_ajax.php",
-    type : "get",
-    traditional : true,
-    data : {"send_id" : send_id, "rv_id" : rv_id, "user_id" : user_id},
-    dataType: "json",
-    success : function(data) {
-      var html_one=send_ids=rv_ids="";
-      for(var i =0; i<data[0].result; i++){
-        send_ids = data[i].send_id;
-        rv_ids = data[i].rv_id;
-        user_ids = data[i].user_id;
-        if (send_ids!==user_ids) {
-          html_one += "<li>";
-          html_one += "<span><button type='button' class='profile_link' onclick='connect_memeber("+send_ids+","+rv_ids+","+user_ids+");''>"+data[i].name+"</button></span>";
-          html_one += "<li>";
-        }else if (rv_ids!==user_ids) {
-          html_one += "<li>";
-          html_one += "<span><button type='button' class='profile_link' onclick='connect_memeber("+send_ids+","+rv_ids+","+user_ids+");''>"+data[i].name+"</button></span>";
-          html_one += "<li>";
-        }
-      }//end of for
-      $("#member_list_ul").html(html_one);
-      // $("#message_view").ScrollTop($("#message_view").scrollHeight);
-    },
-    error:function(request,status,error){
-      alert("메시지 불러오기 ajax 실패");
-      console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-    }
-  });
-}
 function connect_memeber(send_id,rv_id,user_id) {
   $.ajax({
     url : "../aside/message_ajax.php",

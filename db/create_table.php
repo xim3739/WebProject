@@ -107,9 +107,9 @@
                         `content` text NOT NULL,
                         `regist_day` char(20) NOT NULL,
                         `hit` int NOT NULL,
-                        `file_name` char(40),
-                        `file_type` char(40),
-                        `file_copied` char(40),
+                        `file_name` varchar(200),
+                        `file_type` varchar(200),
+                        `file_copied` varchar(200),
                         PRIMARY KEY(`num`)
                     )";
                     break;

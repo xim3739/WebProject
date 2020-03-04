@@ -83,8 +83,8 @@ if (!$username) {
       <div id="slide_div" class="row">
    
       
-      <div id="cp_widget_46565020-a886-41ce-a3af-966d13aab6d6">...</div><script type="text/javascript">
-var cpo = []; cpo["_object"] ="cp_widget_46565020-a886-41ce-a3af-966d13aab6d6"; cpo["_fid"] = "AsPAfqeZUIfu";
+      <div id="cp_widget_038c5ec1-a4f7-449b-a953-a4f2c3aa6621">...</div><script type="text/javascript">
+var cpo = []; cpo["_object"] ="cp_widget_038c5ec1-a4f7-449b-a953-a4f2c3aa6621"; cpo["_fid"] = "AsPAfqeZUIfu";
 var _cpmp = _cpmp || []; _cpmp.push(cpo);
 (function() { var cp = document.createElement("script"); cp.type = "text/javascript";
 cp.async = true; cp.src = "//www.cincopa.com/media-platform/runtime/libasync.js";
