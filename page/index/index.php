@@ -11,7 +11,7 @@
   <meta name="author" content="">
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
-  <title>찾아Joo</title>
+  <title>찾아Zoo</title>
 
   <!-- Bootstrap core CSS -->
   <link href="../../css/index/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -48,7 +48,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container" style="vertical-align: text-top;">
-      <a class="navbar-brand" href="../notice/notice.php">찾아Joo</a>
+      <a class="navbar-brand" href="../notice/notice.php">찾아Zoo</a>
         <div id="icon_box" style=" vertical-align: text-top;">
         <?php
 
@@ -57,7 +57,7 @@ if (!$username) {
     <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/signup.php','zoo','width=500,height=1000,left=500,top=40');">
     <?php
 } else {
-        
+
         include "../../count.php";
 
          if($userid!='admin1234'){
@@ -94,8 +94,8 @@ if (!$username) {
     <div class="overlay"></div>
     <div class="container">
       <div id="slide_div" class="row">
-   
-      
+
+
       <div id="cp_widget_038c5ec1-a4f7-449b-a953-a4f2c3aa6621">...</div><script type="text/javascript">
 var cpo = []; cpo["_object"] ="cp_widget_038c5ec1-a4f7-449b-a953-a4f2c3aa6621"; cpo["_fid"] = "AsPAfqeZUIfu";
 var _cpmp = _cpmp || []; _cpmp.push(cpo);
