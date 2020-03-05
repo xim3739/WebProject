@@ -17,7 +17,7 @@ ul{margin: 0; padding: 0;}
 #board_list {list-style: none; margin: 10px 0 20px 0;}
 #board_list ul li{height: 20px;}
 #board_list .col1 { width: 50px; }
-#board_list .col2 { width: 100px; }
+#board_list .col2 { width: 100px; height: 20px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 #board_list .col3 { width: 50px; }
 #board_list .col4 { width: 105px; }
 #board_list .col5 { width: 170px; height: 20px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
