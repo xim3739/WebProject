@@ -2,7 +2,7 @@
   $real_name = $_GET["real_name"];
   $file_name = $_GET["file_name"];
   $file_type = $_GET["file_type"];
-  $file_path = "./data/".$real_name;
+  $file_path = "../../data/".$real_name;
 
   $ie = preg_match('~MSIE|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT']) ||
         (strpos($_SERVER['HTTP_USER_AGENT'],'Trident/7.0') !== false &&
