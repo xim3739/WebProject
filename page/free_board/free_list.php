@@ -185,10 +185,10 @@
                                     }
                                   }
                                 }
-                                if ($block<=1) {
-                                  echo "<li></li>";
+                                if ($page<=1) {
+                                  echo "<li><b></b></li>";
                                 }else {
-                                  $new_page = $start_page -1;
+                                  $new_page = $start_page;
                                   if ($key_word===" ") {
                                     if ($category===" ") {
                                       echo "<li><a href='free_list.php?page=$new_page'><b> ◀ 이전 </b></a></li>";
