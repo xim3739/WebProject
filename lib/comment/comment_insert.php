@@ -3,7 +3,6 @@
     include "../../db/db_connector.php";
     session_start();
     $group_num  = $_GET["num"];
-    var_dump($group_num);
     $group_num = (int)$group_num;
     if(isset($_GET['ord'])){
       $ord = $_GET["ord"]+1;

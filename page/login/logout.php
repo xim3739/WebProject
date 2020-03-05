@@ -17,8 +17,6 @@
 <?php
 // header('Access-Control-Allow-Origin: *');
   session_start();
-  // unset($_SESSION["userid"]);
-  // unset($_SESSION["username"]);
   session_destroy();
 
 
@@ -30,10 +28,6 @@
         ");
         ?>
 <!-- ===================================카카오 로그아웃========================================= -->
-
-
-
-
 
       </body>
     </html>

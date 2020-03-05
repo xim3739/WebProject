@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>찾아ZOO</title>
     <link rel="stylesheet" href="../../css/login/signup.css">
     <link rel="stylesheet" href="../../css/login/login.css">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>

@@ -2,11 +2,9 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>찾아ZOO</title>
   <link rel="stylesheet" type="text/css" href="../../css/board/board.css">
-  <!-- Bootstrap core CSS -->
   <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom styles for this template -->
   <link href="../../css/main/small-business.css" rel="stylesheet">
 
   <style>
@@ -49,6 +47,7 @@
       white-space: nowrap;
     }
   </style>
+<?php include "../../lib/common_page/main_style.php";?>
 
   <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2bc44b6ace455f7c953f89057af1aeae&libraries=services"></script>
   <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
@@ -70,7 +69,6 @@
      }
     </script>
      <!-- internal style -->
-     <?php include "../../lib/common_page/main_style.php";?>
 
 </head>
 
@@ -94,8 +92,7 @@
 
               <div id="board_wirte_top">
                 <input id="wirte_title" name="subject" type="text" placeholder="Title">
-              <!--  <span id="div_write_spandiv">MemberId :<span id="memberid"></span> </span>-->
-                <select id="category_write" name="category">
+                  <select id="category_write" name="category">
                   <option value="찾아요">찾아요</option>
                   <option value="데리고있어요">데리고 있어요</option>
                 </select>

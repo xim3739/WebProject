@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title></title>
+
   <link rel="stylesheet" type="text/css" href="../../css/board/board.css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-  <!-- Bootstrap core CSS -->
   <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom styles for this template -->
   <link href="../../css/main/small-business.css" rel="stylesheet">
   <?php include "../../lib/common_page/main_style.php" ?>
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
   <script src="../../js/main/pop_up_menu.js"></script>
   <script src="../../js/board/board.js"></script>
 

@@ -13,8 +13,6 @@ $(document).ready(function () {
             success: function (response) {
                 //제이슨 해당정보를 해독을 함
                 var a = JSON.parse(response);
-                console.log(response);
-                console.log(a);
                 for (var i = 0; i < a.length; i++) {
                     list.push(a[i]);
                 }
@@ -105,15 +103,6 @@ $(document).ready(function () {
                                     image: markerImage
                                 });
                                 markers.push(marker);
-
-                                // 인포윈도우로 장소에 대한 설명을 표시합니다
-                                // var infowindow = new kakao.maps.InfoWindow({
-                                //     content: '<div style="width:150px;text-align:center;padding:6px 0;">' +
-                                //         hospitalName + '</div>'
-                                // });
-                                // infowindow.open(map, marker);
-                                //windows.push(infowindow);
-
                             }
                         });
                     }
@@ -121,10 +110,8 @@ $(document).ready(function () {
                 if (!markers.length == 0) {
                     for (var j = 0; j < markers.length; j++) {
                         markers[j].setMap(null);
-                        //windows[j].close();
                     }
                     markers = [];
-                    //windows = [];
                 }
             });
         });

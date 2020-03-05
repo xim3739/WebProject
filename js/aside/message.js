@@ -58,7 +58,6 @@ function connect_memeber(send_id,rv_id,user_id) {
       }//end of for
       $("#message_ul").html(html_one);
       $("#message_form").show();
-      // $("#message_view").ScrollTop($("#message_view").scrollHeight);
     },
     error:function(request,status,error){
       alert("메시지 불러오기 ajax 실패");
@@ -159,7 +158,6 @@ function recall_message(){
 
       $("#message_ul").html(html_one);
       document.getElementById("message_content").placeholder = "메시지를 입력하세요.";
-      // $("#message_content").placeholder("메시지를 입력하세요.");
     },
     error:function(request,status,error){
       alert("메시지 불러오기 ajax 실패");

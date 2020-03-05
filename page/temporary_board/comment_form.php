@@ -1,5 +1,4 @@
 <style media="screen">
-      /* ------------------------------------------ */
       /* comment.php */
       .board_widen_comment_box {
       width: 920px;

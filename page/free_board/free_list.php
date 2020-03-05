@@ -3,18 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-    <!-- Bootstrap core CSS -->
     <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
     <link href="../../css/main/small-business.css" rel="stylesheet">
     <?php include "../../lib/common_page/main_style.php" ?>
-    <script src="../../js/main/pop_up_menu.js"></script>
-    <!-- list css&js -->
-    <script src="../../js/free/free_list.js" charset="utf-8"></script>
     <link rel="stylesheet" href="../../css/free/free.css">
     <link rel="stylesheet" href="../../css/free/free_list.css">
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="../../js/main/pop_up_menu.js"></script>
+    <script src="../../js/free/free_list.js" charset="utf-8"></script>
   </head>
+
     <body>
       <?php include "../../lib/common_page/header.php";?>
       <div id="list_total">
@@ -139,7 +138,7 @@
                           ?>
                         <tr class="bottom_tr list_tr">
                           <td class="col1"><?=$num?></td>
-                          <td class="col2" style="text-align: left;}"><a href="./free_read_form.php?num=<?=$num?>&page=<?=$page?>"><?=$total_subject?></a></td>
+                          <td class="col2" style="text-align: left;"><a href="./free_read_form.php?num=<?=$num?>&page=<?=$page?>"><?=$total_subject?></a></td>
                           <td hidden><?=$id?></td>
                           <td class="col3"><?=$name?></td>
                           <td class="col4"><?=$time?></td>
@@ -148,7 +147,6 @@
                       <?php
                         $number --;
                       }//end of for
-                        // mysqli_close($connect);
                       ?>
                     </tbody>
                     </table>

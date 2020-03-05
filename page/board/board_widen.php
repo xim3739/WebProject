@@ -6,13 +6,12 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="../../css/board/board.css">
   <link rel="stylesheet" type="text/css" href="../../css/comment/comment.css">
+  <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../css/main/small-business.css" rel="stylesheet">
+
   <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="../../js/board/board.js"></script>
-  <!-- Bootstrap core CSS -->
-  <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="../../css/main/small-business.css" rel="stylesheet">
   <style>
     .map_wrap, .map_wrap * {margin:0; padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
     .map_wrap {position:relative;width:100%;height:200px;}
@@ -29,7 +28,6 @@
   </style>
   <?php include "../../lib/common_page/main_style.php";?>
   <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2bc44b6ace455f7c953f89057af1aeae&libraries=services"></script>
-  <!-- <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
   <script src="../../js/main/pop_up_menu.js"></script>
 
 </head>
@@ -107,12 +105,8 @@
 </section>
   <!-- 댓글기능 -->
   <?php include "../../lib/comment/comment_form.php" ?>
-  <!-- <script src="../../js/board/board_map_view.js"></script> -->
   </section>
   <?php include "../../js/board/board_map_view.php"?>
-  <!-- <script src="../../js/board/board_map_view.js"></script> -->
-
-
 </body>
 
 </html>

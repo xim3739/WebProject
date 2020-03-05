@@ -2,18 +2,15 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-    <!-- Bootstrap core CSS -->
+    <title>찾아ZOO</title>
     <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
     <link href="../../css/main/small-business.css" rel="stylesheet">
     <?php include "../../lib/common_page/main_style.php" ?>
-    <script src="../../js/main/pop_up_menu.js"></script>
-    <!-- list css&js -->
-    <script src="../../js/free/free_read.js" charset="utf-8"></script>
     <link rel="stylesheet" href="../../css/free/free.css">
     <link rel="stylesheet" href="../../css/free/free_read.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="../../js/main/pop_up_menu.js"></script>
+    <script src="../../js/free/free_read.js" charset="utf-8"></script>
   </head>
   <?php include "../../lib/common_page/header.php" ?>
   <body>
