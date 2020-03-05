@@ -189,20 +189,17 @@
                     } else {
                         var result = null;
                     }
-                    var check_year = [];
                     if (category === 'seek_keep') {
                         var seek = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
                         var keep = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
                         if (result) {
 
                             for (var i = 0; i < result.length; i++) {
-
                                 if (result[i].regist.includes(select_year.value)) {
-                                    check_year.push(result[i]);
-                                    if (check_year[i].category.includes('찾아요')) {
-                                        seek[(parseInt(check_year[i].regist.substr(5, 2))) - 1]++;
+                                    if (result[i].category.includes('찾아요')) {
+                                        seek[(parseInt(result[i].regist.substr(5, 2))) - 1]++;
                                     } else {
-                                        keep[(parseInt(check_year[i].regist.substr(5, 2))) - 1]++;
+                                        keep[(parseInt(result[i].regist.substr(5, 2))) - 1]++;
                                     }
                                 }
                             }
@@ -238,10 +235,9 @@
                             for (var i = 0; i < result.length; i++) {
 
                                 if (result[i].regist.includes(select_year.value)) {
-                                    check_year.push(result[i]);
-
-                                    visitor[(parseInt(check_year[i].regist.substr(5, 2))) - 1] += parseInt(
-                                        check_year[i].count);
+                                    
+                                   visitor[(parseInt(result[i].regist.substr(5, 2))) - 1] += parseInt(
+                                    result[i].count);
 
                                 }
                             }
@@ -264,11 +260,8 @@
                         var etc = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
                         if (result) {
                             for (var i = 0; i < result.length; i++) {
-
                                 if (result[i].regist.includes(select_year.value)) {
-                                    check_year.push(result[i]);
-
-                                    etc[(parseInt(check_year[i].regist.substr(5, 2))) - 1]++;
+                                    etc[(parseInt(result[i].regist.substr(5, 2))) - 1]++;
 
                                 }
                             }
@@ -294,14 +287,9 @@
                     } else {
                         var etc = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
                         if (result) {
-
                             for (var i = 0; i < result.length; i++) {
-
                                 if (result[i].regist.includes(select_year.value)) {
-                                    check_year.push(result[i]);
-
-                                    etc[(parseInt(check_year[i].regist.substr(5, 2))) - 1]++;
-
+                                    etc[(parseInt(result[i].regist.substr(5, 2))) - 1]++;
                                 }
                             }
                         }

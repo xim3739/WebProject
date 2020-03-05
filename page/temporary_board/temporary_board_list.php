@@ -149,7 +149,7 @@
       //fetch_array는 인덱스와 키값으로 찾을 수 있다.
       //fetch_row는 인덱스로 찾을 수 있다.
       // 하나의 레코드 가져오기
-
+    $num=$row['num'];
 	  $id          = $row["id"];
 	  $name        = $row["name"];
 	  $subject     = $row["subject"];
