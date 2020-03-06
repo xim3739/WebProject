@@ -3,7 +3,6 @@
     include "../../db/db_connector.php";
     session_start();
     $group_num  = $_GET["num"];
-    var_dump($group_num);
     $group_num = (int)$group_num;
     if(isset($_GET['ord'])){
       $ord = $_GET["ord"]+1;
@@ -44,17 +43,17 @@
     if($mode && $comment_num){
       $depth=1;
       //현재 최대큰번호를 가져와서 그룹번호로 저장하기
-      $sql3="SELECT max(ord) from comment WHERE `comment_num`=$comment_num;";
+      $sql3="SELECT max(`ord`) FROM `comment` WHERE `comment_num`=$comment_num;";
       $result = mysqli_query($connect, $sql3);
       $row=mysqli_fetch_array($result);
       $ord=$row['max(ord)']+1;
       $sql="INSERT INTO `comment` VALUES (null,$group_num,$comment_num,$depth,$ord,'$userid','$q_content','$regist_day')";
-      mysqli_query($connect, $sql);
-
+      $result = mysqli_query($connect, $sql);
+      var_dump($result);
       mysqli_close($connect);
       echo "
       <script>
-      location.href='../../page/board/board_widen.php?num=$group_num';
+      //location.href='../../page/board/board_widen.php?num=$group_num';
       </script>";
     }else{
       $depth=0;
@@ -67,7 +66,7 @@
       $result = mysqli_query($connect, $sql);
 
       //현재 최대큰번호를 가져와서 그룹번호로 저장하기
-      $sql2="SELECT max(num) from comment;";
+      $sql2="SELECT max(`num`) FROM `comment`;";
       $result = mysqli_query($connect, $sql2);
       $row=mysqli_fetch_array($result);
       $max_num=$row['max(num)'];
@@ -78,7 +77,7 @@
       mysqli_close($connect);
       echo "
       <script>
-      location.href='../../page/board/board_widen.php?num=$group_num';
+      //location.href='../../page/board/board_widen.php?num=$group_num';
       </script>";
     }
 
