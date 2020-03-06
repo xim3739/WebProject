@@ -9,7 +9,6 @@
     }else{
       $ord=0;
     }
-
     if(isset($_GET['mode'])) {
       $mode  = $_GET["mode"];
     } else {

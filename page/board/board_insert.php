@@ -63,7 +63,6 @@
 				");
             exit;
         }
-        //move_uploaded_file($upfile_tmp_name, $uploaded_file);
         if (move_uploaded_file($upfile_tmp_name, $uploaded_file)) {
             echo "김치";
         } else {

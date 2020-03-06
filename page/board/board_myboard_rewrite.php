@@ -4,9 +4,7 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="../../css/board/board.css">
-  <!-- Bootstrap core CSS -->
   <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom styles for this template -->
   <link href="../../css/main/small-business.css" rel="stylesheet">
   <style>
     .map_wrap, .map_wrap * {margin:0; padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
@@ -23,8 +21,8 @@
     img {vertical-align: unset;}
   </style>
   <?php include "../../lib/common_page/main_style.php";?>
+
   <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2bc44b6ace455f7c953f89057af1aeae&libraries=services"></script>
-  <!-- <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="../../js/main/pop_up_menu.js"></script>
   <script>
@@ -44,6 +42,7 @@
   }
   </script>
 </head>
+
   <body>
     <!-- header -->
     <?php include "../../lib/common_page/header.php" ?>
@@ -86,7 +85,6 @@
           </div>
           <div id="board_myboard_rewrite_top">
             <input id="myboard_rewrite_title" name="subject" type="text" placeholder="Title" value="<?=$subject?>">
-          <!--  <span id="div_myboard_rewrite_spandiv">MemberId :<span id="memberid"><?=$id?></span> </span>-->
           <select id="category_write" name="category">
               <?php
                 switch ($category) {
@@ -94,16 +92,12 @@
                   ?>
                   <option value="찾아요" selected="selected" >찾아요</option>
                   <option value="데리고 있어요">데리고 있어요</option>
-                  <option value="자유게시판">자유게시판</option>
-                  <option value="흐흐흐">흐흐흐</option>
                   <?php
                   break;
                   case '데리고있어요' :
                   ?>
                   <option value="찾아요" >찾아요</option>
                   <option value="데리고 있어요"selected="selected">데리고 있어요</option>
-                  <option value="자유게시판">자유게시판</option>
-                  <option value="흐흐흐">흐흐흐</option>
                   <?php
                   break;
                    default:

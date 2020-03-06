@@ -11,8 +11,6 @@
         var near_hotpital = [];
         var near_category = "";
         var near_hospital_target = [];
-        var a = document.getElementById("a");
-        var b = document.getElementById("b");
         var z = [];
         var location=null;
         var geocoder = new kakao.maps.services.Geocoder();

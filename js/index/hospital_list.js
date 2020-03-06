@@ -21,7 +21,6 @@ $(document).ready(function () {
 
                         }
                     }
-                    console.log("111");
                     $.ajax({
                         type: "post",
                         url: "../../db/hospital_list/hospital_list.php",
@@ -30,7 +29,7 @@ $(document).ready(function () {
                             "addr": addr
                         },
                         success: function (response) {
-                          console.log("222");
+                          console.log("hospital_list 호출성공");
                         },
                         fail:
                         function (error){
@@ -53,7 +52,6 @@ $(document).ready(function () {
         success: function (echo) {
             var flag=echo;
             hospital_list(flag);
-            console.log("444");
         },
         fail:
         function (error){

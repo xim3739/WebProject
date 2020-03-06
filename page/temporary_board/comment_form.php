@@ -1,11 +1,12 @@
 <style media="screen">
-      /* ------------------------------------------ */
       /* comment.php */
       .board_widen_comment_box {
       width: 920px;
       margin: 0 auto;
       }
-
+      img{
+        vertical-align: unset;
+      }
       #board_widen_comment_box {
       width: 920px;
       margin: 20px auto;

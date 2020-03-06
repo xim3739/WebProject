@@ -2,16 +2,13 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>찾아ZOO</title>
     <link rel="stylesheet" href="../../css/temporary_board/board.css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-  <!-- Bootstrap core CSS -->
-  <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="../../css/main/small-business.css" rel="stylesheet">
-  <?php include "../../lib/common_page/main_style.php" ?>
-  <script src="../../js/main/pop_up_menu.js"></script>
+    <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/main/small-business.css" rel="stylesheet">
+    <?php include "../../lib/common_page/main_style.php" ?>
 
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
   </head>
   <script>
     function check_input() {
@@ -37,7 +34,7 @@
     <section >
       <div id="board_box" style="padding-top:100px;">
         <h3 id="board_title">
-            임시보호 > 글쓰기
+            임시보호
         </h3>
         <form  name="board_form" method="post" action="./temporary_board_insert.php" enctype="multipart/form-data">
             <ul id="board_form" style="list-style:none;">

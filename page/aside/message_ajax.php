@@ -16,7 +16,6 @@
     $list=array();
     array_push($list,array("result"=>$total_record,"send_id"=>$send_id,"rv_id"=>$rv_id,"send_name"=>" ",
     "rv_name"=>" ","title_name"=>$title_name,"content"=>" ","regist_day"=>" "));
-
   }else {
     $sql = "select name from member where id = '$rv_id'";
     $result = mysqli_query($connect,$sql);

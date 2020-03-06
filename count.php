@@ -1,5 +1,4 @@
 <?php
-
     $sum = 0;
     $today = date("Y-m-d");
     $sql = "SELECT * FROM `counter` WHERE `date` = $today";

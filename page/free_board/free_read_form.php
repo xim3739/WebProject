@@ -2,12 +2,15 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="../../js/free/free_read.js" charset="utf-8"></script>
+    <title>찾아ZOO</title>
+    <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/main/small-business.css" rel="stylesheet">
+    <?php include "../../lib/common_page/main_style.php" ?>
     <link rel="stylesheet" href="../../css/free/free.css">
     <link rel="stylesheet" href="../../css/free/free_read.css">
-    <?php include "../../lib/common_page/main_style.php" ?>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="../../js/main/pop_up_menu.js"></script>
+    <script src="../../js/free/free_read.js" charset="utf-8"></script>
   </head>
   <?php include "../../lib/common_page/header.php" ?>
   <body>
@@ -52,7 +55,7 @@
           $row = mysqli_fetch_array($result);
           $odd_num = $row["num"];
          ?>
-        <table style="width: 710px;">
+        <table>
           <tbody>
             <tr class="back_tr">
               <td>
@@ -73,7 +76,7 @@
                     echo "<li><a href='#' onclick='delete_confirm($num,$page);'>삭제</a></li>";
                   }
                    ?>
-                  <li><a href="./free_list.php">목록</a></li>
+                  <li><a href="./free_list.php"><button type="button" class="go_list_button">목록</button></a></li>
                 </ul>
               </td>
             </tr>
@@ -97,13 +100,8 @@
                      $file_size = filesize($file_path);
 
                      echo "▷ 첨부파일 : $file_name ($file_size Byte) &nbsp;&nbsp;&nbsp;&nbsp;
-                       <a href='board_download.php?num=$num&real_name=$real_name&file_name=$file_name&file_type=$file_type'>[저장]</a><br><br>";
+                       <a href='free_download.php?num=$num&real_name=$real_name&file_name=$file_name&file_type=$file_type'>[저장]</a><br><br>";
                     }
-                    // if($matches[1]){
-                    //   $thumb = '<span><img src="'.$matches[1].'" width="70" height="70" class="thumb_img" alt=""></span>';
-                    // }else{
-                    //   $thumb = '';
-                    // }
                      ?>
                     <?=$content?>
                   </div>
@@ -113,25 +111,29 @@
             <tr>
               <td>
                 <div class="">
-                  <ul class="total_ul">
-                    <li><a href="./free_list.php">목록</a></li>
-                    <?php
+                  <div id="bottom_left">
+                    <ul class="total_ul">
+                      <li><a href="./free_list.php">목록</a></li>
+                      <?php
                       if ($pre_num) {
                         echo "<li><a href='./free_read_form.php?num=$pre_num&page=$page'>다음글&nbsp;</a></li>";
                       }else {
                         echo "<li><a href='#'>다음글&nbsp;</a></li>";
                       }
                       if ($odd_num) {
-                        echo "<li><a href='./free_read_form.php?num=$odd_num&page=$page'>&nbsp;이전글</a></li>";
+                        echo "<li><a href='./free_read_form.php?num=$odd_num&page=$page'>이전글</a></li>";
                       }else {
                         echo "<li><a href='#'>&nbsp;이전글</a></li>";
                       }
-                     ?>
-                  </ul>
-                  <ul class="total_ul" style="float : right">
-                    <li><a href="#" onclick="history.back();">이전페이지</a></li>
-                    <li><a href="#" onclick="goTop();">맨 위로</a></li>
-                    <li><a href="./free_write_form.php">글쓰기</a></li>
+                      ?>
+                    </ul>
+                  </div>
+                  <div id="bottom_right">
+                    <ul class="total_ul">
+                      <li><a href="#" onclick="history.back();">이전페이지</a></li>
+                      <li><a href="#" onclick="goTop();">맨 위로</a></li>
+                      <li><a href="./free_write_form.php">글쓰기</a></li>
+                  </div>
                   </ul>
                 </div>
               </td>

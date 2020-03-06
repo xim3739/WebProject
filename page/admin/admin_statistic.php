@@ -57,6 +57,7 @@
 
 <body>
 <aside id="admin_aside_left">
+  <button type="button" id="exit_admin" name="button" onclick="location.href='../index/index.php'">나가기</button>
         <ul>
           <li><a href="./admin_member.php">회원 목록 관리</a></li>
           <li><a href="./admin_board.php?category='찾아요'">게시판 관리</a></li>
@@ -69,12 +70,12 @@
           <div id="statis_nav">
             <select name="" id="select_year"></select>
                 <ul>
-                    <li class="cols" id="visitor" onclick="setData(this)">방문자수</li> | 
-                    <li class="cols" id="seek_keep" onclick="setData(this)">찾아요/데리고있어요</li> | 
-                    <li class="cols" id="temp" onclick="setData(this)">임시보호</li> | 
+                    <li class="cols" id="visitor" onclick="setData(this)">방문자수</li> |
+                    <li class="cols" id="seek_keep" onclick="setData(this)">찾아요/데리고있어요</li> |
+                    <li class="cols" id="temp" onclick="setData(this)">임시보호</li> |
                     <li class="cols" id="free" onclick="setData(this)">자유게시판</li>
                 </ul>
-        
+
 
         </div>
         <hr>
@@ -188,20 +189,17 @@
                     } else {
                         var result = null;
                     }
-                    var check_year = [];
                     if (category === 'seek_keep') {
                         var seek = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
                         var keep = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
                         if (result) {
 
                             for (var i = 0; i < result.length; i++) {
-
                                 if (result[i].regist.includes(select_year.value)) {
-                                    check_year.push(result[i]);
-                                    if (check_year[i].category.includes('찾아요')) {
-                                        seek[(parseInt(check_year[i].regist.substr(5, 2))) - 1]++;
+                                    if (result[i].category.includes('찾아요')) {
+                                        seek[(parseInt(result[i].regist.substr(5, 2))) - 1]++;
                                     } else {
-                                        keep[(parseInt(check_year[i].regist.substr(5, 2))) - 1]++;
+                                        keep[(parseInt(result[i].regist.substr(5, 2))) - 1]++;
                                     }
                                 }
                             }
@@ -237,10 +235,9 @@
                             for (var i = 0; i < result.length; i++) {
 
                                 if (result[i].regist.includes(select_year.value)) {
-                                    check_year.push(result[i]);
-
-                                    visitor[(parseInt(check_year[i].regist.substr(5, 2))) - 1] += parseInt(
-                                        check_year[i].count);
+                                    
+                                   visitor[(parseInt(result[i].regist.substr(5, 2))) - 1] += parseInt(
+                                    result[i].count);
 
                                 }
                             }
@@ -263,11 +260,8 @@
                         var etc = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
                         if (result) {
                             for (var i = 0; i < result.length; i++) {
-
                                 if (result[i].regist.includes(select_year.value)) {
-                                    check_year.push(result[i]);
-
-                                    etc[(parseInt(check_year[i].regist.substr(5, 2))) - 1]++;
+                                    etc[(parseInt(result[i].regist.substr(5, 2))) - 1]++;
 
                                 }
                             }
@@ -293,14 +287,9 @@
                     } else {
                         var etc = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
                         if (result) {
-
                             for (var i = 0; i < result.length; i++) {
-
                                 if (result[i].regist.includes(select_year.value)) {
-                                    check_year.push(result[i]);
-
-                                    etc[(parseInt(check_year[i].regist.substr(5, 2))) - 1]++;
-
+                                    etc[(parseInt(result[i].regist.substr(5, 2))) - 1]++;
                                 }
                             }
                         }

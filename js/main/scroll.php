@@ -2,6 +2,7 @@
 $(document).ready(function () {
     console.log('<?=$_SESSION['userid']?>');
     let isEnd = false;
+    let user_id='<?=$_SESSION['userid']?>';
     var page=0;
     var flag=true;
     $(function(){
@@ -10,9 +11,6 @@ $(document).ready(function () {
             let scrollTop = $window.scrollTop();
             let windowHeight = $window.height();
             let documentHeight = $(document).height();
-
-
-           // console.log("documentHeight:" + documentHeight + " | scrollTop:" + scrollTop + " | windowHeight: " + windowHeight );
 
             // scrollbar의 thumb가 바닥 전 30px까지 도달 하면 리스트를 가져온다.
             if(flag){
@@ -30,7 +28,6 @@ $(document).ready(function () {
         if(isEnd == true){
             return;
         }
-        console.log("부르냐");
         <?php
         if(isset($_GET['category'])){
             $cate=$_GET['category'];
@@ -61,14 +58,15 @@ $(document).ready(function () {
 
             success: function(result){
                 setTimeout(function(){flag=true;},500);
-                // 컨트롤러에서 가져온 방명록 리스트는 result.data에 담겨오도록 했다.
-                // 남은 데이터가 5개 이하일 경우 무한 스크롤 종료
+
+                // 남은 데이터가 없을 경우 무한 스크롤 종료
                 if(!result.includes('empty')){
 
                     var response=JSON.parse(result);
                     console.log(response);
 
                     for(var i=0 ; i<response.length ; i++){
+                      console.log(i);
                         var name=response[i].name;
                         var subject=response[i].subject;
                         var content=response[i].content;
@@ -86,7 +84,7 @@ $(document).ready(function () {
                             <img class="img-fluid rounded mb-4 mb-lg-0" src='`+file_path+`'>
                           </div>
                           <div class="col-lg-5 no-flex" style="max-width : 42.666667%">
-                            <span id="span_id">작성자 : `+name+`</span>
+                          <span id="span_id"><a href="#" id="link_`+i+`">작성자 : `+name+`</a></span>
                             <h1 class="font-weight-light" style="width: 400.5px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">`+subject+`</h1>
                             <p style="word-wrap : break-word;">`+content +`</p>
                             <a class="btn btn-primary" href="../../page/board/board_myboard_widen.php?num=`+num+`">게시글 보기</a>
@@ -97,7 +95,6 @@ $(document).ready(function () {
                         </div>
                       </div>
                       </div>`;
-
                         }else{
                             var html=`
                             <div class="board_center">
@@ -107,7 +104,7 @@ $(document).ready(function () {
                             <img class="img-fluid rounded mb-4 mb-lg-0" src='`+file_path+`'>
                           </div>
                           <div class="col-lg-5 no-flex" style="max-width : 42.666667%">
-                            <span id="span_id">작성자 : `+name+`</span>
+                            <span id="span_id"><a href="#" id="link_`+i+`">작성자 : `+name+`</a></span>
                             <h1 class="font-weight-light" style="width: 400.5px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">`+subject+`</h1>
                             <p style="word-wrap : break-word;">`+content +`</p>
                             <a class="btn btn-primary" href="../../page/board/board_widen.php?num=`+num+`">게시글 보기</a>
@@ -128,7 +125,7 @@ $(document).ready(function () {
                             <img class="img-fluid rounded mb-4 mb-lg-0" src='`+file_path+`'>
                           </div>
                           <div class="col-lg-5 no-flex" style="max-width : 42.666667%">
-                            <span id="span_id">작성자 : `+name+`</span>
+                            <span id="span_id"><a href="#" id="link_`+i+`">작성자 : `+name+`</a></span>
                             <h1 class="font-weight-light" style="width: 400.5px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">`+subject+`</h1>
                             <p style="word-wrap : break-word;">`+content +`</p>
                             <a class="btn btn-primary" href="../../page/board/board_myboard_widen.php?num=`+num+`">게시글 보기</a>
@@ -139,7 +136,6 @@ $(document).ready(function () {
                         </div>
                       </div>
                       </div>`;
-
                             }else{
 
                             }
@@ -147,9 +143,10 @@ $(document).ready(function () {
 
                         }
 
-
                         $('section').append(html);
-                    }
+                        $('#link_'+i).on("click",message_seek_id(id,user_id));
+                    }//end of for
+
                     page+=5;
                     console.log(page);
 
@@ -166,4 +163,16 @@ $(document).ready(function () {
 
     }
 });
+
+function message_seek_id(id,user_id){
+  return function(){
+    if (id!==user_id) {
+      console.log(id);
+      console.log(user_id);
+      console.log('connect_memeber('+user_id+','+id+','+user_id+')');
+      show_message();
+      connect_memeber(user_id,id,user_id);
+    }
+  }
+}
 </script>

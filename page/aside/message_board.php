@@ -65,7 +65,6 @@
         break;
 
       default:
-        // code...
         break;
     }
  ?>

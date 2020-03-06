@@ -15,7 +15,7 @@ ul{margin: 0; padding: 0;}
 #member_list input { width: 40px; height: 20px; text-align: center;}
 #member_list button { padding: 3px 10px;}
 #member_list .col1 { width: 50px; }
-#member_list .col2 { width: 110px; }
+#member_list .col2 { width: 110px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 #member_list .col3 { width: 60px; }
 #member_list .col4 { width: 130px; }
 #member_list .col5 { width: 120px;}

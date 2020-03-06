@@ -6,22 +6,22 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>찾아JOO</title>
-
-    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <title>찾아ZOO</title>
+    
     <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../css/notice/notice.css">
-
     <link href="../../css/index/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
     <link href="../../css/index/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link href="../../css/index/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="../../css/index/landing-page.min.css" rel="stylesheet">
+    
+    
+    
+   
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
     <script src="../../js/index/hospital_list.js"></script>
-    <!-- Custom styles for this template -->
-    <link href="../../css/index/landing-page.min.css" rel="stylesheet">
     <!-- KaKao API-->
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
@@ -67,9 +67,7 @@
 
         <span><?=$logged?></span>
         <span>&nbsp;&nbsp; | &nbsp;&nbsp;</span>
-        <!-- <span><a href="../../page/login/member_modify_form.php" target="_blank" class="private">마이페이지</a></span> -->
         <span><a href="#" onclick="window.open('../../page/login/member_modify_form.php','정보 수정','width=500,height=700,left=500');" style="text-align: center;">마이페이지</a></span>
-
         <span>&nbsp;&nbsp; | &nbsp;&nbsp;</span>
         <span><a href="../login/logout.php" style=" width: 100px;text-align: center;">로그아웃</a></span>
         

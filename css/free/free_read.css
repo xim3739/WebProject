@@ -1,10 +1,14 @@
 #read_total{width: 800px; margin: 0 auto; margin-top: 100px;}
 .back_tr td{padding: 5px; padding-left: 30px; text-align: left;}
 .total_ul {font-size: 12px;}
-.col1{width: 210px;}
-.col2{width: 210px;}
+.total_ul a{text-decoration: none; color: black;}
+.col1{width: 200px;}
+.col2{width: 300px; text-align: center;}
 .col3{width: 210px; text-align: right;}
 .main_container{margin: 20px 0 30px 30px;}
-.subject{width: 420px; height: 370px; margin-top: 80px;}
+.subject{width: 420px; height: 200px; margin-top: 50px;}
 .content{width: 670px; overflow: hidden;}
 #comment_div{margin-top: 50px;}
+.go_list_button{width: 50px; font-size: 12px; margin-top: 5px;}
+#bottom_left{display: inline-block; width: 390px;}
+#bottom_right{display: inline-block; width: 390px; text-align: right;}

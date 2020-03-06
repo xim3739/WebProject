@@ -1,15 +1,4 @@
 <?php
-  // session_start();
-  // $userid =(isset($_SESSION["userid"]))?$_SESSION["userid"]:"";
-  // if ($userid !== "admin1234") {
-  //   echo "
-  //         <script>
-  //         alert('관리자가 아닙니다! 회원정보 수정은 관리자만 가능합니다!');
-  //         history.go(-1)
-  //         </script>
-  //        ";
-  //   exit;
-  // }
   if (isset($_POST["item"])) {
     $num_item = count($_POST["item"]);
   }else {
@@ -30,7 +19,7 @@
     $category = $row["category"];
     $file_copied = $row["file_copied"];
     if ($file_copied){
-      $file_path = "./data/".$file_copied;
+      $file_path = "../../data/".$file_copied;
       unlink($file_path);
     }
     $sql = "delete from board where num = $q_num";

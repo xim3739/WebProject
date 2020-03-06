@@ -2,16 +2,16 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>찾아zoo</title>
     <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script src="../../js/login/signup.js"></script>
-
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <style media="screen">
@@ -85,14 +85,12 @@
 
         <div class="row">
           <div class="input-field col s12 center">
-            <!-- <img src="images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login"/> -->
             <p class="center login-form-text">LOGIN</p>
           </div>
         </div>
       <form method="POST" class="signUp" id="login_form" name="login_form" action="./login_session.php">
         <div class="row margin">
           <div class="input-field col s12">
-            <!-- <i class="mdi-social-person-outline prefix"></i> -->
             <i class="material-icons prefix">account_circle</i>
             <input id="username" name="id"  type="text" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;); cursor: auto;"/>
             <label for="username" data-error="wrong" class="center-align" data-success="right">ID</label>
@@ -101,7 +99,6 @@
         </div>
         <div class="row margin">
           <div class="input-field col s12">
-            <!-- <i class="mdi-action-lock-outline prefix"></i> -->
             <i class="material-icons prefix">vpn_key</i>
             <input id="password" name="password" type="password" onkeyup="enterkey();" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;);"/>
             <script>
@@ -161,10 +158,6 @@
                        							Kakao.API.request({
                                      	url:'/v2/user/me',
                        								success: function(res){
-
-                       									// alert(JSON.stringify(res));
-                       									// alert(JSON.stringify(authObj)); //res에 담겨있는 json값을 모두 확인가능
-                                        console.log(res.kakao_account.email);
                                         var allData = {"name": res.properties.nickname, "email": res.id};
                                            $.ajax({
                                              type: "POST",
@@ -176,7 +169,6 @@
                                                  alert('NAME_ERROR');
                                                } else {
                                                  alert(data+' 님 환영합니다.');
-                                                 console.log(data);
                                                  opener.parent.location.reload();
                                                  window.close();
                                                }

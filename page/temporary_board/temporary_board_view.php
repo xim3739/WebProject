@@ -2,18 +2,16 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>PHP 프로그래밍 입문</title>
+<title>찾아ZOO</title>
 <link rel="stylesheet" href="../../css/temporary_board/board.css">
 <link rel="stylesheet" href="../../css/temporary_board/common.css">
-
-<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-<!-- Bootstrap core CSS -->
 <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<!-- Custom styles for this template -->
 <link href="../../css/main/small-business.css" rel="stylesheet">
 <?php include "../../lib/common_page/main_style.php" ?>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script src="../../js/main/pop_up_menu.js"></script>
-<?php   session_start(); include "../../db/db_connector.php" ?>
+
 <style media="screen">
   #list_item{
     border: 1px solid black;
@@ -32,6 +30,8 @@
       float: right;
     }
 </style>
+
+  <?php   session_start(); include "../../db/db_connector.php" ?>
 </head>
 <body>
   <?php include "../../lib/common_page/header.php" ?>
@@ -55,7 +55,7 @@
 <section>
    	<div id="board_box" style="padding-top:100px;">
 	    <h3 class="title">
-			임시보호 > 내용보기
+			임시보호
 		</h3>
 <?php
 	$num  = $_GET["num"];
@@ -99,11 +99,11 @@
 
                         $exist = "exist";
                         echo "▷ 첨부파일 : $file_name ($file_size Byte) &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href='board_download.php?num=$num&real_name=$real_name&file_name=$file_name&file_type=$file_type'>[저장]</a><br><br>";
+            <a href='./board_download.php?num=$num&real_name=$real_name&file_name=$file_name&file_type=$file_type'>[저장]</a><br><br>";
                     } else {
                         $exist = "not_exist";
                         echo "▷ 첨부파일 : $file_name ($file_size Byte) &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href='board_download.php?num=$num&real_name=$real_name&file_name=$file_name&file_type=$file_type'>[저장]</a><br><br>";
+            <a href='./board_download.php?num=$num&real_name=$real_name&file_name=$file_name&file_type=$file_type'>[저장]</a><br><br>";
                     }
 				?>
 				<?=$content?>
