@@ -53,6 +53,7 @@
         <?php
 
 if (!$username) {
+  //로그인이 안되어잇을때
     ?>
     <input type="button" class="btn btn-primary" value="Sign In" onclick="window.open('../login/signup.php','zoo','width=500,height=1000,left=500,top=40');">
     <?php
@@ -70,11 +71,12 @@ if (!$username) {
       <span> |</span>
       <span><a href="../login/logout.php" class="private">로그아웃</a></span>
 
-       
+
 
         <?php
       }else{
-        $logged = $username."(".$userid.")님"; 
+        //로그인이 되었을때
+        $logged = $username."(".$userid.")님";
         ?>
         <span><?=$logged?></span>
         <span>&nbsp;&nbsp;| </span>
@@ -82,7 +84,7 @@ if (!$username) {
         <span><a href="../../page/admin/admin_member.php"class="private">관리자모드</a></span>
         <span> |</span>
         <span><a href="../login/logout.php" class="private">로그아웃</a></span>
-      <?php 
+      <?php
       }
     }
     ?>

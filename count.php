@@ -7,9 +7,11 @@
     $row = mysqli_fetch_array($result);
 
     if(!$row) {
+      //현재 날짜가 잇는지 없는지
         $sql = "INSERT INTO `counter`(`date`, `count`) VALUES('$today', 1)";
         mysqli_query($connect, $sql);
     } else {
+      //count로 1을 증가
         $sql = "UPDATE `counter` SET `count` = `count` + 1 WHERE `date` = $today";
         mysqli_query($connect, $sql);
     }
