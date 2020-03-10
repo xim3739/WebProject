@@ -141,7 +141,7 @@
             </script>
           </div>
           <div class="input-field col s6 m6 l6">
-              <p class="margin right-align medium-small"> <a href="./find_account.php" onClick="window.open(this.href, '', 'width=600, height=450'); return false;">Forgot password ?</a></p>
+              <p class="margin right-align medium-small"> <a href="./find_account.php" onClick="window.open(this.href, '', 'width=600, height=500'); return false;">Forgot password ?</a></p>
           </div>
         </div>
       </form>
