@@ -225,6 +225,8 @@
             // 해당 게시판 group_num 의 뎃글의 갯수를 가져와 보여준다
                for ($i=0; $i<$commentpost_num; $i++) {
                    mysqli_data_seek($result, $i);
+ // 리절트 셋(result set)에서 원하는 순번의 데이터를 선택하는데 쓰입니다.
+ // 보통의 경우 mysqli_data_seek 함수로 원하는 순번을 선택하고 mysqli_fetch_row 로 선택한 데이터를 가져옵니다.
                    $row = mysqli_fetch_array($result);
                    $id      = $row["id"];
                    $regist_day = $row["regist_day"];

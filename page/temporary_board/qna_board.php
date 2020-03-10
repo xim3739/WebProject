@@ -38,6 +38,7 @@ $dbconn = mysqli_select_db($connect,"joo_db") or die('Error: '.mysqli_error($con
 
 function test_input($data) {
   $data = trim($data);
+  //공백 제거
   $data = stripslashes($data);
   $data = htmlspecialchars($data);
   return $data;
