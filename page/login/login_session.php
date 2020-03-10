@@ -1,4 +1,3 @@
-<!-- <meta charset="utf-8"> -->
 <?php
 
 include "../../db/db_connector.php";

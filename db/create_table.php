@@ -79,7 +79,7 @@
                       `ord` int NOT NULL,
                       `id` varchar(15) NOT NULL,
                       `content` text NOT NULL,
-                      `regist_day` varchar(20),
+                      `regist_day` varchar(50),
                       PRIMARY KEY(`num`)
                   )";
                   break;
@@ -105,7 +105,7 @@
                         `category` varchar(20) NOT NULL,
                         `subject` varchar(200) NOT NULL,
                         `content` text NOT NULL,
-                        `regist_day` char(20) NOT NULL,
+                        `regist_day` char(50) NOT NULL,
                         `hit` int NOT NULL,
                         `file_name` varchar(200),
                         `file_type` varchar(200),

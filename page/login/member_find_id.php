@@ -14,7 +14,6 @@ if ($_POST["name"] == "" || $_POST["phone_two"] == "" || $_POST["phone_three"] =
     $db_id=$row["id"];
 
 
-
     if ($db_name == $username) {
         echo "<script>alert('회원님의 ID는 ".$db_id."입니다.'); history.back();</script>";
     } else {

@@ -9,26 +9,20 @@
   <meta name="author" content="">
 
   <title>찾아Joo</title>
-  <link rel="stylesheet" type="text/css" href="../../css/board/board.css">
   <!-- jquery -->
-  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../css/board/board.css">
   <link rel="stylesheet" href="../../css/aside/message.css">
-  <script src="../../js/aside/message.js" charset="utf-8"></script>
-  <script src="../../js/main/pop_up_menu.js"></script>
-  <!-- banner core CSS&JS -->
-  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script> -->
-  <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-  <!-- <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script> -->
   <link rel="stylesheet" href="../../css/aside/banner.css">
-  <script src="../../js/aside/banner.js" charset="utf-8"></script>
-
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
-
   <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../../css/main/small-business.css" rel="stylesheet">
-
+  <!-- banner core CSS&JS -->
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="../../js/aside/message.js" charset="utf-8"></script>
+  <script src="../../js/main/pop_up_menu.js"></script>
+  <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+  <script src="../../js/aside/banner.js" charset="utf-8"></script>
   <!-- main header css -->
   <?php include "../../lib/common_page/main_style.php";?>
   <script>
@@ -55,11 +49,8 @@ function pop_up(id) {
           $category = "찾아요";
           $inputSearch = $_POST['inputSearch'];
           $sql = "SELECT * FROM `board` WHERE `category` = '$category' AND `subject` LIKE '%$inputSearch%'";
-
         }else{
-
           $sql="SELECT * FROM `board`";
-
         }
         $result=mysqli_query($connect,$sql);
         $page_num=mysqli_num_rows($result);

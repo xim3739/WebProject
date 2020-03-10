@@ -21,7 +21,6 @@ mysqli_close($connect);
 
 echo "
 	<script>
-
         opener.parent.location.reload();
         window.close();
 	</script>

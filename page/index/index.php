@@ -64,9 +64,7 @@ if (!$username) {
         $logged = $username."(".$userid.")님"; ?>
       <span><?=$logged?></span>
       <span>&nbsp;&nbsp;| </span>
-      <!-- <span><a href="../../page/login/member_modify_form.php" target="_blank" class="private">마이페이지</a></span> -->
       <span><a href="#" onclick="window.open('../../page/login/member_modify_form.php','','width=500,height=700,left=500,top=40')" class="private">마이페이지</a></span>
-
       <span> |</span>
       <span><a href="../login/logout.php" class="private">로그아웃</a></span>
 
@@ -78,7 +76,6 @@ if (!$username) {
         ?>
         <span><?=$logged?></span>
         <span>&nbsp;&nbsp;| </span>
-        <!-- <span><a href="../../page/login/member_modify_form.php" target="_blank" class="private">마이페이지</a></span> -->
         <span><a href="../../page/admin/admin_member.php"class="private">관리자모드</a></span>
         <span> |</span>
         <span><a href="../login/logout.php" class="private">로그아웃</a></span>

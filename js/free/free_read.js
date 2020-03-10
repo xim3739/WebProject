@@ -22,7 +22,6 @@ function refresh_comment(){
   var comment = $("#input_comment").val();
   var regist_day = $("#hidden_regist_day").val();
   var mode = "refresh";
-  var html = "";
   $.ajax({
     url : "../free_board/free_comment_ajax.php",
     type : "post",
@@ -33,26 +32,6 @@ function refresh_comment(){
     success : function(data) {
       alert("새로고침 성공!");
       console.log(data);
-      // for(var i =0; i<data[0].result; i++){
-      //   name = data[i].name;
-      //   now_ids = data[i].now_id;
-      //   if (send_ids!==now_ids) {
-      //     html_one += "<li style='width: 180px;' class='"+i+"'>";
-      //     html_one += "<span class='time'>"+data[i].regist_day+"</span><br>";
-      //     html_one += "<span class='names'>"+data[i].name+"&nbsp;</span>";
-      //     html_one += "<span class='contents'>"+data[i].content+"</span>";
-      //     html_one += "</li>";
-      //   }else{
-      //     html_one += "<li class='<?=$i?>' style='width: 180px; text-align: right; '>";
-      //     html_one += "<span class='time' style='font-size: 10px;'>"+data[i].regist_day+"</span><br>";
-      //     html_one += "<span class='names' style='display: none;'>"+data[i].name+"&nbsp;</span>";
-      //     html_one += "<span class='contents' style='display: inline-block; max-width : 120px; background-color: #15E7EB; border-radius: 40px 0px 40px 40px;'>"+data[i].content+"</span>";
-      //     html_one += "<input name='hidden_num' value='"+data[i].num+"' hidden></input>";
-      //     html_one += "</li>";
-      //   }
-      // }//end of for
-      // $("#message_ul").html(html_one);
-
     },
     error:function(request,status,error){
       alert("새로고침 실패");

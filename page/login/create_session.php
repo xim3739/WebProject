@@ -3,8 +3,6 @@
   if(!isset($_SESSION['username'])) {
       $name = $_POST['name'];
       $email = $_POST['email'];
-      // $password = "0000";
-      // $phone = "010-0000-0000";
 
       $_SESSION['username'] = $name;
       $_SESSION['userid'] = $email;
