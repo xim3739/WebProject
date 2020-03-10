@@ -2,18 +2,18 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>찾아ZOO</title>
     <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js" charset="utf-8"></script>
+    <script src="../../js/login/signup.js"></script>
+    
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <script src="../../js/login/signup.js"></script>
 
       <style media="screen">
 
@@ -92,7 +92,6 @@
 
               <div class="row margin">
                 <div class="input-field col s12">
-                  <!-- <i class="mdi-social-person-outline prefix"></i> -->
                   <i class="material-icons prefix">account_circle</i>
                   <input type="text" name="inputId" id="inputId" style="margin-bottom:0px;"> <br>
                   <label for="username">ID</label>
@@ -104,7 +103,6 @@
 
               <div class="row margin">
                 <div class="input-field col s12">
-                  <!-- <i class="mdi-action-lock-outline prefix"></i> -->
                   <i class="material-icons prefix">vpn_key</i>
                   <input type="password" name="inputPassword" id="inputPassword" style="margin-bottom:0px;"> <br>
                   <label for="password">Password</label>
@@ -114,7 +112,6 @@
 
               <div class="row margin">
                 <div class="input-field col s12">
-                  <!-- <i class="mdi-action-lock-outline prefix"></i> -->
                   <i class="material-icons prefix">check_circle</i>
                   <input type="password" name="inputPasswordCheck" id="inputPasswordCheck" style="margin-bottom:0px;"> <br>
                   <label for="password_a">Password again</label>
@@ -124,7 +121,6 @@
 
               <div class="row margin">
                 <div class="input-field col s12">
-                  <!-- <i class="mdi-action-lock-outline prefix"></i> -->
                   <i class="material-icons prefix">recent_actors</i>
                   <input type="text" name="inputName" id="inputName" style="margin-bottom:0px;"> <br>
                   <label for="password_a">Name</label>
@@ -134,7 +130,6 @@
 
               <div class="row margin">
                 <div class="input-field col s12">
-                  <!-- <i class="mdi-social-person-outline prefix"></i> -->
                   <i class="material-icons prefix">phone</i>
                   <input id="phone_one" name="phone_one" type="text" style="width:40px;margin-right:10px; margin-bottom: 0px;"/> -
                   <input id="phone_two" name="phone_two" type="text" style="width:60px; margin-left:10px;margin-right:10px; margin-bottom: 0px;"/> -
@@ -146,7 +141,6 @@
 
               <div class="row margin">
                 <div class="input-field col s12">
-                  <!-- <i class="mdi-action-lock-outline prefix"></i> -->
                   <i class="material-icons prefix">check_circle</i>
                   <input id="input_phone_certification" name="input_phone_certification" type="text" style="width:160px;margin-bottom: 0px;"/>
                   <button type="button" id="phone_certification_check" class="btn waves-effect waves-light col s12" style="width:130px;  float:right;margin-left: 10px; margin-top: 5px">인증번호 확인</button>

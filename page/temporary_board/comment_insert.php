@@ -20,7 +20,9 @@
     function test_input($data)
     {
         $data = stripslashes($data);
+        // \'  \"  \\ 로 저장되어 있는 값에서 \(백슬래시)를 제거하고 보여줌
         $data = htmlspecialchars($data);
+        //문자열에서 특정한 특수 문자를 HTML 엔티티로 변환한다. 이함수를 사용하면 악성 사용자로 부터 XSS 공격을 방지 할 수 있다.
         return $data;
     }
     if (!empty($content)) {
@@ -32,6 +34,7 @@
     }
     $content = $_POST["content"];
     $q_content = mysqli_real_escape_string($connect, $content);
+    //제공하는 함수로 MYSQL과 커넥션을할때 String을 Escape한 상태로 만들어준다.
     $q_userid = mysqli_real_escape_string($connect, $userid);
     $regist_day=date("Y-m-d (H:i)");
 
@@ -59,6 +62,7 @@
       $sql = "SELECT max(`comment_num`) FROM `temporary_comment`";
       $result = mysqli_query($connect, $sql);
       $row = mysqli_fetch_array($result);
+      //은 리절트 셋(result set)에서 레코드를 1개씩 리턴해주는 함수입니다.
       $comment_num = $row[0];
       $comment_num = (int)$comment_num;
       $sql="INSERT INTO `temporary_comment` VALUES (null,$group_num,$comment_num+1,$depth,$ord,'$userid','$q_content','$regist_day')";

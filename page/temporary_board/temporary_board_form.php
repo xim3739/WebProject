@@ -2,15 +2,13 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>찾아ZOO</title>
     <link rel="stylesheet" href="../../css/temporary_board/board.css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-  <!-- Bootstrap core CSS -->
-  <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="../../css/main/small-business.css" rel="stylesheet">
-  <?php include "../../lib/common_page/main_style.php" ?>
+    <link href="../../css/main/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/main/small-business.css" rel="stylesheet">
+    <?php include "../../lib/common_page/main_style.php" ?>
 
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
   </head>
   <script>
     function check_input() {

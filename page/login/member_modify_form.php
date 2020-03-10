@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>찾아ZOO</title>
     <link rel="stylesheet" href="../../css/login/signup.css">
     <link rel="stylesheet" href="../../css/login/login.css">
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -48,6 +48,7 @@ include "../../db/db_connector.php";
     $phone = $row["phone"];
 
     $phone = explode("-", $row["phone"]);
+    //문자열을 분할하여 배열로 저장하는 함수입니다. 문자열분할기준,분한할 문자열
     $phone1 = $phone[0];
     $phone2 = $phone[1];
     $phone3 = $phone[2];

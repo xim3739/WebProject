@@ -38,6 +38,7 @@ $dbconn = mysqli_select_db($connect,"joo_db") or die('Error: '.mysqli_error($con
 
 function test_input($data) {
   $data = trim($data);
+  //공백 제거
   $data = stripslashes($data);
   $data = htmlspecialchars($data);
   return $data;
@@ -98,7 +99,6 @@ if ($mode=="reply") {
     }
     mysqli_close($connect);
 
-    // echo "<script>location.href='./qna_view.php?num=$max_num&hit=$hit';</script>";
     echo "<script>location.href='./temporary_board_view.php';</script>";
 
 }elseif ($mode=="update_reply") {
@@ -134,7 +134,6 @@ if ($mode=="reply") {
     $r_content = test_input($_POST["r_content"]);
     $userid = test_input($userid);
     $num = test_input($_POST["num"]);
-    // $hit = test_input($_POST["hit"]);
     $q_content = mysqli_real_escape_string($connect, $content);
     $q_userid = mysqli_real_escape_string($connect, $userid);
     $q_num = mysqli_real_escape_string($connect, $num);
@@ -178,5 +177,4 @@ if ($mode=="reply") {
     $max_num=$row['max(num)'];
 
 }//end of if insert
-// Header("Location: p260_score_list.php");
 ?>

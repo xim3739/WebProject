@@ -50,7 +50,6 @@
     $upfile_type = "";
     $copied_file_name = "";
   }
-  // $connect = mysqli_connect("localhost", "root", "123456", "test");
   $sql = "select * from member where name='$name'";
   $result = mysqli_query($connect, $sql);
   $num_record = mysqli_num_rows($result);

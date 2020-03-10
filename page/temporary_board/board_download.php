@@ -19,7 +19,7 @@
     }
 
     if (file_exists($file_path)) {
-        $fp = fopen($file_path, "rb");
+        $fp = fopen($file_path, "rb");//파일을 오픈하는 기능
         Header("Content-type: application/x-msdownload");
         Header("Content-Length: ".filesize($file_path));
         Header("Content-Disposition: attachment; filename=".$file_name);

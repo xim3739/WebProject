@@ -202,5 +202,4 @@ function done(){
 
 function login_done(){
   document.login_form.submit();
-  // document.getElementById('#signUpButton').submit();
 }

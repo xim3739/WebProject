@@ -12,9 +12,6 @@ $(document).ready(function () {
             let windowHeight = $window.height();
             let documentHeight = $(document).height();
 
-
-           // console.log("documentHeight:" + documentHeight + " | scrollTop:" + scrollTop + " | windowHeight: " + windowHeight );
-
             // scrollbar의 thumb가 바닥 전 30px까지 도달 하면 리스트를 가져온다.
             if(flag){
               if( scrollTop + windowHeight + 30 > documentHeight ){
@@ -31,7 +28,6 @@ $(document).ready(function () {
         if(isEnd == true){
             return;
         }
-        console.log("부르냐");
         <?php
         if(isset($_GET['category'])){
             $cate=$_GET['category'];
@@ -62,8 +58,8 @@ $(document).ready(function () {
 
             success: function(result){
                 setTimeout(function(){flag=true;},500);
-                // 컨트롤러에서 가져온 방명록 리스트는 result.data에 담겨오도록 했다.
-                // 남은 데이터가 5개 이하일 경우 무한 스크롤 종료
+
+                // 남은 데이터가 없을 경우 무한 스크롤 종료
                 if(!result.includes('empty')){
 
                     var response=JSON.parse(result);
